@@ -1,13 +1,7 @@
 # 26 — Timed Mock Contests
 
-## Focus
-
-time management, compute limits, submission checks
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Timed Round 1 mock](lesson-01.md)
+- [Lesson 02 — Timed Round 2 tabular mock](lesson-02.md)
+- [Lesson 03 — Timed Round 2 multimodal mock](lesson-03.md)
+- [Lesson 04 — Final readiness conference](lesson-04.md)

@@ -1,13 +1,6 @@
 # 11 — Decision Trees and Ensembles
 
-## Focus
-
-purity, information gain, bagging, random forest, boosting
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Decision-tree splits, purity, and information gain](lesson-01.md)
+- [Lesson 02 — Bagging and random forests](lesson-02.md)
+- [Lesson 03 — Boosting and ensemble comparison](lesson-03.md)

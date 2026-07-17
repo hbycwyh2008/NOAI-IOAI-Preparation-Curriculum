@@ -1,13 +1,5 @@
-# 10 — Generalisation, Overfitting, and Regularisation
+# 10 — Generalisation and Regularisation
 
-## Focus
-
-train/validation/test, underfitting, overfitting, L1/L2
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Train/validation/test splits and learning curves](lesson-01.md)
+- [Lesson 02 — Underfitting, overfitting, L1/L2, and remedies](lesson-02.md)

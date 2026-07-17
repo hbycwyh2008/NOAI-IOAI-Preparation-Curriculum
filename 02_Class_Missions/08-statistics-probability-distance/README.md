@@ -1,13 +1,5 @@
-# 08 — Statistics, Normal Distribution, and Distance
+# 08 — Statistics, Probability, and Distance
 
-## Focus
-
-mean, variance, standard deviation, Gaussian distribution, distance
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Mean, variance, standard deviation, and z-scores](lesson-01.md)
+- [Lesson 02 — Normal distribution, Euclidean distance, and standardisation](lesson-02.md)

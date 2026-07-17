@@ -1,13 +1,6 @@
-# 09 — Confusion Matrix, Metrics, and Cross-Validation
+# 09 — Model Evaluation
 
-## Focus
-
-accuracy, precision, recall, specificity, F1, cross-validation
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Confusion matrix, accuracy, precision, and recall](lesson-01.md)
+- [Lesson 02 — F1, specificity, ROC/AUC, and metric selection](lesson-02.md)
+- [Lesson 03 — Cross-validation and evaluation design](lesson-03.md)

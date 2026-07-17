@@ -1,13 +1,6 @@
-# 13 — Gradient Descent, Backpropagation, and Optimisers
+# 13 — Backpropagation and Optimisation
 
-## Focus
-
-chain rule intuition, gradients, momentum, Adam/AdamW
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Gradient descent and computational graphs](lesson-01.md)
+- [Lesson 02 — Backpropagation intuition and chain-rule tracing](lesson-02.md)
+- [Lesson 03 — Momentum, RMSprop, Adam, and AdamW](lesson-03.md)

@@ -1,13 +1,5 @@
-# 23 — LLMs, Qwen, Multimodality, and APIs
+# 23 — LLM and Generative AI
 
-## Focus
-
-tokens, next-token prediction, prompting, local inference, API calls
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Tokens, next-token prediction, prompting, and APIs](lesson-01.md)
+- [Lesson 02 — Qwen local inference, multimodality, and responsible use](lesson-02.md)

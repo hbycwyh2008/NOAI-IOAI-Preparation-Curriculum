@@ -1,14 +1,14 @@
 # Pacing Guide
 
-## Standard Path: 32–40 Lessons
+## Standard Path: 66 Lessons × 90 Minutes
 
-- Setup: 2 lessons
-- Python: 4 lessons
-- AI/ML foundations: 9 lessons
-- Neural networks/CNN: 5 lessons
-- Round 1 practice: 3 lessons
-- Data analysis/sklearn: 5 lessons
-- PyTorch and domains: 8 lessons
-- Past papers and mock contests: 4+ lessons
+- Setup and workflow: 2 lessons
+- Python foundations: 6 lessons
+- AI/ML foundations: 17 lessons
+- Neural networks and CNNs: 8 lessons
+- Round 1 training: 4 lessons
+- Data analysis and scikit-learn: 6 lessons
+- PyTorch and domain tasks: 13 lessons
+- Competition practice: 10 lessons
 
-Each folder in `02_Class_Missions` may be taught as one or more 90-minute sessions depending on student readiness.
+See [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md) for the exact lesson order.

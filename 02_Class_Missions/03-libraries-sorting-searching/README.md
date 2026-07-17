@@ -1,13 +1,5 @@
 # 03 — Libraries, Files, Sorting, and Searching
 
-## Focus
-
-modules, CSV, linear search, binary search, simple sorts
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Libraries, files, CSV, and exceptions](lesson-01.md)
+- [Lesson 02 — Linear/binary search and simple sorting](lesson-02.md)

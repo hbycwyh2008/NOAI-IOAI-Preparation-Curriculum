@@ -1,13 +1,5 @@
-# 05 — Supervised, Unsupervised, and Reinforcement Learning
+# 05 — Learning Paradigms
 
-## Focus
-
-regression, classification, clustering, RL states/actions/rewards
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Supervised and unsupervised learning](lesson-01.md)
+- [Lesson 02 — Reinforcement learning foundations](lesson-02.md)

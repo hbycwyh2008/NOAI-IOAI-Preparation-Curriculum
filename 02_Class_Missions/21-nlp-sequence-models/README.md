@@ -1,13 +1,6 @@
-# 21 — NLP, Tokenisation, RNNs, and LSTMs
+# 21 — NLP and Sequence Models
 
-## Focus
-
-vocabulary, tokenisation, padding, embeddings, RNN, LSTM, text classification
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Tokenisation, vocabulary, padding, and embeddings](lesson-01.md)
+- [Lesson 02 — RNN and LSTM sequence modelling](lesson-02.md)
+- [Lesson 03 — Hugging Face text classification and fine-tuning](lesson-03.md)

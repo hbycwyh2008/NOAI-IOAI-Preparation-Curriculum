@@ -1,13 +1,6 @@
 # 25 — Past-Paper Reproduction
 
-## Focus
-
-reproduce, compare, improve, document
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Reproduction method and NLP task](lesson-01.md)
+- [Lesson 02 — Tabular/AI4Science task](lesson-02.md)
+- [Lesson 03 — Audio or image task](lesson-03.md)

@@ -1,13 +1,5 @@
 # 16 — NumPy, Pandas, and Matplotlib
 
-## Focus
-
-arrays, DataFrames, querying, missing values, plots
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — NumPy arrays, shapes, indexing, and broadcasting](lesson-01.md)
+- [Lesson 02 — Pandas inspection, cleaning, grouping, merging, and plots](lesson-02.md)

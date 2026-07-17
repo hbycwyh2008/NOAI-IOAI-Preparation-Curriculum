@@ -3,12 +3,10 @@
 The curriculum contains **66 teachable 90-minute lessons**, not 27 one-lesson placeholders.
 
 ## Phase 0 — Setup
-
 1. Competition workflow and baseline thinking
 2. Evidence system, GitHub workflow, Bohrium readiness
 
 ## Phase 1 — Python
-
 3. Functions, variables, and expressions
 4. Input/output, types, conversion, and debugging
 5. Conditionals and Boolean logic
@@ -17,7 +15,6 @@ The curriculum contains **66 teachable 90-minute lessons**, not 27 one-lesson pl
 8. Linear/binary search and simple sorting
 
 ## Phase 2 — AI and Machine Learning Foundations
-
 9. AI schools, Turing Test, and capabilities
 10. Ethics, bias, privacy, safety, and responsibility
 11. Supervised and unsupervised learning
@@ -37,7 +34,6 @@ The curriculum contains **66 teachable 90-minute lessons**, not 27 one-lesson pl
 25. Bagging, random forests, boosting, and comparison
 
 ## Phase 3 — Neural Networks
-
 26. Perceptrons, neurons, weights, bias, and activations
 27. Multilayer networks and forward propagation
 28. Gradient descent and computational graphs
@@ -48,14 +44,12 @@ The curriculum contains **66 teachable 90-minute lessons**, not 27 one-lesson pl
 33. CNN architecture, Softmax, and cross-entropy
 
 ## Phase 4 — Round 1 Training
-
 34. Multiple-choice reasoning and distractor analysis
 35. Python/sklearn code tracing and completion
 36. Short-answer structure and paper calculations
 37. Full timed Round 1 mock and correction cycle
 
 ## Phase 5 — Data and Scikit-learn
-
 38. NumPy arrays, shapes, indexing, and broadcasting
 39. Pandas inspection, cleaning, grouping, and merging
 40. Numerical/categorical features and leakage prevention
@@ -64,7 +58,6 @@ The curriculum contains **66 teachable 90-minute lessons**, not 27 one-lesson pl
 43. Model comparison, cross-validation, and tuning
 
 ## Phase 6 — PyTorch and Domain Tasks
-
 44. Tensors, devices, shapes, and GPU movement
 45. Dataset, DataLoader, nn.Module, and autograd
 46. Training/validation loops, checkpoints, and mixed precision
@@ -80,7 +73,6 @@ The curriculum contains **66 teachable 90-minute lessons**, not 27 one-lesson pl
 56. Qwen local inference, multimodality, and responsible use
 
 ## Phase 7 — Competition Practice
-
 57. Round 2 data audit and validation strategy
 58. Baseline-first model development and submission validation
 59. Controlled experiments, leaderboard reasoning, and post-mortem

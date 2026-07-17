@@ -1,13 +1,5 @@
-# 06 — Linear Regression and Gradient Descent
+# 06 — Linear Regression
 
-## Focus
-
-prediction, cost, residual, gradient descent
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Model, prediction, residual, and cost](lesson-01.md)
+- [Lesson 02 — Gradient descent, feature scaling, and multiple regression](lesson-02.md)

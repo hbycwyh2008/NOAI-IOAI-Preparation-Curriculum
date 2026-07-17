@@ -1,13 +1,5 @@
-# 07 — Logistic Regression and Decision Boundaries
+# 07 — Logistic Regression
 
-## Focus
-
-sigmoid, probability, threshold, decision boundary, log loss
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Sigmoid, probability, and decision boundary](lesson-01.md)
+- [Lesson 02 — Thresholds, logistic loss, and sklearn classification](lesson-02.md)

@@ -1,13 +1,7 @@
-# 15 — Round 1 Paper-Test Training
+# 15 — Round 1 Exam Training
 
-## Focus
-
-MCQ, short answer, calculation, code completion
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Multiple-choice reasoning and distractor analysis](lesson-01.md)
+- [Lesson 02 — Python/sklearn code tracing and completion](lesson-02.md)
+- [Lesson 03 — Short-answer structure and paper calculations](lesson-03.md)
+- [Lesson 04 — Full timed mock and correction cycle](lesson-04.md)

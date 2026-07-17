@@ -1,13 +1,6 @@
-# 14 — CNNs, Convolution, Pooling, and Output Functions
+# 14 — CNN Foundations
 
-## Focus
-
-kernels, stride, padding, pooling, fully connected, ReLU, softmax, loss
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Convolution kernels and feature maps](lesson-01.md)
+- [Lesson 02 — Padding, stride, pooling, and tensor shapes](lesson-02.md)
+- [Lesson 03 — CNN architecture, Softmax, and cross-entropy](lesson-03.md)

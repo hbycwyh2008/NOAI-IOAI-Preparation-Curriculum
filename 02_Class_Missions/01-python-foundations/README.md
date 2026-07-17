@@ -1,13 +1,5 @@
 # 01 — Functions, Variables, and Input/Output
 
-## Focus
-
-Python values, types, functions, and arithmetic
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Functions, variables, and expressions](lesson-01.md)
+- [Lesson 02 — Input/output, types, conversion, and debugging](lesson-02.md)

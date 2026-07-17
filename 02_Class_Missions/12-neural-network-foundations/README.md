@@ -1,13 +1,5 @@
-# 12 — Perceptrons and Neural Networks
+# 12 — Neural Network Foundations
 
-## Focus
-
-neurons, weights, bias, layers, forward propagation
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Perceptrons, neurons, weights, bias, and activations](lesson-01.md)
+- [Lesson 02 — Multilayer networks and forward propagation](lesson-02.md)

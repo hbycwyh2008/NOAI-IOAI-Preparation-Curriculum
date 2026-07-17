@@ -1,13 +1,6 @@
-# 24 — Round 2 Open-Ended Project Workflow
+# 24 — Round 2 Project Training
 
-## Focus
-
-baseline, leaderboard, experiment control, submission validation
-
-## Lesson Files
-
-- [lesson-01.md](lesson-01.md)
-
-## Completion Standard
-
-The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
+## Lessons
+- [Lesson 01 — Data audit and validation strategy](lesson-01.md)
+- [Lesson 02 — Baseline-first development and submission validation](lesson-02.md)
+- [Lesson 03 — Controlled experiments and leaderboard reasoning](lesson-03.md)
