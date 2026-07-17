@@ -1,0 +1,13 @@
+# 20 — Computer Vision and Transfer Learning
+
+## Focus
+
+image transforms, CNNs, transfer learning, OpenCV baselines
+
+## Lesson Files
+
+- [lesson-01.md](lesson-01.md)
+
+## Completion Standard
+
+The student must submit the guided task, independent task, exit check, and required evidence. Running code once is not sufficient.
