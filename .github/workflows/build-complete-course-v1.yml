@@ -1,0 +1,72 @@
+name: Build complete course V1
+
+on:
+  push:
+    paths:
+      - 'scripts/v1_chunks/**'
+      - '.github/workflows/build-complete-course-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Reconstruct curriculum generator
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          import zlib
+
+          root = Path('.')
+          chunks = root / 'scripts' / 'v1_chunks'
+          output = root / 'scripts'
+          output.mkdir(parents=True, exist_ok=True)
+
+          for prefix, target in [
+              ('data_', 'course_v1_data.py'),
+              ('build_', 'build_complete_course_v1.py'),
+          ]:
+              parts = sorted(chunks.glob(prefix + '*.txt'))
+              if not parts:
+                  raise RuntimeError(f'No chunks found for {prefix}')
+              encoded = ''.join(part.read_text(encoding='utf-8').strip() for part in parts)
+              decoded = zlib.decompress(base64.b64decode(encoded))
+              (output / target).write_bytes(decoded)
+          PY
+
+      - name: Generate complete ready-to-teach curriculum
+        run: python scripts/build_complete_course_v1.py
+
+      - name: Validate generated course
+        run: python scripts/validate_curriculum.py
+
+      - name: Commit generated course content
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            00_Course_Overview \
+            02_Class_Missions \
+            04_Assessment \
+            05_Resources \
+            06_Starter_Code \
+            06_Starter_Notebooks \
+            scripts/course_v1_data.py \
+            scripts/build_complete_course_v1.py \
+            scripts/validate_curriculum.py
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+          else
+            git commit -m 'Generate complete ready-to-teach curriculum V1'
+            git push
+          fi
