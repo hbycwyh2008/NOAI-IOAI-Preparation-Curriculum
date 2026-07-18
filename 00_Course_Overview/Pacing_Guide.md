@@ -1,14 +1,15 @@
 # Pacing Guide
 
-## Standard Path: 66 Lessons × 90 Minutes
+The repository contains **67 scheduled lessons/sessions**.
 
-- Setup and workflow: 2 lessons
-- Python foundations: 6 lessons
-- AI/ML foundations: 17 lessons
-- Neural networks and CNNs: 8 lessons
-- Round 1 training: 4 lessons
-- Data analysis and scikit-learn: 6 lessons
-- PyTorch and domain tasks: 13 lessons
-- Competition practice: 10 lessons
+- Standard concept and coding lessons: 90 minutes.
+- Integrated Round 1 mock and correction: 150 minutes.
+- Past-paper reproduction sessions: 180 minutes each.
+- Timed Round 1 mock: 120 minutes.
+- Timed Round 2 tabular mock: 240 minutes.
+- Timed Round 2 multimodal mock: 360 minutes.
+- Final readiness conference: 45 minutes per student.
 
-See [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md) for the exact lesson order.
+Every lesson file contains a minute-by-minute timeline. Long simulations must not be compressed into a nominal 90-minute lesson.
+
+See [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md).

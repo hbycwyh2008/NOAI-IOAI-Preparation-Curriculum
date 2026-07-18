@@ -1,85 +1,94 @@
 # Detailed Lesson Sequence
 
-The curriculum contains **66 teachable 90-minute lessons**, not 27 one-lesson placeholders.
+The curriculum contains **67 scheduled lessons/sessions**. Each lesson file has an explicit timeline.
 
 ## Phase 0 — Setup
-1. Competition workflow and baseline thinking
-2. Evidence system, GitHub workflow, Bohrium readiness
+
+1. **Competition Workflow and Baseline Thinking** — 90 minutes
+2. **Evidence System, GitHub, and Bohrium Readiness** — 90 minutes
 
 ## Phase 1 — Python
-3. Functions, variables, and expressions
-4. Input/output, types, conversion, and debugging
-5. Conditionals and Boolean logic
-6. Loops, strings, lists, dictionaries, and tuples
-7. Libraries, files, CSV, and exceptions
-8. Linear/binary search and simple sorting
+
+3. **Functions, Variables, and Input/Output** — 90 minutes
+4. **Input/Output, Types, Conversion, and Debugging** — 90 minutes
+5. **Conditionals, Loops, and Core Data Structures** — 90 minutes
+6. **Loops and Core Data Structures** — 90 minutes
+7. **Libraries, Files, Sorting, and Searching** — 90 minutes
+8. **Search and Sorting** — 90 minutes
 
 ## Phase 2 — AI and Machine Learning Foundations
-9. AI schools, Turing Test, and capabilities
-10. Ethics, bias, privacy, safety, and responsibility
-11. Supervised and unsupervised learning
-12. Reinforcement learning foundations
-13. Linear regression, residuals, and cost
-14. Gradient descent, scaling, and multivariable regression
-15. Logistic regression, sigmoid, and decision boundaries
-16. Thresholds, logistic loss, and sklearn classification
-17. Mean, variance, standard deviation, and z-scores
-18. Normal distribution, distance, and standardisation
-19. Confusion matrix and core metrics
-20. F1, ROC/AUC, class imbalance, and metric selection
-21. Cross-validation and evaluation design
-22. Train/validation/test splits and learning curves
-23. Underfitting, overfitting, and regularisation
-24. Decision-tree splits and information gain
-25. Bagging, random forests, boosting, and comparison
+
+9. **AI Paradigms, Turing Test, and Ethics** — 90 minutes
+10. **Bias, Privacy, Safety, and Responsibility** — 90 minutes
+11. **Supervised, Unsupervised, and Reinforcement Learning** — 90 minutes
+12. **Reinforcement Learning Foundations** — 90 minutes
+13. **Linear Regression and Gradient Descent** — 90 minutes
+14. **Gradient Descent and Multiple Regression** — 90 minutes
+15. **Logistic Regression and Decision Boundaries** — 90 minutes
+16. **Thresholds, Logistic Loss, and Sklearn** — 90 minutes
+17. **Statistics, Normal Distribution, and Distance** — 90 minutes
+18. **Normal Distribution, Distance, and Standardisation** — 90 minutes
+19. **Confusion Matrix, Metrics, and Cross-Validation** — 90 minutes
+20. **F1, Specificity, ROC/AUC, and Metric Selection** — 90 minutes
+21. **Cross-Validation and Evaluation Design** — 90 minutes
+22. **Generalisation, Overfitting, and Regularisation** — 90 minutes
+23. **Underfitting, Overfitting, and Regularisation** — 90 minutes
+24. **Decision Trees and Ensembles** — 90 minutes
+25. **Bagging and Random Forests** — 90 minutes
+26. **Boosting and Ensemble Comparison** — 90 minutes
 
 ## Phase 3 — Neural Networks
-26. Perceptrons, neurons, weights, bias, and activations
-27. Multilayer networks and forward propagation
-28. Gradient descent and computational graphs
-29. Backpropagation intuition and chain-rule tracing
-30. Momentum, RMSprop, Adam, and AdamW
-31. Convolution kernels and feature maps
-32. Padding, stride, pooling, and tensor shapes
-33. CNN architecture, Softmax, and cross-entropy
+
+27. **Perceptrons and Neural Networks** — 90 minutes
+28. **Multilayer Networks and Forward Propagation** — 90 minutes
+29. **Gradient Descent, Backpropagation, and Optimisers** — 90 minutes
+30. **Backpropagation and Chain-Rule Tracing** — 90 minutes
+31. **Momentum, RMSprop, Adam, and AdamW** — 90 minutes
+32. **CNNs, Convolution, Pooling, and Output Functions** — 90 minutes
+33. **Padding, Stride, Pooling, and Tensor Shapes** — 90 minutes
+34. **CNN Architecture, Softmax, and Cross-Entropy** — 90 minutes
 
 ## Phase 4 — Round 1 Training
-34. Multiple-choice reasoning and distractor analysis
-35. Python/sklearn code tracing and completion
-36. Short-answer structure and paper calculations
-37. Full timed Round 1 mock and correction cycle
+
+35. **Round 1 Paper-Test Training** — 90 minutes
+36. **Python and Sklearn Code Tracing** — 90 minutes
+37. **Short Answers and Paper Calculations** — 90 minutes
+38. **Full Timed Round 1 Mock** — 150 minutes
 
 ## Phase 5 — Data and Scikit-learn
-38. NumPy arrays, shapes, indexing, and broadcasting
-39. Pandas inspection, cleaning, grouping, and merging
-40. Numerical/categorical features and leakage prevention
-41. Window features, image/text preparation, and embeddings
-42. Scikit-learn split, preprocessing, and baseline pipeline
-43. Model comparison, cross-validation, and tuning
+
+39. **NumPy, Pandas, and Matplotlib** — 90 minutes
+40. **Pandas Data Audit and Visualisation** — 90 minutes
+41. **Data Cleaning and Feature Engineering** — 90 minutes
+42. **Window, Image, Text, and Embedding Features** — 90 minutes
+43. **Complete Scikit-learn Workflow** — 90 minutes
+44. **Model Comparison and Tuning** — 90 minutes
 
 ## Phase 6 — PyTorch and Domain Tasks
-44. Tensors, devices, shapes, and GPU movement
-45. Dataset, DataLoader, nn.Module, and autograd
-46. Training/validation loops, checkpoints, and mixed precision
-47. OpenCV structural baselines and image preprocessing
-48. CNN image baseline, augmentation, and transfer learning
-49. Object detection/segmentation workflow and error analysis
-50. Tokenisation, vocabulary, padding, and embeddings
-51. RNN/LSTM sequence modelling
-52. Hugging Face text classification and fine-tuning
-53. Waveforms, sample rates, spectrograms, and Mel features
-54. Audio classification plus ASR/TTS workflow
-55. Tokens, next-token prediction, prompting, and APIs
-56. Qwen local inference, multimodality, and responsible use
+
+45. **PyTorch Tensors and Training Loops** — 90 minutes
+46. **Dataset, DataLoader, nn.Module, and Autograd** — 90 minutes
+47. **Training Loops, Checkpoints, and Mixed Precision** — 90 minutes
+48. **Computer Vision and Transfer Learning** — 90 minutes
+49. **CNN Baseline, Augmentation, and Transfer Learning** — 90 minutes
+50. **Detection, Segmentation, and Error Analysis** — 90 minutes
+51. **NLP, Tokenisation, RNNs, and LSTMs** — 90 minutes
+52. **RNN and LSTM Sequence Modelling** — 90 minutes
+53. **Hugging Face Text Classification** — 90 minutes
+54. **Audio Features and Speech Tasks** — 90 minutes
+55. **Audio Classification, ASR, and TTS** — 90 minutes
+56. **LLMs, Qwen, Multimodality, and APIs** — 90 minutes
+57. **Qwen, Local Inference, and Multimodality** — 90 minutes
 
 ## Phase 7 — Competition Practice
-57. Round 2 data audit and validation strategy
-58. Baseline-first model development and submission validation
-59. Controlled experiments, leaderboard reasoning, and post-mortem
-60. Past-paper reproduction: NLP task
-61. Past-paper reproduction: tabular/AI4Science task
-62. Past-paper reproduction: audio or image task
-63. Timed Round 1 mock
-64. Timed Round 2 tabular mock
-65. Timed Round 2 multimodal mock
-66. Final readiness conference and individual action plan
+
+58. **Round 2 Open-Ended Project Workflow** — 90 minutes
+59. **Baseline-First Development** — 90 minutes
+60. **Controlled Experiments and Leaderboard Reasoning** — 90 minutes
+61. **Past-Paper Reproduction** — 180 minutes
+62. **Reproduce a Tabular or AI4Science Task** — 180 minutes
+63. **Reproduce an Audio or Image Task** — 180 minutes
+64. **Timed Mock Contests** — 120 minutes
+65. **Timed Round 2 Tabular Mock** — 240 minutes
+66. **Timed Round 2 Multimodal Mock** — 360 minutes
+67. **Final Readiness Conference** — 45 minutes per student
