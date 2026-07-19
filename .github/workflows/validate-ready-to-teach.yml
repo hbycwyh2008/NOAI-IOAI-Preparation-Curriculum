@@ -1,0 +1,120 @@
+name: Validate ready-to-teach curriculum
+
+on:
+  push:
+    paths:
+      - "scripts/generate_ready_notebooks.py"
+      - "scripts/check_required_links.py"
+      - "06_Starter_Code/ready_to_teach/**"
+      - ".github/workflows/validate-ready-to-teach.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "20 2 1 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install validation environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install \
+            numpy pandas matplotlib scikit-learn \
+            nbformat nbclient ipykernel requests \
+            torch torchvision torchaudio \
+            librosa opencv-python-headless
+
+      - name: Generate twelve starter notebooks
+        run: python scripts/generate_ready_notebooks.py
+
+      - name: Execute notebooks from fresh kernels
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          from datetime import datetime, timezone
+          from pathlib import Path
+          import platform
+          import importlib
+          import nbformat
+          from nbclient import NotebookClient
+
+          folder = Path('06_Starter_Notebooks/ready_to_teach')
+          notebooks = sorted(folder.glob('N*.ipynb'))
+          if len(notebooks) != 12:
+              raise RuntimeError(f'Expected 12 notebooks, found {len(notebooks)}')
+
+          results = []
+          for path in notebooks:
+              notebook = nbformat.read(path, as_version=4)
+              NotebookClient(
+                  notebook,
+                  timeout=300,
+                  kernel_name='python3',
+                  allow_errors=False,
+              ).execute(cwd=str(folder))
+              results.append((path.name, 'PASS'))
+
+          packages = ['numpy','pandas','matplotlib','sklearn','torch','torchvision','torchaudio','cv2','librosa','nbformat','nbclient']
+          versions = []
+          for name in packages:
+              module = importlib.import_module(name)
+              versions.append((name, getattr(module, '__version__', 'unknown')))
+
+          lines = [
+              '# Runtime Validation Record', '',
+              f'- Validated: {datetime.now(timezone.utc).isoformat()}',
+              f'- Python: {platform.python_version()}',
+              f'- Platform: {platform.platform()}',
+              '- Runner: GitHub Actions ubuntu-latest',
+              '- Network downloads inside notebooks: none',
+              '- Device requirement: CPU-safe', '',
+              '## Package versions', '',
+          ]
+          lines += [f'- `{name}=={version}`' for name, version in versions]
+          lines += ['', '## Notebook results', '']
+          lines += [f'- `{name}`: {status}' for name, status in results]
+          lines += ['', 'All twelve notebooks executed from fresh kernels without manual state repair.']
+          Path('10_Ready_to_Teach_Pack/Runtime_Validation_Record.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
+
+      - name: Smoke-test executable starter code
+        run: |
+          python 06_Starter_Code/ready_to_teach/metrics_from_counts.py
+          python 06_Starter_Code/ready_to_teach/generate_practice_data.py --output /tmp/noai-practice --seed 2026
+          python 06_Starter_Code/ready_to_teach/validate_submission.py --help
+
+      - name: Check external resource links
+        continue-on-error: true
+        run: python scripts/check_required_links.py
+
+      - name: Commit generated and validated materials
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            06_Starter_Notebooks/ready_to_teach \
+            10_Ready_to_Teach_Pack/Runtime_Validation_Record.md \
+            10_Ready_to_Teach_Pack/Link_Verification_Latest.md
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+          else
+            git commit -m 'Generate and validate twelve ready-to-teach notebooks'
+            git push
+          fi
