@@ -4,6 +4,21 @@ A **competition-first**, **evidence-based**, and **mastery-focused** curriculum 
 
 Students do not receive credit merely for watching videos or running code once. They must **recognize, explain, calculate/trace, rebuild/debug, modify/apply, and compete under constraints**.
 
+## Ready-to-Teach Content
+
+**→ [Open the Ready-to-Teach Pack](10_Ready_to_Teach_Pack/README.md)**
+
+The actual teaching-content audit is currently **92% complete**. The remaining work is cohort-specific runtime testing, link verification, annual rule updates, notebook polishing, and pilot-driven revision—not missing course architecture. See [Completion Audit](10_Ready_to_Teach_Pack/Completion_Audit_90.md).
+
+The pack contains:
+
+- lesson-specific content for all 67 sessions;
+- entry checks, worksheets, guided practice, independent tasks, and phase gates;
+- two complete Round 1 mock papers;
+- tabular, NLP, audio/image, scientific, and multimodal Round 2 simulations;
+- exact resource-module mapping and syllabus crosswalk;
+- executable data, sklearn, PyTorch, metrics, and submission-validation scripts.
+
 ## Start Here
 
 ### Students
@@ -28,7 +43,8 @@ Students do not receive credit merely for watching videos or running code once. 
 ├── 06_Starter_Code/
 ├── 07_Competition_Projects/
 ├── 08_Public_Documents/
-└── 09_Teacher_Planning/
+├── 09_Teacher_Planning/
+└── 10_Ready_to_Teach_Pack/
 ```
 
 ## Competition Pathway
