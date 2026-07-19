@@ -9,11 +9,13 @@ This directory converts the 67-session curriculum architecture into a directly t
 - entry checks, guided practice, independent work, exit tickets, and submission evidence;
 - student worksheet questions embedded under every lesson;
 - exact resource module or chapter names;
-- Round 1 paper-test drills and full mock structure;
-- Round 2 baseline, validation, experiment, and submission workflows;
+- Round 1 paper-test drills and two complete mock papers;
+- Round 2 baseline, validation, experiment, submission, and timed-mock workflows;
 - starter-notebook specifications and reproducible dataset generators;
-- a syllabus crosswalk and completion audit;
-- separate teacher keys in the private teacher repository.
+- executable metrics, sklearn, PyTorch, data-generation, and submission-validation scripts;
+- a syllabus crosswalk and evidence-based completion audit.
+
+Assessment-sensitive teacher keys are stored in a separate aligned private package. They must not be uploaded to the Teacher-Keys repository until that repository is changed from Public to Private.
 
 ## Files
 
@@ -21,14 +23,18 @@ This directory converts the 67-session curriculum architecture into a directly t
 2. `Phase_2A_ML_Foundations.md` — Sessions 9–18
 3. `Phase_2B_Evaluation_Trees.md` — Sessions 19–26
 4. `Phase_3_Neural_Networks.md` — Sessions 27–34
-5. `Phase_4_Round_1.md` — Sessions 35–38
+5. `Phase_4_Round_1.md` — Sessions 35–38 and Mock A
 6. `Phase_5_Data_Sklearn.md` — Sessions 39–44
 7. `Phase_6A_PyTorch_Vision.md` — Sessions 45–50
 8. `Phase_6B_NLP_Audio_LLM.md` — Sessions 51–57
 9. `Phase_7_Competition_Practice.md` — Sessions 58–67
-10. `Resource_Map_and_Syllabus_Crosswalk.md`
-11. `Starter_Notebooks_and_Datasets.md`
-12. `Completion_Audit_90.md`
+10. `Round_1_Mock_B.md` — independent parallel Round 1 form
+11. `Round_2_Mock_Pack.md` — tabular and multimodal scored simulations
+12. `Resource_Map_and_Syllabus_Crosswalk.md`
+13. `Starter_Notebooks_and_Datasets.md`
+14. `Completion_Audit_90.md`
+
+Executable scaffolds are in `06_Starter_Code/ready_to_teach/`.
 
 ## Standard 90-Minute Lesson Routine
 
