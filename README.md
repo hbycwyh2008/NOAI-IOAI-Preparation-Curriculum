@@ -8,7 +8,7 @@ Students do not receive credit merely for watching videos or running code once. 
 
 **→ [Open the Ready-to-Teach Pack](10_Ready_to_Teach_Pack/README.md)**
 
-The actual teaching-content audit is currently **92% complete**. The remaining work is cohort-specific runtime testing, link verification, annual rule updates, notebook polishing, and pilot-driven revision—not missing course architecture. See [Completion Audit](10_Ready_to_Teach_Pack/Completion_Audit_90.md).
+The teaching-content audit is currently **97% complete**, with **94% operational readiness**. All 12 starter-notebook implementations passed local fresh-kernel validation; required public resources and 2026 annual-rule sources were checked. The remaining work requires the exact student runtime, repository privacy changes, future organiser updates, or real student pilot evidence. See [Completion Audit](10_Ready_to_Teach_Pack/Completion_Audit_90.md).
 
 The pack contains:
 
@@ -17,7 +17,9 @@ The pack contains:
 - two complete Round 1 mock papers;
 - tabular, NLP, audio/image, scientific, and multimodal Round 2 simulations;
 - exact resource-module mapping and syllabus crosswalk;
-- executable data, sklearn, PyTorch, metrics, and submission-validation scripts.
+- 12 student-facing Jupyter notebooks;
+- executable data, sklearn, PyTorch, OpenCV, audio, metrics, and submission-validation scripts;
+- runtime, link, annual-rule, pilot, assessment-security, and licensing records.
 
 ## Start Here
 
@@ -41,6 +43,7 @@ The pack contains:
 ├── 04_Assessment/
 ├── 05_Resources/
 ├── 06_Starter_Code/
+├── 06_Starter_Notebooks/
 ├── 07_Competition_Projects/
 ├── 08_Public_Documents/
 ├── 09_Teacher_Planning/
