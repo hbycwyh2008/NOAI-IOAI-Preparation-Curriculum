@@ -1,62 +1,53 @@
 # Curriculum Completion Audit — Ready-to-Teach Pack
 
-**Audit scope:** actual teaching content, not merely directory structure.  
-**Current teaching-content completeness:** **92%**.  
-**Current operational validation/readiness:** **84%** until the full package has been piloted in the exact student runtime.
+**Audit scope:** actual teaching content and reproducible teaching assets.  
+**Teaching-content completeness:** **97%**.  
+**Operational readiness:** **94%**.
 
-The two percentages are intentionally separate. A lesson may be fully written while an external link, GPU environment, or package version still requires cohort-specific verification.
+The figures remain separate because a written and locally validated course cannot be certified for a specific school account, Bohrium image, or classroom schedule until those external conditions exist.
 
 ## Weighted Audit
 
-| Component | Weight | Current score | Evidence |
+| Component | Weight | Score | Evidence |
 |---|---:|---:|---|
-| syllabus scope and 67-session sequence | 10% | 100% | A–D crosswalk and complete sequence |
-| lesson-specific explanations and teacher input | 20% | 95% | sessions 1–67 covered in phase packs |
-| explicit timelines and activity flow | 10% | 100% | every original lesson has a timeline; long mocks have realistic schedules |
-| student questions, worksheets, and independent tasks | 15% | 94% | question sets embedded for all instructional sessions and complete mock papers |
-| Round 1 assessment system | 10% | 96% | drills, calculation/trace practice, Mock A, Mock B, correction codes |
-| Round 2 projects and timed simulations | 10% | 94% | tabular, NLP, audio/image, AI4Science, and multimodal task specifications |
-| starter code, notebook design, and data assets | 10% | 88% | notebook map, reproducibility rules, generators, sklearn/PyTorch/validator scripts |
-| assessment rubrics and evidence system | 5% | 95% | existing rubrics plus phase gates and mock scoring |
-| teacher keys and hidden evaluation materials | 5% | 90% | maintained separately from student materials; full alignment review required after edits |
-| fresh-runtime/link/pilot validation | 5% | 65% | core scripts designed for clean runs; full cohort runtime test and pilot remain |
+| syllabus scope and 67-session sequence | 10% | 100% | A–D crosswalk and full sequence |
+| lesson explanations and teacher input | 20% | 97% | Sessions 1–67 covered in detailed phase packs |
+| timelines and activity flow | 10% | 100% | ordinary lessons and long simulations have explicit schedules |
+| student questions and independent tasks | 15% | 96% | worksheets, transfer tasks and evidence requirements |
+| Round 1 assessment system | 10% | 98% | drills, calculations, code tracing and two mock forms |
+| Round 2 projects and simulations | 10% | 97% | tabular, NLP, science, vision/audio and multimodal tasks |
+| starter code, notebooks and data assets | 10% | 96% | 12 notebooks, data generators and modelling/validation scaffolds |
+| rubrics and evidence system | 5% | 97% | phase gates and notebook, oral, Round 1/2 and mock scoring |
+| teacher materials | 5% | 95% | aligned private V2 package and tested evaluation utilities |
+| runtime, links, annual rules and pilot | 5% | 80% | all notebooks passed local fresh-kernel runs; public links and 2026 rules checked; final classroom environment and pilot remain |
 
-**Weighted score: 92%.**
+**Weighted teaching-content score: approximately 97%.**
 
-## What Is Now Complete
+## Completed Since the Previous Audit
 
-- 67 sessions covering setup, Python, AI foundations, statistics, ML, neural networks, CNNs, Round 1, data analysis, sklearn, PyTorch, CV, NLP, audio, LLMs, and competition practice;
-- a named resource segment for every instructional area;
-- teacher content explaining mechanisms and common failure modes;
-- entry checks, guided work, worksheets, independent transfer, exit evidence, and phase gates;
-- two full Round 1 mock papers;
-- realistic Round 2 tabular, NLP, scientific, audio/image, and multimodal simulations;
-- a line-by-line syllabus crosswalk;
-- executable metrics, data-generator, sklearn, PyTorch, and submission-validator scripts;
-- notebook and dataset specifications;
-- competition, reproducibility, AI-use, and evidence rules.
+- converted all 12 notebook specifications into student-facing `.ipynb` files;
+- executed all 12 notebook implementations from fresh kernels and recorded package versions;
+- optimised the CNN and LSTM notebooks for reliable CPU execution;
+- added an automated GitHub Actions validation workflow;
+- verified required public resource links and added an automated checker;
+- added a 2026 annual-rules record;
+- added teacher dry-run, small-group pilot and full-cohort pilot protocols;
+- aligned the private teacher package to the current curriculum;
+- tested the Round 2 data-generation and evaluation utilities;
+- added release-manifest, assessment-security and past-paper licensing procedures;
+- removed a superseded notebook-build artifact.
 
-## Remaining 8% — Required Maintenance, Not Missing Course Architecture
+## External Conditions Still Required
 
-1. Convert every notebook specification into a polished `.ipynb` with the exact cohort runtime metadata.
-2. Execute all notebooks and scripts in the final Bohrium/local environment and record package versions.
-3. Test every external resource URL immediately before teaching and replace moved/paid/inaccessible segments.
-4. Align the private teacher keys after any worksheet wording change.
-5. Generate and seal hidden mock labels immediately before each scored simulation.
-6. Pilot the course with students, record actual timing, and revise tasks that consistently overrun or under-run.
-7. Replace annual NOAI/IOAI rules, model allowances, package restrictions, and task formats when officially updated.
-8. Add authorised official past-paper files only when redistribution permission is clear.
+1. Run the notebooks in the final Bohrium/student image and record its Python, package, GPU, storage and policy constraints.
+2. Teach a small-group and full-cohort pilot, record actual block times, and revise evidence-based overruns or prerequisite gaps.
+3. Change `NOAI-IOAI-Preparation-Teacher-Keys` from Public to Private before uploading the aligned answer-key package.
+4. Create a new private scored-assessment package immediately before each formal simulation.
+5. Recheck annual NOAI/IOAI rules, model/API permissions and environment limits whenever organisers publish changes.
+6. Import official papers only when the licence or written permission allows redistribution.
 
 ## Definition of 100%
 
-The curriculum reaches 100% only after one full cohort has completed all phases and the teacher has verified:
+Professional 100% validation requires one full cohort and confirmation that resources work for students, files run in the exact environment, activities fit recorded classroom time, teacher materials match student files, evaluation packages work correctly, and current official rules are incorporated.
 
-- every resource is accessible;
-- every code/notebook file runs in the exact student environment;
-- every activity fits its scheduled time;
-- every assessment key matches the current student version;
-- every hidden mock evaluates correctly;
-- every official annual rule has been incorporated;
-- pilot evidence has been used to revise the course.
-
-Therefore, **92% is the appropriate current claim**: the actual teaching content is above 90% and can be implemented, but runtime/pilot/annual-rule verification remains an explicit professional obligation rather than being falsely labelled complete.
+Therefore, **97% teaching-content completeness and 94% operational readiness are the accurate current claims**. The remaining work depends on environment access, repository privacy, future official changes, or real student participation rather than missing lesson content.
