@@ -14,22 +14,22 @@ The video is the Skill Warm-Up. Watching the video is not the final product. Eac
 
 ## Lessons
 
-| Lesson | Video content | Video time | Focus |
+| Lesson | Video content | Video time | Lesson file |
 |---:|---|---:|---|
-| 1 | 第零讲：目录视频 | 28:17 | NOAI/AI learning map and evidence expectations |
-| 2 | 第一讲：人工智能的定义 | 40:09 | AI definition, boundaries, examples/non-examples |
-| 3 | 第二讲：人工智能发展史 | 45:43 | Symbolism, connectionism, behaviourism, Turing Test |
-| 4 | 第三讲：连接主义与机器学习 | 48:48 | Data-driven learning, model, training, inference |
-| 5 | 第四讲：面向对象编程与机器学习标准库 | 36:23 | Python objects, libraries, sklearn/documentation awareness |
-| 6 | 第五讲：机器学习训练模型的范式 | 44:02 | Data → model → training → prediction → evaluation |
-| 7 | 第六讲：分类问题与逻辑斯蒂回归 | 41:12 | Classification, probability, decision boundary, confusion matrix |
-| 8 | 第七讲：求解机器学习问题——优化理论 | 40:54 | Loss, gradient descent, optimisation reasoning |
-| 9 | 第八讲：神经网络与反向传播算法 | 38:29 | Forward pass, loss, backward pass, optimiser step |
-| 10 | 第九讲：距离与K近邻算法 + 第十一讲：贝叶斯理论 | 39:45 | Distance-based reasoning and probability-based reasoning |
-| 11 | 第十讲：支持向量机与拉格朗日乘子法 | 41:52 | Margin, boundary, SVM intuition |
-| 12 | 第十二讲：信息熵与决策树 + 第十三讲：多分类问题与集成学习 | 49:37 | Entropy, decision tree, random forest, ensemble learning |
-| 13 | 第十四讲：无监督学习和强化学习简介 | 28:03 | Clustering, unsupervised learning, reinforcement-learning scenarios |
-| 14 | 第十五讲：深度神经网络 | 52:23 | Deep-network synthesis and bridge to Round 2/PyTorch |
+| 1 | 第零讲：目录视频 | 28:17 | [Lesson 01 — Course Map and Evidence](lesson-01-course-map-evidence.md) |
+| 2 | 第一讲：人工智能的定义 | 40:09 | [Lesson 02 — AI Definition and Boundaries](lesson-02-ai-definition-boundaries.md) |
+| 3 | 第二讲：人工智能发展史 | 45:43 | [Lesson 03 — AI History and Schools](lesson-03-ai-history-schools.md) |
+| 4 | 第三讲：连接主义与机器学习 | 48:48 | [Lesson 04 — Connectionism and Machine Learning](lesson-04-connectionism-machine-learning.md) |
+| 5 | 第四讲：面向对象编程与机器学习标准库 | 36:23 | [Lesson 05 — OOP, Libraries, and sklearn](lesson-05-oop-libraries-sklearn.md) |
+| 6 | 第五讲：机器学习训练模型的范式 | 44:02 | [Lesson 06 — Training Paradigm](lesson-06-training-paradigm.md) |
+| 7 | 第六讲：分类问题与逻辑斯蒂回归 | 41:12 | [Lesson 07 — Classification and Logistic Regression](lesson-07-classification-logistic-regression.md) |
+| 8 | 第七讲：求解机器学习问题——优化理论 | 40:54 | [Lesson 08 — Optimisation Theory](lesson-08-optimization-theory.md) |
+| 9 | 第八讲：神经网络与反向传播算法 | 38:29 | [Lesson 09 — Neural Networks and Backpropagation](lesson-09-neural-network-backprop.md) |
+| 10 | 第九讲：距离与K近邻算法 + 第十一讲：贝叶斯理论 | 39:45 | [Lesson 10 — KNN and Bayes Reasoning](lesson-10-knn-bayes-reasoning.md) |
+| 11 | 第十讲：支持向量机与拉格朗日乘子法 | 41:52 | [Lesson 11 — SVM and Margin](lesson-11-svm-margin.md) |
+| 12 | 第十二讲：信息熵与决策树 + 第十三讲：多分类问题与集成学习 | 49:37 | [Lesson 12 — Entropy, Trees, and Ensembles](lesson-12-entropy-trees-ensembles.md) |
+| 13 | 第十四讲：无监督学习和强化学习简介 | 28:03 | [Lesson 13 — Unsupervised Learning and RL](lesson-13-unsupervised-rl.md) |
+| 14 | 第十五讲：深度神经网络 | 52:23 | [Lesson 14 — Deep Neural Networks](lesson-14-deep-neural-networks.md) |
 
 ## Source Planning File
 
