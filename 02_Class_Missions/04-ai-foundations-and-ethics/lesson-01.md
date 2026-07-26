@@ -28,7 +28,8 @@ By the end of this mission, you can explain the core ideas in **symbolism, conne
 
 ## Required Resource
 
-https://www.deeplearning.ai/courses/ai-for-everyone/
+AI for Everyone — Coursera:
+https://www.coursera.org/learn/ai-for-everyone
 
 Use only the section assigned by your teacher. Do not browse the entire course during class.
 
