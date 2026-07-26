@@ -1,6 +1,6 @@
 # Lesson 05 — BML15 Full Video: Round 1 A/B Review
 
-**Duration:** 75 minutes, or two 75-minute sessions if the assigned Bohrium video is longer than 45 minutes.
+**Duration:** 70 minutes when following the BML15 split, or two 70-minute sessions if the assigned video is too long for meaningful practice and rebuild.
 
 **Official-aligned resource:** 北京市十一学校《中学机器学习十五讲》
 
@@ -8,21 +8,23 @@
 
 **Placement:** This lesson is a Round 1 review lesson. Use it after students have studied Python foundations and basic AI/ML concepts, before full paper-test mocks.
 
+**Detailed split:** [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
+
 ## Timeline
 
-| Time | Block | Student output |
-|---|---|---|
-| 0–40 min | Skill Warm-Up | Watch the full assigned Bohrium video and complete Round 1 guided notes. If the video exceeds 45 minutes, split into two club sessions. |
-| 40–47 min | Talk Robin 1 | Explain which Round 1 topics appeared in the video. |
-| 47–53 min | Entry Check | Answer paper-style concept and code-reading questions. |
-| 53–61 min | Core Pattern | Convert video explanations into paper-test answer structures. |
-| 61–68 min | Guided Practice | Complete supported multiple-choice, short-answer, and calculation prompts. |
-| 68–72 min | Independent Rebuild | Write one new Round 1 question based on the video. |
-| 72–75 min | Talk Robin 2 + Evidence | Explain and submit evidence. |
+Use the exact lesson row and timing template from the BML15 70-minute split. The normal classroom sequence remains:
+
+**Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
+
+For this Round 1 review lesson, use the paper-test pattern:
+
+```text
+Concept → Example → Misconception → Evidence / Calculation / Code Trace
+```
 
 ## 1. Skill Warm-Up
 
-Watch the full assigned Bohrium video.
+Watch the assigned BML15 video in full.
 
 While watching, mark every idea that could become a Round 1 paper-test question.
 
