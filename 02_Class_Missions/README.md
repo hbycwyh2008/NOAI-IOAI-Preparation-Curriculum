@@ -1,6 +1,8 @@
 # Class Missions
 
-Open the numbered folder assigned by the teacher. Every mission has one required resource, exact focus notes, a guided task, an independent task, and exit evidence.
+Open the numbered folder assigned by the teacher. Every ordinary mission follows the seven-step classroom flow: **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**.
+
+Some official Bohrium missions use a full assigned video during **Skill Warm-Up**. In those missions, watching the video is required, but it is not the final product: students still complete discussion, checks, guided practice, independent rebuild, and evidence.
 
 - [00 — Competition Workflow and Baseline Thinking](00-course-overview/README.md)
 - [01 — Functions, Variables, and Input/Output](01-python-foundations/README.md)
@@ -29,3 +31,4 @@ Open the numbered folder assigned by the teacher. Every mission has one required
 - [24 — Round 2 Open-Ended Project Workflow](24-round-2-project-training/README.md)
 - [25 — Past-Paper Reproduction](25-past-paper-reproduction/README.md)
 - [26 — Timed Mock Contests](26-mock-contests/README.md)
+- [27 — Official Bohrium Full-Video Lessons](27-official-bohrium-video-lessons/README.md)
