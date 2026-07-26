@@ -7,12 +7,12 @@ import requests
 
 URLS = {
     "CS50P": "https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f",
-    "AI for Everyone": "https://www.deeplearning.ai/courses/ai-for-everyone/",
-    "Machine Learning Specialization": "https://www.deeplearning.ai/specializations/machine-learning",
+    "AI for Everyone": "https://www.coursera.org/learn/ai-for-everyone",
+    "Machine Learning Specialization": "https://www.coursera.org/specializations/machine-learning-introduction",
     "Google ML Crash Course": "https://developers.google.com/machine-learning/crash-course",
     "StatQuest video index": "https://statquest.org/video-index/",
     "3Blue1Brown neural networks": "https://www.3blue1brown.com/topics/neural-networks",
-    "Deep Learning Specialization": "https://www.deeplearning.ai/courses/deep-learning-specialization/",
+    "Deep Learning Specialization": "https://www.coursera.org/specializations/deep-learning",
     "scikit-learn User Guide": "https://scikit-learn.org/stable/user_guide.html",
     "PyTorch Learn the Basics": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
     "PyTorch tutorials": "https://docs.pytorch.org/tutorials/",
