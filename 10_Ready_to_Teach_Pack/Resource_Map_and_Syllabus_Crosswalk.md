@@ -18,6 +18,14 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 | BML15 | 北京市十一学校《中学机器学习十五讲》 | https://www.bohrium.com/courses/5963419225/content?file=8496 | Round 1 A/B: Python-related reasoning, AI foundations, machine-learning concepts, paper-test preparation |
 | LHY-ML | 台湾大学李宏毅《机器学习》内容精选版 | https://www.bohrium.com/courses/7890895681/content?file=2496 | Round 2 C/D: machine-learning and deep-learning understanding before or after sklearn/PyTorch practice |
 
+## Practical Selected Resources
+
+| Code | Resource | Link | Use rule |
+|---|---|---|---|
+| HML | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | https://github.com/ageron/handson-ml3 | Use selected chapters for sklearn workflow, preprocessing, evaluation, model comparison, trees/ensembles, and end-to-end project habits. Do not use as the PyTorch mainline. |
+| DB-PT | Daniel Bourke / Zero to Mastery Learn PyTorch for Deep Learning | https://www.learnpytorch.io/ | Main PyTorch video/hands-on resource for tensors, Dataset, DataLoader, nn.Module, training loops, computer vision, transfer learning, and reproducible experiments. |
+| JP-PT | Jose Portilla PyTorch / Deep Learning Bootcamp | teacher-selected course link | Optional backup video resource for students who need a slower alternate PyTorch explanation. |
+
 ## Primary Resource Index
 
 | Code | Resource | Assigned scope |
@@ -29,9 +37,12 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 | AIF | DeepLearning.AI AI for Everyone | What AI Can/Cannot Do; AI and Society |
 | MLS | DeepLearning.AI Machine Learning Specialization | supervised/unsupervised/RL; regression; classification; trees/ensembles |
 | MLCC | Google Machine Learning Crash Course | linear/logistic regression; classification metrics; generalisation; overfitting; numerical/categorical data |
+| HML | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | practical sklearn workflow; preprocessing; evaluation; cross-validation; trees/ensembles; end-to-end projects |
 | SQ | StatQuest | statistics; normal distribution; metrics; trees/ensembles clarification |
 | 3B1B | 3Blue1Brown Neural Networks | neural-network intuition; gradient descent; backpropagation calculus |
-| DLS | Deep Learning Specialization | optimisation; CNN operations; sequence models |
+| DLS | Deep Learning Specialization | selected optimisation; CNN operations; selected sequence-model explanations |
+| DB-PT | Daniel Bourke / Zero to Mastery Learn PyTorch for Deep Learning | PyTorch implementation: tensors; datasets; dataloaders; nn.Module; training loops; vision; transfer learning |
+| JP-PT | Jose Portilla PyTorch / Deep Learning Bootcamp | optional alternate PyTorch video explanation |
 | SK | scikit-learn User Guide | pipelines; preprocessing; metrics; CV; tuning |
 | PT | PyTorch Learn the Basics/Tutorials | tensors; datasets; models; autograd; optimisation; save/load; transfer learning; detection |
 | CV | OpenCV University/official documentation | preprocessing; thresholding; morphology; contours; Hough methods |
@@ -51,7 +62,7 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 | Strings, lists, dictionaries, tuples | 6 | CS50P Loops/collections notes | collection-choice explanations and program | cold code trace |
 | Functions | 3–4 | CS50P Functions | independent multi-function program | oral defence |
 | Modules and packages | 7 | CS50P Libraries | imports and environment record | setup evidence |
-| Files and CSV | 7, 39–40 | CS50P File I/O; Pandas tutorials | CSV audit utility and report | Round 2 baseline |
+| Files and CSV | 7, 39–40 | CS50P File I/O; Pandas/HML when aligned | CSV audit utility and report | Round 2 baseline |
 | Exceptions and debugging | 4, 47 | CS50P Exceptions; PyTorch debug tasks | error log, traceback diagnosis | code-completion assessment |
 | Sorting and searching | 8 | CS50 algorithms excerpt | paper traces and independent implementations | Round 1 mixed set |
 
@@ -61,58 +72,58 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 |---|---:|---|---|---|
 | AI schools and Turing Test | 9 | BML15 + official syllabus; AIF optional | capability-claim evaluation | short answer |
 | Ethics, bias, privacy, risk | 10 | BML15 + official syllabus; AIF optional | structured case analysis | Mock A/B Section D |
-| Supervised learning | 11, 13–16 | BML15; MLS/MLCC optional | task classification and baselines | all mocks/projects |
+| Supervised learning | 11, 13–16 | BML15; MLS/MLCC/HML optional | task classification and baselines | all mocks/projects |
 | Unsupervised learning | 11 | BML15; MLS optional | clustering/anomaly task design | concept assessment |
 | Reinforcement learning | 12 | BML15; MLS Course 3 intro optional | environment/reward design | Round 1 concept question |
-| Regression | 13–14 | BML15; MLCC/MLS optional | paper calculations and sklearn model | Mock calculations/project |
-| Classification | 15–16 | BML15; MLCC/MLS optional | threshold table and logistic pipeline | Mock code/project |
+| Regression | 13–14 | BML15; HML/MLCC/MLS optional | paper calculations and sklearn model | Mock calculations/project |
+| Classification | 15–16 | BML15; HML/MLCC/MLS optional | threshold table and logistic pipeline | Mock code/project |
 | Clustering | 11 and extension project | BML15; MLS optional | cluster interpretation and limitations | oral defence |
 | Probability/statistics/normal distribution | 17–18 | SQ; BML15 when aligned | hand calculations and functions | Mock calculations |
 | Distance and standardisation | 18, 39 | SQ/NumPy | distance comparison raw/scaled | Round 1/2 |
-| Accuracy, precision, recall, specificity, F1 | 19–20 | MLCC; BML15 when aligned | confusion-matrix worksheet | Mock A/B |
-| ROC/AUC and threshold choice | 20 | MLCC/SQ | metric decision memo | multimodal mock |
-| Cross-validation | 21, 44 | SK | split design and CV report | Round 2 |
-| Under/overfitting | 22–23 | BML15; MLCC optional | curve diagnosis and controlled remedy | Mock short answer |
-| Regularisation | 23 | BML15; MLCC/MLS optional | controlled experiment | Round 1/2 |
-| Decision trees | 24 | MLS/SQ | impurity calculation and depth experiment | Mock A/B |
-| Bagging/random forest | 25 | MLS/SQ | single tree vs forest comparison | Mock short answer |
-| Boosting | 26 | MLS/SQ | three-model CV comparison | Mock B/model selection |
+| Accuracy, precision, recall, specificity, F1 | 19–20 | MLCC; HML; BML15 when aligned | confusion-matrix worksheet | Mock A/B |
+| ROC/AUC and threshold choice | 20 | MLCC/SQ/HML | metric decision memo | multimodal mock |
+| Cross-validation | 21, 44 | SK/HML | split design and CV report | Round 2 |
+| Under/overfitting | 22–23 | BML15; HML/MLCC optional | curve diagnosis and controlled remedy | Mock short answer |
+| Regularisation | 23 | BML15; HML/MLCC/MLS optional | controlled experiment | Round 1/2 |
+| Decision trees | 24 | HML/MLS/SQ | impurity calculation and depth experiment | Mock A/B |
+| Bagging/random forest | 25 | HML/MLS/SQ | single tree vs forest comparison | Mock short answer |
+| Boosting | 26 | HML/MLS/SQ | three-model CV comparison | Mock B/model selection |
 | Perceptron/neuron | 27 | LHY-ML or 3B1B | numerical neuron and XOR explanation | Round 1 |
 | MLP/forward propagation | 28 | LHY-ML or 3B1B | full hand forward pass | Round 1 |
 | Gradient descent/backpropagation | 29–30 | LHY-ML or 3B1B | computational-graph derivation | Mock A/B |
-| Optimisers Adam/AdamW | 31 | LHY-ML/DLS/PT | controlled optimizer comparison | oral/implementation |
-| CNN | 32–34 | LHY-ML/DLS/PT | convolution calculation and working CNN | Mock shapes/Round 2 |
-| Activation, output, loss functions | 27, 33–34 | LHY-ML/3B1B/PT | role comparison and correct loss code | Round 1/PyTorch |
+| Optimisers Adam/AdamW | 31 | LHY-ML/DLS/PT/DB-PT | controlled optimizer comparison | oral/implementation |
+| CNN | 32–34 | LHY-ML/DLS/PT/DB-PT | convolution calculation and working CNN | Mock shapes/Round 2 |
+| Activation, output, loss functions | 27, 33–34 | LHY-ML/3B1B/PT/DB-PT | role comparison and correct loss code | Round 1/PyTorch |
 | LLM principles | 56–57 | HF-L/QWEN + official syllabus | structured-output tool and offline package | concept + Round 2 |
-| Train/validation/test and cleaning | 21–23, 39–43 | BML15/MLCC/SK | validation memo and pipeline | Round 2 gate |
+| Train/validation/test and cleaning | 21–23, 39–43 | BML15/MLCC/SK/HML | validation memo and pipeline | Round 2 gate |
 
 # C. Advanced Computer Skills
 
 | Syllabus item | Sessions | Resource | Evidence | Assessment |
 |---|---:|---|---|---|
-| NumPy arrays and vectorisation | 39, 45 | NumPy/PT | scaling utility and shape ledger | coding gate |
-| Pandas data manipulation | 40–43 | Pandas/SK | reproducible audit notebook | tabular mock |
-| Matplotlib visualisation | 40, projects | Matplotlib | labelled diagnostic figures | report rubric |
-| Missing values and categories | 41, 43 | SK | robust mixed-type pipeline | tabular mock |
-| Feature engineering | 42 | MLCC/teacher tasks | controlled before/after feature experiment | Round 2 |
+| NumPy arrays and vectorisation | 39, 45 | NumPy/PT/HML | scaling utility and shape ledger | coding gate |
+| Pandas data manipulation | 40–43 | Pandas/SK/HML | reproducible audit notebook | tabular mock |
+| Matplotlib visualisation | 40, projects | Matplotlib/HML | labelled diagnostic figures | report rubric |
+| Missing values and categories | 41, 43 | SK/HML | robust mixed-type pipeline | tabular mock |
+| Feature engineering | 42 | HML/MLCC/teacher tasks | controlled before/after feature experiment | Round 2 |
 | Windows, lags, moments | 42, 62 | teacher/IOAI task notes | leak-free feature table | AI4Science mock |
-| Image augmentation | 49 | PT/torchvision | augmentation policy experiment | image project |
+| Image augmentation | 49 | PT/torchvision/DB-PT | augmentation policy experiment | image project |
 | Tokenisation and vocabulary | 51 | HF-L | collator and shape tests | NLP project |
 | Embeddings | 42, 51–53 | MLCC/HF-L | embedding workflow explanation | oral defence |
 | Image patching | 42, 57 | QWEN/multimodal docs | patch/sequence-length calculation | multimodal task |
-| Reproducible notebook workflow | all coding sessions | official docs | fresh-run evidence | notebook rubric |
+| Reproducible notebook workflow | all coding sessions | official docs/HML/DB-PT | fresh-run evidence | notebook rubric |
 
 # D. Advanced AI Skills
 
 | Syllabus item | Sessions | Resource | Evidence | Assessment |
 |---|---:|---|---|---|
-| PyTorch tensors/devices | 45 | PT Tensors | tensor audit utility | PyTorch gate |
-| Dataset/DataLoader/nn.Module | 46 | PT Basics | independent rebuild | PyTorch gate |
-| Autograd/training loop | 46–47 | PT Autograd/Optimization | full train/validate loop | Round 2 |
-| CPU/GPU movement | 45–47 | PT | device-safe code | fresh-run check |
+| PyTorch tensors/devices | 45 | PT/DB-PT | tensor audit utility | PyTorch gate |
+| Dataset/DataLoader/nn.Module | 46 | PT/DB-PT | independent rebuild | PyTorch gate |
+| Autograd/training loop | 46–47 | PT/DB-PT | full train/validate loop | Round 2 |
+| CPU/GPU movement | 45–47 | PT/DB-PT | device-safe code | fresh-run check |
 | Mixed precision | 47 | PT AMP | controlled AMP test or explanation | oral defence |
-| Initialisation/batch normalisation | 31, 34, extension | LHY-ML/DLS/PT | architecture comparison | advanced extension |
-| CNN/computer vision | 48–50 | LHY-ML/CV/PT | classical baseline + transfer model | image mock |
+| Initialisation/batch normalisation | 31, 34, extension | LHY-ML/DLS/PT/DB-PT | architecture comparison | advanced extension |
+| CNN/computer vision | 48–50 | LHY-ML/CV/PT/DB-PT | classical baseline + transfer model | image mock |
 | Detection/segmentation | 50 | PT tutorial | IoU/error analysis | extension task |
 | RNN/LSTM | 52 | LHY-ML/DLS/PT | sequence model and shape ledger | NLP reproduction |
 | NLP/transformer classification | 51–53 | LHY-ML/HF-L | simple vs pretrained comparison | NLP project |
