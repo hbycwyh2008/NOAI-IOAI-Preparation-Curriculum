@@ -11,6 +11,12 @@ Use this folder when the teacher wants students to watch the full assigned Bohri
 1. [Mission 27.1 — BML15 Full Video: Middle-School Machine Learning Foundations](lesson-01-bml15-full-video.md)
 2. [Mission 27.2 — LHY-ML Full Video: Machine Learning Selected Content](lesson-02-lhy-ml-full-video.md)
 
+## Full-Series Split
+
+- [BML15 70-Minute Lesson Split](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
+
+Use this split when teaching 北京市十一学校《中学机器学习十五讲》 as a multi-session Round 1 A/B concept-building and review sequence.
+
 ## Resource Placement
 
 | Mission | Resource | Best use |
