@@ -4,6 +4,18 @@ A **competition-first**, **evidence-based**, and **mastery-focused** curriculum 
 
 Students do not receive credit merely for watching videos or running code once. They must **recognize, explain, calculate/trace, rebuild/debug, modify/apply, and compete under constraints**.
 
+## Classroom Flow
+
+This curriculum is delivered as a **75-minute after-school club**. Every ordinary class follows the same seven-step cycle:
+
+**Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
+
+**WE LEARN. PRACTICE. REBUILD. SHARE.**
+
+The goal is not just to finish the task. The goal is to **rebuild and explain it independently**.
+
+See [75-Minute After-School Club Implementation](09_Teacher_Planning/75min_After_School_Club_Implementation.md) and [Classroom Flow](02_Class_Missions/shared/classroom-flow.md).
+
 ## Ready-to-Teach Content
 
 **→ [Open the Ready-to-Teach Pack](10_Ready_to_Teach_Pack/README.md)**
