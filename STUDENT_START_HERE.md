@@ -4,16 +4,17 @@ This repository tells you **what to learn, what to practise, and what evidence t
 
 ## What You Do Every Class
 
-Each 90-minute lesson normally follows this sequence:
+Each 75-minute after-school club lesson follows the same cycle:
 
-1. **Entry Point Check** — short individual diagnostic.
-2. **Individual Learning** — one required English resource and focused notes.
-3. **Talk Round** — explain the idea to a partner; every student speaks.
-4. **Teacher Diagnosis** — the teacher addresses only the stuck points.
-5. **Guided Practice** — complete the main mission task.
-6. **Independent Task** — rebuild, calculate, trace, debug, or modify without copying.
-7. **Exit Check** — state what you can now do and what remains unclear.
-8. **Evidence Submission** — commit the required evidence.
+1. **Skill Warm-Up** — use a video, guide, or task to meet the idea.
+2. **Talk Robin 1** — pair discussion: what was done and what is confusing.
+3. **Entry Check** — check basic understanding before we go deeper.
+4. **Core Pattern** — the teacher explains the key method or pattern clearly.
+5. **Guided Practice** — practise with teacher support; ask questions and improve.
+6. **Independent Rebuild** — recreate the pattern on your own with less help.
+7. **Talk Robin 2 + Evidence** — summarize, explain, and submit proof of learning.
+
+The goal is not just to finish the task. The goal is to **rebuild and explain it independently**.
 
 ## Where Today’s Work Is
 
