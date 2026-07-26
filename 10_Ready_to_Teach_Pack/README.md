@@ -1,6 +1,6 @@
 # Ready-to-Teach Curriculum Pack
 
-This directory converts the 67-session curriculum architecture into a directly teachable course for a 75-minute after-school club format.
+This directory converts the curriculum architecture into a directly teachable course for a 75-minute after-school club format.
 
 ## What Is Included
 
@@ -13,7 +13,8 @@ This directory converts the 67-session curriculum architecture into a directly t
 - Round 2 baseline, validation, experiment, submission, and timed-mock workflows;
 - starter-notebook specifications and reproducible dataset generators;
 - executable metrics, sklearn, PyTorch, data-generation, and submission-validation scripts;
-- a syllabus crosswalk and evidence-based completion audit.
+- a syllabus crosswalk and evidence-based completion audit;
+- selected-resource maps for DLS, Hands-On ML, and PyTorch video resources.
 
 Assessment-sensitive teacher keys are stored in a separate aligned private package. They must not be uploaded to the Teacher-Keys repository until that repository is changed from Public to Private.
 
@@ -31,10 +32,18 @@ Assessment-sensitive teacher keys are stored in a separate aligned private packa
 10. `Round_1_Mock_B.md` — independent parallel Round 1 form
 11. `Round_2_Mock_Pack.md` — tabular and multimodal scored simulations
 12. `Resource_Map_and_Syllabus_Crosswalk.md`
-13. `Starter_Notebooks_and_Datasets.md`
-14. `Completion_Audit_90.md`
+13. `DLS_Selected_Content_Map.md`
+14. `HandsOnML_PyTorch_Selected_Content_Map.md`
+15. `Starter_Notebooks_and_Datasets.md`
+16. `Completion_Audit_90.md`
 
 Executable scaffolds are in `06_Starter_Code/ready_to_teach/`.
+
+## Selected Resource Maps
+
+- [DLS Selected Content Map](DLS_Selected_Content_Map.md) — explains that DLS is selected support material, not a full five-course route.
+- [Hands-On ML and PyTorch Selected Content Map](HandsOnML_PyTorch_Selected_Content_Map.md) — explains how Hands-On ML, Daniel Bourke / Zero to Mastery PyTorch, and Jose Portilla PyTorch resources are used.
+- [Resource Map and NOAI Syllabus Crosswalk](Resource_Map_and_Syllabus_Crosswalk.md) — maps all required resources to NOAI A–D syllabus areas.
 
 ## 75-Minute After-School Club Classroom Flow
 
