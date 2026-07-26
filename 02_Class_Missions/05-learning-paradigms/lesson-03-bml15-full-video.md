@@ -1,6 +1,6 @@
 # Lesson 03 — BML15 Full Video: Learning Paradigms and ML Foundations
 
-**Duration:** 75 minutes, or two 75-minute sessions if the assigned Bohrium video is longer than 45 minutes.
+**Duration:** 70 minutes when following the BML15 split, or two 70-minute sessions if the assigned video is too long for meaningful practice and rebuild.
 
 **Official-aligned resource:** 北京市十一学校《中学机器学习十五讲》
 
@@ -8,21 +8,23 @@
 
 **Placement:** This lesson belongs in the Round 1 A/B concept-building sequence because it supports AI foundations, supervised/unsupervised learning, regression, classification, clustering, and paper-test explanations.
 
+**Detailed split:** [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
+
 ## Timeline
 
-| Time | Block | Student output |
-|---|---|---|
-| 0–40 min | Skill Warm-Up | Watch the full assigned Bohrium video and complete guided notes. If the video exceeds 45 minutes, use Session 1 for full viewing and Session 2 for practice/rebuild. |
-| 40–47 min | Talk Robin 1 | Explain the teacher's main idea, one example, and one confusion. |
-| 47–53 min | Entry Check | Answer short concept questions about learning paradigms and task types. |
-| 53–61 min | Core Pattern | Extract the reusable pattern: data → task type → model → training → prediction → evidence. |
-| 61–68 min | Guided Practice | Classify supported NOAI-style scenarios as regression, classification, clustering, or reinforcement learning. |
-| 68–72 min | Independent Rebuild | Create a new scenario and rebuild the same pattern without copying the example. |
-| 72–75 min | Talk Robin 2 + Evidence | Explain and submit guided notes, entry check, and rebuild evidence. |
+Use the exact lesson row and timing template from the BML15 70-minute split. The normal classroom sequence remains:
+
+**Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
+
+For this concept-building lesson, use the core pattern:
+
+```text
+Data → Task Type → Model → Training → Prediction → Evaluation Evidence
+```
 
 ## 1. Skill Warm-Up
 
-Watch the full assigned Bohrium video.
+Watch the assigned BML15 video in full.
 
 While watching, complete:
 
