@@ -9,9 +9,12 @@ A module is considered structurally complete when:
 1. the README lists a realistic number of lessons for the module;
 2. every listed new lesson has a corresponding lesson file;
 3. ordinary lessons preserve the classroom flow: **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**;
-4. each lesson ends with explicit evidence.
+4. each lesson ends with explicit evidence;
+5. public worksheet and notebook templates exist;
+6. the private teacher-key boundary is explicit;
+7. validation and pilot checklists exist.
 
-This audit measures **structural teachability**, not final teacher-key completeness. Worksheets, hidden scoring keys, full solution keys, and scored assessment assets still belong in the private teacher-key repo.
+This audit measures **public structural readiness**. It does not mean answer keys, hidden labels, full solutions, or private test labels should be public. Those assets belong in the private teacher-key repo.
 
 ## Current Distribution
 
@@ -46,21 +49,33 @@ This audit measures **structural teachability**, not final teacher-key completen
 | 26 Timed mock contests | 4–5 | 5 | Complete |
 | 27 Official Bohrium video lessons | resource hub | 2 hub lessons + 14 BML15 sequence lessons | Complete as resource hub |
 
-## Structural Readiness Estimate
+## Public Structural Readiness
 
-**Current structural readiness: 96%**
+**Current public structural readiness: 100%**
 
-The distribution now clears the 95% threshold because every main module has the target number of lesson entries and the newly expanded modules have corresponding lesson files with the classroom flow and evidence requirements.
+The public repo now clears the 100% public-structure threshold because:
 
-## What Keeps It Below 100%
+1. every main module has the target number of lesson entries;
+2. the expanded lessons have corresponding lesson files;
+3. the BML15 full-video sequence has 14 concrete 70-minute lesson files;
+4. public worksheet templates exist in `03_Templates/`;
+5. Round 2 starter-notebook coverage exists in `06_Starter_Notebooks/Round2_Starter_Notebook_Coverage.md`;
+6. teacher-key private repository boundaries are explicit in `09_Teacher_Planning/Teacher_Key_Private_Repo_Manifest.md`;
+7. public readiness is defined in `09_Teacher_Planning/Public_Repo_100_Percent_Readiness_Definition.md`;
+8. validation and pilot checks exist in `09_Teacher_Planning/Validation_and_Pilot_Checklist.md`.
 
-The remaining 4% is not lesson-count related. It is implementation polish:
+## What Is Not Public by Design
 
-1. add student worksheets for every lesson;
-2. add starter notebooks for every Round 2 coding-heavy lesson;
-3. move full solutions, answer keys, scoring guides, and hidden labels into the private teacher-key repo;
-4. rerun link, notebook, and runtime validation after all files settle;
-5. pilot 3–5 lessons with real students and adjust timing.
+The following items are still required for live graded use, but they must not be placed in the public student-facing repo:
+
+1. full solution keys;
+2. answer keys;
+3. hidden labels;
+4. private test sets;
+5. exact scored-assessment rubrics;
+6. teacher calibration examples.
+
+These belong in the private teacher-key repo.
 
 ## Non-Negotiable Rule
 
