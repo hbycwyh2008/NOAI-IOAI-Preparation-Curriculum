@@ -1,16 +1,37 @@
 # 19 — PyTorch Foundations
 
-This module prepares students for Round 2 deep-learning tasks. It must include tensor/device reasoning, Dataset/DataLoader, nn.Module, autograd, training loops, validation, checkpoints, and debugging.
+This module prepares students for Round 2 deep-learning tasks. It includes tensor/device reasoning, Dataset/DataLoader, nn.Module, autograd, training loops, validation, checkpoints, and debugging.
+
+## Primary Structured Resource
+
+**DeepLearning.AI PyTorch for Deep Learning Professional Certificate — Coursera**  
+https://www.coursera.org/professional-certificates/pytorch-for-deep-learning
+
+Use **Course 1 — PyTorch: Fundamentals** as the main structured resource for this module:  
+https://www.coursera.org/learn/pytorch-fundamentals
+
+Use PyTorch official tutorials to verify current APIs:  
+https://docs.pytorch.org/tutorials/
+
+Students do not complete the full professional certificate during this module. The teacher assigns the exact Course 1 module/lesson needed for each mission.
 
 ## Lessons
 
-- [Lesson 01 — Tensors, devices, shapes, and GPU movement](lesson-01.md)
-- [Lesson 02 — Dataset, DataLoader, nn.Module, and autograd](lesson-02.md)
-- [Lesson 03 — Training/validation loops, checkpoints, and mixed precision](lesson-03.md)
-- [Lesson 04 — LHY-ML Full Video: Deep Learning to PyTorch Bridge](lesson-04-lhy-ml-dl-bridge.md)
-- [Lesson 05 — Loss functions, optimizer step, and gradient-debug checklist](lesson-05-loss-optimizer-gradient-debug.md)
-- [Lesson 06 — Dataset/DataLoader rebuild and device-safe training loop](lesson-06-dataloader-device-safe-loop.md)
-- [Lesson 07 — PyTorch Round 2 mini-project and fresh-runtime validation](lesson-07-pytorch-mini-project-validation.md)
+- [Lesson 01 — Tensors, devices, shapes, and GPU movement](lesson-01.md) — Course 1: tensors, tensor math, broadcasting, device reasoning
+- [Lesson 02 — Dataset, DataLoader, nn.Module, and autograd](lesson-02.md) — Course 1: datasets, dataloaders, neural-network building blocks
+- [Lesson 03 — Training/validation loops, checkpoints, and mixed precision](lesson-03.md) — Course 1: complete training pipeline; PyTorch official tutorials for AMP/checkpoints
+- [Lesson 04 — LHY-ML Full Video: Deep Learning to PyTorch Bridge](lesson-04-lhy-ml-dl-bridge.md) — conceptual bridge before implementation
+- [Lesson 05 — Loss functions, optimizer step, and gradient-debug checklist](lesson-05-loss-optimizer-gradient-debug.md) — Course 1: loss, optimisation, model learning
+- [Lesson 06 — Dataset/DataLoader rebuild and device-safe training loop](lesson-06-dataloader-device-safe-loop.md) — Course 1 independent rebuild
+- [Lesson 07 — PyTorch Round 2 mini-project and fresh-runtime validation](lesson-07-pytorch-mini-project-validation.md) — Course 1 integration plus competition validation
+
+## Resource Boundary
+
+- DLS explains selected deep-learning concepts.
+- DeepLearning.AI PyTorch Course 1 provides the main implementation sequence.
+- Course 2 supports later computer-vision, NLP, transfer-learning, and tuning lessons.
+- Course 3 is an optional advanced architecture/deployment extension.
+- PyTorch official tutorials remain the source of truth for current APIs.
 
 ## Official-Aligned Video Placement
 
