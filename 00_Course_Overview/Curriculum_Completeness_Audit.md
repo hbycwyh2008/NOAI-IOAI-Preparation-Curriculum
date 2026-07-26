@@ -3,9 +3,8 @@
 ## Verified Structure
 
 - Lesson/session files found: **67**.
-- Every lesson has an explicit duration.
-- Every lesson has a minute-by-minute timeline.
-- Long mocks use realistic durations rather than a universal 90-minute claim.
+- Ordinary lessons use the seven-step 75-minute after-school club classroom flow.
+- Long mocks use realistic durations rather than a universal 75-minute claim.
 
 ## Still Required Before the Curriculum Is Fully Packaged
 
@@ -18,4 +17,4 @@
 7. Complete mock-contest packages and hidden tests.
 8. A line-by-line official-syllabus crosswalk to lessons and assessments.
 
-The repository is currently a **detailed course architecture**, not yet a fully packaged ready-to-run course product.
+The repository is currently a detailed course architecture plus ready-to-teach pack. Classroom delivery should follow the seven-step flow.

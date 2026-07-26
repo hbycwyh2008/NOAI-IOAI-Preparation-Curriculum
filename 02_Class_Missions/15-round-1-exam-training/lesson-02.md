@@ -1,20 +1,18 @@
 # Mission 15.2 — Python and Sklearn Code Tracing
 
-**Duration:** 90 minutes
+**Duration:** 75 minutes
 
 ## Timeline
 
 | Time | Block | Student output |
 |---|---|---|
-| 0–5 min | Instructions | Review timing, permitted resources, and submission rules. |
-| 5–20 min | Timed set A | Complete the first question set individually. |
-| 20–30 min | Self-check | Mark uncertain items without discussion. |
-| 30–45 min | Timed set B | Complete the second question set. |
-| 45–55 min | Talk round | Compare reasoning, not only final answers. |
-| 55–67 min | Teacher diagnosis | Analyse distractors, calculations, or code traps. |
-| 67–82 min | Correction cycle | Correct errors and record their causes. |
-| 82–87 min | Independent transfer | Complete one unseen transfer item. |
-| 87–90 min | Submission | Submit corrected work and error taxonomy. |
+| 0–8 min | Skill Warm-Up | Use a short mixed set or correction prompt to meet the idea. |
+| 8–15 min | Talk Robin 1 | Pair discussion: what was solved and what is confusing. |
+| 15–22 min | Entry Check | Check basic understanding before timed or deeper work. |
+| 22–35 min | Core Pattern | Teacher explains the key reasoning, calculation, or distractor pattern clearly. |
+| 35–53 min | Guided Practice | Practice with teacher support. Ask questions and improve. |
+| 53–67 min | Independent Rebuild | Recreate the reasoning or solution pattern on your own with less help. |
+| 67–75 min | Talk Robin 2 + Evidence | Summarize, explain, and submit proof of learning. |
 
 
 

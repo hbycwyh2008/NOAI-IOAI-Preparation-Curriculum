@@ -10,16 +10,8 @@ The repository contains **67 scheduled lessons/sessions**.
 - Timed Round 2 multimodal mock: 360 minutes.
 - Final readiness conference: 45 minutes per student.
 
-Every ordinary lesson uses the same cycle:
+Every ordinary lesson uses the same cycle: **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**.
 
-1. **Skill Warm-Up**
-2. **Talk Robin 1**
-3. **Entry Check**
-4. **Core Pattern**
-5. **Guided Practice**
-6. **Independent Rebuild**
-7. **Talk Robin 2 + Evidence**
-
-Long simulations must not be compressed into a nominal 75-minute club lesson. They should be scheduled as special contest sessions or split across multiple club meetings.
+Long simulations must not be compressed into a nominal 75-minute club lesson.
 
 See [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md).

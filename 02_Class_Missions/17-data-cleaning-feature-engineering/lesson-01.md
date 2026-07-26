@@ -1,20 +1,18 @@
 # Mission 17.1 — Data Cleaning and Feature Engineering
 
-**Duration:** 90 minutes
+**Duration:** 75 minutes
 
 ## Timeline
 
 | Time | Block | Student output |
 |---|---|---|
-| 0–8 min | Entry Point Check | Trace or diagnose a short code fragment. |
-| 8–18 min | Required resource | Record only the essential API or pattern. |
-| 18–28 min | Code walk | Predict shapes, values, and failure points before running. |
-| 28–40 min | Talk round | Explain the workflow and expected outputs. |
-| 40–50 min | Teacher diagnosis | Resolve syntax, API, shape, or conceptual blockers. |
-| 50–68 min | Guided practice | Complete the supported implementation task. |
-| 68–83 min | Independent rebuild | Rebuild or modify without copying the guided solution. |
-| 83–87 min | Fresh-run check | Run from a clean state and record one verification. |
-| 87–90 min | Submission | Commit code, notes, error log, and AI-use note. |
+| 0–8 min | Skill Warm-Up | Use a short code fragment, guide, or notebook cell to meet the idea. |
+| 8–15 min | Talk Robin 1 | Pair discussion: what ran, what failed, and what is confusing. |
+| 15–22 min | Entry Check | Check basic understanding of values, shapes, APIs, or workflow before going deeper. |
+| 22–35 min | Core Pattern | Teacher explains the key coding method, pattern, or workflow clearly. |
+| 35–53 min | Guided Practice | Practice with teacher support. Ask questions, run checks, and improve. |
+| 53–67 min | Independent Rebuild | Recreate the pattern on your own with less help. |
+| 67–75 min | Talk Robin 2 + Evidence | Summarize, explain, and submit proof of learning. |
 
 
 
