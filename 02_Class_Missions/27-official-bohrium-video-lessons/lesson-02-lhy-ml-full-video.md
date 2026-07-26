@@ -1,4 +1,4 @@
-# Mission 27.2 — LHY-ML Full Video: Machine Learning Selected Content
+# Mission 27.2 — 台湾大学李宏毅《机器学习》内容精选版完整视频
 
 **Duration:** 75 minutes, or two 75-minute sessions if the assigned video is longer than 45 minutes.
 
@@ -6,7 +6,7 @@
 
 **Bohrium link:** https://www.bohrium.com/courses/7890895681/content?file=2496
 
-**Best use:** Round 2 C/D preparation: deeper machine-learning and deep-learning understanding before or after sklearn/PyTorch practice.
+**Best use:** Round 2 C/D preparation: deeper machine-learning and deep-learning understanding before or after scikit-learn/PyTorch practice.
 
 ## Timeline
 
@@ -15,14 +15,14 @@
 | 0–40 min | Skill Warm-Up | Watch the full assigned Bohrium video and complete guided notes. If the video exceeds 45 minutes, use Session 1 for full viewing and Session 2 for practice/rebuild. |
 | 40–47 min | Talk Robin 1 | Explain what the teacher in the video was trying to teach and what remains confusing. |
 | 47–53 min | Entry Check | Answer short concept, modelling, or implementation-readiness questions. |
-| 53–61 min | Core Pattern | Extract one reusable ML/DL pattern from the video. |
-| 61–68 min | Guided Practice | Apply the pattern to a supported sklearn/PyTorch-style task. |
+| 53–61 min | Core Pattern | Extract one reusable machine-learning or deep-learning pattern from the video. |
+| 61–68 min | Guided Practice | Apply the pattern to a supported scikit-learn or PyTorch-style task. |
 | 68–72 min | Independent Rebuild | Rebuild the pattern on a new problem without copying the example. |
 | 72–75 min | Talk Robin 2 + Evidence | Explain and submit evidence. |
 
 ## 1. Skill Warm-Up
 
-Watch the full assigned Bohrium video.
+Watch the full assigned Bohrium video from 台湾大学李宏毅《机器学习》内容精选版.
 
 While watching, complete:
 
@@ -44,7 +44,7 @@ One point I am still confused about:
 
 NOAI Round 2 connection:
 C. data processing / feature engineering
-D. sklearn / PyTorch / CV / NLP / LLM application
+D. scikit-learn / PyTorch / computer vision / natural-language processing / large-language-model application
 
 Rebuild pattern:
 Input:
@@ -60,7 +60,7 @@ Pair discussion prompts:
 
 1. What did the video clarify about machine learning or deep learning?
 2. Which part connects to actual model training or prediction?
-3. Which part would be hard to implement in sklearn or PyTorch?
+3. Which part would be hard to implement in scikit-learn or PyTorch?
 4. What question should we ask before coding?
 
 ## 3. Entry Check
@@ -74,7 +74,7 @@ Answer individually:
 
 ## 4. Core Pattern
 
-The teacher extracts one reusable ML/DL pattern from the video.
+The teacher extracts one reusable machine-learning or deep-learning pattern from the video.
 
 Use this structure:
 
@@ -138,7 +138,7 @@ Submit:
 2. Entry Check answers;
 3. Guided Practice work;
 4. Independent Rebuild work;
-5. one oral or written explanation of the ML/DL pattern.
+5. one oral or written explanation of the machine-learning or deep-learning pattern.
 
 ## Teacher Note
 
