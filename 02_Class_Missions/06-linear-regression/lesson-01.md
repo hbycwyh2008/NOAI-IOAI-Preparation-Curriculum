@@ -28,7 +28,8 @@ By the end of this mission, you can explain the core ideas in **prediction, cost
 
 ## Required Resource
 
-https://www.deeplearning.ai/specializations/machine-learning
+Machine Learning Specialization — Coursera:
+https://www.coursera.org/specializations/machine-learning-introduction
 
 Use only the section assigned by your teacher. Do not browse the entire course during class.
 
