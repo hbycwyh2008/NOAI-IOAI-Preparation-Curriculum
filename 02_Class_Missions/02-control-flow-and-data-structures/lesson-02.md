@@ -17,7 +17,9 @@
 
 
 ## Required Resource
-CS50P: Loops.
+CS50P edX learning page: https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f
+
+Assigned section: Loops.
 
 ## Learning Targets
 - trace `for` and `while` loops;
