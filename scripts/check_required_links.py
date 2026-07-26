@@ -6,7 +6,7 @@ import sys
 import requests
 
 URLS = {
-    "CS50P": "https://cs50.harvard.edu/python/",
+    "CS50P": "https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f",
     "AI for Everyone": "https://www.deeplearning.ai/courses/ai-for-everyone/",
     "Machine Learning Specialization": "https://www.deeplearning.ai/specializations/machine-learning",
     "Google ML Crash Course": "https://developers.google.com/machine-learning/crash-course",
