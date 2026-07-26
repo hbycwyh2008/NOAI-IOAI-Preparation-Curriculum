@@ -1,6 +1,7 @@
 # English Video Resource Map
 
 - **CS50P:** https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f
+  - Timestamp map for assigned sections: [`CS50P_edX_Timestamp_Map.md`](CS50P_edX_Timestamp_Map.md)
 - **AI for Everyone:** https://www.deeplearning.ai/courses/ai-for-everyone/
 - **Machine Learning Specialization:** https://www.deeplearning.ai/specializations/machine-learning
 - **StatQuest Video Index:** https://statquest.org/video-index/
@@ -17,4 +18,4 @@
 
 ## Selection Rule
 
-Use the assigned section only. A course being listed here does not mean students should complete the entire course.
+Use the assigned section only. A course being listed here does not mean students should complete the entire course. For CS50P, always name the exact week, topic, and timestamp range rather than writing only `CS50P`.
