@@ -14,7 +14,7 @@ This directory converts the curriculum architecture into a directly teachable co
 - starter-notebook specifications and reproducible dataset generators;
 - executable metrics, sklearn, PyTorch, data-generation, and submission-validation scripts;
 - a syllabus crosswalk and evidence-based completion audit;
-- selected-resource maps for DLS, Hands-On ML, and PyTorch video resources.
+- selected-resource maps for DLS, Hands-On ML, and the DeepLearning.AI PyTorch certificate series.
 
 Assessment-sensitive teacher keys are stored in a separate aligned private package. They must not be uploaded to the Teacher-Keys repository until that repository is changed from Public to Private.
 
@@ -41,8 +41,8 @@ Executable scaffolds are in `06_Starter_Code/ready_to_teach/`.
 
 ## Selected Resource Maps
 
-- [DLS Selected Content Map](DLS_Selected_Content_Map.md) — explains that DLS is selected support material, not a full five-course route.
-- [Hands-On ML and PyTorch Selected Content Map](HandsOnML_PyTorch_Selected_Content_Map.md) — explains how Hands-On ML, Daniel Bourke / Zero to Mastery PyTorch, and Jose Portilla PyTorch resources are used.
+- [DLS Selected Content Map](DLS_Selected_Content_Map.md) — explains that DLS is selected conceptual support material, not a full five-course route.
+- [Hands-On ML and DeepLearning.AI PyTorch Selected Content Map](HandsOnML_PyTorch_Selected_Content_Map.md) — explains how Hands-On ML and the three-course DeepLearning.AI PyTorch for Deep Learning Professional Certificate are used.
 - [Resource Map and NOAI Syllabus Crosswalk](Resource_Map_and_Syllabus_Crosswalk.md) — maps all required resources to NOAI A–D syllabus areas.
 
 ## 75-Minute After-School Club Classroom Flow
