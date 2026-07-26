@@ -10,6 +10,7 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 4. Official documentation replaces videos for APIs that change frequently.
 5. A resource is not evidence; the worksheet, independent task, guided notes, independent rebuild, and oral defence are evidence.
 6. Annual NOAI/IOAI rules override this repository, especially for internet access, pretrained models, package versions, local deployment, and AI-assistant use.
+7. For Coursera-hosted video courses, use the Coursera course/specialization link rather than a DeepLearning.AI marketing-page link.
 
 ## Official-Aligned Bohrium Resources
 
@@ -23,6 +24,9 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 | Code | Resource | Link | Use rule |
 |---|---|---|---|
 | CS50P | Harvard CS50's Introduction to Programming with Python | https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f | Main Python resource for functions, variables, conditionals, loops, exceptions, libraries, file I/O, and code reading. Use only assigned sections. |
+| AIF | AI for Everyone | https://www.coursera.org/learn/ai-for-everyone | Optional AI-literacy resource for what AI can/cannot do, AI in society, ethics, risk, and organisational thinking. |
+| MLS | Machine Learning Specialization | https://www.coursera.org/specializations/machine-learning-introduction | Optional concept reinforcement for supervised/unsupervised/RL, regression, classification, trees, ensembles, and ML development habits. |
+| DLS | Deep Learning Specialization | https://www.coursera.org/specializations/deep-learning | Selected support for optimisation, CNNs, and sequence models. Do not assign the full five-course sequence as the main route. |
 | HML | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | https://github.com/ageron/handson-ml3 | Use selected chapters for sklearn workflow, preprocessing, evaluation, model comparison, trees/ensembles, and end-to-end project habits. Do not use as the PyTorch mainline. |
 | DB-PT | Daniel Bourke / Zero to Mastery Learn PyTorch for Deep Learning | https://www.learnpytorch.io/ | Main PyTorch video/hands-on resource for tensors, Dataset, DataLoader, nn.Module, training loops, computer vision, transfer learning, and reproducible experiments. |
 | JP-PT | Jose Portilla PyTorch / Deep Learning Bootcamp | teacher-selected course link | Optional backup video resource for students who need a slower alternate PyTorch explanation. |
@@ -35,13 +39,13 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 | BML15 | 北京市十一学校《中学机器学习十五讲》 | Round 1 A/B official-aligned concept and machine-learning preparation |
 | LHY-ML | 台湾大学李宏毅《机器学习》内容精选版 | Round 2 C/D official-aligned machine-learning and deep-learning preparation |
 | CS50P | Harvard CS50's Introduction to Programming with Python — edX learning page listed above | Functions/Variables; Conditionals; Loops; Exceptions; Libraries; File I/O |
-| AIF | DeepLearning.AI AI for Everyone | What AI Can/Cannot Do; AI and Society |
-| MLS | DeepLearning.AI Machine Learning Specialization | supervised/unsupervised/RL; regression; classification; trees/ensembles |
+| AIF | AI for Everyone — Coursera link listed above | What AI Can/Cannot Do; AI and Society |
+| MLS | Machine Learning Specialization — Coursera link listed above | supervised/unsupervised/RL; regression; classification; trees/ensembles |
 | MLCC | Google Machine Learning Crash Course | linear/logistic regression; classification metrics; generalisation; overfitting; numerical/categorical data |
 | HML | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | practical sklearn workflow; preprocessing; evaluation; cross-validation; trees/ensembles; end-to-end projects |
 | SQ | StatQuest | statistics; normal distribution; metrics; trees/ensembles clarification |
 | 3B1B | 3Blue1Brown Neural Networks | neural-network intuition; gradient descent; backpropagation calculus |
-| DLS | Deep Learning Specialization | selected optimisation; CNN operations; selected sequence-model explanations |
+| DLS | Deep Learning Specialization — Coursera link listed above | selected optimisation; CNN operations; selected sequence-model explanations |
 | DB-PT | Daniel Bourke / Zero to Mastery Learn PyTorch for Deep Learning | PyTorch implementation: tensors; datasets; dataloaders; nn.Module; training loops; vision; transfer learning |
 | JP-PT | Jose Portilla PyTorch / Deep Learning Bootcamp | optional alternate PyTorch video explanation |
 | SK | scikit-learn User Guide | pipelines; preprocessing; metrics; CV; tuning |
