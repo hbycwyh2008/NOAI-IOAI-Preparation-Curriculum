@@ -1,4 +1,4 @@
-# Mission 27.1 — BML15 Full Video: Middle-School Machine Learning Foundations
+# Mission 27.1 — 北京市十一学校《中学机器学习十五讲》完整视频：Machine-Learning Foundations
 
 **Duration:** 75 minutes, or two 75-minute sessions if the assigned video is longer than 45 minutes.
 
@@ -6,7 +6,7 @@
 
 **Bohrium link:** https://www.bohrium.com/courses/5963419225/content?file=8496
 
-**Best use:** Round 1 A/B preparation: AI foundations, machine-learning concepts, Python-related reasoning, paper-test preparation.
+**Best use:** Round 1 A/B preparation: artificial-intelligence foundations, machine-learning concepts, Python-related reasoning, and paper-test preparation.
 
 ## Timeline
 
@@ -22,7 +22,7 @@
 
 ## 1. Skill Warm-Up
 
-Watch the full assigned Bohrium video.
+Watch the full assigned Bohrium video from 北京市十一学校《中学机器学习十五讲》.
 
 While watching, complete:
 
@@ -44,9 +44,9 @@ One point I am still confused about:
 
 NOAI syllabus connection:
 A. Python / code reading
-B. AI foundations
-C. data processing
-D. sklearn / PyTorch / application
+B. Artificial-intelligence foundations
+C. Data processing
+D. Scikit-learn / PyTorch / application
 
 Rebuild pattern:
 Input:
@@ -70,7 +70,7 @@ Answer individually:
 
 1. Define the key concept from the video in one sentence.
 2. Give one example and one non-example.
-3. Identify whether the idea belongs mostly to Python skills, AI foundations, data processing, or modelling.
+3. Identify whether the idea belongs mostly to Python skills, artificial-intelligence foundations, data processing, or modelling.
 4. Write one possible NOAI Round 1 short-answer question based on the video.
 
 ## 4. Core Pattern
