@@ -16,6 +16,8 @@
 | 83–87 min | Fresh-run check | Run from a clean state and record one verification. |
 | 87–90 min | Submission | Commit code, notes, error log, and AI-use note. |
 
+
+
 ## Learning Target
 
 By the end of this mission, you can explain the core ideas in **tensor operations, Dataset, DataLoader, nn.Module, autograd, optimisation** and demonstrate them through a paper-based or computational task.

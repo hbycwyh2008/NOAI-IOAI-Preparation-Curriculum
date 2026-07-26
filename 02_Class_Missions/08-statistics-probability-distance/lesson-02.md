@@ -16,6 +16,8 @@
 | 83–87 min | Exit check | Answer one transfer question and rate confidence. |
 | 87–90 min | Submission | Submit notes, work, error log, AI-use note, and commit. |
 
+
+
 ## Required Resource
 StatQuest: Normal Distribution, Standardization, and Distance.
 

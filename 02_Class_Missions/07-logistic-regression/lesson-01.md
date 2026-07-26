@@ -16,6 +16,8 @@
 | 83–87 min | Exit check | Answer one transfer question and rate confidence. |
 | 87–90 min | Submission | Submit notes, work, error log, AI-use note, and commit. |
 
+
+
 ## Learning Target
 
 By the end of this mission, you can explain the core ideas in **sigmoid, probability, threshold, decision boundary, log loss** and demonstrate them through a paper-based or computational task.

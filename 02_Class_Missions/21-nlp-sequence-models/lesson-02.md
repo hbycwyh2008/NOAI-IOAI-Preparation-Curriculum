@@ -16,6 +16,8 @@
 | 83–87 min | Fresh-run check | Run from a clean state and record one verification. |
 | 87–90 min | Submission | Commit code, notes, error log, and AI-use note. |
 
+
+
 ## Required Resource
 Deep Learning Specialization: Sequence Models.
 

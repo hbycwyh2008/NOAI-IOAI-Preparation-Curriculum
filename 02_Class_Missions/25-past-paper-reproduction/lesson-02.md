@@ -15,6 +15,8 @@
 | 150–170 min | Error analysis | Inspect failures and select the next step. |
 | 170–180 min | Submission and post-mortem | Save notebook, predictions, experiment log, and reflection. |
 
+
+
 ## Required Resource
 Official teacher-supplied NOAI task package.
 

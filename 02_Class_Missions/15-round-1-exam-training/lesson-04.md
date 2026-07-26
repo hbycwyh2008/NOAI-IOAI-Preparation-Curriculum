@@ -13,6 +13,8 @@
 | 120–135 min | Initial error coding | Mark knowledge, reasoning, calculation, and time errors. |
 | 135–150 min | Correction plan | Select the three highest-priority corrections. |
 
+
+
 ## Conditions
 Two hours, paper-style restrictions, no answer checking during the test.
 

@@ -16,6 +16,8 @@
 | 330–350 min | Final submission | Validate schema and submit final output. |
 | 350–360 min | Post-mortem notes | Record decisions, lost time, and immediate lessons. |
 
+
+
 ## Conditions
 Image, text, or audio task with fixed compute and time.
 

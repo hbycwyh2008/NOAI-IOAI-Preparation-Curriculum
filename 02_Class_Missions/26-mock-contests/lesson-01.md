@@ -11,6 +11,8 @@
 | 100–112 min | Review pass | Check calculations, code traces, and unanswered items. |
 | 112–120 min | Submission | Submit paper and timing log before discussion. |
 
+
+
 ## Learning Target
 
 By the end of this mission, you can explain the core ideas in **time management, compute limits, submission checks** and demonstrate them through a paper-based or computational task.

@@ -15,6 +15,8 @@
 | 205–225 min | Robustness checks | Fresh-run critical cells and inspect edge cases. |
 | 225–240 min | Submission and log | Submit notebook, predictions, experiment table, and timing record. |
 
+
+
 ## Conditions
 Fixed runtime, competition-style dataset, and submission deadline.
 

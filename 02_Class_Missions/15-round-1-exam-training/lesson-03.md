@@ -16,6 +16,8 @@
 | 82–87 min | Independent transfer | Complete one unseen transfer item. |
 | 87–90 min | Submission | Submit corrected work and error taxonomy. |
 
+
+
 ## Learning Targets
 - answer with definition, mechanism, evidence, and implication;
 - calculate metrics, simple statistics, distances, and tensor shapes;

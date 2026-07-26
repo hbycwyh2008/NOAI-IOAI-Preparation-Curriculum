@@ -16,6 +16,8 @@
 | 82–87 min | Independent transfer | Complete one unseen transfer item. |
 | 87–90 min | Submission | Submit corrected work and error taxonomy. |
 
+
+
 ## Learning Target
 
 By the end of this mission, you can explain the core ideas in **MCQ, short answer, calculation, code completion** and demonstrate them through a paper-based or computational task.

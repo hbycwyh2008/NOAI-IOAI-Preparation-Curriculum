@@ -15,6 +15,8 @@
 | 150–170 min | Error analysis | Inspect failures and select the next step. |
 | 170–180 min | Submission and post-mortem | Save notebook, predictions, experiment log, and reflection. |
 
+
+
 ## Learning Target
 
 By the end of this mission, you can explain the core ideas in **reproduce, compare, improve, document** and demonstrate them through a paper-based or computational task.
