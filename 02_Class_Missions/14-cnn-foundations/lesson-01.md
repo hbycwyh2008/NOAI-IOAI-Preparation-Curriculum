@@ -28,7 +28,8 @@ By the end of this mission, you can explain the core ideas in **kernels, stride,
 
 ## Required Resource
 
-https://www.deeplearning.ai/courses/deep-learning-specialization/
+Deep Learning Specialization — Coursera:
+https://www.coursera.org/specializations/deep-learning
 
 Use only the section assigned by your teacher. Do not browse the entire course during class.
 
