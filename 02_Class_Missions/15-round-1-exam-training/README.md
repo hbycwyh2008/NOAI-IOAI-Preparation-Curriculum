@@ -11,3 +11,5 @@
 ## Official-Aligned Video Placement
 
 Use Lesson 05 as a Round 1 A/B review lesson after students have studied Python foundations and AI/ML concepts, and before or between paper-test mocks.
+
+For the full 14-session 70-minute split, see [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md).
