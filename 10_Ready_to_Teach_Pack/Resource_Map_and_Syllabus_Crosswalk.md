@@ -4,16 +4,27 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 
 ## Resource Selection Rules
 
-1. One required resource segment per ordinary lesson.
-2. Students use only the named chapter/module, not an entire playlist during class.
-3. Official documentation replaces videos for APIs that change frequently.
-4. A resource is not evidence; the worksheet, independent task, and oral defence are evidence.
-5. Annual NOAI/IOAI rules override this repository, especially for internet access, pretrained models, package versions, local deployment, and AI-assistant use.
+1. One required resource per ordinary lesson. The required resource may be a full Bohrium video when the lesson is explicitly marked as a full-video lesson.
+2. When a full Bohrium video is assigned, use `02_Class_Missions/shared/full-bohrium-video-classroom-flow.md`: students watch the full assigned video, complete guided notes, and then complete Talk Robin, Entry Check, Core Pattern, Guided Practice, Independent Rebuild, and Evidence.
+3. When a short segment is assigned, students use only the named chapter/module, not an entire playlist during class.
+4. Official documentation replaces videos for APIs that change frequently.
+5. A resource is not evidence; the worksheet, independent task, guided notes, independent rebuild, and oral defence are evidence.
+6. Annual NOAI/IOAI rules override this repository, especially for internet access, pretrained models, package versions, local deployment, and AI-assistant use.
+
+## Official-Aligned Bohrium Resources
+
+| Code | Resource | Link | Official-aligned use |
+|---|---|---|---|
+| BML15 | 北京市十一学校《中学机器学习十五讲》 | https://www.bohrium.com/courses/5963419225/content?file=8496 | Round 1 A/B: Python-related reasoning, AI foundations, machine-learning concepts, paper-test preparation |
+| LHY-ML | 台湾大学李宏毅《机器学习》内容精选版 | https://www.bohrium.com/courses/7890895681/content?file=2496 | Round 2 C/D: machine-learning and deep-learning understanding before or after sklearn/PyTorch practice |
 
 ## Primary Resource Index
 
 | Code | Resource | Assigned scope |
 |---|---|---|
+| NOAI | Current official NOAI handbook, FAQ, syllabus, and authorised task repositories | format, annual rules, past tasks, allowed environment |
+| BML15 | 北京市十一学校《中学机器学习十五讲》 | Round 1 A/B official-aligned concept and machine-learning preparation |
+| LHY-ML | 台湾大学李宏毅《机器学习》内容精选版 | Round 2 C/D official-aligned machine-learning and deep-learning preparation |
 | CS50P | Harvard CS50's Introduction to Programming with Python | Functions/Variables; Conditionals; Loops; Exceptions; Libraries; File I/O |
 | AIF | DeepLearning.AI AI for Everyone | What AI Can/Cannot Do; AI and Society |
 | MLS | DeepLearning.AI Machine Learning Specialization | supervised/unsupervised/RL; regression; classification; trees/ensembles |
@@ -28,7 +39,6 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 | HF-A | Hugging Face Audio Course | waveforms; preprocessing; classification; ASR; TTS |
 | QWEN | Current official Qwen/Hugging Face documentation | local/offline inference; processors; quantisation; multimodality |
 | IOAI | IOAI Academy Study Plan and official task repositories | competition workflow; decision under constraint; multimodal/open-ended tasks |
-| NOAI | Current official NOAI handbook, FAQ, syllabus, and authorised task repositories | format, annual rules, past tasks, allowed environment |
 
 ---
 
@@ -36,7 +46,7 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 
 | Syllabus item | Sessions | Required resource | Required evidence | Assessed in |
 |---|---:|---|---|---|
-| Python values, expressions, input/output | 3–4 | CS50P Functions/Variables; Exceptions | trace tables, robust input program | Mock A/B Section B |
+| Python values, expressions, input/output | 3–4 | CS50P Functions/Variables; Exceptions; BML15 when aligned | trace tables, robust input program | Mock A/B Section B |
 | Sequence, selection, iteration | 5–6 | CS50P Conditionals; Loops | boundary table, loop trace, frequency program | Mock A/B MCQ/code |
 | Strings, lists, dictionaries, tuples | 6 | CS50P Loops/collections notes | collection-choice explanations and program | cold code trace |
 | Functions | 3–4 | CS50P Functions | independent multi-function program | oral defence |
@@ -49,32 +59,32 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 
 | Syllabus item | Sessions | Resource | Required evidence | Assessment |
 |---|---:|---|---|---|
-| AI schools and Turing Test | 9 | AIF + official syllabus | capability-claim evaluation | short answer |
-| Ethics, bias, privacy, risk | 10 | AIF AI and Society | structured case analysis | Mock A/B Section D |
-| Supervised learning | 11, 13–16 | MLS/MLCC | task classification and baselines | all mocks/projects |
-| Unsupervised learning | 11 | MLS | clustering/anomaly task design | concept assessment |
-| Reinforcement learning | 12 | MLS Course 3 intro | environment/reward design | Round 1 concept question |
-| Regression | 13–14 | MLCC/MLS | paper calculations and sklearn model | Mock calculations/project |
-| Classification | 15–16 | MLCC/MLS | threshold table and logistic pipeline | Mock code/project |
-| Clustering | 11 and extension project | MLS | cluster interpretation and limitations | oral defence |
-| Probability/statistics/normal distribution | 17–18 | SQ | hand calculations and functions | Mock calculations |
+| AI schools and Turing Test | 9 | BML15 + official syllabus; AIF optional | capability-claim evaluation | short answer |
+| Ethics, bias, privacy, risk | 10 | BML15 + official syllabus; AIF optional | structured case analysis | Mock A/B Section D |
+| Supervised learning | 11, 13–16 | BML15; MLS/MLCC optional | task classification and baselines | all mocks/projects |
+| Unsupervised learning | 11 | BML15; MLS optional | clustering/anomaly task design | concept assessment |
+| Reinforcement learning | 12 | BML15; MLS Course 3 intro optional | environment/reward design | Round 1 concept question |
+| Regression | 13–14 | BML15; MLCC/MLS optional | paper calculations and sklearn model | Mock calculations/project |
+| Classification | 15–16 | BML15; MLCC/MLS optional | threshold table and logistic pipeline | Mock code/project |
+| Clustering | 11 and extension project | BML15; MLS optional | cluster interpretation and limitations | oral defence |
+| Probability/statistics/normal distribution | 17–18 | SQ; BML15 when aligned | hand calculations and functions | Mock calculations |
 | Distance and standardisation | 18, 39 | SQ/NumPy | distance comparison raw/scaled | Round 1/2 |
-| Accuracy, precision, recall, specificity, F1 | 19–20 | MLCC | confusion-matrix worksheet | Mock A/B |
+| Accuracy, precision, recall, specificity, F1 | 19–20 | MLCC; BML15 when aligned | confusion-matrix worksheet | Mock A/B |
 | ROC/AUC and threshold choice | 20 | MLCC/SQ | metric decision memo | multimodal mock |
 | Cross-validation | 21, 44 | SK | split design and CV report | Round 2 |
-| Under/overfitting | 22–23 | MLCC | curve diagnosis and controlled remedy | Mock short answer |
-| Regularisation | 23 | MLCC/MLS | controlled experiment | Round 1/2 |
+| Under/overfitting | 22–23 | BML15; MLCC optional | curve diagnosis and controlled remedy | Mock short answer |
+| Regularisation | 23 | BML15; MLCC/MLS optional | controlled experiment | Round 1/2 |
 | Decision trees | 24 | MLS/SQ | impurity calculation and depth experiment | Mock A/B |
 | Bagging/random forest | 25 | MLS/SQ | single tree vs forest comparison | Mock short answer |
 | Boosting | 26 | MLS/SQ | three-model CV comparison | Mock B/model selection |
-| Perceptron/neuron | 27 | 3B1B | numerical neuron and XOR explanation | Round 1 |
-| MLP/forward propagation | 28 | 3B1B | full hand forward pass | Round 1 |
-| Gradient descent/backpropagation | 29–30 | 3B1B | computational-graph derivation | Mock A/B |
-| Optimisers Adam/AdamW | 31 | DLS/PT | controlled optimizer comparison | oral/implementation |
-| CNN | 32–34 | DLS/PT | convolution calculation and working CNN | Mock shapes/Round 2 |
-| Activation, output, loss functions | 27, 33–34 | 3B1B/PT | role comparison and correct loss code | Round 1/PyTorch |
-| LLM principles | 56–57 | HF-L/QWEN | structured-output tool and offline package | concept + Round 2 |
-| Train/validation/test and cleaning | 21–23, 39–43 | MLCC/SK | validation memo and pipeline | Round 2 gate |
+| Perceptron/neuron | 27 | LHY-ML or 3B1B | numerical neuron and XOR explanation | Round 1 |
+| MLP/forward propagation | 28 | LHY-ML or 3B1B | full hand forward pass | Round 1 |
+| Gradient descent/backpropagation | 29–30 | LHY-ML or 3B1B | computational-graph derivation | Mock A/B |
+| Optimisers Adam/AdamW | 31 | LHY-ML/DLS/PT | controlled optimizer comparison | oral/implementation |
+| CNN | 32–34 | LHY-ML/DLS/PT | convolution calculation and working CNN | Mock shapes/Round 2 |
+| Activation, output, loss functions | 27, 33–34 | LHY-ML/3B1B/PT | role comparison and correct loss code | Round 1/PyTorch |
+| LLM principles | 56–57 | HF-L/QWEN + official syllabus | structured-output tool and offline package | concept + Round 2 |
+| Train/validation/test and cleaning | 21–23, 39–43 | BML15/MLCC/SK | validation memo and pipeline | Round 2 gate |
 
 # C. Advanced Computer Skills
 
@@ -101,11 +111,11 @@ This document maps the 2026 NOAI China A–D syllabus structure to the 67 teachi
 | Autograd/training loop | 46–47 | PT Autograd/Optimization | full train/validate loop | Round 2 |
 | CPU/GPU movement | 45–47 | PT | device-safe code | fresh-run check |
 | Mixed precision | 47 | PT AMP | controlled AMP test or explanation | oral defence |
-| Initialisation/batch normalisation | 31, 34, extension | DLS/PT | architecture comparison | advanced extension |
-| CNN/computer vision | 48–50 | CV/PT | classical baseline + transfer model | image mock |
+| Initialisation/batch normalisation | 31, 34, extension | LHY-ML/DLS/PT | architecture comparison | advanced extension |
+| CNN/computer vision | 48–50 | LHY-ML/CV/PT | classical baseline + transfer model | image mock |
 | Detection/segmentation | 50 | PT tutorial | IoU/error analysis | extension task |
-| RNN/LSTM | 52 | DLS/PT | sequence model and shape ledger | NLP reproduction |
-| NLP/transformer classification | 51–53 | HF-L | simple vs pretrained comparison | NLP project |
+| RNN/LSTM | 52 | LHY-ML/DLS/PT | sequence model and shape ledger | NLP reproduction |
+| NLP/transformer classification | 51–53 | LHY-ML/HF-L | simple vs pretrained comparison | NLP project |
 | Audio classification | 54–55 | HF-A | source-aware classifier | audio reproduction |
 | ASR/TTS | 55 | HF-A | pipeline evaluation | domain task |
 | Generative AI/LLM API | 56 | HF-L/current API docs | validated structured-output utility | Round 2 |
