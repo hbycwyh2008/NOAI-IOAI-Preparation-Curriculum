@@ -1,0 +1,23 @@
+# 27 — Official Bohrium Full-Video Lessons
+
+These missions turn official-aligned Bohrium videos into after-school club lessons.
+
+Use this folder when the teacher wants students to watch the full assigned Bohrium video during class and then move through the seven-step classroom flow:
+
+**Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
+
+## Missions
+
+1. [Mission 27.1 — BML15 Full Video: Middle-School Machine Learning Foundations](lesson-01-bml15-full-video.md)
+2. [Mission 27.2 — LHY-ML Full Video: Machine Learning Selected Content](lesson-02-lhy-ml-full-video.md)
+
+## Resource Placement
+
+| Mission | Resource | Best use |
+|---|---|---|
+| 27.1 | 北京市十一学校《中学机器学习十五讲》 | Round 1 A/B: AI foundations, machine-learning concepts, paper-test preparation |
+| 27.2 | 台湾大学李宏毅《机器学习》内容精选版 | Round 2 C/D: deeper ML/DL understanding before or after sklearn/PyTorch practice |
+
+## Rule
+
+The full video is part of **Skill Warm-Up**, but watching the video is not the final product. Each mission must end with student explanation and evidence.
