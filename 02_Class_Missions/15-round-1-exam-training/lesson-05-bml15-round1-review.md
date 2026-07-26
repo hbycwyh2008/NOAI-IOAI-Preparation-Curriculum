@@ -1,18 +1,18 @@
-# Lesson 05 — BML15 Full Video: Round 1 A/B Review
+# Lesson 05 — 北京市十一学校《中学机器学习十五讲》完整视频：Round 1 A/B Review
 
-**Duration:** 70 minutes when following the BML15 split, or two 70-minute sessions if the assigned video is too long for meaningful practice and rebuild.
+**Duration:** 70 minutes when following the 北京市十一学校《中学机器学习十五讲》 split, or two 70-minute sessions if the assigned video is too long for meaningful practice and rebuild.
 
 **Official-aligned resource:** 北京市十一学校《中学机器学习十五讲》
 
 **Bohrium link:** https://www.bohrium.com/courses/5963419225/content?file=8496
 
-**Placement:** This lesson is a Round 1 review lesson. Use it after students have studied Python foundations and basic AI/ML concepts, before full paper-test mocks.
+**Placement:** This lesson is a Round 1 review lesson. Use it after students have studied Python foundations and basic artificial-intelligence / machine-learning concepts, before full paper-test mocks.
 
 **Detailed split:** [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
 
 ## Timeline
 
-Use the exact lesson row and timing template from the BML15 70-minute split. The normal classroom sequence remains:
+Use the exact lesson row and timing template from the 70-minute split for 北京市十一学校《中学机器学习十五讲》. The normal classroom sequence remains:
 
 **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
 
@@ -24,7 +24,7 @@ Concept → Example → Misconception → Evidence / Calculation / Code Trace
 
 ## 1. Skill Warm-Up
 
-Watch the assigned BML15 video in full.
+Watch the assigned video from 北京市十一学校《中学机器学习十五讲》 in full.
 
 While watching, mark every idea that could become a Round 1 paper-test question.
 
@@ -38,7 +38,7 @@ Round 1 concepts mentioned:
 
 Python / code-reading connection:
 
-AI foundations connection:
+Artificial-intelligence foundations connection:
 
 Machine-learning concept connection:
 
