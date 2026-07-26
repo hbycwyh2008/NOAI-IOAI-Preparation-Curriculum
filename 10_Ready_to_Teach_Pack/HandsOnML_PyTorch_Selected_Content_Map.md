@@ -1,74 +1,74 @@
-# Hands-On ML and DeepLearning.AI PyTorch Selected Content Map
+# Hands-On Machine Learning and DeepLearning.AI PyTorch Selected Content Map
 
 This file clarifies how two practical resources are used in the NOAI / IOAI preparation curriculum:
 
 1. **Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow** by Aurélien Géron.
-2. **PyTorch for Deep Learning Professional Certificate** by DeepLearning.AI on Coursera, taught by Laurence Moroney.
+2. **DeepLearning.AI PyTorch for Deep Learning Professional Certificate** on Coursera, taught by Laurence Moroney.
 
 The purpose is not to make students complete both resources end-to-end. The purpose is to select the parts that directly strengthen NOAI Round 2 C/D and IOAI-style applied problem solving.
 
-## Resource Codes
+## Full Resource Names and Links
 
-| Code | Resource | Coursera / source link | Main use |
-|---|---|---|---|
-| HML | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | https://github.com/ageron/handson-ml3 | sklearn workflow, data pipelines, evaluation, model comparison, trees/ensembles, end-to-end project habits |
-| DLAI-PT | DeepLearning.AI PyTorch for Deep Learning Professional Certificate | https://www.coursera.org/professional-certificates/pytorch-for-deep-learning | PyTorch tensors, datasets, dataloaders, neural networks, training pipelines, transfer learning, vision, NLP, optimisation, and selected deployment topics |
-| DLAI-PT1 | PyTorch: Fundamentals | https://www.coursera.org/learn/pytorch-fundamentals | required PyTorch foundation course for the selected repo lessons |
-| DLAI-PT2 | PyTorch: Techniques and Ecosystem Tools | https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools | selected transfer learning, TorchVision, Hugging Face, tuning, and efficient training content |
-| DLAI-PT3 | PyTorch: Advanced Architectures and Deployment | https://www.coursera.org/learn/pytorch-advanced-architectures-and-deployment | optional advanced extension: architectures, Transformers, compression, export, and deployment |
-| PT | PyTorch official tutorials | https://docs.pytorch.org/tutorials/ | current API reference and implementation verification |
+| Full resource name | Coursera / source link | Main use |
+|---|---|---|
+| Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | https://github.com/ageron/handson-ml3 | scikit-learn workflow, data pipelines, evaluation, model comparison, trees/ensembles, and end-to-end project habits |
+| DeepLearning.AI PyTorch for Deep Learning Professional Certificate | https://www.coursera.org/professional-certificates/pytorch-for-deep-learning | PyTorch tensors, datasets, dataloaders, neural networks, training pipelines, transfer learning, vision, natural-language processing, optimisation, and selected deployment topics |
+| Course 1 — PyTorch: Fundamentals | https://www.coursera.org/learn/pytorch-fundamentals | required PyTorch foundation course for selected repo lessons |
+| Course 2 — PyTorch: Techniques and Ecosystem Tools | https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools | selected transfer learning, TorchVision, Hugging Face, tuning, and efficient-training content |
+| Course 3 — PyTorch: Advanced Architectures and Deployment | https://www.coursera.org/learn/pytorch-advanced-architectures-and-deployment | optional advanced extension: architectures, Transformers, compression, export, and deployment |
+| PyTorch official tutorials | https://docs.pytorch.org/tutorials/ | current API reference and implementation verification |
 
 ## Important Boundary
 
-Hands-On Machine Learning is used mainly for **scikit-learn, end-to-end ML workflow, evaluation, and practical model iteration**.
+Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow is used mainly for **scikit-learn, end-to-end machine-learning workflow, evaluation, and practical model iteration**.
 
-The DeepLearning.AI PyTorch certificate is the repo's main structured PyTorch video/course series. PyTorch official tutorials remain the source of truth for current APIs.
+The DeepLearning.AI PyTorch for Deep Learning Professional Certificate is the repo's main structured PyTorch video/course series. PyTorch official tutorials remain the source of truth for current APIs.
 
 Students do not need to complete the entire three-course certificate before competing. The teacher assigns selected modules that match the repo lesson targets.
 
-## HML Selected Placement
+## Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow Placement
 
-| HML topic | Repo placement | Lesson use |
+| Topic | Repo placement | Lesson use |
 |---|---|---|
-| End-to-end ML project workflow | `18-sklearn-workflow/`, `24-round-2-project-training/` | task reading, data audit, baseline, validation, submission report |
-| Data cleaning and preprocessing | `16-numpy-pandas-matplotlib/`, `17-data-cleaning-feature-engineering/` | missing values, categories, scaling, leakage-safe transformations |
-| sklearn pipelines | `18-sklearn-workflow/lesson-04-columntransformer-pipeline-leakage.md` | ColumnTransformer, Pipeline, reproducibility |
-| Model evaluation and cross-validation | `09-model-evaluation/`, `18-sklearn-workflow/` | metric decision, CV design, validation memo |
+| End-to-end machine-learning project workflow | `18-sklearn-workflow/`, `24-round-2-project-training/` | task reading, data audit, baseline, validation, and submission report |
+| Data cleaning and preprocessing | `16-numpy-pandas-matplotlib/`, `17-data-cleaning-feature-engineering/` | missing values, categories, scaling, and leakage-safe transformations |
+| scikit-learn pipelines | `18-sklearn-workflow/lesson-04-columntransformer-pipeline-leakage.md` | ColumnTransformer, Pipeline, and reproducibility |
+| Model evaluation and cross-validation | `09-model-evaluation/`, `18-sklearn-workflow/` | metric decision, cross-validation design, and validation memo |
 | Linear and logistic regression | `06-linear-regression/`, `07-logistic-regression/` | practical comparison after paper calculations |
-| Trees, random forests, boosting | `11-trees-and-ensembles/` | impurity, ensemble comparison, model-selection evidence |
-| Error analysis and iteration | `24-round-2-project-training/lesson-06-ablation-error-analysis-report.md` | ablation, controlled experiments, postmortem |
+| Trees, random forests, and boosting | `11-trees-and-ensembles/` | impurity, ensemble comparison, and model-selection evidence |
+| Error analysis and iteration | `24-round-2-project-training/lesson-06-ablation-error-analysis-report.md` | ablation, controlled experiments, and postmortem |
 
-Approximate HML-supported mainline use: **18–25 lessons**, mostly in Round 2 C/D and selected Round 1 ML modules.
+Approximate mainline use supported by Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: **18–25 lessons**, mostly in Round 2 C/D and selected Round 1 machine-learning modules.
 
-## DLAI-PT Course 1 — PyTorch: Fundamentals
+## Course 1 — PyTorch: Fundamentals
 
 **Status:** selected mainline resource.
 
 | Topic | Repo placement | Lesson use |
 |---|---|---|
-| Tensors, tensor math, broadcasting | `19-pytorch-foundations/lesson-01.md` | tensor audit, shape ledger, dtype/device reasoning |
-| Dataset and DataLoader | `19-pytorch-foundations/lesson-02.md`, `lesson-06-dataloader-device-safe-loop.md` | batching, data pipeline, custom dataset rebuild |
-| Neural-network building blocks | `19-pytorch-foundations/lesson-02.md`, `lesson-05-loss-optimizer-gradient-debug.md` | nn.Module, forward pass, activation and loss |
-| Complete training pipeline | `19-pytorch-foundations/lesson-03.md`, `lesson-06-dataloader-device-safe-loop.md` | forward, loss, backward, optimiser, validation |
-| Monitoring and evaluation | `19-pytorch-foundations/lesson-07-pytorch-mini-project-validation.md` | metrics, checkpoint, fresh-runtime evidence |
+| Tensors, tensor mathematics, and broadcasting | `19-pytorch-foundations/lesson-01.md` | tensor audit, shape ledger, and data-type/device reasoning |
+| Dataset and DataLoader | `19-pytorch-foundations/lesson-02.md`, `lesson-06-dataloader-device-safe-loop.md` | batching, data pipeline, and custom-dataset rebuild |
+| Neural-network building blocks | `19-pytorch-foundations/lesson-02.md`, `lesson-05-loss-optimizer-gradient-debug.md` | nn.Module, forward pass, activation, and loss |
+| Complete training pipeline | `19-pytorch-foundations/lesson-03.md`, `lesson-06-dataloader-device-safe-loop.md` | forward pass, loss, backward pass, optimiser, and validation |
+| Monitoring and evaluation | `19-pytorch-foundations/lesson-07-pytorch-mini-project-validation.md` | metrics, checkpoint, and fresh-runtime evidence |
 
 Approximate Course 1-supported use: **6–8 lessons**.
 
-## DLAI-PT Course 2 — Techniques and Ecosystem Tools
+## Course 2 — PyTorch: Techniques and Ecosystem Tools
 
 **Status:** selected Round 2 support.
 
 | Topic | Repo placement | Lesson use |
 |---|---|---|
-| TorchVision and image pipelines | `20-computer-vision/lesson-02.md`, `lesson-04-image-datasets-and-transforms.md` | image datasets, transforms, augmentation |
-| Transfer learning and fine-tuning | `20-computer-vision/lesson-05-transfer-learning-finetuning.md` | pretrained model adaptation under time limits |
+| TorchVision and image pipelines | `20-computer-vision/lesson-02.md`, `lesson-04-image-datasets-and-transforms.md` | image datasets, transforms, and augmentation |
+| Transfer learning and fine-tuning | `20-computer-vision/lesson-05-transfer-learning-finetuning.md` | pretrained-model adaptation under time limits |
 | Hugging Face and text workflows | `21-nlp-sequence-models/` | selected text preprocessing and model adaptation |
 | Hyperparameter tuning and optimisation | `24-round-2-project-training/lesson-06-ablation-error-analysis-report.md` | controlled experiments and evidence-driven improvement |
 | Efficient training pipelines | `19-pytorch-foundations/lesson-07-pytorch-mini-project-validation.md`, `24-round-2-project-training/` | reproducibility, validation, and runtime checks |
 
 Approximate Course 2-supported use: **4–6 lessons**.
 
-## DLAI-PT Course 3 — Advanced Architectures and Deployment
+## Course 3 — PyTorch: Advanced Architectures and Deployment
 
 **Status:** optional IOAI / advanced-student extension.
 
@@ -90,21 +90,21 @@ Possible placements:
 
 This course is not required for ordinary NOAI Round 1 preparation and should not displace baseline, validation, or submission training.
 
-## When to Use HML vs DLAI-PT
+## Which Resource to Use
 
 | Teaching need | Use |
 |---|---|
-| sklearn pipeline, preprocessing, cross-validation, model comparison | HML + sklearn User Guide |
-| tabular Round 2 baseline | HML + sklearn User Guide |
-| PyTorch tensors, Dataset, DataLoader, nn.Module | DLAI-PT1 + PyTorch official tutorials |
-| complete PyTorch training and validation loop | DLAI-PT1 + starter notebook |
-| CNN, TorchVision, transfer learning | DLAI-PT2 + PyTorch/torchvision tutorials |
-| selected advanced architecture or deployment | DLAI-PT3 as optional extension |
-| error analysis and competition iteration | HML + DLAI-PT + NOAI/IOAI task notes |
+| scikit-learn pipeline, preprocessing, cross-validation, and model comparison | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow + scikit-learn User Guide |
+| tabular Round 2 baseline | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow + scikit-learn User Guide |
+| PyTorch tensors, Dataset, DataLoader, and nn.Module | Course 1 — PyTorch: Fundamentals + PyTorch official tutorials |
+| complete PyTorch training and validation loop | Course 1 — PyTorch: Fundamentals + starter notebook |
+| convolutional neural networks, TorchVision, and transfer learning | Course 2 — PyTorch: Techniques and Ecosystem Tools + PyTorch/torchvision official tutorials |
+| selected advanced architecture or deployment | Course 3 — PyTorch: Advanced Architectures and Deployment as an optional extension |
+| error analysis and competition iteration | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow + DeepLearning.AI PyTorch for Deep Learning Professional Certificate + official NOAI/IOAI task notes |
 
 ## Student Instruction
 
-Students should not passively watch long videos or copy notebook code. For every selected HML or DLAI-PT segment, students must produce:
+Students should not passively watch long videos or copy notebook code. For every selected section from Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow or the DeepLearning.AI PyTorch for Deep Learning Professional Certificate, students must produce:
 
 1. guided notes naming the exact course, module, lesson, and assigned segment;
 2. an Entry Check response;
@@ -118,11 +118,11 @@ Students should not passively watch long videos or copy notebook code. For every
 
 For most students, use this order:
 
-1. BML15 for Round 1 A/B concept formation.
-2. Andrew Ng's Machine Learning Specialization selected content for traditional ML concepts.
-3. HML selected chapters for sklearn and practical ML workflow.
-4. DLS selected content for deep-learning concepts.
-5. DLAI-PT Course 1 and selected Course 2 modules for PyTorch implementation.
+1. 北京市十一学校《中学机器学习十五讲》 for Round 1 A/B concept formation.
+2. Selected content from Machine Learning Specialization for traditional machine-learning concepts.
+3. Selected chapters from Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow for scikit-learn and practical machine-learning workflow.
+4. Selected content from Deep Learning Specialization for deep-learning concepts.
+5. Course 1 — PyTorch: Fundamentals and selected modules from Course 2 — PyTorch: Techniques and Ecosystem Tools for PyTorch implementation.
 6. PyTorch official tutorials for API correctness.
-7. Hugging Face and Qwen resources for NLP, LLM, audio, and multimodal extension.
-8. NOAI / IOAI official tasks for timed reproduction and competition readiness.
+7. Hugging Face and Qwen resources for natural-language processing, large language models, audio, and multimodal extension.
+8. Official NOAI / IOAI tasks for timed reproduction and competition readiness.
