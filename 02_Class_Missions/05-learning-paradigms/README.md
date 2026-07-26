@@ -6,7 +6,7 @@ This module turns supervised, unsupervised, and reinforcement learning from voca
 
 - [Lesson 01 — Supervised and unsupervised learning](lesson-01.md)
 - [Lesson 02 — Reinforcement learning foundations](lesson-02.md)
-- [Lesson 03 — BML15 Full Video: Learning Paradigms and ML Foundations](lesson-03-bml15-full-video.md)
+- [Lesson 03 — 北京市十一学校《中学机器学习十五讲》完整视频：学习范式与机器学习基础](lesson-03-bml15-full-video.md)
 - [Lesson 04 — Regression, classification, clustering, and task-type sorting](lesson-04-task-type-sorting.md)
 - [Lesson 05 — Training, inference, labels, features, and evaluation evidence](lesson-05-training-inference-evidence.md)
 - [Lesson 06 — Round 1 learning-paradigm distractors and scenario explanations](lesson-06-round1-paradigm-distractors.md)
