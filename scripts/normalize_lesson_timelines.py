@@ -46,45 +46,35 @@ CODING_FOLDERS = {
 }
 
 
-def regular_timeline():
-    return "90 minutes", [
-        ("0–8 min", "Entry Point Check", "Complete three individual questions without notes."),
-        ("8–20 min", "Required resource", "Use only the assigned excerpt."),
-        ("20–32 min", "Focused notes", "Record terms, process, example, and misconception."),
-        ("32–44 min", "Talk round", "Explain the process; partner challenges vague steps."),
-        ("44–54 min", "Teacher diagnosis", "Correct misconceptions revealed by evidence."),
-        ("54–70 min", "Guided practice", "Complete the lesson’s guided task."),
-        ("70–83 min", "Independent task", "Rebuild, calculate, trace, or transfer without a full solution."),
-        ("83–87 min", "Exit check", "Answer one transfer question and rate confidence."),
-        ("87–90 min", "Submission", "Submit notes, work, error log, AI-use note, and commit."),
-    ]
-
-
-def coding_timeline():
-    return "90 minutes", [
-        ("0–8 min", "Entry Point Check", "Trace or diagnose a short code fragment."),
-        ("8–18 min", "Required resource", "Record only the essential API or pattern."),
-        ("18–28 min", "Code walk", "Predict shapes, values, and failure points before running."),
-        ("28–40 min", "Talk round", "Explain the workflow and expected outputs."),
-        ("40–50 min", "Teacher diagnosis", "Resolve syntax, API, shape, or conceptual blockers."),
-        ("50–68 min", "Guided practice", "Complete the supported implementation task."),
-        ("68–83 min", "Independent rebuild", "Rebuild or modify without copying the guided solution."),
-        ("83–87 min", "Fresh-run check", "Run from a clean state and record one verification."),
-        ("87–90 min", "Submission", "Commit code, notes, error log, and AI-use note."),
-    ]
-
-
-def assessment_timeline():
-    return "90 minutes", [
-        ("0–5 min", "Instructions", "Review timing, permitted resources, and submission rules."),
-        ("5–20 min", "Timed set A", "Complete the first question set individually."),
-        ("20–30 min", "Self-check", "Mark uncertain items without discussion."),
-        ("30–45 min", "Timed set B", "Complete the second question set."),
-        ("45–55 min", "Talk round", "Compare reasoning, not only final answers."),
-        ("55–67 min", "Teacher diagnosis", "Analyse distractors, calculations, or code traps."),
-        ("67–82 min", "Correction cycle", "Correct errors and record their causes."),
-        ("82–87 min", "Independent transfer", "Complete one unseen transfer item."),
-        ("87–90 min", "Submission", "Submit corrected work and error taxonomy."),
+def seven_step_flow(kind: str = "concept"):
+    if kind == "coding":
+        return "75 minutes", [
+            ("0–8 min", "Skill Warm-Up", "Use a short code fragment, guide, or notebook cell to meet the idea."),
+            ("8–15 min", "Talk Robin 1", "Pair discussion: what ran, what failed, and what is confusing."),
+            ("15–22 min", "Entry Check", "Check basic understanding of values, shapes, APIs, or workflow before going deeper."),
+            ("22–35 min", "Core Pattern", "Teacher explains the key coding method, pattern, or workflow clearly."),
+            ("35–53 min", "Guided Practice", "Practice with teacher support. Ask questions, run checks, and improve."),
+            ("53–67 min", "Independent Rebuild", "Recreate the pattern on your own with less help."),
+            ("67–75 min", "Talk Robin 2 + Evidence", "Summarize, explain, and submit proof of learning."),
+        ]
+    if kind == "assessment":
+        return "75 minutes", [
+            ("0–8 min", "Skill Warm-Up", "Use a short mixed set or correction prompt to meet the idea."),
+            ("8–15 min", "Talk Robin 1", "Pair discussion: what was solved and what is confusing."),
+            ("15–22 min", "Entry Check", "Check basic understanding before timed or deeper work."),
+            ("22–35 min", "Core Pattern", "Teacher explains the key reasoning, calculation, or distractor pattern clearly."),
+            ("35–53 min", "Guided Practice", "Practice with teacher support. Ask questions and improve."),
+            ("53–67 min", "Independent Rebuild", "Recreate the reasoning or solution pattern on your own with less help."),
+            ("67–75 min", "Talk Robin 2 + Evidence", "Summarize, explain, and submit proof of learning."),
+        ]
+    return "75 minutes", [
+        ("0–8 min", "Skill Warm-Up", "Use a video, guide, or task to meet the idea."),
+        ("8–15 min", "Talk Robin 1", "Pair discussion: what was done and what is confusing."),
+        ("15–22 min", "Entry Check", "Check basic understanding before we go deeper."),
+        ("22–35 min", "Core Pattern", "Teacher explains the key method or pattern clearly."),
+        ("35–53 min", "Guided Practice", "Practice with teacher support. Ask questions and improve."),
+        ("53–67 min", "Independent Rebuild", "Recreate the pattern on your own with less help."),
+        ("67–75 min", "Talk Robin 2 + Evidence", "Summarize, explain, and submit proof of learning."),
     ]
 
 
@@ -133,10 +123,10 @@ def timeline_for(relative: str):
         return duration, long_timeline(minutes)
     folder = relative.split("/", 1)[0]
     if folder == "15-round-1-exam-training":
-        return assessment_timeline()
+        return seven_step_flow("assessment")
     if folder in CODING_FOLDERS:
-        return coding_timeline()
-    return regular_timeline()
+        return seven_step_flow("coding")
+    return seven_step_flow("concept")
 
 
 def render(duration: str, rows):
@@ -183,7 +173,7 @@ def update_overview(paths):
         duration, _ = timeline_for(relative)
         grouped.setdefault(phase_for(folder), []).append((title, duration))
 
-    sequence = ["# Detailed Lesson Sequence", "", f"The curriculum contains **{len(paths)} scheduled lessons/sessions**. Each lesson file has an explicit timeline.", ""]
+    sequence = ["# Detailed Lesson Sequence", "", f"The curriculum contains **{len(paths)} scheduled lessons/sessions**. Ordinary lessons use the seven-step 75-minute after-school club flow.", ""]
     count = 1
     for phase, items in grouped.items():
         sequence.extend([f"## {phase}", ""])
@@ -197,7 +187,7 @@ def update_overview(paths):
 
 The repository contains **{len(paths)} scheduled lessons/sessions**.
 
-- Standard concept and coding lessons: 90 minutes.
+- Standard concept and coding lessons: **75 minutes** using the seven-step after-school club classroom flow.
 - Integrated Round 1 mock and correction: 150 minutes.
 - Past-paper reproduction sessions: 180 minutes each.
 - Timed Round 1 mock: 120 minutes.
@@ -205,7 +195,9 @@ The repository contains **{len(paths)} scheduled lessons/sessions**.
 - Timed Round 2 multimodal mock: 360 minutes.
 - Final readiness conference: 45 minutes per student.
 
-Every lesson file contains a minute-by-minute timeline. Long simulations must not be compressed into a nominal 90-minute lesson.
+Every ordinary lesson uses the same cycle: **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**.
+
+Long simulations must not be compressed into a nominal 75-minute club lesson.
 
 See [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md).
 """
@@ -216,9 +208,8 @@ See [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md).
 ## Verified Structure
 
 - Lesson/session files found: **{len(paths)}**.
-- Every lesson has an explicit duration.
-- Every lesson has a minute-by-minute timeline.
-- Long mocks use realistic durations rather than a universal 90-minute claim.
+- Ordinary lessons use the seven-step 75-minute after-school club classroom flow.
+- Long mocks use realistic durations rather than a universal 75-minute claim.
 
 ## Still Required Before the Curriculum Is Fully Packaged
 
@@ -231,7 +222,7 @@ See [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md).
 7. Complete mock-contest packages and hidden tests.
 8. A line-by-line official-syllabus crosswalk to lessons and assessments.
 
-The repository is currently a **detailed course architecture**, not yet a fully packaged ready-to-run course product.
+The repository is currently a detailed course architecture plus ready-to-teach pack. Classroom delivery should follow the seven-step flow.
 """
     (ROOT / "00_Course_Overview" / "Curriculum_Completeness_Audit.md").write_text(audit, encoding="utf-8")
 
