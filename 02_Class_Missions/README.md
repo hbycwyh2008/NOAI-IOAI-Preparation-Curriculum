@@ -4,6 +4,15 @@ Open the numbered folder assigned by the teacher. Every ordinary mission follows
 
 Some official Bohrium missions use a full assigned video during **Skill Warm-Up**. In those missions, watching the video is required, but it is not the final product: students still complete discussion, checks, guided practice, independent rebuild, and evidence.
 
+## Start With the Large-Scale Structure
+
+Before assigning individual lessons, read:
+
+- [Class Mission Resource Architecture](Class_Mission_Resource_Architecture.md) — shows the curriculum phases, what each module teaches, which resource is primary, which resources are supplementary, and how CS50P, BML15, MLS, HML, DLS, the DeepLearning.AI PyTorch certificate, Hugging Face, Qwen, and official NOAI/IOAI tasks are distributed.
+- [Lesson Distribution Audit](Lesson_Distribution_Audit.md) — checks whether each module has sufficient lesson density and actual lesson files.
+
+## Mission Modules
+
 - [00 — Competition Workflow and Baseline Thinking](00-course-overview/README.md)
 - [01 — Functions, Variables, and Input/Output](01-python-foundations/README.md)
 - [02 — Conditionals, Loops, and Core Data Structures](02-control-flow-and-data-structures/README.md)
