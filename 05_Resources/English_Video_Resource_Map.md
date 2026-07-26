@@ -1,17 +1,17 @@
 # English Video Resource Map
 
-- **CS50P:** https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f
-  - Timestamp map for assigned sections: [`CS50P_edX_Timestamp_Map.md`](CS50P_edX_Timestamp_Map.md)
-- **AI for Everyone — Coursera:** https://www.coursera.org/learn/ai-for-everyone
-- **Machine Learning Specialization — Coursera:** https://www.coursera.org/specializations/machine-learning-introduction
-- **Deep Learning Specialization — Coursera:** https://www.coursera.org/specializations/deep-learning
-- **PyTorch for Deep Learning Professional Certificate — Coursera:** https://www.coursera.org/professional-certificates/pytorch-for-deep-learning
+- **Harvard CS50’s Introduction to Programming with Python:** https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f
+  - Exact timestamp map for assigned sections: [`CS50P_edX_Timestamp_Map.md`](CS50P_edX_Timestamp_Map.md)
+- **AI for Everyone on Coursera:** https://www.coursera.org/learn/ai-for-everyone
+- **Machine Learning Specialization on Coursera:** https://www.coursera.org/specializations/machine-learning-introduction
+- **Deep Learning Specialization on Coursera:** https://www.coursera.org/specializations/deep-learning
+- **DeepLearning.AI PyTorch for Deep Learning Professional Certificate on Coursera:** https://www.coursera.org/professional-certificates/pytorch-for-deep-learning
   - **Course 1 — PyTorch: Fundamentals:** https://www.coursera.org/learn/pytorch-fundamentals
   - **Course 2 — PyTorch: Techniques and Ecosystem Tools:** https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools
   - **Course 3 — PyTorch: Advanced Architectures and Deployment:** https://www.coursera.org/learn/pytorch-advanced-architectures-and-deployment
 - **StatQuest Video Index:** https://statquest.org/video-index/
 - **3Blue1Brown Neural Networks:** https://www.3blue1brown.com/topics/neural-networks
-- **Google ML Crash Course:** https://developers.google.com/machine-learning/crash-course
+- **Google Machine Learning Crash Course:** https://developers.google.com/machine-learning/crash-course
 - **IBM Data Analysis with Python:** https://www.coursera.org/learn/data-analysis-with-python
 - **PyTorch Learn the Basics:** https://docs.pytorch.org/tutorials/beginner/basics/intro.html
 - **PyTorch Tutorials:** https://docs.pytorch.org/tutorials/
@@ -22,6 +22,12 @@
 
 ## Selection Rule
 
-Use the assigned section only. A course being listed here does not mean students should complete the entire course. For CS50P, always name the exact week, topic, and timestamp range rather than writing only `CS50P`. For Coursera-hosted resources, use Coursera links rather than DeepLearning.AI marketing-page links.
+Use the assigned section only. A course being listed here does not mean students should complete the entire course.
 
-For PyTorch, use the DeepLearning.AI three-course certificate selectively: Course 1 is the main foundation, Course 2 supports Round 2 vision/NLP workflows, and Course 3 is an optional advanced extension. PyTorch official tutorials remain the API reference.
+For Harvard CS50’s Introduction to Programming with Python, always name the exact week, topic, and timestamp range rather than writing only an abbreviation.
+
+For Coursera-hosted resources, use Coursera links rather than DeepLearning.AI marketing-page links.
+
+For PyTorch, use the DeepLearning.AI three-course certificate selectively: PyTorch: Fundamentals is the main foundation course; PyTorch: Techniques and Ecosystem Tools supports Round 2 computer-vision and natural-language-processing workflows; PyTorch: Advanced Architectures and Deployment is an optional advanced extension. PyTorch official tutorials remain the API reference.
+
+In student-facing and teacher-facing documents, write the complete course name. Do not rely on internal abbreviations.
