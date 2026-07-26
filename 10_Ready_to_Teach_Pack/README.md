@@ -1,12 +1,12 @@
 # Ready-to-Teach Curriculum Pack
 
-This directory converts the 67-session curriculum architecture into a directly teachable course.
+This directory converts the 67-session curriculum architecture into a directly teachable course for a 75-minute after-school club format.
 
 ## What Is Included
 
 - lesson-specific teaching points rather than generic placeholders;
-- an explicit timeline for every lesson or contest session;
-- entry checks, guided practice, independent work, exit tickets, and submission evidence;
+- an explicit teaching cycle for every ordinary lesson;
+- entry checks, guided practice, independent work, evidence submission, and oral explanation;
 - student worksheet questions embedded under every lesson;
 - exact resource module or chapter names;
 - Round 1 paper-test drills and two complete mock papers;
@@ -36,21 +36,25 @@ Assessment-sensitive teacher keys are stored in a separate aligned private packa
 
 Executable scaffolds are in `06_Starter_Code/ready_to_teach/`.
 
-## Standard 90-Minute Lesson Routine
+## 75-Minute After-School Club Classroom Flow
 
-| Time | Teaching block | Required output |
-|---|---|---|
-| 0–8 | Entry check | individual answers without notes |
-| 8–20 | Assigned resource | focused notes on the named segment only |
-| 20–32 | Teacher model / worked example | annotated example or prediction |
-| 32–44 | Talk round | every student explains; partner challenges one gap |
-| 44–54 | Teacher diagnosis | correction of evidence-based misconceptions |
-| 54–70 | Guided practice | completed supported task |
-| 70–83 | Independent transfer | rebuild, calculate, debug, or apply |
-| 83–87 | Exit ticket | one cold question and confidence rating |
-| 87–90 | Submission | notes, work, error log, AI-use note, Git commit |
+Every ordinary class follows this exact learning cycle.
 
-Long contest sessions use their own realistic timelines.
+**WE LEARN. PRACTICE. REBUILD. SHARE.**
+
+| Step | Teaching block | Time | Required output |
+|---:|---|---:|---|
+| 1 | **Skill Warm-Up** | 0–8 | Use a video, guide, or task to meet the idea. |
+| 2 | **Talk Robin 1** | 8–15 | Pair discussion: what was done and what is confusing. |
+| 3 | **Entry Check** | 15–22 | Check basic understanding before we go deeper. |
+| 4 | **Core Pattern** | 22–35 | Teacher explains the key method or pattern clearly. |
+| 5 | **Guided Practice** | 35–53 | Practice with teacher support. Ask questions and improve. |
+| 6 | **Independent Rebuild** | 53–67 | Recreate the pattern on your own with less help. |
+| 7 | **Talk Robin 2 + Evidence** | 67–75 | Summarize, explain, and submit proof of learning. |
+
+The goal is not just to finish the task. The goal is to **rebuild and explain it independently**.
+
+Long contest sessions use their own realistic timelines, but ordinary lessons must not replace or reorder this seven-step cycle.
 
 ## Minimum Evidence Per Lesson
 
@@ -63,4 +67,4 @@ Long contest sessions use their own realistic timelines.
 
 ## Implementation Rule
 
-The teacher may shorten a resource segment or provide language support, but may not remove the independent transfer task or lower the exit standard. Students receive support to reach the same standard, not a different standard.
+The teacher may shorten a resource segment or provide language support, but may not remove **Independent Rebuild** or **Talk Robin 2 + Evidence**. Students receive support to reach the same standard, not a different standard.
