@@ -1,4 +1,4 @@
-# Lesson 04 — LHY-ML Full Video: Deep Learning to PyTorch Bridge
+# Lesson 04 — 台湾大学李宏毅《机器学习》内容精选版完整视频：Deep Learning to PyTorch Bridge
 
 **Duration:** 75 minutes, or two 75-minute sessions if the assigned Bohrium video is longer than 45 minutes.
 
@@ -6,7 +6,7 @@
 
 **Bohrium link:** https://www.bohrium.com/courses/7890895681/content?file=2496
 
-**Placement:** This lesson belongs after basic PyTorch foundations when students need to connect conceptual deep-learning explanations to tensors, modules, losses, optimizers, and training loops.
+**Placement:** This lesson belongs after basic PyTorch foundations when students need to connect conceptual deep-learning explanations to tensors, modules, losses, optimisers, and training loops.
 
 ## Timeline
 
@@ -22,7 +22,7 @@
 
 ## 1. Skill Warm-Up
 
-Watch the full assigned Bohrium video.
+Watch the full assigned video from 台湾大学李宏毅《机器学习》内容精选版.
 
 While watching, complete:
 
@@ -40,7 +40,7 @@ Where this appears in PyTorch code:
 - tensor / dataset:
 - model:
 - loss:
-- optimizer:
+- optimiser:
 - training loop:
 
 One point I need to test by coding:
@@ -63,7 +63,7 @@ Answer individually:
 1. What is the input tensor?
 2. What does the model output?
 3. What loss function would fit the task?
-4. What does the optimizer update?
+4. What does the optimiser update?
 5. What must be verified before trusting training results?
 
 ## 4. Core Pattern
@@ -71,7 +71,7 @@ Answer individually:
 Teacher extracts the PyTorch bridge pattern:
 
 ```text
-Tensor/DataLoader → nn.Module → Forward Pass → Loss → Backward Pass → Optimizer Step → Validation
+Tensor/DataLoader → nn.Module → Forward Pass → Loss → Backward Pass → Optimiser Step → Validation
 ```
 
 ## 5. Guided Practice
@@ -96,7 +96,7 @@ Task:
 Input tensor shape:
 Model output:
 Loss:
-Optimizer:
+Optimiser:
 Training evidence:
 Validation evidence:
 Possible failure mode:
