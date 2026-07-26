@@ -28,7 +28,8 @@ By the end of this mission, you can explain the core ideas in **Python values, t
 
 ## Required Resource
 
-https://cs50.harvard.edu/python/
+CS50P edX learning page:
+https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f
 
 Use only the section assigned by your teacher. Do not browse the entire course during class.
 
