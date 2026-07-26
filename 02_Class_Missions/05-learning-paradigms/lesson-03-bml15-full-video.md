@@ -1,18 +1,18 @@
-# Lesson 03 — BML15 Full Video: Learning Paradigms and ML Foundations
+# Lesson 03 — 北京市十一学校《中学机器学习十五讲》完整视频：Learning Paradigms and Machine-Learning Foundations
 
-**Duration:** 70 minutes when following the BML15 split, or two 70-minute sessions if the assigned video is too long for meaningful practice and rebuild.
+**Duration:** 70 minutes when following the 北京市十一学校《中学机器学习十五讲》 split, or two 70-minute sessions if the assigned video is too long for meaningful practice and rebuild.
 
 **Official-aligned resource:** 北京市十一学校《中学机器学习十五讲》
 
 **Bohrium link:** https://www.bohrium.com/courses/5963419225/content?file=8496
 
-**Placement:** This lesson belongs in the Round 1 A/B concept-building sequence because it supports AI foundations, supervised/unsupervised learning, regression, classification, clustering, and paper-test explanations.
+**Placement:** This lesson belongs in the Round 1 A/B concept-building sequence because it supports artificial-intelligence foundations, supervised/unsupervised learning, regression, classification, clustering, and paper-test explanations.
 
 **Detailed split:** [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
 
 ## Timeline
 
-Use the exact lesson row and timing template from the BML15 70-minute split. The normal classroom sequence remains:
+Use the exact lesson row and timing template from the 70-minute split for 北京市十一学校《中学机器学习十五讲》. The normal classroom sequence remains:
 
 **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
 
@@ -24,7 +24,7 @@ Data → Task Type → Model → Training → Prediction → Evaluation Evidence
 
 ## 1. Skill Warm-Up
 
-Watch the assigned BML15 video in full.
+Watch the assigned video from 北京市十一学校《中学机器学习十五讲》 in full.
 
 While watching, complete:
 
@@ -45,8 +45,8 @@ One point I understood:
 One point I am still confused about:
 
 NOAI A/B connection:
-- AI foundations:
-- Machine learning paradigm:
+- Artificial-intelligence foundations:
+- Machine-learning paradigm:
 - Typical task type:
 ```
 
