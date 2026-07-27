@@ -1,145 +1,127 @@
 # Resource Map and NOAI Syllabus Crosswalk
 
-This document maps the 2026 NOAI China A–D syllabus structure to teaching sessions, required resources, student evidence, and major assessments. Resource titles are used instead of fragile timestamps unless a verified timestamp map exists. The teacher must verify URLs, access terms, annual competition rules, model restrictions, and package availability before each cohort begins.
+This document maps the NOAI China A–D syllabus areas to Class Mission modules, full resource names, student evidence, and assessments.
+
+It uses **module paths instead of legacy session numbers** so that the crosswalk remains valid when the lesson bank expands.
+
+The teacher must verify URLs, access terms, annual competition rules, model restrictions, package versions, and platform availability before each cohort begins.
 
 ## Resource Selection Rules
 
-1. One required resource per ordinary lesson.
-2. When a full Bohrium video is assigned, use `02_Class_Missions/shared/full-bohrium-video-classroom-flow.md`.
-3. When a course segment is assigned, name the exact course, module/week, topic, and segment; do not assign an entire playlist during class.
-4. Use Coursera links for Coursera-hosted DeepLearning.AI resources.
-5. Official documentation replaces videos for APIs that change frequently.
-6. A resource is not evidence; the worksheet, guided practice, independent rebuild, oral defence, and fresh-run record are evidence.
-7. Annual NOAI/IOAI rules override this repository.
+1. Use one required resource per ordinary lesson.
+2. Write the complete resource name in student and teacher instructions.
+3. Name the exact course, week, module, chapter, video, task, or timestamp range.
+4. Use Coursera links for Coursera-hosted DeepLearning.AI courses.
+5. Use official documentation as the source of truth for changing APIs.
+6. Watching a resource is not evidence; students must practise, rebuild, explain, and submit proof.
+7. Current official NOAI/IOAI rules override this repository.
+8. Automated tuning is used only after task recognition, validation, data engineering, and a valid baseline are correct.
 
-## Official-Aligned Bohrium Resources
+## Full Resource Names and Links
 
-| Code | Resource | Link | Official-aligned use |
-|---|---|---|---|
-| BML15 | 北京市十一学校《中学机器学习十五讲》 | https://www.bohrium.com/courses/5963419225/content?file=8496 | Round 1 A/B concepts and paper-test preparation |
-| LHY-ML | 台湾大学李宏毅《机器学习》内容精选版 | https://www.bohrium.com/courses/7890895681/content?file=2496 | Round 2 C/D ML/DL concept reinforcement before or after implementation |
-
-## Practical Selected Resources
-
-| Code | Resource | Link | Use rule |
-|---|---|---|---|
-| CS50P | Harvard CS50's Introduction to Programming with Python | https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f | Main Python resource; assign exact verified segments |
-| AIF | AI for Everyone | https://www.coursera.org/learn/ai-for-everyone | Optional AI literacy, ethics, limits, and society |
-| MLS | Machine Learning Specialization | https://www.coursera.org/specializations/machine-learning-introduction | Selected traditional ML concept reinforcement |
-| DLS | Deep Learning Specialization | https://www.coursera.org/specializations/deep-learning | Selected conceptual support for optimisation, CNNs, and sequence models |
-| HML | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | https://github.com/ageron/handson-ml3 | Main practical sklearn and end-to-end ML workflow resource |
-| DLAI-PT | PyTorch for Deep Learning Professional Certificate | https://www.coursera.org/professional-certificates/pytorch-for-deep-learning | Main structured PyTorch course series |
-| DLAI-PT1 | PyTorch: Fundamentals | https://www.coursera.org/learn/pytorch-fundamentals | PyTorch foundations and complete training pipeline |
-| DLAI-PT2 | PyTorch: Techniques and Ecosystem Tools | https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools | TorchVision, Hugging Face, transfer learning, tuning, efficient pipelines |
-| DLAI-PT3 | PyTorch: Advanced Architectures and Deployment | https://www.coursera.org/learn/pytorch-advanced-architectures-and-deployment | Optional advanced architecture, compression, export, and deployment extension |
-| SK | scikit-learn User Guide | https://scikit-learn.org/stable/user_guide.html | Current sklearn API and workflow reference |
-| PT | PyTorch Tutorials | https://docs.pytorch.org/tutorials/ | Current PyTorch API reference |
-
-## Primary Resource Index
-
-| Code | Resource | Assigned scope |
+| Full resource name | Link | Main role |
 |---|---|---|
-| NOAI | Current official NOAI handbook, FAQ, syllabus, and authorised task repositories | format, rules, past tasks, permitted environment |
-| IOAI | IOAI Academy / official task repositories | open-ended, multimodal, small-data, and competition workflow |
-| BML15 | 中学机器学习十五讲 | Round 1 A/B concept spine |
-| LHY-ML | 李宏毅机器学习精选 | ML/DL concept reinforcement |
-| CS50P | CS50 Python | Python foundations and code reading |
-| MLS | Andrew Ng Machine Learning Specialization | selected regression, classification, clustering, trees, ensembles, ML development concepts |
-| DLS | Andrew Ng Deep Learning Specialization | selected deep-learning concepts, not a full five-course route |
-| HML | Hands-On Machine Learning | sklearn, preprocessing, model evaluation, end-to-end workflow |
-| DLAI-PT | DeepLearning.AI PyTorch certificate | structured PyTorch implementation path |
-| SK / PT | Official framework documentation | current API correctness |
-| SQ | StatQuest | statistics, metrics, trees, ensembles clarification |
-| 3B1B | 3Blue1Brown Neural Networks | neural-network, gradient-descent, and backprop intuition |
-| MLCC | Google Machine Learning Crash Course | regression, classification metrics, generalisation, feature handling |
-| CV | OpenCV official/free-course resources | classical image preprocessing and structural baselines |
-| HF-L | Hugging Face LLM Course | tokenisation, transformers, classification, fine-tuning |
-| HF-A | Hugging Face Audio Course | waveforms, spectrograms, classification, ASR/TTS |
-| QWEN | Current Qwen/Hugging Face documentation | local inference, multimodality, quantisation |
+| 北京市十一学校《中学机器学习十五讲》 | https://www.bohrium.com/courses/5963419225/content?file=8496 | official-aligned Round 1 A/B artificial-intelligence and machine-learning concept spine |
+| 台湾大学李宏毅《机器学习》内容精选版 | https://www.bohrium.com/courses/7890895681/content?file=2496 | machine-learning and deep-learning conceptual bridge for Round 2 C/D |
+| Harvard CS50’s Introduction to Programming with Python | https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f | Python foundations and code reading; assign exact timestamps |
+| AI for Everyone | https://www.coursera.org/learn/ai-for-everyone | optional artificial-intelligence literacy, capability limits, ethics, and society |
+| Machine Learning Specialization | https://www.coursera.org/specializations/machine-learning-introduction | selected traditional machine-learning concepts and development strategy |
+| Course 2 — Advanced Learning Algorithms | https://www.coursera.org/learn/advanced-learning-algorithms | trees, ensembles, bias/variance diagnosis, learning curves, error analysis, and iterative development |
+| Deep Learning Specialization | https://www.coursera.org/specializations/deep-learning | selected deep-learning concepts; not a second full curriculum |
+| Course 2 — Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization | https://www.coursera.org/learn/deep-neural-network | regularisation, optimisation, learning-rate decay, Batch Normalization, and hyperparameter tuning |
+| Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | https://github.com/ageron/handson-ml3 | practical scikit-learn workflow, preprocessing, evaluation, trees/ensembles, and end-to-end projects |
+| DeepLearning.AI PyTorch for Deep Learning Professional Certificate | https://www.coursera.org/professional-certificates/pytorch-for-deep-learning | main structured PyTorch course series |
+| Course 1 — PyTorch: Fundamentals | https://www.coursera.org/learn/pytorch-fundamentals | tensors, datasets, dataloaders, neural networks, and training pipelines |
+| Course 2 — PyTorch: Techniques and Ecosystem Tools | https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools | TorchVision, Hugging Face, transfer learning, tuning, Optuna, and efficient pipelines |
+| Course 3 — PyTorch: Advanced Architectures and Deployment | https://www.coursera.org/learn/pytorch-advanced-architectures-and-deployment | optional advanced architectures, compression, export, and deployment |
+| Google Machine Learning Crash Course | https://developers.google.com/machine-learning/crash-course | concise regression, classification, metrics, generalisation, and feature reinforcement |
+| StatQuest Video Index | https://statquest.org/video-index/ | statistics, distributions, metrics, trees, ensembles, and clarification |
+| 3Blue1Brown Neural Networks | https://www.3blue1brown.com/topics/neural-networks | neural-network, gradient-descent, and backpropagation intuition |
+| Scikit-Learn User Guide | https://scikit-learn.org/stable/user_guide.html | current preprocessing, Pipeline, metrics, cross-validation, and tuning APIs |
+| PyTorch Tutorials | https://docs.pytorch.org/tutorials/ | current PyTorch API and implementation reference |
+| Hugging Face LLM Course | https://huggingface.co/learn/llm-course/en/chapter1/1 | tokenisation, Transformers, classification, and fine-tuning |
+| Hugging Face Audio Course | https://huggingface.co/learn/audio-course/en/chapter0/introduction | waveforms, spectrograms, audio classification, automatic speech recognition, and text-to-speech |
+| OpenCV Free Courses | https://opencv.org/university/free-courses/ | classical image preprocessing and structural baselines |
+| Current official Qwen documentation | teacher verifies current official documentation before the cohort | local inference, multimodality, quantisation, and deployment verification |
+| Current official NOAI and IOAI rules, syllabi, and task repositories | teacher archives the current official sources before the cohort | competition scope, task format, allowed tools, runtime, and assessment constraints |
 
 ---
 
 # A. General Computer Skills
 
-| Syllabus item | Sessions | Required resource | Required evidence | Assessed in |
-|---|---:|---|---|---|
-| Python values, expressions, input/output | 3–4 | CS50P exact Week 0 segments | trace tables, robust input program | Round 1 code/MCQ |
-| Sequence, selection, iteration | 5–6 | CS50P Conditionals and Loops segments | boundary table, loop trace | Round 1 code |
-| Strings, lists, dictionaries, tuples | 6 | CS50P Loops/collections segments | transformation and frequency programs | cold trace |
-| Functions | 3–4 | CS50P Functions segments | multi-function program and return trace | oral defence |
-| Modules and packages | 7 | CS50P Libraries + documentation | import/environment record | setup evidence |
-| Files and CSV | 7, 39–40 | CS50P File I/O; HML/Pandas | CSV audit utility | Round 2 baseline |
-| Exceptions and debugging | 4, 47 | CS50P Exceptions; PyTorch debug tasks | traceback diagnosis and debug log | code completion |
-| Sorting and searching | 8 | teacher-selected CS50 algorithms excerpt | paper traces and implementations | Round 1 mixed set |
+| Syllabus area | Class Mission modules | Required resources | Required evidence | Main assessment |
+|---|---|---|---|---|
+| Python values, expressions, variables, and input/output | `01-python-foundations` | Harvard CS50’s Introduction to Programming with Python: exact Week 0 segments | trace tables, type/conversion explanation, robust input/output program | Round 1 code reading and multiple choice |
+| Functions, parameters, return values, and scope | `01-python-foundations` | Harvard CS50’s Introduction to Programming with Python: Functions and Variables segments | multi-function program, return-versus-print explanation, function trace | cold trace and oral defence |
+| Sequence, selection, Boolean logic, and iteration | `02-control-flow-and-data-structures` | Harvard CS50’s Introduction to Programming with Python: Conditionals and Loops segments | boundary table, branch trace, loop trace, independent rebuild | Round 1 code questions |
+| Strings, lists, dictionaries, tuples, and nested structures | `02-control-flow-and-data-structures` | Harvard CS50’s Introduction to Programming with Python: exact collection segments | transformation, frequency table, nested-structure trace | code completion |
+| Exceptions and debugging | `01-python-foundations`, `03-libraries-sorting-searching`, `19-pytorch-foundations` | Harvard CS50’s Introduction to Programming with Python: Exceptions; PyTorch debugging tasks | traceback diagnosis, debug log, corrected code | code-completion and runtime gate |
+| Modules, packages, and documentation | `03-libraries-sorting-searching` | Harvard CS50’s Introduction to Programming with Python: Libraries; Python official documentation | import record, environment note, documentation-use explanation | setup evidence |
+| Files and comma-separated-value data | `03-libraries-sorting-searching`, `16-numpy-pandas-matplotlib` | Harvard CS50’s Introduction to Programming with Python: File I/O; Pandas documentation | file/CSV reader, data-audit table | Round 2 baseline |
+| Sorting and searching | `03-libraries-sorting-searching` | teacher-selected CS50 algorithms material; official NOAI-style paper tasks | paper traces and independent implementation | Round 1 mixed set |
 
-# B. AI Foundations
+# B. Artificial-Intelligence and Machine-Learning Foundations
 
-| Syllabus item | Sessions | Resource | Required evidence | Assessment |
-|---|---:|---|---|---|
-| AI schools and Turing Test | 9 | BML15 + official syllabus; AIF optional | capability-claim evaluation | short answer |
-| Ethics, bias, privacy, risk | 10 | BML15 + official syllabus; AIF optional | structured case analysis | Round 1 scenario |
-| Supervised learning | 11, 13–16 | BML15; MLS optional | task classification and baseline choice | mocks/projects |
-| Unsupervised learning | 11 | BML15; MLS optional | clustering/anomaly task design | concept check |
-| Reinforcement learning | 12 | BML15; MLS Course 3 intro optional | state/action/reward design | concept question |
-| Regression | 13–14 | BML15; MLS/HML/MLCC | calculations and sklearn model | calculation/project |
-| Classification | 15–16 | BML15; MLS/HML/MLCC | threshold table and logistic workflow | code/project |
-| Clustering | 11 + extension | BML15; MLS optional | cluster interpretation and limitations | oral defence |
-| Probability/statistics/normal distribution | 17–18 | SQ; BML15 when aligned | hand calculations | Round 1 calculations |
-| Distance and standardisation | 18, 39 | SQ/NumPy/HML | raw vs scaled comparison | Round 1/2 |
-| Accuracy, precision, recall, specificity, F1 | 19–20 | MLCC/SQ/HML | confusion-matrix worksheet | Round 1 |
-| ROC/AUC and threshold choice | 20 | MLCC/SQ/HML | metric decision memo | multimodal mock |
-| Cross-validation | 21, 44 | SK/HML | split design and CV report | Round 2 |
-| Under/overfitting | 22–23 | BML15; MLS/HML/MLCC | curve diagnosis | short answer |
-| Regularisation | 23 | MLS/DLS/HML | controlled experiment | Round 1/2 |
-| Decision trees | 24 | MLS/HML/SQ | impurity and depth experiment | Round 1 |
-| Bagging/random forest | 25 | MLS/HML/SQ | tree vs forest comparison | short answer |
-| Boosting | 26 | MLS/HML/SQ | three-model comparison | model selection |
-| Perceptron/neuron | 27 | LHY-ML/3B1B/DLS selected | numerical neuron and XOR explanation | Round 1 |
-| MLP/forward propagation | 28 | LHY-ML/3B1B/DLS selected | hand forward pass | Round 1 |
-| Gradient descent/backpropagation | 29–30 | LHY-ML/3B1B/DLS selected | computational-graph derivation | Round 1 |
-| Optimisers Adam/AdamW | 31 | LHY-ML/DLS/DLAI-PT1/PT | controlled optimiser comparison | oral/implementation |
-| CNN concepts | 32–34 | LHY-ML/DLS | convolution calculation and shape reasoning | Round 1 |
-| Activation, output, loss functions | 27, 33–34 | LHY-ML/3B1B/DLS/DLAI-PT1 | role comparison and correct loss code | Round 1/PyTorch |
-| Train/validation/test and cleaning | 21–23, 39–43 | BML15/MLS/HML/SK | validation memo and pipeline | Round 2 gate |
-| LLM principles | 56–57 | HF-L/QWEN + official syllabus | structured-output and offline package | concept + Round 2 |
+| Syllabus area | Class Mission modules | Required resources | Required evidence | Main assessment |
+|---|---|---|---|---|
+| Artificial-intelligence schools, Turing Test, capability boundaries | `04-ai-foundations-and-ethics` | 北京市十一学校《中学机器学习十五讲》; current official NOAI syllabus | capability-claim analysis and example/non-example table | short answer |
+| Ethics, bias, privacy, safety, and responsibility | `04-ai-foundations-and-ethics` | current official syllabus; 北京市十一学校《中学机器学习十五讲》; AI for Everyone optional | structured case analysis | Round 1 scenario |
+| Supervised, unsupervised, and reinforcement learning | `05-learning-paradigms` | 北京市十一学校《中学机器学习十五讲》; selected Machine Learning Specialization content | task-type sorting, label/evidence diagram, state/action/reward design | concept check and scenario explanation |
+| Regression | `06-linear-regression` | 北京市十一学校《中学机器学习十五讲》; selected Machine Learning Specialization content | paper calculations, residual/cost explanation, baseline model | Round 1 calculations and Round 2 project |
+| Classification and logistic regression | `07-logistic-regression` | 北京市十一学校《中学机器学习十五讲》; selected Machine Learning Specialization content | sigmoid/threshold table, decision-boundary explanation, logistic workflow | code and project |
+| Probability, statistics, normal distribution, and distance | `08-statistics-probability-distance` | StatQuest; selected 北京市十一学校《中学机器学习十五讲》 content | hand calculations and raw-versus-standardised comparison | Round 1 calculations |
+| Confusion matrix, accuracy, precision, recall, specificity, F1, ROC/AUC | `09-model-evaluation` | Google Machine Learning Crash Course; StatQuest; Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | confusion-matrix worksheet and metric decision memo | Round 1 and Round 2 metric gate |
+| Cross-validation and evaluation design | `09-model-evaluation`, `18-sklearn-workflow` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Scikit-Learn User Guide | split diagram, cross-validation result, reliability memo | Round 2 gate |
+| Underfitting, overfitting, learning curves, and regularisation | `10-generalization-regularization`, `28-competition-sprint-task-data-tuning` | selected Machine Learning Specialization content; Course 2 — Advanced Learning Algorithms; Course 2 — Improving Deep Neural Networks | bias/variance diagnosis and controlled remedy | short answer and tuning log |
+| Decision trees, bagging, random forests, and boosting | `11-trees-and-ensembles` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; selected Machine Learning Specialization content; StatQuest | impurity calculation and model-comparison table | Round 1 and model selection |
+| Perceptrons, neurons, multilayer perceptrons, and forward propagation | `12-neural-network-foundations` | 台湾大学李宏毅《机器学习》内容精选版; 3Blue1Brown Neural Networks; selected Deep Learning Specialization content | numerical neuron, parameter count, hand forward pass | Round 1 short answer |
+| Gradient descent and backpropagation | `13-backprop-optimization` | 台湾大学李宏毅《机器学习》内容精选版; 3Blue1Brown Neural Networks; selected Deep Learning Specialization content | computational-graph trace and gradient explanation | Round 1 and oral defence |
+| Adam, AdamW, learning-rate decay, and optimisation choices | `13-backprop-optimization`, `19-pytorch-foundations`, `28-competition-sprint-task-data-tuning` | Course 2 — Improving Deep Neural Networks; Course 1 — PyTorch: Fundamentals; PyTorch Tutorials | controlled optimiser/learning-rate experiment | implementation and tuning log |
+| Convolutional-neural-network concepts and shapes | `14-cnn-foundations` | 台湾大学李宏毅《机器学习》内容精选版; Course 4 — Convolutional Neural Networks from the Deep Learning Specialization | convolution and output-shape calculations | Round 1 short answer |
 
 # C. Advanced Computer Skills
 
-| Syllabus item | Sessions | Resource | Evidence | Assessment |
-|---|---:|---|---|---|
-| NumPy arrays and vectorisation | 39, 45 | NumPy/HML/DLAI-PT1/PT | scaling utility and shape ledger | coding gate |
-| Pandas data manipulation | 40–43 | Pandas/HML/SK | reproducible audit notebook | tabular mock |
-| Matplotlib visualisation | 40 + projects | Matplotlib/HML | diagnostic figures | report rubric |
-| Missing values and categories | 41, 43 | HML/SK | mixed-type pipeline | tabular mock |
-| Feature engineering | 42 | HML/MLCC | before/after experiment | Round 2 |
-| Windows, lags, moments | 42, 62 | teacher/IOAI notes | leak-free feature table | AI4Science mock |
-| Image augmentation | 49 | DLAI-PT2/PT/torchvision | augmentation experiment | image project |
-| Tokenisation and vocabulary | 51 | HF-L/DLAI-PT2 selected | collator and shape tests | NLP project |
-| Embeddings | 42, 51–53 | HF-L/DLAI-PT2 | embedding workflow explanation | oral defence |
-| Image patching | 42, 57 | QWEN/multimodal docs | patch/sequence calculation | multimodal task |
-| Reproducible notebook workflow | all coding sessions | HML/DLAI-PT/PT/SK | fresh-run evidence | notebook rubric |
+| Syllabus area | Class Mission modules | Required resources | Required evidence | Main assessment |
+|---|---|---|---|---|
+| NumPy arrays and vectorisation | `16-numpy-pandas-matplotlib`, `19-pytorch-foundations` | NumPy documentation; Course 1 — PyTorch: Fundamentals | vectorised utility and tensor/array shape ledger | coding gate |
+| Pandas data manipulation and audit | `16-numpy-pandas-matplotlib`, `28-competition-sprint-task-data-tuning` | Pandas documentation; Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | reproducible audit notebook and missing-value table | tabular mock |
+| Matplotlib visualisation | `16-numpy-pandas-matplotlib` and project modules | Matplotlib documentation; Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | labelled diagnostic figures | report rubric |
+| Missing values, categorical data, scaling, and leakage-safe preprocessing | `17-data-cleaning-feature-engineering`, `18-sklearn-workflow`, `28-competition-sprint-task-data-tuning` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Scikit-Learn User Guide | Pipeline/ColumnTransformer and leakage checklist | Round 2 gate |
+| Feature engineering | `17-data-cleaning-feature-engineering`, `28-competition-sprint-task-data-tuning` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; task-specific official documentation | feature hypothesis, before/after validation result | project and sprint |
+| Image augmentation and transforms | `20-computer-vision` | Course 2 — PyTorch: Techniques and Ecosystem Tools; PyTorch/torchvision tutorials | augmentation policy and controlled experiment | image project |
+| Tokenisation, vocabulary, padding, and embeddings | `21-nlp-sequence-models` | Hugging Face LLM Course; Course 2 — PyTorch: Techniques and Ecosystem Tools | tokenizer/collator tests and shape ledger | natural-language-processing project |
+| Audio features and spectrograms | `22-audio-speech` | Hugging Face Audio Course; torchaudio documentation | waveform/spectrogram pipeline | audio reproduction |
+| Reproducible notebook workflow | all coding modules | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; official framework documentation | fresh-runtime evidence, environment record, AI-use note | notebook rubric |
 
-# D. Advanced AI Skills
+# D. Advanced Artificial-Intelligence Skills
 
-| Syllabus item | Sessions | Resource | Evidence | Assessment |
-|---|---:|---|---|---|
-| PyTorch tensors/devices | 45 | DLAI-PT1/PT | tensor audit utility | PyTorch gate |
-| Dataset/DataLoader/nn.Module | 46 | DLAI-PT1/PT | independent rebuild | PyTorch gate |
-| Autograd/training loop | 46–47 | DLAI-PT1/PT | full train/validate loop | Round 2 |
-| CPU/GPU movement | 45–47 | DLAI-PT1/PT | device-safe code | fresh-run check |
-| Mixed precision | 47 | PT AMP; DLAI-PT selected | controlled AMP test | oral defence |
-| Initialisation/batch normalisation | 31, 34 + extension | DLS/DLAI-PT1/PT | architecture comparison | extension |
-| CNN/computer vision implementation | 48–50 | DLAI-PT2/PT/CV | classical baseline + transfer model | image mock |
-| Detection/segmentation | 50 | PT tutorials; DLAI-PT3 optional | IoU/error analysis | extension task |
-| RNN/LSTM | 52 | LHY-ML/DLS/PT | sequence model and shape ledger | NLP reproduction |
-| NLP/transformer classification | 51–53 | HF-L/DLAI-PT2 | simple vs pretrained comparison | NLP project |
-| Audio classification | 54–55 | HF-A | source-aware classifier | audio reproduction |
-| ASR/TTS | 55 | HF-A | pipeline evaluation | domain task |
-| Generative AI/LLM API | 56 | HF-L/current API docs | validated structured-output utility | Round 2 |
-| Qwen local deployment | 57 | QWEN docs + annual rules | offline smoke test | readiness gate |
-| Multimodality | 57, 66 | QWEN/IOAI | modality baseline comparison | six-hour mock |
-| Advanced architecture/deployment | extension | DLAI-PT3/PT official docs | efficiency/export/deployment memo | IOAI extension |
-| Competition workflow | 1, 58–67 | IOAI/NOAI | baseline, validation, experiments, submission | timed mocks |
+| Syllabus area | Class Mission modules | Required resources | Required evidence | Main assessment |
+|---|---|---|---|---|
+| PyTorch tensors, devices, datasets, dataloaders, neural-network modules, autograd, and loops | `19-pytorch-foundations` | Course 1 — PyTorch: Fundamentals; PyTorch Tutorials | tensor audit, custom Dataset/DataLoader, complete train/validate loop | PyTorch gate |
+| Computer vision and transfer learning | `20-computer-vision` | Course 2 — PyTorch: Techniques and Ecosystem Tools; PyTorch/torchvision tutorials; OpenCV resources | classical baseline, neural baseline, transfer model, image error analysis | image mock |
+| Detection and segmentation | `20-computer-vision` | PyTorch official tutorials; Course 3 — PyTorch: Advanced Architectures and Deployment optional | intersection-over-union and failure analysis | extension task |
+| Recurrent neural networks and long short-term memory networks | `21-nlp-sequence-models` | 台湾大学李宏毅《机器学习》内容精选版; Course 5 — Sequence Models from the Deep Learning Specialization; PyTorch Tutorials | sequence-shape ledger and reproduction | natural-language-processing reproduction |
+| Transformer text classification | `21-nlp-sequence-models` | Hugging Face LLM Course; Course 2 — PyTorch: Techniques and Ecosystem Tools | simple-versus-pretrained comparison | project |
+| Audio classification, automatic speech recognition, and text-to-speech | `22-audio-speech` | Hugging Face Audio Course | source-aware classifier and pipeline evaluation | audio project |
+| Large-language-model API and structured output | `23-llm-generative-ai` | Hugging Face LLM Course; current official API documentation | validated structured-output utility | Round 2 task |
+| Qwen local deployment and multimodality | `23-llm-generative-ai` | current official Qwen documentation; current official rules | offline smoke test and modality-baseline comparison | readiness gate and multimodal mock |
+| Advanced architecture, compression, export, and deployment | selected extensions in Modules 20–24 | Course 3 — PyTorch: Advanced Architectures and Deployment; official PyTorch documentation | efficiency/export/deployment memo | IOAI extension |
+
+# Competition Sprint Crosswalk
+
+| Sprint skill | Module 28 lessons | Required resources | Required evidence |
+|---|---|---|---|
+| Task recognition | Lessons 01–02 | current official NOAI/IOAI task statements; Course 2 — Advanced Learning Algorithms selected material | task-recognition sheet and baseline/metric memo |
+| Data audit and validation | Lesson 03 | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Scikit-Learn User Guide | audit table, split design, leakage checklist |
+| Data cleaning and feature engineering | Lesson 04 | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; task-specific documentation | feature hypothesis and before/after result |
+| Classical machine-learning tuning | Lesson 05 | Course 2 — Advanced Learning Algorithms, Week 3: Advice for Applying Machine Learning | diagnosis-first experiment log |
+| Deep-learning tuning | Lesson 06 | Course 2 — Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization | learning-rate, regularisation, batch-size, and optimiser record |
+| PyTorch schedulers, Optuna, and efficiency | Lesson 07 | Course 2 — PyTorch: Techniques and Ecosystem Tools, Module 1: Hyperparameter Optimization | manual-versus-automated comparison, search-space rationale, efficiency record |
+| Full sprint simulation | Lesson 08 | current official task format and permitted tools | full solution package, fresh-runtime record, submission validation, postmortem |
+
+Use the exact video assignments in:
+
+`02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`
 
 ---
 
@@ -147,24 +129,26 @@ This document maps the 2026 NOAI China A–D syllabus structure to teaching sess
 
 | Assessment | Main competencies |
 |---|---|
-| Entry checks | retrieval, misconceptions, prerequisite readiness |
-| Lesson worksheets | definitions, calculations, code tracing, scenario reasoning |
-| Independent rebuilds | implementation without copying |
-| Oral defence | conceptual ownership and AI-use accountability |
-| Round 1 mocks | broad A/B coverage, code, calculations, explanations |
-| Tabular mock | audit, validation, pipeline, threshold, submission |
-| Multimodal mock | single-modality baselines, fusion, stress tests, offline execution |
-| Final conference | cold knowledge, code defence, reproducibility, time management |
+| Entry checks | retrieval, misconceptions, and prerequisite readiness |
+| Lesson worksheets | definitions, calculations, code tracing, and scenario reasoning |
+| Independent rebuilds | implementation or reasoning without copying |
+| Oral defence | conceptual ownership and artificial-intelligence-use accountability |
+| Round 1 mocks | broad A/B coverage, code, calculations, and explanations |
+| Tabular mock | audit, validation, pipeline, metric, threshold, and submission |
+| Domain projects | computer vision, natural-language processing, audio, large language models, and multimodality |
+| Competition sprint | task recognition, data engineering, diagnosis-first tuning, efficiency, and submission risk |
+| Final conference | cold knowledge, code defence, reproducibility, and time management |
 
 # Maintenance Checklist Before Every Cohort
 
-- [ ] archive the current official syllabus and rules;
-- [ ] confirm Round 1/2 duration and permitted tools;
-- [ ] confirm internet, API, AI-assistant, and pretrained-model rules;
-- [ ] confirm package/runtime/GPU limits;
+- [ ] archive the current official NOAI and IOAI syllabus and rules;
+- [ ] confirm Round 1 and Round 2 duration and permitted tools;
+- [ ] confirm internet, API, artificial-intelligence-assistant, and pretrained-model rules;
+- [ ] confirm package, runtime, GPU, storage, and submission limits;
 - [ ] verify every required resource link and access requirement;
-- [ ] verify exact course modules and assigned segments;
-- [ ] run every starter environment from a fresh account/runtime;
-- [ ] keep hidden labels and scoring keys outside the student repository;
+- [ ] verify exact course modules, videos, durations, chapters, and timestamps;
+- [ ] rerun starter notebooks and scripts in the final student environment;
+- [ ] validate Module 28 Optuna, scheduler, and efficiency activities;
+- [ ] keep hidden labels, answer keys, and scoring packages outside the public repository;
 - [ ] confirm the teacher-key repository is private;
-- [ ] update the crosswalk when the official syllabus changes.
+- [ ] update this crosswalk whenever the official syllabus or curriculum architecture changes.
