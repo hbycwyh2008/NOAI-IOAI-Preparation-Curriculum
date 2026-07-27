@@ -1,38 +1,50 @@
-name: Normalise lesson timelines
+name: Validate curriculum structure
 
 on:
   push:
     branches: [main]
     paths:
+      - 'README.md'
+      - '00_Course_Overview/**'
+      - '02_Class_Missions/**'
+      - '10_Ready_to_Teach_Pack/**'
       - 'scripts/normalize_lesson_timelines.py'
       - 'scripts/validate_curriculum.py'
+      - 'scripts/validate_curriculum_structure.py'
+      - '.github/workflows/normalise-lesson-timelines.yml'
+  pull_request:
+    paths:
+      - 'README.md'
+      - '00_Course_Overview/**'
       - '02_Class_Missions/**'
+      - '10_Ready_to_Teach_Pack/**'
+      - 'scripts/normalize_lesson_timelines.py'
+      - 'scripts/validate_curriculum.py'
+      - 'scripts/validate_curriculum_structure.py'
       - '.github/workflows/normalise-lesson-timelines.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  normalise:
+  validate-structure:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Add explicit timelines and update overview
-        run: python scripts/normalize_lesson_timelines.py
-      - name: Validate curriculum structure
-        run: python scripts/validate_curriculum.py
-      - name: Commit generated updates
+
+      - name: Validate module counts, lesson links, classroom flow, and overview consistency
+        run: python scripts/validate_curriculum_structure.py
+
+      - name: Confirm legacy entry points are non-destructive
         run: |
-          if git diff --quiet; then
-            echo 'No changes required.'
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add 00_Course_Overview 02_Class_Missions
-          git commit -m 'Add explicit timelines to every lesson'
-          git push
+          python scripts/validate_curriculum.py
+          python scripts/normalize_lesson_timelines.py
