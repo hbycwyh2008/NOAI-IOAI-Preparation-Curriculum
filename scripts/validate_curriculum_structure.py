@@ -66,6 +66,18 @@ SPECIAL_LONG_OR_CONFERENCE_FILES = {
     "28-competition-sprint-task-data-tuning/lesson-08-full-sprint-simulation.md",
 }
 
+REQUIRED_FILES = (
+    "00_Course_Overview/README.md",
+    "00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md",
+    "10_Ready_to_Teach_Pack/Phase_8_Competition_Sprint.md",
+    "10_Ready_to_Teach_Pack/Curriculum_Readiness_Audit.md",
+    "03_Templates/Competition_Sprint_Experiment_Log_Template.md",
+    "03_Templates/Competition_Sprint_Submission_Checklist.md",
+    "06_Starter_Code/ready_to_teach/competition_sprint_experiment_log.py",
+    "06_Starter_Code/ready_to_teach/manual_tuning_template.py",
+    "06_Starter_Code/ready_to_teach/optuna_tuning_template.py",
+)
+
 LINK_PATTERN = re.compile(r"\(([^)]+\.md)\)")
 
 
@@ -73,62 +85,65 @@ def lesson_files(folder: Path) -> list[Path]:
     return sorted(folder.rglob("lesson-*.md"))
 
 
-def markdown_links(readme: Path) -> set[Path]:
+def linked_lesson_files(module_folder: Path) -> set[Path]:
     linked: set[Path] = set()
-    text = readme.read_text(encoding="utf-8")
-    for raw_target in LINK_PATTERN.findall(text):
-        target = raw_target.split("#", 1)[0].strip()
-        if not target or "://" in target:
-            continue
-        resolved = (readme.parent / target).resolve()
-        if resolved.name.startswith("lesson-") and resolved.suffix == ".md":
-            linked.add(resolved)
+    for readme in module_folder.rglob("README.md"):
+        text = readme.read_text(encoding="utf-8")
+        for raw_target in LINK_PATTERN.findall(text):
+            target = raw_target.split("#", 1)[0].strip()
+            if not target or "://" in target:
+                continue
+            resolved = (readme.parent / target).resolve()
+            if resolved.name.startswith("lesson-") and resolved.suffix == ".md":
+                linked.add(resolved)
     return linked
 
 
-def validate_module_links(module: str, errors: list[str]) -> None:
+def validate_module(module: str, expected: int, errors: list[str]) -> int:
     folder = MISSIONS / module
-    actual = {path.resolve() for path in lesson_files(folder)}
-    linked: set[Path] = set()
-    for readme in folder.rglob("README.md"):
-        linked.update(markdown_links(readme))
+    if not folder.exists():
+        errors.append(f"Missing module folder: {module}")
+        return 0
 
-    missing_targets = sorted(path for path in linked if not path.exists())
-    orphaned = sorted(actual - linked)
+    files = lesson_files(folder)
+    if len(files) != expected:
+        errors.append(f"{module}: expected {expected} lesson files, found {len(files)}")
 
-    for path in missing_targets:
+    actual = {path.resolve() for path in files}
+    linked = linked_lesson_files(folder)
+
+    for path in sorted(linked - actual):
         errors.append(f"Broken lesson link in {module}: {path}")
-    for path in orphaned:
-        errors.append(f"Lesson file is not linked from a README in {module}: {path.relative_to(ROOT)}")
+    for path in sorted(actual - linked):
+        errors.append(
+            f"Lesson file is not linked from a README in {module}: {path.relative_to(ROOT)}"
+        )
+
+    for path in files:
+        relative = path.relative_to(MISSIONS).as_posix()
+        text = path.read_text(encoding="utf-8")
+        lines = text.splitlines()
+
+        if not lines or not lines[0].startswith("# "):
+            errors.append(f"Missing H1 title: {relative}")
+        if "Evidence" not in text and "evidence" not in text:
+            errors.append(f"Missing evidence requirement: {relative}")
+        if relative in SPECIAL_LONG_OR_CONFERENCE_FILES:
+            continue
+        for marker in FLOW_MARKERS:
+            if marker not in text:
+                errors.append(f"Missing classroom-flow marker '{marker}': {relative}")
+
+    return len(files)
 
 
-def validate_lesson_content(path: Path, errors: list[str]) -> None:
-    relative = path.relative_to(MISSIONS).as_posix()
-    text = path.read_text(encoding="utf-8")
-    lines = text.splitlines()
-
-    if not lines or not lines[0].startswith("# "):
-        errors.append(f"Missing H1 title: {relative}")
-
-    if "Evidence" not in text and "evidence" not in text:
-        errors.append(f"Missing evidence requirement: {relative}")
-
-    if relative in SPECIAL_LONG_OR_CONFERENCE_FILES:
-        return
-
-    for marker in FLOW_MARKERS:
-        if marker not in text:
-            errors.append(f"Missing classroom-flow marker '{marker}': {relative}")
-
-
-def require_text(path: str, required: tuple[str, ...], errors: list[str]) -> None:
+def require_text(path: str, markers: tuple[str, ...], errors: list[str]) -> None:
     file_path = ROOT / path
     if not file_path.exists():
         errors.append(f"Missing required document: {path}")
         return
-
     text = file_path.read_text(encoding="utf-8")
-    for marker in required:
+    for marker in markers:
         if marker not in text:
             errors.append(f"'{marker}' not found in {path}")
 
@@ -136,48 +151,33 @@ def require_text(path: str, required: tuple[str, ...], errors: list[str]) -> Non
 def main() -> int:
     errors: list[str] = []
 
-    mainline_total = 0
-    for module, expected in EXPECTED_MAINLINE_COUNTS.items():
-        folder = MISSIONS / module
-        if not folder.exists():
-            errors.append(f"Missing module folder: {module}")
-            continue
-
-        files = lesson_files(folder)
-        actual = len(files)
-        mainline_total += actual
-        if actual != expected:
-            errors.append(f"{module}: expected {expected} lesson files, found {actual}")
-
-        validate_module_links(module, errors)
-        for path in files:
-            validate_lesson_content(path, errors)
+    mainline_total = sum(
+        validate_module(module, expected, errors)
+        for module, expected in EXPECTED_MAINLINE_COUNTS.items()
+    )
 
     resource_folder = MISSIONS / RESOURCE_HUB
-    resource_files = lesson_files(resource_folder) if resource_folder.exists() else []
-    if len(resource_files) != EXPECTED_RESOURCE_HUB_COUNT:
-        errors.append(
-            f"{RESOURCE_HUB}: expected {EXPECTED_RESOURCE_HUB_COUNT} lesson files, "
-            f"found {len(resource_files)}"
-        )
-    else:
-        validate_module_links(RESOURCE_HUB, errors)
+    resource_total = validate_module(
+        RESOURCE_HUB,
+        EXPECTED_RESOURCE_HUB_COUNT,
+        errors,
+    )
 
-    public_total = mainline_total + len(resource_files)
     if mainline_total != EXPECTED_MAINLINE_TOTAL:
         errors.append(
             f"Expected {EXPECTED_MAINLINE_TOTAL} mainline lesson files, found {mainline_total}"
         )
-    if public_total != EXPECTED_PUBLIC_TOTAL:
+    if mainline_total + resource_total != EXPECTED_PUBLIC_TOTAL:
         errors.append(
-            f"Expected {EXPECTED_PUBLIC_TOTAL} total public lesson files, found {public_total}"
+            f"Expected {EXPECTED_PUBLIC_TOTAL} total public lesson files, "
+            f"found {mainline_total + resource_total}"
         )
 
-    require_text(
-        "README.md",
-        ("75 sessions", "155 lessons", "Competition sprint"),
-        errors,
-    )
+    for relative in REQUIRED_FILES:
+        if not (ROOT / relative).exists():
+            errors.append(f"Missing required file: {relative}")
+
+    require_text("README.md", ("75 sessions", "155 lessons", "Competition sprint"), errors)
     require_text(
         "00_Course_Overview/Pacing_Guide.md",
         ("75 sessions", "155 lessons", "70-Minute Bohrium Exception"),
@@ -188,11 +188,7 @@ def main() -> int:
         ("75 scheduled sessions", "Phase 8 — Competition Sprint"),
         errors,
     )
-    require_text(
-        "02_Class_Missions/README.md",
-        ("28 — Competition Sprint",),
-        errors,
-    )
+    require_text("02_Class_Missions/README.md", ("28 — Competition Sprint",), errors)
     require_text(
         "10_Ready_to_Teach_Pack/README.md",
         ("Phase_8_Competition_Sprint.md", "Curriculum_Readiness_Audit.md"),
@@ -200,7 +196,7 @@ def main() -> int:
     )
     require_text(
         "10_Ready_to_Teach_Pack/Resource_Map_and_Syllabus_Crosswalk.md",
-        ("Competition Sprint Crosswalk", "Hyperparameter Optimization with Optuna"),
+        ("Competition Sprint Crosswalk", "Optuna"),
         errors,
     )
 
@@ -212,8 +208,8 @@ def main() -> int:
 
     print("Curriculum structure validation passed.")
     print(f"Mainline lesson files: {mainline_total}")
-    print(f"Optional Bohrium resource lesson files: {len(resource_files)}")
-    print(f"Total public lesson files: {public_total}")
+    print(f"Optional Bohrium resource lesson files: {resource_total}")
+    print(f"Total public lesson files: {mainline_total + resource_total}")
     return 0
 
 
