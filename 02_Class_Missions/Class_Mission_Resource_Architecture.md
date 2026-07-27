@@ -25,14 +25,14 @@ One ordinary lesson should normally have **one required resource**. The tables b
 | 台湾大学李宏毅《机器学习》内容精选版 on Bohrium | machine-learning and deep-learning conceptual bridge for Round 2 C/D |
 | Harvard CS50’s Introduction to Programming with Python on edX | Python syntax, functions, conditionals, loops, exceptions, libraries, and files |
 | AI for Everyone on Coursera | optional AI-literacy, capability, ethics, risk, and society support |
-| Machine Learning Specialization on Coursera | selected traditional machine-learning explanations: learning paradigms, regression, classification, trees, and ensembles |
+| Machine Learning Specialization on Coursera | selected traditional machine-learning explanations: learning paradigms, regression, classification, trees, ensembles, evaluation, and model-development advice |
 | Google Machine Learning Crash Course | concise reinforcement for regression, classification, metrics, generalisation, and data features |
-| Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | practical scikit-learn workflow, preprocessing, evaluation, model comparison, and project habits |
+| Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | practical scikit-learn workflow, preprocessing, evaluation, model comparison, project habits, and data engineering |
 | StatQuest | statistics, distributions, metrics, trees, ensembles, and model-evaluation clarification |
 | 3Blue1Brown Neural Networks | neural-network, gradient-descent, and backpropagation intuition |
-| Deep Learning Specialization on Coursera | selected deep-learning concepts: optimisation, convolutional neural networks, project strategy, and sequence models |
+| Deep Learning Specialization on Coursera | selected deep-learning concepts: optimisation, convolutional neural networks, project strategy, sequence models, and hyperparameter tuning |
 | PyTorch: Fundamentals on Coursera | main structured PyTorch foundation course |
-| PyTorch: Techniques and Ecosystem Tools on Coursera | selected transfer learning, TorchVision, Hugging Face, tuning, and efficient-training content |
+| PyTorch: Techniques and Ecosystem Tools on Coursera | selected transfer learning, TorchVision, Hugging Face, tuning, Optuna, scheduling, and efficient-training content |
 | PyTorch: Advanced Architectures and Deployment on Coursera | optional advanced architecture, compression, export, and deployment extension |
 | scikit-learn User Guide | current scikit-learn APIs, pipelines, metrics, cross-validation, and tuning |
 | PyTorch official tutorials | current PyTorch APIs and implementation verification |
@@ -112,7 +112,7 @@ One ordinary lesson should normally have **one required resource**. The tables b
 | `22-audio-speech` | waveform, sampling, spectrogram/Mel features, audio classification, automatic speech recognition, and text-to-speech | Hugging Face Audio Course and documentation | PyTorch and torchaudio official documentation; official NOAI audio-style task materials |
 | `23-llm-generative-ai` | large-language-model principles, prompting, structured output, APIs, Qwen local deployment, multimodality, and validation | current official Qwen documentation; Hugging Face LLM Course and documentation; current official API documentation | PyTorch: Advanced Architectures and Deployment as an optional Transformer/deployment extension; current official annual rules |
 
-**Phase rule:** the DeepLearning.AI PyTorch for Deep Learning Professional Certificate is the main structured PyTorch series. PyTorch: Fundamentals supports the PyTorch foundation module; PyTorch: Techniques and Ecosystem Tools supports selected computer-vision, natural-language-processing, and project lessons; PyTorch: Advanced Architectures and Deployment is an optional advanced extension. PyTorch official tutorials remain the source of truth for current APIs.
+**Phase rule:** the DeepLearning.AI PyTorch for Deep Learning Professional Certificate is the main structured PyTorch series. PyTorch: Fundamentals supports the PyTorch foundation module; PyTorch: Techniques and Ecosystem Tools supports selected computer-vision, natural-language-processing, tuning, and project lessons; PyTorch: Advanced Architectures and Deployment is an optional advanced extension. PyTorch official tutorials remain the source of truth for current APIs.
 
 # Phase 7 — Competition Integration
 
@@ -123,6 +123,14 @@ One ordinary lesson should normally have **one required resource**. The tables b
 | `26-mock-contests` | timed Round 1 and Round 2 simulations, reliability, fresh-runtime checks, and final readiness conference | current official rules and task format | all selected resources only for permitted preparation and review |
 
 **Phase rule:** Modules 24–26 are task-driven. The resource is chosen by the task modality; no external course overrides official rules or competition constraints.
+
+# Phase 8 — Competition Sprint: Task Recognition, Data Engineering, and Hyperparameter Tuning
+
+| Module | Main content | Primary resources | Supporting resources |
+|---|---|---|---|
+| `28-competition-sprint-task-data-tuning` | rapid task recognition, baseline and metric selection, data audit, validation and leakage, data engineering, classical model tuning, deep-learning tuning, PyTorch automated tuning, efficiency, and full sprint simulation | official NOAI/IOAI tasks; Course 2 — Advanced Learning Algorithms from the Machine Learning Specialization; Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Course 2 — Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization; Course 2 — PyTorch: Techniques and Ecosystem Tools | scikit-learn User Guide; PyTorch official tutorials; Course 1 — PyTorch: Fundamentals; task-specific Hugging Face, Qwen, OpenCV, NumPy, Pandas, and Matplotlib documentation |
+
+**Phase rule:** this is a late-stage integration chapter. Students must already be able to build a valid baseline. Tuning is permitted only after the task, metric, split, data pipeline, and baseline are correct. Lessons 05–07 use the exact Coursera video selections listed in `28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`.
 
 # Official Bohrium Resource Hub
 
@@ -148,6 +156,7 @@ Module 27 is a **resource hub**, not an additional independent curriculum phase.
 22–23       Hugging Face Audio Course / Hugging Face LLM Course + Qwen and current official documentation
 24–26       Official NOAI / IOAI tasks, reproductions, and mock contests
 27          北京市十一学校《中学机器学习十五讲》 / 台湾大学李宏毅《机器学习》内容精选版 Bohrium resource hub
+28          Competition sprint: task recognition → data engineering → tuning → full simulation
 ```
 
 # Teacher Assignment Rule
@@ -155,7 +164,7 @@ Module 27 is a **resource hub**, not an additional independent curriculum phase.
 For every lesson, the teacher must name:
 
 1. the exact full resource name;
-2. the exact course, module, chapter, or timestamp range;
+2. the exact course, module, chapter, video title, or timestamp range;
 3. what students must extract from the resource;
 4. what Guided Practice follows;
 5. what students must rebuild independently;
