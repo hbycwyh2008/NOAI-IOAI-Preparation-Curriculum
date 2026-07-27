@@ -36,6 +36,25 @@ Use the dedicated resource map:
 
 The map gives the exact Coursera course, week or module, video title, duration, and use in Lessons 05–07.
 
+## Executable Sprint Assets
+
+Use these public starter files from `06_Starter_Code/ready_to_teach/`:
+
+- `competition_sprint_experiment_log.py` — create and validate a controlled-experiment log;
+- `manual_tuning_template.py` — practise one-variable-at-a-time tuning without touching the test split;
+- `optuna_tuning_template.py` — compare manual tuning with a small, justified Optuna search;
+- `validate_submission.py` — verify output row count, schema, identifiers, ranges, and missing values.
+
+These files are scaffolds, not complete competition solutions. Students must adapt the metric, split, model, search space, and error analysis to the actual task.
+
+## Student Templates
+
+Use:
+
+- [`Competition Sprint Experiment Log Template`](../../03_Templates/Competition_Sprint_Experiment_Log_Template.md)
+- [`Competition Sprint Submission Checklist`](../../03_Templates/Competition_Sprint_Submission_Checklist.md)
+- [`Round 2 Notebook Lab Template`](../../03_Templates/Round_2_Notebook_Lab_Template.md)
+
 ## Resource Structure
 
 | Sprint component | Primary resources |
@@ -52,11 +71,14 @@ The map gives the exact Coursera course, week or module, video title, duration, 
 
 1. Do not tune before a valid baseline exists.
 2. Do not tune on the test set.
-3. Do not change the data pipeline, model family, metric, and five hyperparameters at the same time.
-4. Record every experiment with hypothesis, change, validation result, runtime, and decision.
+3. Do not change the data pipeline, model family, metric, and several hyperparameters at the same time.
+4. Record every experiment with hypothesis, single change, validation result, runtime, and decision.
 5. Prefer a reproducible improvement over an unexplained leaderboard jump.
 6. Stop tuning when the expected gain is smaller than the remaining submission and validation risk.
 7. Always reserve time for fresh-runtime execution and submission-file checking.
+8. Use Optuna only after the student can complete and explain a manual controlled experiment.
+9. Record rejected experiments; do not keep only the winning configuration.
+10. Compare accuracy gain with runtime, memory, and submission risk.
 
 ## Minimum Evidence
 
@@ -68,6 +90,8 @@ Students must submit:
 - a feature-engineering table;
 - a classical-model tuning log;
 - a deep-learning or PyTorch tuning log when relevant;
+- the search-space rationale when Optuna is used;
 - an error-analysis table;
 - a final submission validation record;
+- a fresh-runtime record;
 - a postmortem identifying the highest-value next action.
