@@ -1,84 +1,102 @@
-# Lesson Distribution Audit
+# Class Mission Lesson Distribution and File-Structure Audit
 
-This audit checks whether `02_Class_Missions` has moved from a thin two-lesson skeleton to a dense, teachable NOAI/IOAI preparation sequence.
+This audit checks whether `02_Class_Missions` contains the intended lesson bank and whether each module has enough files for concept formation, practice, independent rebuild, and evidence.
 
-## Completion Standard
+## Coverage Standard
 
-A module is considered structurally complete when:
+A module contributes to public file-structure coverage when:
 
-1. the README lists a realistic number of lessons for the module;
-2. every listed new lesson has a corresponding lesson file;
-3. ordinary lessons preserve the classroom flow: **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**;
-4. each lesson ends with explicit evidence;
-5. public worksheet and notebook templates exist;
-6. the private teacher-key boundary is explicit;
-7. validation and pilot checklists exist.
+1. its README lists a realistic lesson sequence;
+2. every listed lesson has a corresponding file;
+3. every lesson file is linked from a README;
+4. ordinary lessons preserve the classroom flow: **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**;
+5. every lesson identifies required evidence;
+6. public worksheet, notebook, experiment, and submission templates exist;
+7. the private teacher-key boundary is explicit;
+8. automated validation and pilot checklists exist.
 
-This audit measures **public structural readiness**. It does not mean answer keys, hidden labels, full solutions, or private test labels should be public. Those assets belong in the private teacher-key repo.
+This audit measures **public file-structure coverage**. It does not certify runtime, real-class timing, annual competition rules, private-assessment security, or student outcomes.
 
 ## Current Distribution
 
-| Module | Target lesson count | Current lesson count | Status |
+| Module | Target lesson count | Current lesson count | File-structure status |
 |---|---:|---:|---|
-| 00 Competition workflow | 2 | 2 | Complete for orientation |
-| 01 Python foundations | 5–6 | 6 | Complete |
-| 02 Control flow/data structures | 5–6 | 6 | Complete |
-| 03 Libraries/sorting/searching | 4–5 | 5 | Complete |
-| 04 AI foundations/ethics | 4 | 4 | Complete |
-| 05 Learning paradigms | 5–6 | 6 | Complete |
-| 06 Linear regression | 4 | 4 | Complete |
-| 07 Logistic regression | 4 | 4 | Complete |
-| 08 Statistics/probability/distance | 5 | 5 | Complete |
-| 09 Model evaluation | 5 | 6 | Complete |
-| 10 Generalization/regularization | 4 | 4 | Complete |
-| 11 Trees/ensembles | 4 | 4 | Complete |
-| 12 Neural network foundations | 5 | 6 | Complete |
-| 13 Backprop/optimization | 5 | 6 | Complete |
-| 14 Convolutional neural-network foundations | 5 | 6 | Complete |
-| 15 Round 1 exam training | 8–10 | 10 | Complete |
-| 16 NumPy/Pandas/Matplotlib | 6 | 6 | Complete |
-| 17 Data cleaning/feature engineering | 6 | 6 | Complete |
-| 18 Scikit-learn workflow | 6 | 6 | Complete |
-| 19 PyTorch foundations | 7 | 7 | Complete |
-| 20 Computer vision | 6 | 6 | Complete |
-| 21 Natural-language processing/sequence models | 6 | 6 | Complete |
-| 22 Audio/speech | 5 | 5 | Complete |
-| 23 Large language models/multimodality | 5 | 5 | Complete |
-| 24 Round 2 project workflow | 6–8 | 7 | Complete |
-| 25 Past-paper reproduction | 4 | 4 | Complete |
-| 26 Timed mock contests | 4–5 | 5 | Complete |
-| 27 Official Bohrium video lessons | resource hub | 2 hub lessons + 14-video sequence lessons | Complete as resource hub |
-| 28 Competition sprint: task recognition, data engineering, and hyperparameter tuning | 8 | 8 | Complete |
+| 00 Competition workflow | 2 | 2 | Covered |
+| 01 Python foundations | 5–6 | 6 | Covered |
+| 02 Control flow/data structures | 5–6 | 6 | Covered |
+| 03 Libraries/sorting/searching | 4–5 | 5 | Covered |
+| 04 Artificial-intelligence foundations/ethics | 4 | 4 | Covered |
+| 05 Learning paradigms | 5–6 | 6 | Covered |
+| 06 Linear regression | 4 | 4 | Covered |
+| 07 Logistic regression | 4 | 4 | Covered |
+| 08 Statistics/probability/distance | 5 | 5 | Covered |
+| 09 Model evaluation | 5–6 | 6 | Covered |
+| 10 Generalisation/regularisation | 4 | 4 | Covered |
+| 11 Trees/ensembles | 4 | 4 | Covered |
+| 12 Neural-network foundations | 5–6 | 6 | Covered |
+| 13 Backpropagation/optimisation | 5–6 | 6 | Covered |
+| 14 Convolutional-neural-network foundations | 5–6 | 6 | Covered |
+| 15 Round 1 exam training | 8–10 | 10 | Covered |
+| 16 NumPy/Pandas/Matplotlib | 6 | 6 | Covered |
+| 17 Data cleaning/feature engineering | 6 | 6 | Covered |
+| 18 Scikit-learn workflow | 6 | 6 | Covered |
+| 19 PyTorch foundations | 7 | 7 | Covered |
+| 20 Computer vision | 6 | 6 | Covered |
+| 21 Natural-language processing/sequence models | 6 | 6 | Covered |
+| 22 Audio/speech | 5 | 5 | Covered |
+| 23 Large language models/multimodality | 5 | 5 | Covered |
+| 24 Round 2 project workflow | 6–8 | 7 | Covered |
+| 25 Past-paper reproduction | 4 | 4 | Covered |
+| 26 Timed mock contests | 4–5 | 5 | Covered |
+| 27 Official Bohrium video resource hub | resource hub | 2 hub lessons + 14 sequence lessons | Covered as optional resource hub |
+| 28 Competition sprint: task recognition, data engineering, and hyperparameter tuning | 8 | 8 | Covered |
 
-## Public Structural Readiness
+## Current Public File-Structure Coverage
 
-**Current public structural readiness: 100%**
+**Current target result: 100% public file-structure coverage, subject to the automated validator passing on the current commit.**
 
-The public repo clears the public-structure threshold because:
+The expected public lesson bank is:
 
-1. every main module has the target number of lesson entries;
-2. the expanded lessons have corresponding lesson files;
-3. the 北京市十一学校《中学机器学习十五讲》 full-video sequence has 14 concrete 70-minute lesson files;
-4. the competition-sprint chapter has eight concrete lessons and an exact Coursera tuning-video map;
-5. public worksheet templates exist in `03_Templates/`;
-6. Round 2 starter-notebook coverage exists in `06_Starter_Notebooks/Round2_Starter_Notebook_Coverage.md`;
-7. teacher-key private repository boundaries are explicit in `09_Teacher_Planning/Teacher_Key_Private_Repo_Manifest.md`;
-8. public readiness is defined in `09_Teacher_Planning/Public_Repo_100_Percent_Readiness_Definition.md`;
-9. validation and pilot checks exist in `09_Teacher_Planning/Validation_and_Pilot_Checklist.md`.
+- 155 mainline mission lessons across Modules 00–26 and Module 28;
+- 16 optional Bohrium resource lessons in Module 27;
+- 171 total public lesson/resource files.
 
-## What Is Not Public by Design
+The scheduled pathway remains separate:
 
-The following items are still required for live graded use, but they must not be placed in the public student-facing repo:
+- 67 core sessions;
+- eight competition-sprint sessions;
+- 75 recommended sessions in total.
 
-1. full solution keys;
-2. answer keys;
-3. hidden labels;
-4. private test sets;
-5. exact scored-assessment rubrics;
-6. teacher calibration examples.
+## Required Supporting Coverage
 
-These belong in the private teacher-key repo.
+The public structure also includes:
 
-## Non-Negotiable Rule
+1. the fourteen concrete 70-minute lessons for 北京市十一学校《中学机器学习十五讲》;
+2. exact Harvard CS50’s Introduction to Programming with Python timestamp mapping;
+3. exact Coursera video packages for competition-sprint tuning;
+4. public worksheet, Round 1, notebook-lab, experiment-log, and submission-check templates;
+5. starter notebooks and executable starter code;
+6. a current resource/syllabus crosswalk;
+7. explicit teacher-key boundaries;
+8. link, runtime, annual-rule, and pilot validation procedures;
+9. a non-destructive curriculum validator.
 
-Do not return to a two-lesson-per-module skeleton. A core NOAI/IOAI module must include enough lessons for concept formation, guided practice, independent rebuild, and evidence submission.
+## Not Public by Design
+
+The following remain private:
+
+- full solution keys;
+- answer keys;
+- hidden labels;
+- private test sets;
+- secure scoring packages;
+- exact pre-use assessment rubrics;
+- teacher calibration examples.
+
+## Non-Negotiable Rules
+
+- Do not return to a two-lesson-per-module skeleton.
+- Do not schedule all 171 files automatically.
+- Do not label file coverage as blanket operational readiness.
+- Do not use automated tuning before task recognition, validation, data engineering, and a valid baseline are correct.
+- Do not upload assessment-sensitive assets until the teacher-key repository is confirmed private.
