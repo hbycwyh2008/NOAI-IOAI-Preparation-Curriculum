@@ -1,4 +1,4 @@
-# BML15 Lesson 08 — 第七讲：求解机器学习问题——优化理论
+# 北京市十一学校《中学机器学习十五讲》Lesson 08 — 第七讲：求解机器学习问题——优化理论
 
 **Video time:** 40:54  
 **Class duration:** 70 minutes
