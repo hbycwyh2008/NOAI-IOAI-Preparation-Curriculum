@@ -1,12 +1,13 @@
 # Mission 01.1 — Functions, Variables, and Input/Output
 
-**Duration:** 75 minutes
+**Duration:** 75 minutes  
+**Pre-class required viewing:** assigned Harvard course segments below
 
 ## Timeline
 
 | Time | Block | Student output |
 |---|---|---|
-| 0–8 min | Skill Warm-Up | Watch the assigned CS50P segments and mark the first examples of `print`, variables, and function calls. |
+| 0–8 min | Skill Warm-Up | Complete a retrieval trace using `print`, variables, a function call, and a return value from the pre-class viewing. |
 | 8–15 min | Talk Robin 1 | Pair discussion: what output is produced, what value is stored, and what is still confusing. |
 | 15–22 min | Entry Check | Check basic understanding of values, types, assignment, and output. |
 | 22–35 min | Core Pattern | Teacher explains input → processing → output and call → parameter → return. |
@@ -16,18 +17,16 @@
 
 ## Learning Target
 
-By the end of this mission, you can explain the core ideas in **Python values, types, functions, and arithmetic** and demonstrate them through a paper-based or computational task.
+By the end of this mission, you can explain Python values, types, functions, arithmetic, input, processing, output, and return values through a paper-based or computational task.
 
-## 1. Skill Warm-Up
+## Pre-Class Required Resource
 
-### Required Resource
-
-CS50P edX learning page:
+**Harvard CS50’s Introduction to Programming with Python on edX**  
 https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f
 
-### Assigned CS50P segments
+### Assigned Segments
 
-| CS50P week | Topic | Timestamp range | Student action |
+| Week | Topic | Timestamp range | Student action |
 |---|---|---:|---|
 | Week 0 — Functions, Variables | hello.py / basic printed output | 00:00:24–00:03:19 | Identify the printed output. |
 | Week 0 — Functions, Variables | Functions, arguments, side effects | 00:05:06–00:07:35 | Mark the function name and argument. |
@@ -38,7 +37,20 @@ https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:Harvard
 | Week 0 — Functions, Variables | Defining functions | 01:26:14–01:39:01 | Explain `def`, parameters, and helper functions. |
 | Week 0 — Functions, Variables | Return values | 01:41:17–01:45:11 | Contrast `return` with `print`. |
 
-Use only the assigned segments above. Do not browse the entire course during class.
+Complete the assigned segments before class or in a separately scheduled resource session. The full package does not fit inside the eight-minute Skill Warm-Up.
+
+## 1. Skill Warm-Up
+
+Trace one short program supplied by the teacher:
+
+```text
+Input value:
+Stored variable:
+Function called:
+Parameter value:
+Returned value:
+Printed output:
+```
 
 ## 2. Talk Robin 1
 
@@ -64,13 +76,13 @@ Trace short Python programs and write small functions.
 
 Rebuild a small input-process-output program without notes.
 
-Do not copy a complete solution. Documentation, hints, and debugging support may be used according to the AI policy.
+Do not copy a complete solution. Documentation, hints, and debugging support may be used according to the artificial-intelligence-use policy.
 
 ## 7. Talk Robin 2 + Evidence
 
 Submit:
 
-- CS50P segment notes with timestamps;
+- pre-class viewing note with exact segment titles;
 - guided-practice trace evidence;
 - independent program evidence;
 - one error and its correction;
