@@ -5,23 +5,40 @@ on:
     branches: [main]
     paths:
       - 'README.md'
+      - 'TEACHER_START_HERE.md'
+      - 'STUDENT_START_HERE.md'
+      - 'MANIFEST.md'
       - '00_Course_Overview/**'
+      - '01_Student_Start/**'
       - '02_Class_Missions/**'
+      - '03_Templates/**'
+      - '04_Assessment/**'
+      - '05_Resources/**'
+      - '08_Public_Documents/**'
+      - '09_Teacher_Planning/**'
       - '10_Ready_to_Teach_Pack/**'
       - 'scripts/normalize_lesson_timelines.py'
       - 'scripts/validate_curriculum.py'
       - 'scripts/validate_curriculum_structure.py'
       - '.github/workflows/normalise-lesson-timelines.yml'
+      - '.github/workflows/validate-ready-to-teach.yml'
   pull_request:
     paths:
       - 'README.md'
+      - 'TEACHER_START_HERE.md'
+      - 'STUDENT_START_HERE.md'
+      - 'MANIFEST.md'
       - '00_Course_Overview/**'
+      - '01_Student_Start/**'
       - '02_Class_Missions/**'
+      - '03_Templates/**'
+      - '04_Assessment/**'
+      - '05_Resources/**'
+      - '08_Public_Documents/**'
+      - '09_Teacher_Planning/**'
       - '10_Ready_to_Teach_Pack/**'
-      - 'scripts/normalize_lesson_timelines.py'
-      - 'scripts/validate_curriculum.py'
-      - 'scripts/validate_curriculum_structure.py'
-      - '.github/workflows/normalise-lesson-timelines.yml'
+      - 'scripts/**'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
@@ -41,7 +58,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Validate module counts, lesson links, classroom flow, and overview consistency
+      - name: Validate module counts, lesson links, lesson flow, resource delivery, and overview consistency
         run: python scripts/validate_curriculum_structure.py
 
       - name: Confirm legacy entry points are non-destructive
