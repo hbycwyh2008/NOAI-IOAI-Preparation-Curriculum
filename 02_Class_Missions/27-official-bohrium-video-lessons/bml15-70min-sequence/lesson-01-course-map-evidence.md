@@ -1,4 +1,4 @@
-# BML15 Lesson 01 — 第零讲：目录视频
+# 北京市十一学校《中学机器学习十五讲》Lesson 01 — 第零讲：目录视频
 
 **Video time:** 28:17  
 **Class duration:** 70 minutes
@@ -29,8 +29,8 @@ Fill a learning-map table with columns: topic, example, NOAI link, evidence to s
 
 ## 6. Independent Rebuild
 
-Create your own 4-week BML15 study map using the same evidence logic.
+Create your own four-week study map for 北京市十一学校《中学机器学习十五讲》 using the same evidence logic.
 
 ## 7. Talk Robin 2 + Evidence
 
-Submit guided notes, learning map, personal goal, and one confusion to revisit.
+Submit the learning map, personal target, one confusion, and one oral or written explanation of how the course supports the competition pathway.
