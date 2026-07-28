@@ -2,7 +2,24 @@
 
 This file lists the exact video sections used during the competition-sprint tuning lessons. Use the full course names in all student instructions.
 
-The durations below are the current Coursera-listed video lengths checked on 2026-07-27. Course structures may change, so verify the page before each cohort.
+The durations below were checked against the listed Coursera course structures on 2026-07-27. Course structures may change, so verify the page before each cohort.
+
+## Delivery Rule
+
+The required packages for Lessons 05–07 take 33–43 minutes. They are **pre-class required viewing** or a separately scheduled resource session.
+
+They are not played in full during the eight-minute Skill Warm-Up of a 75-minute Class Mission.
+
+Before class, students submit:
+
+1. the video titles completed;
+2. one key decision rule from each video;
+3. one point they cannot yet apply;
+4. one question to test during the lesson.
+
+During the eight-minute Skill Warm-Up, students complete a retrieval or diagnosis task based on the pre-class viewing.
+
+---
 
 ## A. Classical Machine-Learning Diagnosis and Tuning
 
@@ -12,29 +29,39 @@ The durations below are the current Coursera-listed video lengths checked on 202
 
 | Video | Duration | Sprint use |
 |---|---:|---|
-| Deciding what to try next | 4 min | prevents random tuning |
-| Evaluating a model | 10 min | establishes valid evaluation before tuning |
-| Model selection and training/cross validation/test sets | 14 min | prevents test-set tuning and split misuse |
-| Diagnosing bias and variance | 11 min | decides whether to add capacity, regularisation, features, or data |
-| Establishing a baseline level of performance | 9 min | defines what improvement means |
-| Learning curves | 12 min | distinguishes data shortage from model limitation |
-| Iterative loop of machine-learning development | 8 min | structures controlled competition experiments |
-| Error analysis | 8 min | directs the next experiment toward the largest error category |
-| Adding data | 14 min | decides whether more or better data is worth the time |
-| Full cycle of a machine-learning project | 9 min | integrates task, data, model, evaluation, and deployment decisions |
+| Deciding What to Try Next | 4 min | prevents random tuning |
+| Evaluating a Model | 10 min | establishes valid evaluation before tuning |
+| Model Selection and Training/Cross Validation/Test Sets | 14 min | prevents test-set tuning and split misuse |
+| Diagnosing Bias and Variance | 11 min | decides whether to add capacity, regularisation, features, or data |
+| Establishing a Baseline Level of Performance | 9 min | defines what improvement means |
+| Learning Curves | 12 min | distinguishes data shortage from model limitation |
+| Iterative Loop of Machine-Learning Development | 8 min | structures controlled competition experiments |
+| Error Analysis | 8 min | directs the next experiment toward the largest error category |
+| Adding Data | 14 min | decides whether more or better data is worth the time |
+| Full Cycle of a Machine-Learning Project | 9 min | integrates task, data, model, evaluation, and deployment decisions |
 
-### Required selection for Lesson 05
+### Pre-Class Required Selection for Lesson 05
 
-Watch these four videos:
+1. Deciding What to Try Next — 4 min
+2. Model Selection and Training/Cross Validation/Test Sets — 14 min
+3. Diagnosing Bias and Variance — 11 min
+4. Iterative Loop of Machine-Learning Development — 8 min
 
-1. Deciding what to try next — 4 min
-2. Model selection and training/cross validation/test sets — 14 min
-3. Diagnosing bias and variance — 11 min
-4. Iterative loop of machine-learning development — 8 min
+**Pre-class required viewing time:** 37 minutes.
 
-**Required video time:** 37 minutes.
+Optional review:
 
-Use `Learning curves` and `Error analysis` as optional review or pre-class work.
+- Learning Curves — 12 min
+- Error Analysis — 8 min
+
+### Lesson 05 In-Class Retrieval
+
+In eight minutes, students inspect one training/validation result and identify:
+
+- the dominant failure mode;
+- one parameter family worth testing;
+- one change that should not be attempted yet;
+- the validation evidence required before keeping the change.
 
 ---
 
@@ -47,7 +74,7 @@ Use `Learning curves` and `Error analysis` as optional review or pre-class work.
 
 | Video | Duration | Sprint use |
 |---|---:|---|
-| Train / Dev / Test sets | 12 min | correct split design |
+| Train / Dev / Test Sets | 12 min | correct split design |
 | Bias / Variance | 9 min | diagnosis before tuning |
 | Basic Recipe for Machine Learning | 6 min | chooses the next intervention |
 | Regularization | 10 min | controls overfitting |
@@ -58,10 +85,10 @@ Use `Learning curves` and `Error analysis` as optional review or pre-class work.
 
 | Video | Duration | Sprint use |
 |---|---:|---|
-| Mini-batch Gradient Descent | 11 min | batch-size and update-frequency reasoning |
+| Mini-Batch Gradient Descent | 11 min | batch-size and update-frequency reasoning |
 | Gradient Descent with Momentum | 9 min | optimiser comparison |
 | RMSprop | 8 min | adaptive update intuition |
-| Adam Optimization Algorithm | 7 min | practical default optimiser reasoning |
+| Adam Optimization Algorithm | 7 min | practical default-optimiser reasoning |
 | Learning Rate Decay | 7 min | scheduler decisions |
 
 ### Week 3 — Hyperparameter Tuning, Batch Normalization and Programming Frameworks
@@ -76,9 +103,7 @@ Use `Learning curves` and `Error analysis` as optional review or pre-class work.
 | Why Does Batch Norm Work? | 12 min | explains its stabilising effect |
 | Batch Norm at Test Time | 6 min | prevents inference mistakes |
 
-### Required selection for Lesson 06
-
-Watch these six videos:
+### Pre-Class Required Selection for Lesson 06
 
 1. Basic Recipe for Machine Learning — 6 min
 2. Adam Optimization Algorithm — 7 min
@@ -87,9 +112,21 @@ Watch these six videos:
 5. Using an Appropriate Scale to Pick Hyperparameters — 9 min
 6. Hyperparameters Tuning in Practice: Pandas vs. Caviar — 7 min
 
-**Required video time:** 43 minutes.
+**Pre-class required viewing time:** 43 minutes.
 
 The remaining videos are assigned only when the task shows the corresponding problem.
+
+### Lesson 06 In-Class Retrieval
+
+In eight minutes, students classify one training curve as:
+
+- optimisation failure;
+- underfitting;
+- overfitting;
+- unstable validation;
+- data-pipeline or metric failure.
+
+They then identify the first parameter to change and what must remain fixed.
 
 ---
 
@@ -109,18 +146,27 @@ The remaining videos are assigned only when the task shows the corresponding pro
 | Hyperparameter Optimization with Optuna | 10 min | introduces automated search |
 | Optimizing Model Efficiency | 11 min | balances score, memory, inference time, and training cost |
 
-### Required selection for Lesson 07
-
-Watch these four videos:
+### Pre-Class Required Selection for Lesson 07
 
 1. Learning Rate Schedulers — 5 min
 2. Tuning Hyperparameters — 7 min
 3. Hyperparameter Optimization with Optuna — 10 min
 4. Optimizing Model Efficiency — 11 min
 
-**Required video time:** 33 minutes.
+**Pre-class required viewing time:** 33 minutes.
 
-### Optional implementation labs
+### Lesson 07 In-Class Retrieval
+
+In eight minutes, students specify:
+
+- objective metric and direction;
+- fixed validation protocol;
+- one logarithmic parameter range;
+- one categorical parameter set;
+- trial/time/compute budget;
+- invalid-trial and stopping rules.
+
+### Optional Implementation Labs
 
 - Hyperparameter Tuning: Learning Rate and Metrics — 60 min
 - Schedulers in PyTorch — 60 min
