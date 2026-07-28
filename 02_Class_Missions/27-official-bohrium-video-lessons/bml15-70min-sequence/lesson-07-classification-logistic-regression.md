@@ -1,4 +1,4 @@
-# BML15 Lesson 07 — 第六讲：分类问题与逻辑斯蒂回归
+# 北京市十一学校《中学机器学习十五讲》Lesson 07 — 第六讲：分类问题与逻辑斯蒂回归
 
 **Video time:** 41:12  
 **Class duration:** 70 minutes
