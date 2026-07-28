@@ -3,13 +3,47 @@ name: Validate ready-to-teach curriculum
 on:
   push:
     paths:
-      - "scripts/generate_ready_notebooks.py"
-      - "scripts/check_required_links.py"
-      - "scripts/validate_curriculum_structure.py"
+      - "README.md"
+      - "TEACHER_START_HERE.md"
+      - "STUDENT_START_HERE.md"
+      - "MANIFEST.md"
+      - "00_Course_Overview/**"
+      - "01_Student_Start/**"
+      - "02_Class_Missions/**"
+      - "03_Templates/**"
+      - "04_Assessment/**"
+      - "05_Resources/**"
       - "06_Starter_Code/ready_to_teach/**"
       - "06_Starter_Notebooks/ready_to_teach/**"
+      - "08_Public_Documents/**"
+      - "09_Teacher_Planning/**"
       - "10_Ready_to_Teach_Pack/**"
+      - "scripts/generate_ready_notebooks.py"
+      - "scripts/check_required_links.py"
+      - "scripts/validate_curriculum.py"
+      - "scripts/validate_curriculum_structure.py"
+      - "scripts/normalize_lesson_timelines.py"
       - ".github/workflows/validate-ready-to-teach.yml"
+      - ".github/workflows/normalise-lesson-timelines.yml"
+  pull_request:
+    paths:
+      - "README.md"
+      - "TEACHER_START_HERE.md"
+      - "STUDENT_START_HERE.md"
+      - "MANIFEST.md"
+      - "00_Course_Overview/**"
+      - "01_Student_Start/**"
+      - "02_Class_Missions/**"
+      - "03_Templates/**"
+      - "04_Assessment/**"
+      - "05_Resources/**"
+      - "06_Starter_Code/ready_to_teach/**"
+      - "06_Starter_Notebooks/ready_to_teach/**"
+      - "08_Public_Documents/**"
+      - "09_Teacher_Planning/**"
+      - "10_Ready_to_Teach_Pack/**"
+      - "scripts/**"
+      - ".github/workflows/**"
   workflow_dispatch:
   schedule:
     - cron: "20 2 1 * *"
@@ -33,7 +67,7 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Validate curriculum structure
+      - name: Validate curriculum structure and internal consistency
         run: python scripts/validate_curriculum_structure.py
 
       - name: Install validation environment
@@ -88,6 +122,7 @@ jobs:
           lines = [
               '# Runtime Validation Record', '',
               f'- Validated: {datetime.now(timezone.utc).isoformat()}',
+              f'- Commit: {__import__("subprocess").check_output(["git", "rev-parse", "HEAD"], text=True).strip()}',
               f'- Python: {platform.python_version()}',
               f'- Platform: {platform.platform()}',
               '- Runner: GitHub Actions ubuntu-latest',
@@ -121,11 +156,11 @@ jobs:
           python 06_Starter_Code/ready_to_teach/manual_tuning_template.py --output /tmp/manual-tuning-results.json
           python 06_Starter_Code/ready_to_teach/optuna_tuning_template.py --trials 2 --output /tmp/optuna-tuning-results.json
 
-      - name: Check external resource links
-        continue-on-error: true
+      - name: Check required external resource links
         run: python scripts/check_required_links.py
 
       - name: Commit generated and validated materials
+        if: github.event_name != 'pull_request'
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
