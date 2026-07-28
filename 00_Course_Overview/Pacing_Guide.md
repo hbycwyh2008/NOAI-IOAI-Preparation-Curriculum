@@ -28,7 +28,7 @@ The fourteen-session split for 北京市十一学校《中学机器学习十五�
 
 This is a named exception. It does not change the ordinary 75-minute classroom standard.
 
-See [BML15 70-Minute Lesson Split](../09_Teacher_Planning/BML15_70min_Lesson_Split.md).
+See [北京市十一学校《中学机器学习十五讲》— 14 × 70-Minute Lesson Split](../09_Teacher_Planning/BML15_70min_Lesson_Split.md). The compatibility filename remains unchanged.
 
 ## Long Sessions
 
