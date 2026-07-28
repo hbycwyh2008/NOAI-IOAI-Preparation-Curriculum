@@ -36,6 +36,18 @@ Use the dedicated resource map:
 
 The map gives the exact Coursera course, week or module, video title, duration, and use in Lessons 05–07.
 
+## Video Delivery Protocol for Lessons 05–07
+
+The required video packages are longer than the eight-minute classroom Skill Warm-Up. They are therefore assigned as **pre-class preparation**, not played in full during the 75-minute lesson.
+
+| Lesson | Pre-class required viewing | In-class Skill Warm-Up |
+|---:|---:|---|
+| 05 | 37 minutes | an eight-minute retrieval task using one diagnosis example from the assigned videos |
+| 06 | 43 minutes | an eight-minute training-curve diagnosis using concepts from the assigned videos |
+| 07 | 33 minutes | an eight-minute scheduler/search-space check using concepts from the assigned videos |
+
+Students submit a short pre-class viewing note before entry to the lesson. The teacher may replace pre-class viewing with a separate resource session, but must not claim that 33–43 minutes of video fit inside an eight-minute warm-up.
+
 ## Executable Sprint Assets
 
 Use these public starter files from `06_Starter_Code/ready_to_teach/`:
