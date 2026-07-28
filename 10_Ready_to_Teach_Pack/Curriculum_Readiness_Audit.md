@@ -1,69 +1,70 @@
 # Curriculum Readiness Audit
 
-**Audit scope:** public curriculum structure, teaching content, resources, executable assets, assessment security, classroom validation, and annual competition alignment.
+**Audit scope:** public file structure, teaching-content specificity, resource delivery, executable assets, runtime checks, assessment security, classroom validation, and annual competition alignment.
 
 ## Current Status
 
 | Area | Current status | Evidence | Remaining condition |
 |---|---|---|---|
-| Public module structure | Complete | Modules 00–28 are indexed; Module 27 is an optional resource hub; Module 28 contains eight sprint lessons | repeat the structural audit after any new module or rename |
-| Mainline lesson bank | Complete as a curriculum bank | 155 mainline mission lessons across Modules 00–26 and 28 | teachers must select a pathway rather than assign every lesson |
-| Bohrium resource bank | Complete as an optional hub | two full-video hub missions and fourteen 70-minute lessons for 北京市十一学校《中学机器学习十五讲》 | verify access and video structure before each cohort |
-| Recommended scheduled pathway | Complete | 67-session core pathway plus eight-session competition sprint | pilot the full 75-session pathway in a real cohort |
-| Round 1 teaching content | High readiness | Python, artificial-intelligence foundations, machine-learning concepts, calculations, code tracing, short answers, and mocks | run live timing and difficulty calibration |
-| Round 2 teaching content | High readiness | data engineering, scikit-learn, PyTorch, computer vision, natural-language processing, audio, large language models, projects, reproductions, and mocks | validate against the final student runtime and current official rules |
-| Competition sprint | Structurally complete; pilot pending | task recognition, data engineering, classical tuning, deep-learning tuning, PyTorch tuning, Optuna, and full simulation | verify current Coursera segments; run the tuning notebooks/labs in the final environment; pilot timing |
-| Starter notebooks | Existing validation record | twelve student-facing notebooks and `Runtime_Validation_Record.md` | rerun after dependency, runtime, dataset, or notebook changes |
-| Automated checks | Present | GitHub Actions workflow and link-validation scripts | confirm the latest workflow run passes after curriculum changes |
-| Teacher keys and hidden assessments | Boundary defined | private-package manifest and public/private rules | the teacher-key repository must be private before sensitive files are uploaded |
-| Real classroom evidence | Not complete | pilot protocols exist | conduct small-group and full-cohort pilots and record actual timings |
-| Annual rules | Maintenance required | annual-rules record and maintenance checklist exist | recheck whenever organisers publish new rules or platform constraints |
+| Public module structure | Complete by design | Modules 00–28 are indexed; Module 27 is an optional resource hub; Module 28 contains eight sprint lessons | strict validator must pass on the release commit |
+| Mainline lesson bank | Complete as a curriculum bank | 155 mainline mission lessons across Modules 00–26 and 28 | teachers must choose a pathway rather than assign every lesson |
+| Bohrium resource bank | Complete as an optional hub | two full-video hub missions and fourteen 70-minute lessons for 北京市十一学校《中学机器学习十五讲》 | verify authenticated access and current video structure before each cohort |
+| Recommended scheduled pathway | Complete as a schedule | 67-session core pathway plus eight-session competition sprint | pilot the selected pathway with real students |
+| Round 1 teaching content | High readiness | Python, artificial-intelligence foundations, machine-learning concepts, calculations, code tracing, short answers, mocks, and correction structures | live timing and difficulty calibration |
+| Round 2 teaching content | High readiness | data engineering, scikit-learn, PyTorch, computer vision, natural-language processing, audio, large language models, projects, reproductions, and mocks | exact student-runtime and current-rule validation |
+| Competition sprint | Structurally integrated | task recognition, data engineering, classical tuning, deep-learning tuning, PyTorch tuning, Optuna, efficiency, and full simulation | execute current starter assets and pilot Sessions 68–75 |
+| Video delivery | Explicit | long Harvard/Coursera packages are marked pre-class or separate-resource-session work; in-class warm-ups remain eight minutes | verify course access and listed section structure before teaching |
+| Starter notebooks | Automated workflow exists | twelve notebooks are generated and executed from fresh kernels | confirm the workflow result for the current release commit |
+| Sprint starter code | Automated smoke tests exist | experiment log, manual tuning, Optuna tuning, metrics, data generation, and submission validation | confirm current workflow result and final student-environment compatibility |
+| External links | Blocking automated check | required-link failures now fail the Ready-to-Teach workflow | authenticated edX/Coursera/Bohrium access still requires manual testing |
+| Legacy overwrite risk | Removed | obsolete V1 builder workflow deleted; archived chunks marked inert | do not restore an executable decoder on `main` |
+| Teacher keys and hidden assessments | Boundary defined | private-package manifest and public/private rules | confirm the teacher-key repository is private and complete before sensitive uploads |
+| Real classroom evidence | Not complete | pilot protocols and timing rules exist | conduct representative and full-cohort pilots |
+| Annual rules | Maintenance required | annual-rule records and maintenance instructions exist | recheck whenever organisers update rules, packages, models, APIs, or platform constraints |
 
-## What “100%” Means Here
+## What “100%” Means
 
-The public repository may be described as **100% structurally complete** when every public module has the intended lesson files, templates, resource maps, evidence requirements, and public/private boundaries.
+The repository may report **100% public file-structure and internal-consistency coverage** only when the strict validator passes and all expected public files, links, lesson-flow markers, durations, resource-delivery labels, counts, and source-of-truth boundaries are consistent.
 
-It must **not** be described as professionally or operationally 100% ready until all of the following are true:
+It must not be described as operationally, pedagogically, or competitively 100% ready until all of the following are evidenced:
 
-1. the complete selected pathway has been taught to a real cohort;
-2. ordinary lesson blocks fit the recorded 75-minute schedule;
-3. the fourteen-video 北京市十一学校《中学机器学习十五讲》 sequence fits its recorded 70-minute schedule;
-4. every required notebook and script runs in the exact student environment;
-5. current official NOAI/IOAI rules and permitted tools have been incorporated;
+1. the selected pathway has been taught to a real cohort;
+2. ordinary lessons fit the recorded 75-minute schedule;
+3. the fourteen-video 北京市十一学校《中学机器学习十五讲》 sequence fits the recorded 70-minute schedule;
+4. required notebooks and scripts run in the exact student environment;
+5. current official rules and permitted tools have been incorporated;
 6. the teacher-key repository is private and assessment-sensitive assets are protected;
-7. formal simulations use newly generated hidden data and secure scoring packages;
-8. broken links, moved course modules, and changed APIs have been corrected.
+7. formal simulations use secure hidden data and scoring packages;
+8. authenticated external-course access is confirmed;
+9. changed APIs, packages, model permissions, and runtime constraints are addressed.
 
 ## Current Curriculum Counts
 
 | Category | Count | Scheduling meaning |
 |---|---:|---|
-| Mainline mission lessons | 155 | curriculum bank; not all are automatically required |
-| Optional Bohrium resource lessons | 16 | alternatives, concept reinforcement, or full-video sequences |
+| Mainline mission lessons | 155 | curriculum bank; not all automatically required |
+| Optional Bohrium resource lessons | 16 | alternatives, concept reinforcement, and full-video sequence |
 | Total public mission/resource lessons | 171 | total available lesson files |
-| Core scheduled pathway | 67 | compressed full NOAI foundation and competition path |
+| Core scheduled pathway | 67 | full foundation and competition-practice route |
 | Competition sprint | 8 | late-stage task recognition, data engineering, and tuning |
 | Recommended full scheduled pathway | 75 | 67 core sessions plus eight sprint sessions |
 
-## Validation Required After This Update
+## Release Validation
 
-Because Module 28 and the 75-session pathway were added after earlier validation records, the next release should run:
+For the release commit:
 
-1. internal-link validation for all Module 28 lesson links;
-2. external-link validation for the three Coursera tuning courses;
-3. fresh-runtime execution for any new Optuna, scheduler, tuning, or efficiency notebook/lab;
-4. a dry run of Sessions 68–75;
-5. a full check that the main README, pacing guide, detailed sequence, Ready-to-Teach Pack, resource crosswalk, and lesson-distribution audit report the same pathway and counts.
+1. run `python scripts/validate_curriculum_structure.py`;
+2. execute all twelve starter notebooks from fresh kernels;
+3. smoke-test the competition-sprint starter code, including Optuna;
+4. run `python scripts/check_required_links.py` without ignoring failures;
+5. verify authenticated course access manually;
+6. run the coding assets in the exact student environment;
+7. verify current official competition rules;
+8. confirm private-assessment security;
+9. pilot representative lesson types and record actual timing.
 
 ## Release Decision
 
-The repository is suitable for continued curriculum development and teacher dry runs. Formal graded use still requires the privacy, runtime, annual-rule, and pilot conditions above.
+The repository is suitable for curriculum development, structural validation, and teacher dry runs when the strict automated checks pass.
 
-Do not use a single percentage to hide the distinction between:
-
-- structural completeness;
-- teaching-content quality;
-- runtime validation;
-- assessment security;
-- classroom evidence;
-- annual competition compliance.
+Formal graded use remains conditional on runtime, privacy, annual-rule, authenticated-access, and classroom-pilot evidence. No single percentage may hide those distinctions.
