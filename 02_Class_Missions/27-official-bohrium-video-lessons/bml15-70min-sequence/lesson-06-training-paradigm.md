@@ -1,11 +1,11 @@
-# BML15 Lesson 06 — 第五讲：机器学习训练模型的范式
+# 北京市十一学校《中学机器学习十五讲》Lesson 06 — 第五讲：机器学习训练模型的范式
 
 **Video time:** 44:02  
 **Class duration:** 70 minutes
 
 ## 1. Skill Warm-Up
 
-Watch the full video and record the full training-model workflow.
+Watch the full video and record the complete model-training workflow.
 
 ## 2. Talk Robin 1
 
@@ -25,11 +25,11 @@ Data → model → training objective → learned parameters → prediction → 
 
 ## 5. Guided Practice
 
-Annotate a supported ML problem using the workflow pattern.
+Annotate a supported machine-learning problem using the workflow pattern.
 
 ## 6. Independent Rebuild
 
-Create a new ML problem and specify data, model type, training target, prediction, and metric.
+Create a new machine-learning problem and specify data, model type, training target, prediction, and metric.
 
 ## 7. Talk Robin 2 + Evidence
 
