@@ -1,17 +1,16 @@
 # Lesson 06 — Deep-Learning Tuning: Learning Rate, Batch Size, Regularisation, and Optimiser
 
-**Duration:** 75 minutes
+**Duration:** 75 minutes  
+**Pre-class required viewing:** 43 minutes
 
 ## Learning Target
 
 Students can tune a deep-learning baseline in a disciplined order and distinguish optimisation failure from overfitting, underfitting, and data-pipeline problems.
 
-## Required Video Resource
+## Pre-Class Required Video Resource
 
 **Course 2 — Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization**, part of the **Deep Learning Specialization**  
 Coursera: https://www.coursera.org/learn/deep-neural-network
-
-Required videos:
 
 1. Basic Recipe for Machine Learning — 6 min
 2. Adam Optimization Algorithm — 7 min
@@ -20,13 +19,23 @@ Required videos:
 5. Using an Appropriate Scale to Pick Hyperparameters — 9 min
 6. Hyperparameters Tuning in Practice: Pandas vs. Caviar — 7 min
 
-**Required video time:** 43 minutes.
+**Pre-class required viewing time:** 43 minutes.
+
+Before class, submit a note identifying one diagnosis rule, one search-scale rule, one optimiser/scheduler rule, and one unresolved question.
 
 See [Hyperparameter-Tuning Video Resource Map](Hyperparameter_Tuning_Video_Resource_Map.md).
 
 ## 1. Skill Warm-Up — 0–8 min
 
-Watch the first assigned segment and classify one training curve as optimisation failure, underfitting, overfitting, or unstable validation.
+Do not replay the full 43-minute package. Classify one supplied training curve as:
+
+- optimisation failure;
+- underfitting;
+- overfitting;
+- unstable validation;
+- data-pipeline or metric failure.
+
+Then identify the first parameter to change and one variable that must remain fixed.
 
 ## 2. Talk Robin 1 — 8–15 min
 
@@ -98,7 +107,13 @@ Next experiment:
 
 ## 7. Talk Robin 2 + Evidence — 67–75 min
 
-Submit the tuning ladder and explain why the search order is safer than tuning all parameters simultaneously.
+Submit:
+
+- pre-class viewing note;
+- training-curve diagnosis;
+- five-run tuning ladder;
+- independent tuning decision;
+- one explanation of why the search order is safer than tuning all parameters simultaneously.
 
 ## Exit Standard
 
