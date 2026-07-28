@@ -1,4 +1,4 @@
-# BML15 Lesson 03 — 第二讲：人工智能发展史
+# 北京市十一学校《中学机器学习十五讲》Lesson 03 — 第二讲：人工智能发展史
 
 **Video time:** 45:43  
 **Class duration:** 70 minutes
@@ -9,7 +9,7 @@ Watch the full video and record key ideas about symbolism, connectionism, behavi
 
 ## 2. Talk Robin 1
 
-Explain which AI school is easiest to recognise and which is easiest to confuse.
+Explain which artificial-intelligence school is easiest to recognise and which is easiest to confuse.
 
 ## 3. Entry Check
 
@@ -25,11 +25,11 @@ Historical idea → representation of intelligence → typical example → limit
 
 ## 5. Guided Practice
 
-Complete a comparison table for AI schools and examples.
+Complete a comparison table for artificial-intelligence schools and examples.
 
 ## 6. Independent Rebuild
 
-Classify a new AI scenario by school of thought and justify the choice.
+Classify a new artificial-intelligence scenario by school of thought and justify the choice.
 
 ## 7. Talk Robin 2 + Evidence
 
