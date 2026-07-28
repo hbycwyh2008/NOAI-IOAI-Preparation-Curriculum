@@ -1,12 +1,13 @@
 # Lesson 05 — Classical Machine-Learning Tuning: Diagnose before Searching
 
-**Duration:** 75 minutes
+**Duration:** 75 minutes  
+**Pre-class required viewing:** 37 minutes
 
 ## Learning Target
 
 Students can diagnose the dominant failure mode and tune a classical machine-learning model using controlled experiments instead of random parameter changes.
 
-## Required Video Resource
+## Pre-Class Required Video Resource
 
 **Course 2 — Advanced Learning Algorithms**, part of the **Machine Learning Specialization**  
 Coursera: https://www.coursera.org/learn/advanced-learning-algorithms  
@@ -17,7 +18,9 @@ Week 3 — Advice for Applying Machine Learning:
 3. Diagnosing Bias and Variance — 11 min
 4. Iterative Loop of Machine-Learning Development — 8 min
 
-**Required video time:** 37 minutes.
+**Pre-class required viewing time:** 37 minutes.
+
+Before class, submit four brief notes: the dominant diagnosis rule, one valid next action, one action that should wait, and one question.
 
 Optional review:
 
@@ -28,7 +31,14 @@ See [Hyperparameter-Tuning Video Resource Map](Hyperparameter_Tuning_Video_Resou
 
 ## 1. Skill Warm-Up — 0–8 min
 
-Watch the first assigned segment and write one reason random tuning is inefficient.
+Do not replay the full 37-minute package. Inspect one supplied training/validation result and write:
+
+```text
+Dominant failure mode:
+Evidence:
+Highest-value parameter family to test:
+One change that should not be tried yet:
+```
 
 ## 2. Talk Robin 1 — 8–15 min
 
@@ -96,7 +106,13 @@ Run or simulate three parameter settings and complete:
 
 ## 7. Talk Robin 2 + Evidence — 67–75 min
 
-Explain why the selected setting is better than the alternatives and why the next experiment follows from evidence.
+Submit:
+
+- pre-class viewing note;
+- Skill Warm-Up diagnosis;
+- controlled-search specification;
+- three-run tuning log;
+- one explanation of why the selected setting is better and why the next experiment follows from evidence.
 
 ## Exit Standard
 
