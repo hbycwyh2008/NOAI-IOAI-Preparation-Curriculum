@@ -1,31 +1,42 @@
 # Lesson 07 — PyTorch Tuning with Schedulers, Optuna, and Efficiency Constraints
 
-**Duration:** 75 minutes
+**Duration:** 75 minutes  
+**Pre-class required viewing:** 33 minutes
 
 ## Learning Target
 
 Students can move from manual controlled experiments to limited automated search without wasting the competition compute budget.
 
-## Required Video Resource
+## Pre-Class Required Video Resource
 
 **Course 2 — PyTorch: Techniques and Ecosystem Tools**, part of the **DeepLearning.AI PyTorch for Deep Learning Professional Certificate**  
 Coursera: https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools  
 Module 1 — Hyperparameter Optimization
-
-Required videos:
 
 1. Learning Rate Schedulers — 5 min
 2. Tuning Hyperparameters — 7 min
 3. Hyperparameter Optimization with Optuna — 10 min
 4. Optimizing Model Efficiency — 11 min
 
-**Required video time:** 33 minutes.
+**Pre-class required viewing time:** 33 minutes.
+
+Before class, submit a note identifying the optimisation objective, one justified search range, one efficiency constraint, and one reason a trial should be stopped or rejected.
 
 See [Hyperparameter-Tuning Video Resource Map](Hyperparameter_Tuning_Video_Resource_Map.md).
 
 ## 1. Skill Warm-Up — 0–8 min
 
-Watch the learning-rate-scheduler segment and identify what triggers or controls the schedule.
+Do not replay the full 33-minute package. Complete this retrieval check:
+
+```text
+Objective metric and direction:
+Fixed validation protocol:
+One logarithmic parameter range:
+One categorical parameter set:
+Maximum trials or time budget:
+Invalid-trial rule:
+Stopping rule:
+```
 
 ## 2. Talk Robin 1 — 8–15 min
 
@@ -81,7 +92,7 @@ Design an automated-search specification:
 
 ## 6. Independent Rebuild — 53–67 min
 
-Write pseudocode or implement a small search wrapper that records:
+Use `06_Starter_Code/ready_to_teach/optuna_tuning_template.py` or write pseudocode for a small search wrapper that records:
 
 ```text
 trial number
@@ -98,7 +109,13 @@ Then choose one configuration using both performance and efficiency.
 
 ## 7. Talk Robin 2 + Evidence — 67–75 min
 
-Submit the search-space specification, trial table, and one explanation of why the highest validation score may not be the best competition model.
+Submit:
+
+- pre-class viewing note;
+- Skill Warm-Up search specification;
+- justified search-space table;
+- trial log or pseudocode;
+- one explanation of why the highest validation score may not be the best competition model.
 
 ## Exit Standard
 
