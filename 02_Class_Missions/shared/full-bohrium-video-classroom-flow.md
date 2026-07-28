@@ -6,12 +6,12 @@ The video is not treated as passive homework. Students watch the full assigned v
 
 ## Official-Aligned Bohrium Resources
 
-| Code | Resource | Best use in this curriculum |
-|---|---|---|
-| BML15 | 北京市十一学校《中学机器学习十五讲》 | Round 1 A/B: Python-related reasoning, AI foundations, core machine-learning concepts, paper-test preparation |
-| LHY-ML | 台湾大学李宏毅《机器学习》内容精选版 | Round 2 C/D: deeper machine-learning and deep-learning concepts before or after sklearn/PyTorch practice |
+| Full resource name | Best use in this curriculum |
+|---|---|
+| 北京市十一学校《中学机器学习十五讲》 | Round 1 A/B: Python-related reasoning, artificial-intelligence foundations, core machine-learning concepts, and paper-test preparation |
+| 台湾大学李宏毅《机器学习》内容精选版 | Round 2 C/D: deeper machine-learning and deep-learning concepts before or after scikit-learn/PyTorch practice |
 
-## Required 7-Step Flow
+## Required Seven-Step Flow
 
 | Step | Block | What happens |
 |---:|---|---|
@@ -25,7 +25,7 @@ The video is not treated as passive homework. Students watch the full assigned v
 
 ## Guided Notes During the Video
 
-Students complete the following while watching:
+Students complete:
 
 ```text
 Video title/topic:
@@ -45,9 +45,9 @@ One point I am still confused about:
 
 NOAI syllabus connection:
 A. Python / code reading
-B. AI foundations
+B. artificial-intelligence foundations
 C. data processing
-D. sklearn / PyTorch / application
+D. scikit-learn / PyTorch / application
 
 Rebuild pattern:
 Input:
@@ -58,7 +58,7 @@ Evidence:
 
 ## Timing Rules for a 75-Minute Club Session
 
-### If the video is 25 minutes or shorter
+### Video is 25 minutes or shorter
 
 | Time | Block |
 |---|---|
@@ -70,29 +70,34 @@ Evidence:
 | 62–70 min | Independent Rebuild |
 | 70–75 min | Talk Robin 2 + Evidence |
 
-### If the video is 25–45 minutes
+### Video is 25–45 minutes
 
 | Time | Block |
 |---|---|
-| 0–40 min | Skill Warm-Up: full video + guided notes |
-| 40–47 min | Talk Robin 1 |
-| 47–53 min | Entry Check |
-| 53–61 min | Core Pattern |
-| 61–68 min | Guided Practice |
-| 68–72 min | Independent Rebuild |
-| 72–75 min | Talk Robin 2 + Evidence |
+| 0–video end | Skill Warm-Up: full video + guided notes |
+| next 7 min | Talk Robin 1 |
+| next 6 min | Entry Check |
+| next 8 min | Core Pattern |
+| next 7 min | Guided Practice |
+| next 4 min | Independent Rebuild |
+| final 3 min | Talk Robin 2 + Evidence |
 
-### If the video is longer than 45 minutes
+Use the exact arithmetic for the assigned video. Do not write `0–40 min` when a video is shorter or longer than 40 minutes.
 
-Use two club sessions.
+### Video is longer than 45 minutes
 
-Session 1: full viewing, guided notes, first discussion, entry check, and teacher summary.
+Use two ordinary 75-minute club sessions unless a named resource-specific exception explicitly supplies another schedule.
 
-Session 2: review the notes, complete the entry check again, extract the core pattern, complete guided practice, independent rebuild, and evidence submission.
+- **Session 1:** full viewing, guided notes, first discussion, entry check, and teacher summary.
+- **Session 2:** retrieval review, core pattern, guided practice, independent rebuild, and evidence submission.
+
+### Named 70-Minute Exception
+
+The fourteen-session split for 北京市十一学校《中学机器学习十五讲》 is a deliberate resource-specific exception. Its exact video times and compressed practice blocks are defined in `09_Teacher_Planning/BML15_70min_Lesson_Split.md`.
 
 ## Required Evidence
 
-Each full-video lesson must produce at least four pieces of evidence:
+Each full-video lesson must produce at least **five** pieces of evidence:
 
 1. completed video guided notes;
 2. Entry Check answers;
@@ -102,4 +107,4 @@ Each full-video lesson must produce at least four pieces of evidence:
 
 ## Non-Negotiable Rule
 
-A full Bohrium video can take more time than an ordinary warm-up, but it does not replace the classroom flow. The lesson still ends with student explanation and evidence, not with simply finishing the video.
+A full Bohrium video can take more time than an ordinary warm-up, but it does not replace the classroom flow. The lesson ends with student explanation and evidence, not with simply finishing the video.
