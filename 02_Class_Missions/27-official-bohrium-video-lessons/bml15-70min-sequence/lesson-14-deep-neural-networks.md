@@ -1,11 +1,11 @@
-# BML15 Lesson 14 — 第十五讲：深度神经网络
+# 北京市十一学校《中学机器学习十五讲》Lesson 14 — 第十五讲：深度神经网络
 
 **Video time:** 52:23  
 **Class duration:** 70 minutes
 
 ## 1. Skill Warm-Up
 
-Watch the full video and record deep network, layer, feature representation, training difficulty, and Round 2/PyTorch bridge.
+Watch the full video and record deep network, layer, feature representation, training difficulty, and the Round 2/PyTorch bridge.
 
 ## 2. Talk Robin 1
 
@@ -25,11 +25,11 @@ Input → stacked layers → learned representation → prediction → loss/trai
 
 ## 5. Guided Practice
 
-Complete a deep-network summary table: input, layers, output, loss, optimiser, validation evidence.
+Complete a deep-network summary table: input, layers, output, loss, optimiser, and validation evidence.
 
 ## 6. Independent Rebuild
 
-Design a tiny PyTorch-ready deep-learning task plan.
+Design a small PyTorch-ready deep-learning task plan.
 
 ## 7. Talk Robin 2 + Evidence
 
