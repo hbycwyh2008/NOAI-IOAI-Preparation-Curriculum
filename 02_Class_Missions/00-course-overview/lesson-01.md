@@ -2,79 +2,61 @@
 
 **Duration:** 75 minutes
 
+## Required Resource
+
+Use the current teacher-archived NOAI syllabus, contest rules, task format, permitted-tool rules, and one official past task statement. Current official documents override this repository.
+
 ## Timeline
 
 | Time | Block | Student output |
 |---|---|---|
-| 0–8 min | Skill Warm-Up | Use a video, guide, or task to meet the idea. |
-| 8–15 min | Talk Robin 1 | Pair discussion: what was done and what is confusing. |
-| 15–22 min | Entry Check | Check basic understanding before we go deeper. |
-| 22–35 min | Core Pattern | Teacher explains the key method or pattern clearly. |
-| 35–53 min | Guided Practice | Practice with teacher support. Ask questions and improve. |
-| 53–67 min | Independent Rebuild | Recreate the pattern on your own with less help. |
-| 67–75 min | Talk Robin 2 + Evidence | Summarize, explain, and submit proof of learning. |
+| 0–8 min | Skill Warm-Up | Mark the task input, required output, metric, time limit, and tool constraints in an official-style task statement. |
+| 8–15 min | Talk Robin 1 | Compare what Round 1 and Round 2 require and identify one likely failure point. |
+| 15–22 min | Entry Check | Classify five statements as task requirement, metric, constraint, baseline, or evidence. |
+| 22–35 min | Core Pattern | Teacher models task recognition → simplest valid baseline → validation → improvement → submission check. |
+| 35–53 min | Guided Practice | Complete a task-recognition sheet and design a minimum valid baseline for the supplied task. |
+| 53–67 min | Independent Rebuild | Analyse a second task statement without the worked example and produce a personal risk register. |
+| 67–75 min | Talk Robin 2 + Evidence | Defend the baseline choice and submit the task sheet, risk register, and correction note. |
 
+## 1. Skill Warm-Up
 
+Annotate:
 
-## Learning Target
+```text
+Input:
+Output:
+Label or target:
+Metric:
+Time/compute limit:
+Allowed tools:
+Submission format:
+```
 
-By the end of this mission, you can explain the core ideas in **NOAI syllabus and competition pathway** and demonstrate them through a paper-based or computational task.
+## 2. Talk Robin 1
 
-## Entry Point Check
+Explain why “most advanced model” is not the same as “best first baseline.”
 
-1. Write one definition you already know from this topic.
-2. Give one example and one non-example.
-3. State one question you need answered.
+## 3. Entry Check
 
-## Required Resource
+1. What makes a baseline valid?
+2. Why must the metric be identified before modelling?
+3. Which requirement can invalidate an otherwise accurate solution?
 
-Official syllabus supplied by the teacher
+## 4. Core Pattern
 
-Use only the section assigned by your teacher. Do not browse the entire course during class.
+```text
+Read task → identify input/output/metric/constraints → build simplest valid baseline
+→ validate → inspect errors → change one thing → verify submission
+```
 
-## Focus Notes
+## 5. Guided Practice
 
-Record:
+For the supplied official-style task, complete a baseline decision table containing model, features, metric, validation split, expected runtime, and first submission check.
 
-- three essential terms;
-- one process or algorithm in ordered steps;
-- one common misconception;
-- one worked example;
-- one question to discuss.
+## 6. Independent Rebuild
 
-## Talk Round
+Create a personal preparation risk register with columns: risk, evidence, prevention, recovery action, and owner.
 
-Each student explains the process in their own words. Partners identify missing steps or vague language.
+## 7. Talk Robin 2 + Evidence
 
-## Teacher Diagnosis
-
-The teacher addresses only the misunderstandings revealed by the entry check and talk round.
-
-## Guided Practice
-
-Explain the difference between Round 1 and Round 2 and define a baseline.
-
-## Independent Task
-
-Create a personal preparation risk register and evidence plan.
-
-Do not copy a complete solution. Documentation, hints, and debugging support may be used according to the AI policy.
-
-## NOAI-Style Check
-
-Complete all three:
-
-1. one concept or scenario question;
-2. one calculation, code-tracing, or tensor-shape question;
-3. one explanation of why a tempting wrong answer is wrong.
-
-## Exit Evidence
-
-Submit:
-
-- `notes.md`;
-- guided-practice evidence;
-- independent-task evidence;
-- one error and its correction;
-- `ai_usage_note.md` when applicable;
-- a meaningful Git commit.
+Submit the annotated task, baseline decision table, risk register, one corrected misconception, and a meaningful Git commit.
