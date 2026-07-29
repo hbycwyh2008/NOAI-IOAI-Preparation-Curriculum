@@ -1,0 +1,67 @@
+name: Audit curriculum consistency
+
+on:
+  push:
+    paths:
+      - "00_Course_Overview/**"
+      - "01_Student_Start/**"
+      - "02_Class_Missions/**"
+      - "03_Templates/**"
+      - "04_Assessment/**"
+      - "05_Resources/**"
+      - "06_Starter_Code/**"
+      - "09_Teacher_Planning/**"
+      - "10_Ready_to_Teach_Pack/**"
+      - "scripts/validate_curriculum_structure.py"
+      - ".github/workflows/audit-curriculum.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run strict curriculum audit
+        id: audit
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          python scripts/validate_curriculum_structure.py > /tmp/audit.log 2>&1
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          cat /tmp/audit.log
+      - name: Write auditable result
+        shell: bash
+        run: |
+          {
+            echo "# Automated Curriculum Audit"
+            echo
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Runner: GitHub Actions / Python 3.12"
+            echo "- Exit code: \`${{ steps.audit.outputs.exit_code }}\`"
+            echo
+            echo '```text'
+            cat /tmp/audit.log
+            echo '```'
+          } > 10_Ready_to_Teach_Pack/Automated_Curriculum_Audit_Latest.md
+      - name: Commit audit result
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 10_Ready_to_Teach_Pack/Automated_Curriculum_Audit_Latest.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record automated curriculum audit result'
+            git push
+          fi
+      - name: Enforce audit result
+        if: steps.audit.outputs.exit_code != '0'
+        run: exit 1
