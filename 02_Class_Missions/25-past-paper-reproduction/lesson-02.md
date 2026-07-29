@@ -15,16 +15,31 @@
 | 150–170 min | Error analysis | Inspect failures and select the next step. |
 | 170–180 min | Submission and post-mortem | Save notebook, predictions, experiment log, and reflection. |
 
-
-
 ## Required Resource
-Official teacher-supplied NOAI task package.
+
+Official teacher-supplied NOAI task package. Use only authorised task files and official rules.
 
 ## Learning Targets
+
 - understand the scientific target and metric;
 - create a leakage-safe validation design;
-- establish linear/tree baselines;
-- document domain assumptions.
+- establish linear or tree-based baselines;
+- document domain assumptions;
+- produce a reproducible submission before reading any reference solution.
 
 ## Independent Task
+
 Reproduce a valid score before reading the reference solution, then compare methods.
+
+## Required Evidence
+
+Submit:
+
+1. task-recognition sheet;
+2. data-audit and leakage checklist;
+3. baseline notebook and validation result;
+4. validated submission file;
+5. one controlled-improvement record;
+6. error-analysis table;
+7. fresh-runtime record;
+8. post-mortem comparing your route with the reference route without copying it.
