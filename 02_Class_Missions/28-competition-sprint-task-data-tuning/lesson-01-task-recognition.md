@@ -1,10 +1,10 @@
-# Lesson 01 — Task Recognition from Unfamiliar Competition Statements
+# Lesson 01 — Task Recognition and Task Formalisation
 
 **Duration:** 75 minutes
 
 ## Learning Target
 
-By the end of this lesson, students can convert an unfamiliar task statement into a precise modelling specification before writing code.
+By the end of this lesson, students can convert an unfamiliar task statement into a precise modelling and evaluation specification before inspecting models or writing training code.
 
 ## Required Resource
 
@@ -20,7 +20,8 @@ Mark:
 - required output;
 - whether labels exist;
 - task type;
-- evaluation metric;
+- evaluation metric and direction;
+- prediction-time boundary;
 - runtime and package constraints;
 - submission-file requirements.
 
@@ -29,9 +30,10 @@ Mark:
 Partners compare answers to:
 
 1. What exactly is one sample?
-2. What must the model produce for one sample?
+2. What must the system produce for one sample?
 3. Which sentence reveals the task type?
-4. Which sentence creates the greatest competition risk?
+4. What information genuinely exists at prediction time?
+5. Which sentence creates the greatest competition risk?
 
 ## 3. Entry Check — 15–22 min
 
@@ -39,21 +41,32 @@ Complete without coding:
 
 ```text
 Task type:
-Input:
-Output:
+Input X:
+Output/target y:
 Target or hidden structure:
 Training signal:
-Metric:
-Submission unit:
+Official metric and direction:
+Submission unit and schema:
+Prediction-time boundary:
+Possible independent/group unit:
 Main constraint:
 ```
 
 ## 4. Core Pattern — 22–35 min
 
-Use this task-recognition pattern:
+Use this task-formalisation pattern:
 
 ```text
-Input → Output → Training Signal → Metric → Constraints → Candidate Model Families
+Input X
+→ Output/Target y
+→ Training Signal
+→ Task Type
+→ Metric and Direction
+→ Prediction-Time Boundary
+→ Independent Unit
+→ Constraints
+→ Submission Schema
+→ Data Questions to Audit Next
 ```
 
 Recognition rules:
@@ -66,16 +79,18 @@ Recognition rules:
 - action and reward loop → reinforcement learning;
 - text/image/audio combination → multimodal task.
 
+Do **not** select the final model family in this lesson. Model selection occurs only after data quality, validation, and feature representation are understood.
+
 ## 5. Guided Practice — 35–53 min
 
 Classify four short competition scenarios and justify each using evidence from the wording.
 
-| Scenario | Task type | Recognition signal | Metric | Candidate baseline |
-|---|---|---|---|---|
-| A |  |  |  |  |
-| B |  |  |  |  |
-| C |  |  |  |  |
-| D |  |  |  |  |
+| Scenario | Task type | Input/output evidence | Metric | Prediction-time boundary | First data-quality question |
+|---|---|---|---|---|---|
+| A |  |  |  |  |  |
+| B |  |  |  |  |  |
+| C |  |  |  |  |  |
+| D |  |  |  |  |  |
 
 ## 6. Independent Rebuild — 53–67 min
 
@@ -84,19 +99,25 @@ For a new task statement, produce a one-page task card:
 ```text
 Problem in one sentence:
 One sample is:
-The required prediction is:
+Input X is:
+The required output/target y is:
 The learning paradigm is:
 The task type is:
 The metric rewards:
 The metric punishes:
-The simplest valid baseline is:
-The largest implementation risk is:
+Prediction-time information is limited to:
+The independent or grouping unit may be:
+The submission must contain:
+The largest data/validation risk is:
+The first three data questions to investigate are:
 ```
 
 ## 7. Talk Robin 2 + Evidence — 67–75 min
 
-Submit the task card and explain one rejected model family.
+Submit the task card and explain one model-selection decision that must wait until after the data and feature stages.
 
 ## Exit Standard
 
-A student is not ready to code until the input, output, metric, split unit, and baseline are unambiguous.
+A student is ready for the data-quality lesson only when the input, output, task type, metric, prediction-time boundary, independent-unit hypothesis, constraints, and submission schema are unambiguous.
+
+The student is **not** yet expected to choose the final baseline model.
