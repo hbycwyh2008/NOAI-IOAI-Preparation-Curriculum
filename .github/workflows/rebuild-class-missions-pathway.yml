@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - agent/rebuild-class-missions-pathway
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
