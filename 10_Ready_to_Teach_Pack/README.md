@@ -29,11 +29,19 @@ The repository preserves:
 
 The reusable bank lives under [`02_Class_Missions/_Lesson_Library`](../02_Class_Missions/_Lesson_Library/README.md). It supports remediation, deeper practice, alternative explanations, domain extensions, and competition preparation; it is not a second scheduled route.
 
-## Phase Delivery Packs
+## Canonical Phase Delivery Packs
 
 - [Phase 4 — AI History and Thinking Humans](Phase_4_AI_History_and_Thinking_Humans.md)
-- [Phase 7 — Competition Practice](Phase_7_Competition_Practice.md)
-- [Phase 8 — Competition Sprint](Phase_8_Competition_Sprint.md)
+- [Phase 8 — Tuning, Ensembling, and Competition](Phase_8_Competition_Sprint.md)
+
+The canonical Phase 7 teacher overview is [Model Comparison, EDA, and Evaluation](../09_Teacher_Planning/Phase_Overviews/Canonical_Phase_7_Model_Comparison_EDA_Evaluation.md).
+
+## Reusable Competition Practice
+
+- [Extended Competition Practice Teacher Index](Phase_7_Competition_Practice.md)
+- [Competition Workflow Lesson Bank](../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/README.md)
+
+These resources provide longer reproductions, mocks, and an eight-lesson sprint bank. They do not define additional canonical sessions after Session 78.
 
 Phase 04 also uses:
 
@@ -80,7 +88,8 @@ Assessment-sensitive teacher keys, hidden labels, private tests, secure scoring 
 
 Use:
 
-- [Phase 8 teacher pack](Phase_8_Competition_Sprint.md)
+- [Canonical Phase 8 teacher pack](Phase_8_Competition_Sprint.md)
+- [Extended competition practice index](Phase_7_Competition_Practice.md)
 - [Competition workflow lesson bank](../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/README.md)
 - [Experiment log](../03_Templates/Competition_Sprint_Experiment_Log_Template.md)
 - [Model ensembling record](../03_Templates/Competition_Sprint_Model_Ensembling_Record.md)
