@@ -6,10 +6,10 @@ This four-session route is canonical. The eight-lesson competition-sprint bank r
 
 | Session | Focus | Open this lesson | Required evidence |
 |---:|---|---|---|
-| 75 | diagnosis-first tuning and controlled search | [Classical-model tuning](../_Lesson_Library/28-competition-sprint-task-data-tuning/lesson-05-classical-model-tuning.md) or, for a deep model, [deep-learning tuning](../_Lesson_Library/28-competition-sprint-task-data-tuning/lesson-06-deep-learning-tuning.md) | default reference, diagnosis, controlled search log, stable-gain decision |
-| 76 | model ensembling, diversity, and out-of-fold stacking | [Model ensembling](../_Lesson_Library/28-competition-sprint-task-data-tuning/lesson-07-model-ensembling.md) | held-out/OOF predictions, diversity table, best-single comparison |
-| 77 | full competition simulation and fresh-runtime validation | [Full sprint simulation](../_Lesson_Library/28-competition-sprint-task-data-tuning/lesson-08-full-sprint-simulation.md) | complete workflow, valid submission, fresh run, time-management record |
-| 78 | postmortem and readiness conference | [Cross-task postmortem](../_Lesson_Library/25-past-paper-reproduction/lesson-04-cross-task-postmortem-patterns.md) and [final readiness conference](../_Lesson_Library/26-mock-contests/lesson-04.md) | postmortem, correction priorities, readiness status, dated next actions |
+| 75 | diagnosis-first tuning and controlled search | [Classical-model tuning](session-75-classical-model-tuning.md) or, for a deep model, [deep-learning tuning](session-75-deep-learning-tuning.md) | default reference, diagnosis, controlled search log, stable-gain decision |
+| 76 | model ensembling, diversity, and out-of-fold stacking | [Model ensembling](session-76-model-ensembling.md) | held-out/OOF predictions, diversity table, best-single comparison |
+| 77 | full competition simulation and fresh-runtime validation | [Full sprint simulation](session-77-full-sprint-simulation.md) | complete workflow, valid submission, fresh run, time-management record |
+| 78 | postmortem and readiness conference | [Cross-task postmortem](session-78-cross-task-postmortem.md) and [final readiness conference](session-78-final-readiness-conference.md) | postmortem, correction priorities, readiness status, dated next actions |
 
 ## Non-Negotiable Order
 

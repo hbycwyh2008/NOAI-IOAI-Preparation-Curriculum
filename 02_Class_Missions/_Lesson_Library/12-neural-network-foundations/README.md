@@ -4,8 +4,10 @@ This module must support the 2026 NOAI change that neural-network items are most
 
 ## Lessons
 
+> Canonical session lesson bodies have moved into their numbered Phase folders. This module now indexes only remaining remediation, extension, or reference material. Use the Phase session launcher for scheduled teaching.
+
+
 - [Lesson 01 — Perceptrons, neurons, weights, bias, and activations](lesson-01.md)
-- [Lesson 02 — Multilayer networks and forward propagation](lesson-02.md)
 - [Lesson 03 — Activation functions, decision functions, and loss functions](lesson-03-activation-decision-loss.md)
 - [Lesson 04 — Parameter counting and layer-shape reasoning](lesson-04-parameters-and-shapes.md)
 - [Lesson 05 — Forward-pass hand trace and paper-test explanation](lesson-05-forward-pass-trace.md)

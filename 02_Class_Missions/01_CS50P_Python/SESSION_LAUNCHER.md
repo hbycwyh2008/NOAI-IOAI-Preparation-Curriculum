@@ -7,15 +7,15 @@ Open the assigned row. The links already select the required lesson-bank file; d
 
 | Session | Focus | Open this lesson | Required evidence |
 |---:|---|---|---|
-| 3 | functions, variables, expressions, input, and output | [Functions and variables](../_Lesson_Library/01-python-foundations/lesson-01.md) | trace plus small function program |
-| 4 | types, conversion, input/output, and debugging | [Types, conversion, and debugging](../_Lesson_Library/01-python-foundations/lesson-02.md) | conversion/error table and corrected program |
-| 5 | conditionals and Boolean reasoning | [Conditionals and Boolean logic](../_Lesson_Library/02-control-flow-and-data-structures/lesson-01.md) | branch table and independent conditional task |
-| 6 | loops and boundary reasoning | [Loop tracing and boundaries](../_Lesson_Library/02-control-flow-and-data-structures/lesson-03-loop-tracing-boundaries.md) | loop trace, boundary case, and corrected loop |
-| 7 | strings, lists, dictionaries, and tuples | [String/list transformations](../_Lesson_Library/02-control-flow-and-data-structures/lesson-04-string-list-transformations.md) and [dictionary counting](../_Lesson_Library/02-control-flow-and-data-structures/lesson-05-dictionary-counting-patterns.md) | transformation plus frequency table |
-| 8 | function decomposition and return-value tracing | [Function decomposition and tracing](../_Lesson_Library/01-python-foundations/lesson-03-function-decomposition-tracing.md) | multi-function trace and rebuild |
-| 9 | libraries, modules, imports, and documentation | [Modules, imports, and documentation](../_Lesson_Library/01-python-foundations/lesson-04-modules-imports-docs.md) | documentation-use record and imported solution |
-| 10 | exceptions, defensive checks, and debugging evidence | [Defensive checks and debugging evidence](../_Lesson_Library/01-python-foundations/lesson-05-debugging-evidence.md) | exception-handling example and debugging log |
-| 11 | files, CSV schema, and row processing | [CSV schema and row processing](../_Lesson_Library/03-libraries-sorting-searching/lesson-03-csv-schema-row-processing.md) | CSV audit and row-processing script |
+| 3 | functions, variables, expressions, input, and output | [Functions and variables](session-03-functions-and-variables.md) | trace plus small function program |
+| 4 | types, conversion, input/output, and debugging | [Types, conversion, and debugging](session-04-types-conversion-and-debugging.md) | conversion/error table and corrected program |
+| 5 | conditionals and Boolean reasoning | [Conditionals and Boolean logic](session-05-conditionals-and-boolean-logic.md) | branch table and independent conditional task |
+| 6 | loops and boundary reasoning | [Loop tracing and boundaries](session-06-loop-tracing-and-boundaries.md) | loop trace, boundary case, and corrected loop |
+| 7 | strings, lists, dictionaries, and tuples | [String/list transformations](session-07-string-list-transformations.md) and [dictionary counting](session-07-dictionary-counting.md) | transformation plus frequency table |
+| 8 | function decomposition and return-value tracing | [Function decomposition and tracing](session-08-function-decomposition-and-tracing.md) | multi-function trace and rebuild |
+| 9 | libraries, modules, imports, and documentation | [Modules, imports, and documentation](session-09-modules-imports-and-documentation.md) | documentation-use record and imported solution |
+| 10 | exceptions, defensive checks, and debugging evidence | [Defensive checks and debugging evidence](session-10-defensive-checks-and-debugging-evidence.md) | exception-handling example and debugging log |
+| 11 | files, CSV schema, and row processing | [CSV schema and row processing](session-11-csv-schema-and-row-processing.md) | CSV audit and row-processing script |
 | 12 | unit tests, classes, and mastery checkpoint | [Python mastery checkpoint](session-12-python-mastery-checkpoint.md) | tested CSV mini-program and fresh-run evidence |
 
 ## Supporting Resource

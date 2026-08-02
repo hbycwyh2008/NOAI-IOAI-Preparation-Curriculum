@@ -30,7 +30,7 @@ It is **not canonical Phase 7**, does not define session numbers, and must not r
 | Round 1 mock | 120 minutes | [`26-mock-contests/lesson-01.md`](../02_Class_Missions/_Lesson_Library/26-mock-contests/lesson-01.md) | closed-note performance, confidence coding, and correction evidence |
 | Round 2 tabular mock | 240 minutes | [`26-mock-contests/lesson-02.md`](../02_Class_Missions/_Lesson_Library/26-mock-contests/lesson-02.md) | valid submission and fresh run |
 | Round 2 multimodal mock | 360 minutes | [`26-mock-contests/lesson-03.md`](../02_Class_Missions/_Lesson_Library/26-mock-contests/lesson-03.md) | single-modality baselines, fusion, and stress tests |
-| Readiness conference | 45 minutes per student | [`26-mock-contests/lesson-04.md`](../02_Class_Missions/_Lesson_Library/26-mock-contests/lesson-04.md) | evidence-based readiness status and dated next actions |
+| Readiness conference | 45 minutes per student | [`26-mock-contests/lesson-04.md`](../02_Class_Missions/08_Tuning_Ensembling_Competition/session-78-final-readiness-conference.md) | evidence-based readiness status and dated next actions |
 
 ## Selection Gate
 

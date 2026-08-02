@@ -7,20 +7,20 @@ Each link opens the exact teachable lesson packet. Do not open the parent Module
 
 | Session | Focus | Open this lesson | Required evidence |
 |---:|---|---|---|
-| 19 | course map and evidence expectations | [Course map and evidence](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-01-course-map-evidence.md) | learning map, terms, goal, and confusion |
-| 20 | definition and boundaries of artificial intelligence | [AI definition and boundaries](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-02-ai-definition-boundaries.md) | definition, contrast, and boundary |
-| 21 | AI history, schools, and Turing Test | [AI history and schools](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-03-ai-history-schools.md) | schools/Turing comparison table |
-| 22 | connectionism and machine learning | [Connectionism and ML](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-04-connectionism-machine-learning.md) | data → model → training → inference explanation |
-| 23 | object-oriented programming, libraries, and scikit-learn | [OOP, libraries, and scikit-learn](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-05-oop-libraries-sklearn.md) | library/documentation note and workflow sketch |
-| 24 | training paradigm and ML workflow | [Training paradigm](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-06-training-paradigm.md) | complete ML workflow diagram |
-| 25 | classification and logistic regression | [Classification and logistic regression](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-07-classification-logistic-regression.md) | scenario, boundary explanation, and confusion-matrix check |
-| 26 | optimisation and gradient descent | [Optimisation theory](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-08-optimization-theory.md) | loss/gradient/descent explanation |
-| 27 | neural networks and backpropagation | [Neural networks and backpropagation](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-09-neural-network-backprop.md) | forward/loss/backward/optimiser trace |
-| 28 | KNN and Bayes reasoning | [KNN and Bayes](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-10-knn-bayes-reasoning.md) | distance-versus-probability comparison |
-| 29 | SVM and margin | [Support vector machines and margin](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-11-svm-margin.md) | margin/boundary explanation |
-| 30 | entropy, trees, multiclass learning, and ensembles | [Entropy, trees, and ensembles](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-12-entropy-trees-ensembles.md) | entropy/tree/ensemble comparison |
-| 31 | unsupervised learning and reinforcement learning | [Unsupervised learning and RL](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-13-unsupervised-rl.md) | scenario sorting and explanation |
-| 32 | deep neural networks and bridge to later phases | [Deep neural networks](../_Lesson_Library/27-official-bohrium-video-lessons/bml15-70min-sequence/lesson-14-deep-neural-networks.md) | DNN synthesis and transition questions |
+| 19 | course map and evidence expectations | [Course map and evidence](session-19-course-map-and-evidence.md) | learning map, terms, goal, and confusion |
+| 20 | definition and boundaries of artificial intelligence | [AI definition and boundaries](session-20-ai-definition-and-boundaries.md) | definition, contrast, and boundary |
+| 21 | AI history, schools, and Turing Test | [AI history and schools](session-21-ai-history-and-schools.md) | schools/Turing comparison table |
+| 22 | connectionism and machine learning | [Connectionism and ML](session-22-connectionism-and-ml.md) | data → model → training → inference explanation |
+| 23 | object-oriented programming, libraries, and scikit-learn | [OOP, libraries, and scikit-learn](session-23-oop-libraries-and-scikit-learn.md) | library/documentation note and workflow sketch |
+| 24 | training paradigm and ML workflow | [Training paradigm](session-24-training-paradigm.md) | complete ML workflow diagram |
+| 25 | classification and logistic regression | [Classification and logistic regression](session-25-classification-and-logistic-regression.md) | scenario, boundary explanation, and confusion-matrix check |
+| 26 | optimisation and gradient descent | [Optimisation theory](session-26-optimisation-theory.md) | loss/gradient/descent explanation |
+| 27 | neural networks and backpropagation | [Neural networks and backpropagation](session-27-neural-networks-and-backpropagation.md) | forward/loss/backward/optimiser trace |
+| 28 | KNN and Bayes reasoning | [KNN and Bayes](session-28-knn-and-bayes.md) | distance-versus-probability comparison |
+| 29 | SVM and margin | [Support vector machines and margin](session-29-support-vector-machines-and-margin.md) | margin/boundary explanation |
+| 30 | entropy, trees, multiclass learning, and ensembles | [Entropy, trees, and ensembles](session-30-entropy-trees-and-ensembles.md) | entropy/tree/ensemble comparison |
+| 31 | unsupervised learning and reinforcement learning | [Unsupervised learning and RL](session-31-unsupervised-learning-and-rl.md) | scenario sorting and explanation |
+| 32 | deep neural networks and bridge to later phases | [Deep neural networks](session-32-deep-neural-networks.md) | DNN synthesis and transition questions |
 
 ## Teacher Overview
 

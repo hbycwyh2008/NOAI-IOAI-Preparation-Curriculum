@@ -4,8 +4,9 @@ This module prepares students to reason about regression, residuals, cost, fitti
 
 ## Lessons
 
-- [Lesson 01 — Model, prediction, residual, and cost](lesson-01.md)
-- [Lesson 02 — Gradient descent, feature scaling, and multiple regression](lesson-02.md)
+> Canonical session lesson bodies have moved into their numbered Phase folders. This module now indexes only remaining remediation, extension, or reference material. Use the Phase session launcher for scheduled teaching.
+
+
 - [Lesson 03 — Linear regression paper calculations and interpretation](lesson-03-paper-calculations-interpretation.md)
 - [Lesson 04 — Regression baseline, error analysis, and Round 2 bridge](lesson-04-regression-baseline-error-analysis.md)
 

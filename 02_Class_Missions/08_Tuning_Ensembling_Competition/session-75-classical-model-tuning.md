@@ -27,7 +27,7 @@ Optional review:
 - Learning Curves — 12 min
 - Error Analysis — 8 min
 
-See [Hyperparameter-Tuning Video Resource Map](Hyperparameter_Tuning_Video_Resource_Map.md).
+See [Hyperparameter-Tuning Video Resource Map](../_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md).
 
 ## 1. Skill Warm-Up — 0–8 min
 
