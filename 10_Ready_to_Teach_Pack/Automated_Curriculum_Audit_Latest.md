@@ -1,12 +1,14 @@
 # Automated Curriculum Audit
 
-- Commit: `fc355310a2459777f9be395fe03a8d5de4c9aafd`
+- Commit: `facf0a35ea65ff48b20e10f1ca7d8af5cda37d31`
 - Runner: GitHub Actions / Python 3.12
-- Exit code: `1`
+- Exit code: `0`
 
 ```text
-Curriculum structure validation failed:
-- '75 sessions' not found in 00_Course_Overview/Pacing_Guide.md
-- '75 scheduled sessions' not found in 00_Course_Overview/Detailed_Lesson_Sequence.md
-- '72–75' not found in 00_Course_Overview/Course_Map.md
+Curriculum structure validation passed.
+Mainline lesson files: 155
+Optional Bohrium resource lesson files: 16
+Total public lesson files: 171
+Public file-structure and internal-consistency coverage: 100%
+Operational, pilot, privacy, runtime, and annual-rule readiness remain separate.
 ```
