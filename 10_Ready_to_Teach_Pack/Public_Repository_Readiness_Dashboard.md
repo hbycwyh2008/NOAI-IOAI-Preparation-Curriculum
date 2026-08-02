@@ -8,7 +8,7 @@
 | numbered Phase launchers | complete |
 | phase-local canonical lesson storage | complete |
 | unique phase-local launcher targets | 95 |
-| canonical links into `_Lesson_Library` | zero |
+| canonical links into the former extension library | zero |
 | extension/remediation lesson files | 96 |
 | AI History phase | complete |
 | Andrew ML mathematics transition | complete |

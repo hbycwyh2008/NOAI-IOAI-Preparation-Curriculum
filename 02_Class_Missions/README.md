@@ -6,13 +6,11 @@
 choose the assigned Phase
 → open its Session Launcher
 → click the assigned Session
-→ teach or complete the phase-local lesson
+→ teach or complete that lesson
 → submit the named evidence
 ```
 
 Read [How to Use Class Missions](HOW_TO_USE_CLASS_MISSIONS.md) once before teaching the course.
-
-> **Do not browse `_Lesson_Library` to choose a class.** Every canonical lesson body is stored directly inside its numbered Phase folder, and the launchers below point to the exact file.
 
 ## Canonical 78-Session Route
 
@@ -23,25 +21,19 @@ Read [How to Use Class Missions](HOW_TO_USE_CLASS_MISSIONS.md) once before teach
 | 2 — NumPy, Pandas, and Visualisation | 13–18 | [Launch Sessions 13–18](02_NumPy_Pandas_Visualisation/SESSION_LAUNCHER.md) | arrays, DataFrames, data quality, plots, and a fresh-run audit notebook |
 | 3 — Bohrium ML Foundations | 19–32 | [Launch Sessions 19–32](03_Bohrium_ML_Foundations/SESSION_LAUNCHER.md) | Chinese-language ML concept foundation |
 | 4 — AI History and Thinking Humans | 33–40 | [Launch Sessions 33–40](04_AI_History_and_Thinking_Humans/SESSION_LAUNCHER.md) | AI history, claim auditing, evidence, and conceptual limits |
-| 5 — Andrew Ng ML and Model Labs | 41–58 | [Launch Sessions 41–58](05_Andrew_Ng_ML_Model_Labs/SESSION_LAUNCHER.md) | mathematics transition, classical models, task recognition, Kaggle practice, and model cards |
+| 5 — Andrew Ng ML and Model Labs | 41–58 | [Launch Sessions 41–58](05_Andrew_Ng_ML_Model_Labs/SESSION_LAUNCHER.md) | mathematics transition, classical models, embedded practice, and model cards |
 | 6 — Andrew Ng DL and PyTorch | 59–70 | [Launch Sessions 59–70](06_Andrew_Ng_DL_PyTorch/SESSION_LAUNCHER.md) | deep-learning concepts paired with PyTorch and domain tasks |
 | 7 — Model Comparison, EDA, and Evaluation | 71–74 | [Launch Sessions 71–74](07_Model_Comparison_EDA_Evaluation/SESSION_LAUNCHER.md) | model selection, systematic EDA, features, validation, and error analysis |
 | 8 — Tuning, Ensembling, and Competition | 75–78 | [Launch Sessions 75–78](08_Tuning_Ensembling_Competition/SESSION_LAUNCHER.md) | tuning, ensembling, full simulation, and readiness decision |
 
-## Resource Roles
+## Supporting Areas
 
-- CS50P is the Python spine.
-- NumPy, Pandas, and Matplotlib form the data-tool foundation.
-- 北京市十一学校《中学机器学习十五讲》 on Bohrium precedes formal model study.
-- Melanie Mitchell’s *Artificial Intelligence: A Guide for Thinking Humans* supplies AI history and critical judgement.
-- Andrew Ng Machine Learning is paired with an explicit mathematics transition, StatQuest, 3Blue1Brown, embedded Kaggle practice, model recognition, and typical tasks.
-- Andrew Ng Deep Learning is paired immediately with PyTorch implementations.
+- [Student setup and evidence](../01_Student_Start/README.md)
+- [Templates](../03_Templates/README.md)
+- [Assessment](../04_Assessment/README.md)
+- [Resources](../05_Resources/README.md)
+- [Teacher planning](../09_Teacher_Planning/README.md)
+- [Ready-to-Teach records](../10_Ready_to_Teach_Pack/README.md)
+- [Repository Architecture Manifest](../MANIFEST.md)
 
-## Maintainer and Extension Areas
-
-These are not normal student entry points:
-
-- [`_Lesson_Library`](./_Lesson_Library/README.md) — remediation, alternative explanations, domain extensions, reproductions, mocks, and optional competition practice;
-- [`_Curriculum_Governance`](./_Curriculum_Governance/README.md) — audits, architecture, and maintenance.
-
-The numbered Phase folders are the sole storage and delivery location for canonical Sessions 1–78.
+These supporting areas do not create a second teaching order.

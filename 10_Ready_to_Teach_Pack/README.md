@@ -1,30 +1,25 @@
-# Ready-to-Teach Curriculum Pack
+# Ready-to-Teach Pack Index
 
-This directory supports the canonical 78-Session pathway.
-
-## Normal Delivery
-
-1. Open [Class Missions](../02_Class_Missions/README.md).
-2. Open the assigned numbered Phase.
-3. Open `SESSION_LAUNCHER.md`.
-4. Open the phase-local lesson packet.
-5. Collect the named evidence and apply the Session or Phase gate.
-
-Canonical teaching does not require browsing `_Lesson_Library`.
-
-## Current Public Architecture
-
-- 78 canonical Sessions;
-- 95 unique phase-local launcher targets;
-- 96 remaining optional extension/remediation lessons;
-- eight AI History seminars;
-- Andrew ML mathematics transition in Sessions 41–43.
+Canonical teaching begins in [Class Missions](../02_Class_Missions/README.md). This folder contains delivery support and release evidence, not a second lesson sequence.
 
 ## Canonical Delivery Packs
 
 - [Phase 4 — AI History and Thinking Humans](Phase_4_AI_History_and_Thinking_Humans.md)
 - [Phase 5 — Andrew ML Mathematics Bridge](Phase_5_Andrew_Ng_ML_Mathematics_Bridge.md)
 - [Phase 8 — Tuning, Ensembling, and Competition](Phase_8_Competition_Sprint.md)
+
+## Resource Crosswalks
+
+- [Resource and Syllabus Crosswalk](Resource_Map_and_Syllabus_Crosswalk.md)
+- [Deep Learning Specialization Selected Content](DLS_Selected_Content_Map.md)
+- [Hands-On ML and PyTorch Selected Content](HandsOnML_PyTorch_Selected_Content_Map.md)
+- [Starter Notebooks and Datasets](Starter_Notebooks_and_Datasets.md)
+
+## Assessment and Mock Security
+
+- [Round 1 Mock B](Round_1_Mock_B.md)
+- [Round 2 Mock Pack](Round_2_Mock_Pack.md)
+- [Hidden Mock Sealing Protocol](Hidden_Mock_Sealing_Protocol.md)
 
 ## Readiness Records
 
@@ -33,6 +28,14 @@ Canonical teaching does not require browsing `_Lesson_Library`.
 - [Release Readiness Gates](Release_Readiness_Gates.md)
 - [Student Runtime Qualification Record](Student_Runtime_Qualification_Record.md)
 - [External Access Verification Record](External_Access_Verification_Record.md)
-- [Representative Pilot Matrix](../09_Teacher_Planning/Pilot/Representative_Pilot_Matrix.md)
+- [Runtime Validation Record](Runtime_Validation_Record.md)
+- [Latest Link Verification](Link_Verification_Latest.md)
+- [Latest Automated Curriculum Audit](Automated_Curriculum_Audit_Latest.md)
+- [Repository Cleanup Audit](Repository_Cleanup_Audit.md)
 
-Public structural readiness does not replace real-cohort runtime, access, security, pilot, or annual-rule evidence.
+## Annual Rules
+
+- [Annual Competition Rule Verification Template](Annual_Competition_Rule_Verification.md)
+- [2026 Rules Verification Record](Annual_Rules_2026_Verification.md)
+
+Public repository checks do not replace cohort-specific runtime, access, privacy, pilot, or current-rule evidence.

@@ -1,35 +1,22 @@
-# Templates
+# Student and Teacher Templates
 
-This folder contains reusable student-facing templates used across the NOAI / IOAI preparation curriculum.
+Use only the template named by the current Session, assessment, or teacher plan. Templates do not create additional scheduled lessons.
 
-These templates complete the public repository structure without exposing answer keys, hidden labels, scoring guides, or full solutions. Teacher-only materials belong in the private teacher-key repository.
-
-## Templates
-
-- [Student Worksheet Master Template](Student_Worksheet_Master_Template.md)
+- [AI History Reading Evidence Template](AI_History_Reading_Evidence_Template.md)
+- [AI Usage Note](AI_Usage_Note_Template.md)
+- [Andrew ML Mathematics Bridge Evidence Template](Andrew_ML_Mathematics_Bridge_Evidence_Template.md)
+- [Competition Sprint Experiment Log Template](Competition_Sprint_Experiment_Log_Template.md)
+- [Competition Sprint Model Ensembling Record](Competition_Sprint_Model_Ensembling_Record.md)
+- [Competition Sprint Submission Checklist](Competition_Sprint_Submission_Checklist.md)
+- [Concept Notes](Concept_Notes_Template.md)
+- [Error Log](Error_Log_Template.md)
+- [Universal Evidence Checklist](Evidence_Checklist.md)
+- [Experiment Report](Experiment_Report_Template.md)
+- [Independent Rebuild](Independent_Rebuild_Template.md)
+- [Mock Contest Report](Mock_Contest_Report_Template.md)
+- [Model Card](Model_Card_Template.md)
 - [Round 1 Paper Practice Worksheet Template](Round_1_Paper_Practice_Worksheet_Template.md)
 - [Round 2 Notebook Lab Template](Round_2_Notebook_Lab_Template.md)
-- [Competition Sprint Experiment Log Template](Competition_Sprint_Experiment_Log_Template.md)
-- [Competition Sprint Submission Checklist](Competition_Sprint_Submission_Checklist.md)
-- [Evidence Checklist](Evidence_Checklist.md)
-
-## Use Rule
-
-Every ordinary lesson should produce evidence using one of these templates or a lesson-specific variant:
-
-1. guided notes or entry-check response;
-2. core-pattern statement;
-3. guided-practice work;
-4. independent rebuild;
-5. short oral or written explanation.
-
-Competition-sprint lessons additionally require:
-
-1. task-recognition evidence;
-2. baseline and metric decisions;
-3. data-audit and leakage evidence;
-4. a controlled experiment log;
-5. a stop/continue tuning decision;
-6. fresh-runtime and submission checks.
-
-Do not place teacher solutions, hidden labels, private test data, or scoring keys in this folder.
+- [Student NOAI Preparation Repository](Student_Repo_Template.md)
+- [Student Worksheet Master Template](Student_Worksheet_Master_Template.md)
+- [Weekly Reflection](Weekly_Reflection_Template.md)

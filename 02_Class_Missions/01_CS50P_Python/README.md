@@ -7,7 +7,7 @@
 
 [**Open the Phase 1 Session Launcher**](SESSION_LAUNCHER.md)
 
-The launcher maps every scheduled session to the exact lesson file and required evidence. Do not choose lessons by browsing `_Lesson_Library`.
+The launcher maps every scheduled Session to its phase-local lesson and required evidence.
 
 ## Purpose
 

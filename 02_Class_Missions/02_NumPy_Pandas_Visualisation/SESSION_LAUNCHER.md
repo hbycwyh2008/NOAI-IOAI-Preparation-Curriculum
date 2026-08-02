@@ -2,7 +2,7 @@
 
 **Sessions:** 13–18
 
-Open the exact session link below. The lesson body may be stored in `_Lesson_Library`, but no manual library browsing is required.
+Open the exact session link below. The lesson body may be stored in the former extension library, but no manual library browsing is required.
 
 | Session | Focus | Open this lesson | Required evidence |
 |---:|---|---|---|

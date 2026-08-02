@@ -3,11 +3,11 @@
 **Sessions:** 41–58  
 **Primary spine:** Andrew Ng Machine Learning Specialization
 
-This launcher is the scheduled route. Open the exact session link; do not choose a lesson by browsing `_Lesson_Library`.
+Open the exact Session link below.
 
 | Session | Focus | Open this lesson | Required evidence |
 |---:|---|---|---|
-| 41 | mathematics transition I: task notation, scalar/vector/matrix objects, shapes, and equation-to-code translation | [Mathematics transition bridge — Session 41](Andrew_ML_Mathematics_Bridge.md#session-41--mathematical-language-of-machine-learning) | task/notation ledger, shape ledger, equation translation, baseline |
+| 41 | mathematics transition I: task notation, scalar/vector/matrix objects, shapes, and equation-to-code translation | [Mathematics transition bridge — Session 41](Andrew_ML_Mathematics_Bridge.md#session-41-mathematical-language-of-machine-learning) | task/notation ledger, shape ledger, equation translation, baseline |
 | 42 | mathematics transition II and linear regression: dot products, slope, residuals, and MSE | [Linear prediction, residual, and cost](session-42-linear-prediction-residual-and-cost.md) | hand prediction, residual/loss, graph, code mapping |
 | 43 | mathematics transition III and multiple regression: scale, derivatives, gradients, and gradient descent | [Gradient descent, scale, and multiple regression](session-43-gradient-descent-scale-and-multiple-regression.md) | contour explanation and one correct update |
 | 44 | logistic regression: sigmoid, probability, logarithms, and boundary | [Sigmoid, probability, and decision boundary](session-44-sigmoid-probability-and-decision-boundary.md) | probability table, boundary explanation, log-loss intuition |

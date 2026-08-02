@@ -1,66 +1,80 @@
-# Mission 12.2 — Multilayer Networks and Forward Propagation
+# Session 60 — PyTorch Forward Pass: `nn.Module`, Logits, and Shape Debugging
 
 **Duration:** 75 minutes  
-**Pre-class required viewing:** 28 minutes
+**Prerequisite:** Session 47 conceptual forward propagation and Session 59 tensor/device work
 
-## Pre-Class Required Resource
+## Required Mastery
 
-**Course 2 — Advanced Learning Algorithms**, part of the **Machine Learning Specialization**  
-Coursera: https://www.coursera.org/learn/advanced-learning-algorithms  
-Week 1 — Neural Networks
+Students must be able to:
 
-| Video | Duration | Student action |
-|---|---:|---|
-| Neural Network Layer | 10 min | identify inputs, weights, bias, activation, and output of one layer |
-| More Complex Neural Networks | 8 min | distinguish input, hidden, and output layers |
-| Inference: Making Predictions (Forward Propagation) | 5 min | trace information through the network |
-| Forward Propagation in a Single Layer | 5 min | calculate one small layer output |
+1. implement a small network as an `nn.Module`;
+2. explain what belongs in `__init__` and what belongs in `forward`;
+3. track batch, feature, hidden, and output shapes through every layer;
+4. distinguish logits, probabilities, predictions, targets, and loss;
+5. match the final layer and loss function to regression, binary classification, or multiclass classification;
+6. recognise when a softmax or sigmoid should not be inserted before a logits-based loss;
+7. diagnose a matrix-shape, dtype, or device mismatch from an error message;
+8. verify the forward pass with a small batch before training.
 
-Optional extension: General Implementation of Forward Propagation — 8 min.
+## Learning Cycle
 
-## Timeline
-
-| Time | Block | Student output |
-|---|---|---|
-| 0–8 min | Skill Warm-Up | Calculate one neuron output and label the tensor shapes. |
-| 8–15 min | Talk Robin 1 | Explain how the output of one layer becomes the input of the next. |
-| 15–22 min | Entry Check | Identify layers, parameters, and activations in a small diagram. |
-| 22–35 min | Core Pattern | Teacher models input → affine transformation → activation → next layer → output. |
-| 35–53 min | Guided Practice | Calculate a two-layer forward pass with teacher support. |
-| 53–67 min | Independent Rebuild | Calculate and diagram a new two-layer network. |
-| 67–75 min | Talk Robin 2 + Evidence | Explain one complete forward path and submit evidence. |
-
-## Learning Targets
-
-- distinguish input, hidden, and output layers;
-- calculate a small forward pass;
-- track vector and matrix shapes;
-- explain why nonlinear activations matter;
-- match sigmoid, rectified-linear-unit, and linear outputs to tasks.
+| Time | Block | Required student action |
+|---:|---|---|
+| 0–8 | **Skill Warm-Up** | Predict shapes for a batch passing through two `nn.Linear` layers. |
+| 8–15 | **Talk Robin 1** | Explain the difference between conceptual layer equations and a PyTorch `forward` method. |
+| 15–22 | **Entry Check** | Match task type, output shape, and loss function. |
+| 22–35 | **Core Pattern** | Trace batch → module → logits → loss-ready output. |
+| 35–53 | **Guided Practice** | Repair a model with an incorrect input width, activation placement, and target dtype. |
+| 53–67 | **Independent Rebuild** | Implement and test a fresh `nn.Module` from a shape specification. |
+| 67–75 | **Talk Robin 2 + Evidence** | Explain the forward trace and one repaired failure. |
 
 ## Core Pattern
 
 ```text
-Input vector → weighted sum + bias → activation → hidden representation → output layer → prediction
+input batch
+→ shape assertion
+→ linear transformation
+→ activation
+→ hidden representation
+→ output layer
+→ logits or regression output
+→ loss function
 ```
 
 ## Guided Practice
 
-Students calculate a two-layer network and complete a table:
+Students annotate and repair:
 
-| Item | Shape | Numerical result or role |
-|---|---|---|
-| input |  |  |
-| first-layer weights |  |  |
-| first-layer bias |  |  |
-| hidden activation |  |  |
-| output-layer weights |  |  |
-| final output |  |  |
+```python
+class Classifier(torch.nn.Module):
+    def __init__(self, n_features: int, n_classes: int) -> None:
+        super().__init__()
+        self.hidden = torch.nn.Linear(n_features, 16)
+        self.output = torch.nn.Linear(16, n_classes)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = torch.relu(self.hidden(x))
+        return self.output(x)
+```
+
+The class must state the expected shape and dtype before and after each operation and explain why the returned tensor is logits.
 
 ## Independent Rebuild
 
-Calculate and diagram a new two-layer network, including tensor shapes, activation choices, output interpretation, and one likely shape error.
+Create a module from a supplied task card. Include:
 
-## Talk Robin 2 + Evidence
+- constructor parameters;
+- shape comments;
+- a deterministic synthetic batch;
+- assertions for output shape and finite values;
+- the matching loss function;
+- one intentionally introduced failure and its diagnosis;
+- CPU-safe execution evidence.
 
-Submit the pre-class viewing note, guided forward-pass table, independent network diagram and calculation, and one explanation of why removing every nonlinear activation changes what the network can represent.
+## Evidence
+
+Submit the shape ledger, tested module, output/loss interpretation, repaired error record, and one explanation of why a correct forward pass is necessary but not sufficient for a correct training system.
+
+## Gate
+
+The module must run on a fresh process, produce the required output shape, use a compatible loss, and be explained without relying on trial-and-error execution.

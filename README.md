@@ -28,23 +28,21 @@ CS50P Python
 
 ## Storage Model
 
-The normal teaching path is:
-
 ```text
 numbered Phase
 → SESSION_LAUNCHER.md
 → phase-local lesson packet
 ```
 
-All canonical lesson bodies for Sessions 1–78 live directly inside their numbered Phase folders. `_Lesson_Library` contains only remediation, extension, alternative explanations, reproductions, mocks, and optional competition banks.
+All canonical lesson bodies for Sessions 1–78 live directly inside their numbered Phase folders. Supporting material lives in the named setup, template, assessment, resource, public-document, teacher-planning, and Ready-to-Teach directories. There is no parallel lesson-library schedule.
 
 ## Current Architecture
 
-- **78 canonical sessions** across nine numbered phases;
-- **95 unique phase-local Markdown packets** linked by the session launchers;
-- **96 remaining extension/remediation lesson files** in `_Lesson_Library`;
+- **78 canonical Sessions** across nine numbered Phases;
+- **95 unique phase-local Markdown packets** linked by the Session launchers;
 - eight English AI History seminars in Sessions 33–40;
-- an explicit Andrew ML mathematics transition in Sessions 41–43.
+- an explicit Andrew ML mathematics transition in Sessions 41–43;
+- permanent structure, readiness, launcher, hygiene, notebook, code, and link validation.
 
 ## Evidence Standard
 

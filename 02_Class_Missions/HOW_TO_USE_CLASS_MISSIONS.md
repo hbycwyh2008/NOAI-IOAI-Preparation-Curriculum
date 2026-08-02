@@ -11,45 +11,38 @@
 → collect the named evidence
 ```
 
-Every canonical lesson body for Sessions 1–78 is stored directly inside its numbered Phase folder. Teachers and students do not open `_Lesson_Library` during normal delivery.
+Every canonical lesson body for Sessions 1–78 is stored directly inside its numbered Phase folder.
 
 ## What Each Layer Means
 
 | Layer | Who uses it | Purpose |
 |---|---|---|
-| numbered Phase folder | teacher and student | canonical order and canonical lesson bodies |
-| `SESSION_LAUNCHER.md` | teacher and student | exact session-by-session entry point |
-| phase-local session file | teacher and student | classroom cycle, tasks, evidence, and gate |
-| `_Lesson_Library` | teacher or maintainer | remediation, extension, alternatives, and competition banks only |
-| `_Curriculum_Governance` | curriculum maintainer | audits, counts, architecture, and maintenance |
+| numbered Phase folder | teacher and student | canonical order and lesson bodies |
+| `SESSION_LAUNCHER.md` | teacher and student | exact Session entry point |
+| phase-local Session file | teacher and student | classroom cycle, tasks, evidence, and gate |
+| setup/templates/assessment/resources | teacher and student when linked | supporting material only |
+| teacher-planning and Ready-to-Teach folders | teacher or maintainer | planning, pilots, security, release evidence, and maintenance |
 
 ## Normal Class Workflow
 
 1. The teacher announces the Phase and Session number.
 2. Everyone opens the numbered Phase folder.
-3. Everyone clicks `SESSION_LAUNCHER.md`.
-4. Everyone opens the linked phase-local session packet.
+3. Everyone opens `SESSION_LAUNCHER.md`.
+4. Everyone opens the linked phase-local Session packet.
 5. Students use only the resources and templates linked by that packet.
 6. The teacher collects the named evidence.
-7. The class advances only after the session or phase gate is satisfied.
+7. The class advances only after the Session or Phase gate is satisfied.
 
 ## What Not to Do
 
-Do not:
-
-- browse `_Lesson_Library` to locate a scheduled lesson;
-- schedule every extension lesson;
-- treat a legacy module number as a canonical Session number;
-- teach from governance documents;
-- add an extension to the canonical schedule without recording the change.
-
-## When to Use the Lesson Library
-
-Open `_Lesson_Library` only for reteaching, extra practice, an alternative explanation, a domain extension, reproduction work, mock contests, or curriculum maintenance.
+- Do not invent a second Session order from resource maps or teacher notes.
+- Do not treat a historical module number as a canonical Session number.
+- Do not teach from architecture or readiness records.
+- Do not add optional material to the canonical schedule without recording the cohort decision.
 
 ## Source-of-Truth Rule
 
-- **Schedule and canonical lesson bodies:** numbered Phase folders.
+- **Schedule and lesson bodies:** numbered Phase folders.
 - **Exact entry point:** each Phase `SESSION_LAUNCHER.md`.
-- **Extra material:** `_Lesson_Library`.
-- **Teacher planning and release evidence:** `09_Teacher_Planning` and `10_Ready_to_Teach_Pack`.
+- **Supporting material:** the named setup, template, assessment, resource, and teacher directories.
+- **Architecture and validation:** [Repository Architecture Manifest](../MANIFEST.md).
