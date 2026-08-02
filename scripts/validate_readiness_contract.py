@@ -38,6 +38,8 @@ REQUIRED_FILES = (
     "09_Teacher_Planning/Phase_Overviews/README.md",
     *CANONICAL_TEACHER_OVERVIEWS,
     "10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md",
+    "10_Ready_to_Teach_Pack/Phase_7_Competition_Practice.md",
+    "10_Ready_to_Teach_Pack/Phase_8_Competition_Sprint.md",
     "10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md",
     "10_Ready_to_Teach_Pack/Student_Runtime_Qualification_Record.md",
     "10_Ready_to_Teach_Pack/External_Access_Verification_Record.md",
@@ -113,8 +115,18 @@ AUTHORITATIVE_MARKERS = {
     ),
     "10_Ready_to_Teach_Pack/README.md": (
         "canonical 78-session pathway",
-        "AI History and Thinking Humans",
-        "Phase_4_AI_History_and_Thinking_Humans.md",
+        "Canonical Phase Delivery Packs",
+        "Extended Competition Practice Teacher Index",
+    ),
+    "10_Ready_to_Teach_Pack/Phase_7_Competition_Practice.md": (
+        "This file predates the canonical 78-session pathway",
+        "not canonical Phase 7",
+        "Canonical Phase 7: Sessions 71–74",
+    ),
+    "10_Ready_to_Teach_Pack/Phase_8_Competition_Sprint.md": (
+        "**Sessions:** 75–78",
+        "Canonical Four-Session Sequence",
+        "not canonical Sessions 79–86",
     ),
     "10_Ready_to_Teach_Pack/Curriculum_Readiness_Audit.md": (
         "Canonical scheduled pathway | 78",
@@ -139,6 +151,9 @@ BANNED_AUTHORITATIVE_TEXT = (
     "Kaggle Learn | required short workflow refresh",
     "five-session workflow refresh after the Bohrium foundation sequence",
     "| 33 | Pandas:",
+    "Sessions 58–67 integrate Round 2 workflow",
+    "scheduled Sessions 1–75",
+    "| 68 | Task recognition and task formalisation",
 )
 
 LESSON_MARKERS = (
@@ -247,6 +262,7 @@ def main() -> int:
     print("Canonical teacher overviews: 9")
     print("High-traffic pathway documents: current and internally consistent")
     print("Kaggle practice map: embedded in Andrew ML model labs")
+    print("Competition packs: canonical Phase 8 separated from reusable extensions")
     print("Public readiness artifacts: present and internally consistent")
     print("Operational readiness remains cohort-, runtime-, security-, access-, and year-specific")
     return 0
