@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/delete-merged-cleanup-branch.yml
+      - .github/branch-delete-trigger
   workflow_dispatch:
 
 permissions:
@@ -19,5 +19,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git ls-remote --exit-code --heads "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" agent/repository-cleanup-audit >/dev/null 2>&1 || exit 0
-          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --delete agent/repository-cleanup-audit
+          gh api --method DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/agent/repository-cleanup-audit" || true
