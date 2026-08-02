@@ -162,8 +162,8 @@ jobs:
       - name: Check required external resource links
         run: python scripts/check_required_links.py
 
-      - name: Commit generated and validated materials
-        if: github.event_name != 'pull_request'
+      - name: Commit generated and validated materials on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
