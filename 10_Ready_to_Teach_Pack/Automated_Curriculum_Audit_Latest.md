@@ -1,6 +1,6 @@
 # Automated Curriculum Audit
 
-- Commit: `18ca477b4e38368b155c6524f01bf87a6b4dcdea`
+- Commit: `15105c0028dc1a618b616ddfc6d114a3e37fd81f`
 - Runner: GitHub Actions / Python 3.12
 - Exit code: ``
 
@@ -11,6 +11,7 @@ Curriculum structure validation failed:
 Readiness contract validation passed.
 Canonical pathway: 78 sessions
 AI History phase: 8 complete English seminars
+Canonical teacher overviews: 9
 Public readiness artifacts: present and internally consistent
 Operational readiness remains cohort-, runtime-, security-, access-, and year-specific
 ```
