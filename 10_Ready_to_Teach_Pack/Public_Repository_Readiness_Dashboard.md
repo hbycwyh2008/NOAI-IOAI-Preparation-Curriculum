@@ -26,7 +26,11 @@ This dashboard prevents one percentage from hiding different kinds of readiness.
 
 When automated checks pass, the repository may state:
 
-> **100% public file-structure, launcher-coverage, and internal-consistency coverage for the maintained curriculum assets.**
+> **100% public file-structure and internal-consistency coverage for the maintained curriculum assets.**
+
+The launcher validator additionally establishes complete scheduled-session navigation coverage:
+
+> **Nine Phase launchers cover Sessions 1–78 exactly once and resolve to valid lesson files.**
 
 It may also state, separately, which maintained notebooks, scripts, and links passed on the release commit.
 
