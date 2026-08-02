@@ -153,7 +153,7 @@ Students enter this pathway only after they can train a basic model. The sprint 
 ### Optional extension resources
 
 - Course 2 — PyTorch: Techniques and Ecosystem Tools, Module 1: Hyperparameter Optimization.
-- `lesson-07-pytorch-automated-tuning.md`.
+- `02_Class_Missions/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md`.
 - `06_Starter_Code/ready_to_teach/optuna_tuning_template.py`.
 
 Optuna and broad automated search are assigned only after the student can explain a manual tuning cycle and when the compute/time budget justifies them.
