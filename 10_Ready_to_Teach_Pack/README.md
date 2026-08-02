@@ -2,6 +2,18 @@
 
 This directory supplies teacher-facing delivery, assessment, runtime, access, pilot, and release records for the **canonical 78-session pathway**.
 
+## How to Start a Class
+
+```text
+Class Missions
+→ assigned Phase
+→ SESSION_LAUNCHER.md
+→ exact linked lesson
+→ required evidence
+```
+
+Use [Class Missions — Start Here](../02_Class_Missions/README.md) and [How to Use Class Missions](../02_Class_Missions/HOW_TO_USE_CLASS_MISSIONS.md). Do not browse `_Lesson_Library` to choose a scheduled class.
+
 ## Canonical Delivery Structure
 
 | Phase | Sessions | Main spine |
@@ -11,12 +23,12 @@ This directory supplies teacher-facing delivery, assessment, runtime, access, pi
 | 2 | 13–18 | NumPy, Pandas, and Matplotlib |
 | 3 | 19–32 | 北京市十一学校《中学机器学习十五讲》 on Bohrium |
 | 4 | 33–40 | AI History and Thinking Humans through Melanie Mitchell |
-| 5 | 41–58 | Andrew Ng Machine Learning Specialization + StatQuest + 3Blue1Brown + embedded Kaggle practice + model labs |
-| 6 | 59–70 | Andrew Ng Deep Learning Specialization + PyTorch + domain tasks |
+| 5 | 41–58 | Andrew Ng ML mathematics transition + models + StatQuest + 3Blue1Brown + embedded Kaggle practice |
+| 6 | 59–70 | Andrew Ng Deep Learning + PyTorch + domain tasks |
 | 7 | 71–74 | model comparison, EDA, feature engineering, evaluation, and error analysis |
 | 8 | 75–78 | tuning, ensembling, full simulation, and postmortem |
 
-The authoritative order is the [Detailed 78-Session Sequence](../00_Course_Overview/Detailed_Lesson_Sequence.md). The [Class Missions phase navigation](../02_Class_Missions/README.md) defines prerequisites, resource roles, and gates.
+The [Detailed 78-Session Sequence](../00_Course_Overview/Detailed_Lesson_Sequence.md) is the whole-course overview. The Phase launchers are the exact teaching entry points.
 
 ## Curriculum Bank
 
@@ -25,16 +37,31 @@ The repository preserves:
 - 155 mainline lesson files;
 - 16 Bohrium resource lessons;
 - 171 public lesson/resource files in the reusable bank;
-- eight scheduled AI History reading seminars in Phase 04.
+- nine Phase launchers covering Sessions 1–78 exactly once;
+- eight scheduled AI History reading seminars;
+- an explicit Andrew ML mathematics transition in Sessions 41–43.
 
 The reusable bank lives under [`02_Class_Missions/_Lesson_Library`](../02_Class_Missions/_Lesson_Library/README.md). It supports remediation, deeper practice, alternative explanations, domain extensions, and competition preparation; it is not a second scheduled route.
 
 ## Canonical Phase Delivery Packs
 
 - [Phase 4 — AI History and Thinking Humans](Phase_4_AI_History_and_Thinking_Humans.md)
+- [Phase 5 — Andrew ML Mathematics Transition](Phase_5_Andrew_Ng_ML_Mathematics_Bridge.md)
 - [Phase 8 — Tuning, Ensembling, and Competition](Phase_8_Competition_Sprint.md)
 
 The canonical Phase 7 teacher overview is [Model Comparison, EDA, and Evaluation](../09_Teacher_Planning/Phase_Overviews/Canonical_Phase_7_Model_Comparison_EDA_Evaluation.md).
+
+## Phase 4 Evidence and Assessment
+
+- [AI History Reading Evidence Template](../03_Templates/AI_History_Reading_Evidence_Template.md)
+- [AI History Phase Rubric](../04_Assessment/AI_History_Phase_Rubric.md)
+
+## Phase 5 Mathematics Evidence and Assessment
+
+- [Andrew ML Mathematics Transition Bridge](../02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Andrew_ML_Mathematics_Bridge.md)
+- [Mathematics Intuition Map](../02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Math_Intuition_Map.md)
+- [Mathematics Bridge Evidence Template](../03_Templates/Andrew_ML_Mathematics_Bridge_Evidence_Template.md)
+- [Mathematics Bridge Rubric](../04_Assessment/Andrew_ML_Mathematics_Bridge_Rubric.md)
 
 ## Reusable Competition Practice
 
@@ -42,11 +69,6 @@ The canonical Phase 7 teacher overview is [Model Comparison, EDA, and Evaluation
 - [Competition Workflow Lesson Bank](../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/README.md)
 
 These resources provide longer reproductions, mocks, and an eight-lesson sprint bank. They do not define additional canonical sessions after Session 78.
-
-Phase 04 also uses:
-
-- [AI History Reading Evidence Template](../03_Templates/AI_History_Reading_Evidence_Template.md)
-- [AI History Phase Rubric](../04_Assessment/AI_History_Phase_Rubric.md)
 
 ## Readiness and Release Records
 
@@ -62,15 +84,15 @@ Phase 04 also uses:
 
 ## What Is Included
 
-- exact phase and session navigation;
+- exact Phase and Session launchers;
 - entry checks, guided practice, independent rebuilds, and evidence requirements;
-- AI-history reading seminars with explicit mastery, misconceptions, claim auditing, and a phase gate;
+- eight AI-history reading seminars with a teacher pack and rubric;
+- Andrew ML mathematics transition, just-in-time mathematics map, teacher pack, template, and rubric;
+- model-recognition routines and model-comparison evidence;
 - Round 1 paper-test work and mock forms;
 - Round 2 tabular, image, text, audio, scientific, and multimodal work;
-- model-recognition routines and model-comparison evidence;
 - competition experiment, ensembling, and submission templates;
 - generated starter notebooks and executable starter code;
-- syllabus and resource crosswalks;
 - runtime, link, annual-rule, pilot, privacy, licensing, and authenticated-access records.
 
 Assessment-sensitive teacher keys, hidden labels, private tests, secure scoring packages, and calibration examples remain in the private teacher-key repository.
@@ -79,7 +101,6 @@ Assessment-sensitive teacher keys, hidden labels, private tests, secure scoring 
 
 - [CS50P exact timestamp map](../05_Resources/CS50P_edX_Timestamp_Map.md)
 - [Kaggle Learn embedded-practice map](../05_Resources/Kaggle_Learn_Refresh_Map.md)
-- [Andrew Ng ML mathematics intuition map](../02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Math_Intuition_Map.md)
 - [Deep Learning Specialization selected-content map](DLS_Selected_Content_Map.md)
 - [Hands-On ML and PyTorch selected-content map](HandsOnML_PyTorch_Selected_Content_Map.md)
 - [Resource map and NOAI syllabus crosswalk](Resource_Map_and_Syllabus_Crosswalk.md)
@@ -106,8 +127,6 @@ diagnose the limitation
 → validate the submission
 → write the postmortem
 ```
-
-Automated tuning is optional and follows a justified manual tuning cycle. Stacking requires out-of-fold base predictions.
 
 ## Classroom Flow
 
