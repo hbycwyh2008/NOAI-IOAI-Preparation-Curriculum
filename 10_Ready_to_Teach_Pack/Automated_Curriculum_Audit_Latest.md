@@ -1,6 +1,6 @@
 # Automated Curriculum Audit
 
-- Commit: `338aa9e32bf58515c0c0ad21486e7059ada4d6e1`
+- Commit: `717efd7f83af997a284b0b41e7963d255899a8fd`
 - Runner: GitHub Actions / Python 3.12
 - Exit code: `0`
 
