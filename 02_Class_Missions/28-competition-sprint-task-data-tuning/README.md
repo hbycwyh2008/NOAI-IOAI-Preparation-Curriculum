@@ -25,7 +25,7 @@ Task definition comes before the five stages. Error analysis is used throughout,
 
 ## Eight Scheduled Lessons
 
-1. [Lesson 01 — Task recognition from unfamiliar competition statements](lesson-01-task-recognition.md)
+1. [Lesson 01 — Task recognition and task formalisation](lesson-01-task-recognition.md)
 2. [Lesson 02 — Data quality, validation design, and leakage prevention](lesson-02-data-quality-validation.md)
 3. [Lesson 03 — Feature engineering and reproducible pipelines](lesson-03-feature-engineering.md)
 4. [Lesson 04 — Model selection, baseline ladder, and error analysis](lesson-04-model-selection-baseline.md)
@@ -36,15 +36,15 @@ Task definition comes before the five stages. Error analysis is used throughout,
 
 ## Optional Automated-Tuning Extension
 
-Optuna and broader automated search are useful only after students can explain a controlled manual tuning cycle. They are no longer a required scheduled session because automated search must not displace model ensembling or submission validation.
+Optuna and broader automated search are useful only after students can explain a controlled manual tuning cycle. They are not a required scheduled session because automated search must not displace model ensembling or submission validation.
 
 Use:
 
-- [Optional PyTorch schedulers, Optuna, and efficiency extension](lesson-07-pytorch-automated-tuning.md)
+- [Optional PyTorch schedulers, Optuna, and efficiency extension](Optional_Automated_Tuning_Extension.md)
 - [Hyperparameter-Tuning Video Resource Map](Hyperparameter_Tuning_Video_Resource_Map.md)
 - `06_Starter_Code/ready_to_teach/optuna_tuning_template.py`
 
-The teacher may assign this extension to students who have already passed the manual-tuning gate and have sufficient compute budget.
+The optional video package is **33 minutes**. The teacher may assign it to students who have passed the manual-tuning gate and have sufficient compute budget.
 
 ## Video Delivery Protocol for Lessons 05–06
 
@@ -55,7 +55,7 @@ The required tuning video packages are longer than the eight-minute classroom Sk
 | 05 | 37 minutes | an eight-minute diagnosis task using one classical-model result |
 | 06 | 43 minutes | an eight-minute training-curve diagnosis |
 
-The former 33-minute Optuna package is optional extension work, not a required part of Lesson 07.
+The optional Optuna package takes 33 minutes and is not a required part of Lesson 07.
 
 ## Stage Gates
 
@@ -75,6 +75,7 @@ Use these public starter files from `06_Starter_Code/ready_to_teach/`:
 
 - `competition_sprint_experiment_log.py` — create and validate a controlled-experiment log;
 - `manual_tuning_template.py` — practise one-variable-at-a-time tuning without touching the test split;
+- `model_ensembling_template.py` — generate OOF predictions, measure model diversity, and compare an ensemble with the best single model;
 - `optuna_tuning_template.py` — optional comparison after manual tuning is understood;
 - `validate_submission.py` — verify output row count, schema, identifiers, ranges, and missing values.
 
@@ -135,6 +136,6 @@ Students must submit:
 - a fresh-runtime record;
 - a postmortem identifying the highest-value next action.
 
-## Legacy Paths
+## Migration Note
 
-The former Lesson 02–04 files remain as compatibility pointers so old links do not break. The canonical teaching order is the eight-lesson sequence above.
+The former Lesson 02–04 and automated-tuning filenames were replaced so Module 28 retains exactly eight scheduled lesson files with names that match their current purpose. Use the links in this README as the source of truth.
