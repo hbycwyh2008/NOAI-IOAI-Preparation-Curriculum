@@ -80,7 +80,15 @@ REQUIRED_FILES = (
     "02_Class_Missions/01_CS50P_Python/README.md",
     "02_Class_Missions/02_NumPy_Pandas_Visualisation/README.md",
     "02_Class_Missions/03_Bohrium_ML_Foundations/README.md",
-    "02_Class_Missions/04_Kaggle_ML_Refresh/README.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/README.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-01-what-counts-as-intelligence.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-02-neural-networks-and-ai-cycles.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-03-how-machines-recognise-images.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-04-what-did-the-model-learn.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-05-reward-games-and-reinforcement-learning.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-06-language-processing-and-understanding.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-07-common-sense-abstraction-and-analogy.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-08-how-intelligent-is-ai.md",
     "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/README.md",
     "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Math_Intuition_Map.md",
     "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Model_Recognition_Routine.md",
@@ -327,20 +335,20 @@ def main() -> int:
     validate_legacy_boundaries(errors)
     validate_exact_timestamp_map(errors)
 
-    require_text("README.md", ("75 sessions", "155 lessons", "Competition sprint"), errors)
+    require_text("README.md", ("78 sessions", "155 lessons", "Competition sprint"), errors)
     require_text(
         "00_Course_Overview/Pacing_Guide.md",
-        ("75 sessions", "155 lessons", "70-Minute Bohrium Exception"),
+        ("78 sessions", "155 lessons", "70-Minute Bohrium Exception"),
         errors,
     )
     require_text(
         "00_Course_Overview/Detailed_Lesson_Sequence.md",
-        ("75 scheduled sessions", "Phase 8 — Tuning, Ensembling, and Competition"),
+        ("78 scheduled sessions", "Phase 8 — Tuning, Ensembling, and Competition"),
         errors,
     )
     require_text(
         "00_Course_Overview/Course_Map.md",
-        ("Phase", "72–75", "155 mainline lesson files", "16 Bohrium resource lessons"),
+        ("Phase", "75–78", "155 mainline lesson files", "16 Bohrium resource lessons"),
         errors,
     )
     require_text(
@@ -348,7 +356,7 @@ def main() -> int:
         ("100% public file-structure coverage", "171", "Operational"),
         errors,
     )
-    require_text("02_Class_Missions/README.md", ("CS50P", "Bohrium", "Andrew Ng Machine Learning", "Andrew Ng Deep Learning", "Model Comparison"), errors)
+    require_text("02_Class_Missions/README.md", ("CS50P", "Bohrium", "AI History", "Andrew Ng Machine Learning", "Andrew Ng Deep Learning", "Model Comparison"), errors)
     require_text(
         "02_Class_Missions/_Lesson_Library/shared/full-bohrium-video-classroom-flow.md",
         ("at least **five** pieces of evidence", "Named 70-Minute Exception"),

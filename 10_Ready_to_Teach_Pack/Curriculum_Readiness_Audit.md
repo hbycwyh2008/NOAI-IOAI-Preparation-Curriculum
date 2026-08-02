@@ -6,7 +6,7 @@
 
 | Area | Current status | Evidence | Remaining condition |
 |---|---|---|---|
-| Canonical pathway | Complete by design | nine dependency-based phases and 75 scheduled sessions | pilot the actual sequence with students |
+| Canonical pathway | Complete by design | nine dependency-based phases and 78 scheduled sessions | pilot the actual sequence with students |
 | Class Missions navigation | Rebuilt | scheduled phase folders are separated from `_Lesson_Library` and `_Curriculum_Governance` | maintain the separation when adding content |
 | Mainline lesson bank | Structurally complete | 155 mainline lesson files | select by phase need rather than assign all files |
 | Bohrium foundation bank | Structurally complete | 16 resource lessons, including the fourteen-session 70-minute sequence | verify authenticated access and current video structure |

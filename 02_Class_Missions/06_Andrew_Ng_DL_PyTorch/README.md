@@ -1,6 +1,6 @@
 # 06 — Andrew Ng Deep Learning and PyTorch
 
-**Scheduled sessions:** 56–67  
+**Scheduled sessions:** 59–70  
 **Concept spine:** Deep Learning Specialization  
 **Implementation spine:** PyTorch courses and official tutorials
 

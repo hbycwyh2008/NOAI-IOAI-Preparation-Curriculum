@@ -1,6 +1,6 @@
 # 07 — Model Comparison, EDA, and Evaluation
 
-**Scheduled sessions:** 68–71
+**Scheduled sessions:** 71–74
 
 Basic data checks and metrics appear inside earlier tasks. This phase systematises them after students have experienced multiple model families.
 

@@ -1,6 +1,6 @@
 # 08 — Tuning, Ensembling, and Competition
 
-**Scheduled sessions:** 72–75
+**Scheduled sessions:** 75–78
 
 ## Fixed Order
 

@@ -1,6 +1,6 @@
 # Ready-to-Teach Curriculum Pack
 
-This directory supplies teacher-facing delivery, assessment, runtime, and resource records for the canonical 75-session pathway.
+This directory supplies teacher-facing delivery, assessment, runtime, and resource records for the canonical 78-session pathway.
 
 ## Canonical Delivery Structure
 
@@ -10,11 +10,11 @@ This directory supplies teacher-facing delivery, assessment, runtime, and resour
 | 1 | 3–12 | CS50P Python |
 | 2 | 13–18 | NumPy, Pandas, and Matplotlib |
 | 3 | 19–32 | 北京市十一学校《中学机器学习十五讲》 on Bohrium |
-| 4 | 33–37 | Kaggle Learn workflow refresh |
-| 5 | 38–55 | Andrew Ng Machine Learning Specialization + StatQuest + 3Blue1Brown + model labs |
-| 6 | 56–67 | Andrew Ng Deep Learning Specialization + PyTorch + domain tasks |
-| 7 | 68–71 | model comparison, EDA, feature engineering, evaluation, and error analysis |
-| 8 | 72–75 | tuning, ensembling, full simulation, and postmortem |
+| 4 | 33–40 | Kaggle Learn workflow refresh |
+| 5 | 41–58 | Andrew Ng Machine Learning Specialization + StatQuest + 3Blue1Brown + model labs |
+| 6 | 59–70 | Andrew Ng Deep Learning Specialization + PyTorch + domain tasks |
+| 7 | 71–74 | model comparison, EDA, feature engineering, evaluation, and error analysis |
+| 8 | 75–78 | tuning, ensembling, full simulation, and postmortem |
 
 The authoritative order is the [Detailed 75-Session Sequence](../00_Course_Overview/Detailed_Lesson_Sequence.md). The [Class Missions phase navigation](../02_Class_Missions/README.md) defines prerequisites, resource roles, and gates.
 

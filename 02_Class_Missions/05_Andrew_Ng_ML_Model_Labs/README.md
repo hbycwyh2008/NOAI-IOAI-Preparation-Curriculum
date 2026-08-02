@@ -1,6 +1,6 @@
 # 05 — Andrew Ng Machine Learning and Model Labs
 
-**Scheduled sessions:** 38–55  
+**Scheduled sessions:** 41–58  
 **Primary course:** Machine Learning Specialization by Andrew Ng
 
 ## Learning Loop for Every Model
@@ -58,3 +58,10 @@ recognise the task
 ## Gate
 
 Given an unfamiliar scenario, students identify X, y, label availability, output type, task family, valid baseline, candidate models, metric, and one reason a model may fail.
+
+
+## Embedded Kaggle Practice
+
+Kaggle Learn is used inside the model labs rather than as a separate scheduled phase. Selected exercises provide short practical rehearsals of Pandas, train/validation splits, decision-tree baselines, missing-value handling, categorical encoding, pipelines, cross-validation, and leakage prevention. Every Kaggle activity must serve the model currently being learned and produce baseline, validation, and error-analysis evidence.
+
+See [Kaggle Learn Embedded Practice Map](../../05_Resources/Kaggle_Learn_Refresh_Map.md).

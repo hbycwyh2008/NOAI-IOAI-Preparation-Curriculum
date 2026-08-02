@@ -10,7 +10,7 @@ python scripts/validate_curriculum_structure.py
 
 | Category | Expected count |
 |---|---:|
-| Canonical scheduled pathway | 75 sessions |
+| Canonical scheduled pathway | 78 sessions |
 | Mainline lesson files in `_Lesson_Library` | 155 |
 | Bohrium resource lessons | 16 |
 | Total public lesson/resource files | 171 |
@@ -51,7 +51,7 @@ A lesson-library module must not silently become a second scheduled pathway.
 CS50P
 → NumPy / Pandas / Matplotlib
 → Bohrium ML foundations
-→ Kaggle workflow refresh
+→ AI history and critical-reading phase
 → Andrew Ng ML + mathematics intuition + model labs
 → Andrew Ng DL + PyTorch + domain tasks
 → comparison + EDA + features + evaluation

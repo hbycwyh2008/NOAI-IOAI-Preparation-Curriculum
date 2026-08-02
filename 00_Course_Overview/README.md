@@ -1,6 +1,6 @@
 # Course Overview
 
-The canonical 75-session route is organised by learning dependency rather than by a flat topic bank.
+The canonical 78-session route is organised by learning dependency rather than by a flat topic bank.
 
 - [Course Map](Course_Map.md)
 - [Detailed 75-Session Sequence](Detailed_Lesson_Sequence.md)

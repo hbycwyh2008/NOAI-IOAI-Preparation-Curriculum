@@ -1,4 +1,6 @@
-# Kaggle Learn Refresh Map
+# Kaggle Learn Embedded Practice Map
+
+Kaggle Learn is not a separate scheduled phase. Selected material is embedded in Andrew Ng Machine Learning model labs when workflow rehearsal is needed.
 
 Kaggle Learn is used for a **five-session workflow refresh after the Bohrium foundation sequence and before Andrew Ng Machine Learning Specialization**. Students do not need to complete every Kaggle micro-course from beginning to end.
 
