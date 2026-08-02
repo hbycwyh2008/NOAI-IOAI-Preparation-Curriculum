@@ -11,7 +11,7 @@ This repository is a **curriculum bank**, not a requirement that every cohort co
 | Layer | Count | Purpose |
 |---|---:|---|
 | Core scheduled pathway | 67 sessions | compressed pathway from orientation through Round 1, Round 2, projects, mocks, and readiness |
-| Competition sprint | 8 sessions | task recognition, data engineering, classical/deep-learning tuning, PyTorch tuning, and full simulation |
+| Competition sprint | 8 sessions | task formalisation, data quality, feature engineering, model selection, tuning, model ensembling, and full simulation |
 | Recommended full competition pathway | 75 sessions | 67 core sessions plus the eight-session competition sprint |
 | Mainline mission bank | 155 lessons | deeper practice, alternatives, reteaching, and domain extension across Modules 00–26 and 28 |
 | Optional Bohrium resource hub | 16 lessons | full-video missions and the fourteen-session 70-minute sequence for 北京市十一学校《中学机器学习十五讲》 |
@@ -96,8 +96,10 @@ Setup and evidence system
 → Round 2 open-ended projects
 → past-paper reproduction
 → timed mock contests
-→ competition sprint: task recognition → data engineering → tuning → full simulation
+→ competition sprint: task definition → data quality → feature engineering → model selection → tuning → model ensembling → full simulation
 ```
+
+During the sprint, students protect validation quality before chasing score. Optuna and broad automated search are optional extensions after a manual tuning cycle; they do not replace model ensembling, reproducibility, or submission checks.
 
 ## Main Structured Resources
 
@@ -125,6 +127,8 @@ Every substantial mission requires:
 - an artificial-intelligence-use note when assistance was used;
 - meaningful Git commit history;
 - fresh-runtime evidence for competition code when applicable.
+
+For the competition sprint, evidence must also show the stage gates: data-quality audit, frozen validation, reproducible features, baseline ladder, diagnosis-first tuning, and best-single-model versus ensemble comparison.
 
 ## Licensing
 
