@@ -1,6 +1,6 @@
 # Automated Curriculum Audit
 
-- Commit: `97e2993482a26b0980e6dbe3e7fc7da10e005f6d`
+- Commit: `1b98c6f7f848ac1611f4b7d3406b558f6c44604e`
 - Runner: GitHub Actions / Python 3.12
 - Exit code: `1`
 
@@ -10,6 +10,26 @@ Curriculum structure validation failed:
 - Lesson file is not linked from a README in 28-competition-sprint-task-data-tuning: 02_Class_Missions/28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
 - Lesson file is not linked from a README in 28-competition-sprint-task-data-tuning: 02_Class_Missions/28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
 - Lesson file is not linked from a README in 28-competition-sprint-task-data-tuning: 02_Class_Missions/28-competition-sprint-task-data-tuning/lesson-04-data-cleaning-feature-engineering.md
+- Missing explicit duration: 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing classroom-flow marker 'Skill Warm-Up': 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing classroom-flow marker 'Talk Robin 1': 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing classroom-flow marker 'Entry Check': 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing classroom-flow marker 'Core Pattern': 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing classroom-flow marker 'Guided Practice': 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing classroom-flow marker 'Independent Rebuild': 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing classroom-flow marker 'Talk Robin 2': 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing classroom-flow marker 'Evidence': 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing timeline or numbered seven-step flow: 28-competition-sprint-task-data-tuning/lesson-02-baseline-metric-model-selection.md
+- Missing explicit duration: 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing classroom-flow marker 'Skill Warm-Up': 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing classroom-flow marker 'Talk Robin 1': 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing classroom-flow marker 'Entry Check': 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing classroom-flow marker 'Core Pattern': 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing classroom-flow marker 'Guided Practice': 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing classroom-flow marker 'Independent Rebuild': 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing classroom-flow marker 'Talk Robin 2': 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing classroom-flow marker 'Evidence': 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
+- Missing timeline or numbered seven-step flow: 28-competition-sprint-task-data-tuning/lesson-03-data-audit-split-leakage.md
 - Expected 155 mainline lesson files, found 159
 - Expected 171 total public lesson files, found 175
 - '33 minutes' not found in 02_Class_Missions/28-competition-sprint-task-data-tuning/README.md
