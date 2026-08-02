@@ -1,14 +1,13 @@
 # Automated Curriculum Audit
 
-- Commit: `37ccc639e8c324204673efdf6023d1361966f7be`
+- Commit: `f22a6acf211c41014cd60bb367d5d5bee90aaee3`
 - Runner: GitHub Actions / Python 3.12
-- Exit code: `0`
+- Exit code: `1`
 
 ```text
-Curriculum structure validation passed.
-Mainline lesson files: 155
-Optional Bohrium resource lesson files: 16
-Total public lesson files: 171
-Public file-structure and internal-consistency coverage: 100%
-Operational, pilot, privacy, runtime, and annual-rule readiness remain separate.
+Curriculum structure validation failed:
+- 28-competition-sprint-task-data-tuning: expected 8 lesson files, found 9
+- Lesson file is not linked from a README in 28-competition-sprint-task-data-tuning: 02_Class_Missions/28-competition-sprint-task-data-tuning/lesson-02-data-quality-validation.md
+- Expected 155 mainline lesson files, found 156
+- Expected 171 total public lesson files, found 172
 ```
