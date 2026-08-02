@@ -7,7 +7,7 @@
 
 [**Open the Phase 5 Session Launcher**](SESSION_LAUNCHER.md)
 
-The launcher maps every scheduled model session to the exact lesson packet, mathematical evidence, typical task, Kaggle practice, and gate. Do not browse `_Lesson_Library` manually.
+The launcher maps every scheduled model Session to its lesson packet, mathematical evidence, typical task, embedded practice, and gate.
 
 ## Mathematics Transition
 

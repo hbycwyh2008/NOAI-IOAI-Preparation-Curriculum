@@ -25,6 +25,7 @@ on:
       - "scripts/validate_curriculum_structure.py"
       - "scripts/validate_readiness_contract.py"
       - "scripts/validate_class_mission_launchers.py"
+      - "scripts/validate_repository_hygiene.py"
       - "scripts/normalize_lesson_timelines.py"
       - ".github/workflows/validate-ready-to-teach.yml"
       - ".github/workflows/normalise-lesson-timelines.yml"
@@ -79,6 +80,9 @@ jobs:
 
       - name: Validate Class Missions launchers
         run: python scripts/validate_class_mission_launchers.py
+
+      - name: Validate repository hygiene
+        run: python scripts/validate_repository_hygiene.py
 
       - name: Install validation environment
         run: |

@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - "README.md"
+      - "TEACHER_START_HERE.md"
+      - "STUDENT_START_HERE.md"
+      - "MANIFEST.md"
       - "00_Course_Overview/**"
       - "01_Student_Start/**"
       - "02_Class_Missions/**"
@@ -11,26 +14,34 @@ on:
       - "04_Assessment/**"
       - "05_Resources/**"
       - "06_Starter_Code/**"
+      - "08_Public_Documents/**"
       - "09_Teacher_Planning/**"
       - "10_Ready_to_Teach_Pack/**"
       - "scripts/validate_curriculum_structure.py"
       - "scripts/validate_readiness_contract.py"
       - "scripts/validate_class_mission_launchers.py"
+      - "scripts/validate_repository_hygiene.py"
       - ".github/workflows/audit-curriculum.yml"
   pull_request:
     paths:
       - "README.md"
+      - "TEACHER_START_HERE.md"
+      - "STUDENT_START_HERE.md"
+      - "MANIFEST.md"
       - "00_Course_Overview/**"
       - "01_Student_Start/**"
       - "02_Class_Missions/**"
       - "03_Templates/**"
       - "04_Assessment/**"
       - "05_Resources/**"
+      - "06_Starter_Code/**"
+      - "08_Public_Documents/**"
       - "09_Teacher_Planning/**"
       - "10_Ready_to_Teach_Pack/**"
       - "scripts/validate_curriculum_structure.py"
       - "scripts/validate_readiness_contract.py"
       - "scripts/validate_class_mission_launchers.py"
+      - "scripts/validate_repository_hygiene.py"
       - ".github/workflows/audit-curriculum.yml"
   workflow_dispatch:
 
@@ -47,7 +58,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run strict curriculum, readiness, and launcher audits
+      - name: Run structure, readiness, launcher, and hygiene audits
         id: audit
         shell: bash
         run: |
@@ -58,8 +69,10 @@ jobs:
           readiness_code=$?
           python scripts/validate_class_mission_launchers.py >> /tmp/audit.log 2>&1
           launcher_code=$?
+          python scripts/validate_repository_hygiene.py >> /tmp/audit.log 2>&1
+          hygiene_code=$?
 
-          if [ "$structure_code" -ne 0 ] || [ "$readiness_code" -ne 0 ] || [ "$launcher_code" -ne 0 ]; then
+          if [ "$structure_code" -ne 0 ] || [ "$readiness_code" -ne 0 ] || [ "$launcher_code" -ne 0 ] || [ "$hygiene_code" -ne 0 ]; then
             combined_code=1
           else
             combined_code=0

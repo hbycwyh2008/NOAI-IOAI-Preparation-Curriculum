@@ -16,4 +16,4 @@
 
 Ordinary missions use 75 minutes. Sessions 19–32 and 33–40 are named 70-minute exceptions. Long competition simulations use the target event duration.
 
-Reading, video completion, or external-course progress does not replace the Session gate. Teachers assign extensions from `_Lesson_Library` only after opening the canonical phase-local lesson.
+Reading, video completion, or external-course progress does not replace the Session gate. Teachers assign extensions from the former extension library only after opening the canonical phase-local lesson.

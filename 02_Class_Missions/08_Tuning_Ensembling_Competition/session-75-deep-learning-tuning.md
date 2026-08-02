@@ -23,7 +23,7 @@ Coursera: https://www.coursera.org/learn/deep-neural-network
 
 Before class, submit a note identifying one diagnosis rule, one search-scale rule, one optimiser/scheduler rule, and one unresolved question.
 
-See [Hyperparameter-Tuning Video Resource Map](../_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md).
+See [Hyperparameter-Tuning Video Resource Map](../../05_Resources/Hyperparameter_Tuning_Resource_Map.md).
 
 ## 1. Skill Warm-Up — 0–8 min
 

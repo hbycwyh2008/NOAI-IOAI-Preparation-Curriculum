@@ -6,7 +6,7 @@
 
 [**Open the Phase 0 Session Launcher**](SESSION_LAUNCHER.md)
 
-Use the launcher to select Session 1 or 2. Do not browse `_Lesson_Library` manually.
+Open the Session Launcher to select Session 1 or 2.
 
 ## Purpose
 

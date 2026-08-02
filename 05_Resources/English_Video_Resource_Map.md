@@ -40,7 +40,7 @@
 
 Use the exact video-title and duration map:
 
-[`02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`](../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md)
+[`05_Resources/Hyperparameter_Tuning_Resource_Map.md`](Hyperparameter_Tuning_Resource_Map.md)
 
 The three main tuning sources are:
 

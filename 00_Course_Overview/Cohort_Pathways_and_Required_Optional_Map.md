@@ -41,7 +41,7 @@ The teacher must preserve prerequisite gates even when reducing breadth.
 
 ## IOAI Extension Pathway
 
-Complete the canonical path, then select deeper computer-vision, natural-language-processing, audio, multimodal, reproducibility, scientific, and open-ended project lessons from `_Lesson_Library`.
+Complete the canonical path, then select deeper computer-vision, natural-language-processing, audio, multimodal, reproducibility, scientific, and open-ended project lessons from the former extension library.
 
 ## Required Resource Roles
 
@@ -76,4 +76,4 @@ When shortening a pathway:
 4. record omitted phases and the resulting capability limits;
 5. do not claim full-pathway readiness from a compressed route.
 
-Do not assign all 171 reusable public files automatically.
+Do not assign every extension or remediation file automatically.
