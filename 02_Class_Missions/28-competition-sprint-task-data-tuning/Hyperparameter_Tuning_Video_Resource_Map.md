@@ -134,7 +134,7 @@ They then identify the first parameter to change and what must remain fixed.
 
 **Optional viewing time:** 33 minutes.
 
-Use the [optional automated-tuning extension](lesson-07-pytorch-automated-tuning.md) only after the student has completed and explained a manual tuning cycle.
+Use the [optional automated-tuning extension](Optional_Automated_Tuning_Extension.md) only after the student has completed and explained a manual tuning cycle.
 
 ### Optional Implementation Labs
 
