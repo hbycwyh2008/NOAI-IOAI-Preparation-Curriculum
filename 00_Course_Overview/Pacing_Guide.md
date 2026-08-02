@@ -1,79 +1,39 @@
 # Pacing Guide
 
-This repository is a **curriculum bank**, not a requirement that every cohort complete every lesson file.
+## Standard Path
 
-## Scheduling Structure
+| Phase | Sessions | Count |
+|---|---:|---:|
+| Orientation and evidence | 1–2 | 2 |
+| CS50P Python | 3–12 | 10 |
+| NumPy, Pandas, and visualisation | 13–18 | 6 |
+| Bohrium foundations | 19–32 | 14 |
+| Kaggle ML refresh | 33–37 | 5 |
+| Andrew Ng ML and model labs | 38–55 | 18 |
+| Andrew Ng DL and PyTorch | 56–67 | 12 |
+| Model comparison, EDA, and evaluation | 68–71 | 4 |
+| Tuning, ensembling, and competition | 72–75 | 4 |
 
-| Layer | Count | Meaning |
-|---|---:|---|
-| Core scheduled pathway | 67 sessions | compressed full pathway from orientation through mocks and final readiness |
-| Competition sprint | 8 sessions | task formalisation, data quality, feature engineering, model selection, classical/deep tuning, model ensembling, and full sprint simulation |
-| Recommended full scheduled pathway | 75 sessions | 67 core sessions plus the eight-session competition sprint |
-| Mainline mission bank | 155 lessons | all lesson files across Modules 00–26 and Module 28; includes deeper practice and alternatives |
-| Optional Bohrium resource hub | 16 lessons | two full-video hub missions plus the fourteen-session 70-minute sequence for 北京市十一学校《中学机器学习十五讲》 |
+**Total: 75 sessions**
 
-Teachers should choose the pathway first and then add optional lessons only when evidence shows that reteaching, deeper practice, or extension is required.
+## Duration Policy
 
-See [Cohort Pathways and Required / Optional Map](Cohort_Pathways_and_Required_Optional_Map.md).
+- Ordinary club mission: 75 minutes.
+- **70-Minute Bohrium Exception:** Sessions 19–32.
+- Full competition simulation: target competition duration.
+- Readiness conference: scheduled separately or inside Session 75.
 
-## Ordinary Lesson Timing
+## Gate Policy
 
-Standard concept and coding lessons use **75 minutes** and the seven-step after-school club flow:
+Do not advance because a video playlist is finished. Advance when the student passes the phase gate.
 
-**Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
+- No NumPy/Pandas phase before basic CS50P programming independence.
+- No Andrew Ng ML before the Bohrium concept sequence and Kaggle workflow refresh.
+- No Andrew Ng DL before classical model recognition and baseline practice.
+- No tuning before validation, model comparison, and error analysis.
+- No stacking without out-of-fold predictions.
+- No final readiness claim without a fresh-runtime competition simulation.
 
-## 70-Minute Bohrium Exception
+## Lesson Bank Policy
 
-The fourteen-session split for 北京市十一学校《中学机器学习十五讲》 uses **70-minute lessons** because it was designed around the actual video sequence.
-
-This is a named exception. It does not change the ordinary 75-minute classroom standard.
-
-See [北京市十一学校《中学机器学习十五讲》— 14 × 70-Minute Lesson Split](../09_Teacher_Planning/BML15_70min_Lesson_Split.md). The compatibility filename remains unchanged.
-
-## Long Sessions
-
-- Integrated Round 1 mock and correction: **150 minutes**.
-- Past-paper reproduction: **180 minutes** per task.
-- Timed Round 1 mock: **120 minutes**.
-- Timed Round 2 tabular mock: **240 minutes**.
-- Timed Round 2 multimodal mock: **360 minutes**.
-- Final readiness conference: **45 minutes per student**.
-
-Long simulations must not be compressed into a nominal 75-minute club lesson.
-
-## Recommended Delivery Options
-
-### Round 1 pathway
-
-Use Sessions 1–38 from [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md), then add Module 15 lessons as required by mock evidence.
-
-### Full NOAI pathway
-
-Use Sessions 1–67.
-
-### Full competition pathway
-
-Use Sessions 1–75, including Module 28 as Sessions 68–75.
-
-The final eight sessions retain the existing total but follow this order:
-
-```text
-68 task formalisation
-69 data quality and validation
-70 feature engineering
-71 model selection and error analysis
-72 classical tuning
-73 deep-learning tuning
-74 model ensembling
-75 full simulation
-```
-
-PyTorch schedulers, Optuna, and broad automated search are optional extension work after Session 73; they are not an additional required session.
-
-### IOAI extension
-
-After the 75-session pathway, select advanced lessons from Modules 20–28 and official IOAI tasks according to student readiness and task modality.
-
-## Scheduling Rule
-
-Do not schedule all public mission/resource lesson files automatically. Use the shortest pathway that reaches the required competition standard, and add lessons only when entry checks, phase gates, mocks, or project evidence justify them.
+The repository still contains 155 mainline lessons and 16 Bohrium resource lessons. Use extra files only for remediation, deeper practice, alternative modality work, or extension.
