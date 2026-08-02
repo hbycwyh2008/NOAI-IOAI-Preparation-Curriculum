@@ -6,13 +6,13 @@
 choose the assigned Phase
 → open its Session Launcher
 → click the assigned Session
-→ teach or complete that lesson
+→ teach or complete the phase-local lesson
 → submit the named evidence
 ```
 
 Read [How to Use Class Missions](HOW_TO_USE_CLASS_MISSIONS.md) once before teaching the course.
 
-> **Do not browse `_Lesson_Library` to choose a class.** The launchers below already point to the exact lesson files.
+> **Do not browse `_Lesson_Library` to choose a class.** Every canonical lesson body is stored directly inside its numbered Phase folder, and the launchers below point to the exact file.
 
 ## Canonical 78-Session Route
 
@@ -37,11 +37,11 @@ Read [How to Use Class Missions](HOW_TO_USE_CLASS_MISSIONS.md) once before teach
 - Andrew Ng Machine Learning is paired with an explicit mathematics transition, StatQuest, 3Blue1Brown, embedded Kaggle practice, model recognition, and typical tasks.
 - Andrew Ng Deep Learning is paired immediately with PyTorch implementations.
 
-## Maintainer and Remediation Areas
+## Maintainer and Extension Areas
 
 These are not normal student entry points:
 
-- [`_Lesson_Library`](./_Lesson_Library/README.md) — reusable lesson bodies, remediation, extension, and competition practice;
-- [`_Curriculum_Governance`](./_Curriculum_Governance/README.md) — audits, counts, architecture, and maintenance.
+- [`_Lesson_Library`](./_Lesson_Library/README.md) — remediation, alternative explanations, domain extensions, reproductions, mocks, and optional competition practice;
+- [`_Curriculum_Governance`](./_Curriculum_Governance/README.md) — audits, architecture, and maintenance.
 
-The library contains the maintained phase-local and extension lesson files. The launchers select which of those files belong in the 78-session scheduled route.
+The numbered Phase folders are the sole storage and delivery location for canonical Sessions 1–78.
