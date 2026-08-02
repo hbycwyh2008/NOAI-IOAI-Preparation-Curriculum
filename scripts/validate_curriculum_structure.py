@@ -75,11 +75,14 @@ REQUIRED_FILES = (
     "00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md",
     "00_Course_Overview/Curriculum_Completeness_Audit.md",
     "02_Class_Missions/Class_Mission_Resource_Architecture.md",
+    "02_Class_Missions/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md",
     "03_Templates/Competition_Sprint_Experiment_Log_Template.md",
+    "03_Templates/Competition_Sprint_Model_Ensembling_Record.md",
     "03_Templates/Competition_Sprint_Submission_Checklist.md",
     "05_Resources/CS50P_edX_Timestamp_Map.md",
     "06_Starter_Code/ready_to_teach/competition_sprint_experiment_log.py",
     "06_Starter_Code/ready_to_teach/manual_tuning_template.py",
+    "06_Starter_Code/ready_to_teach/model_ensembling_template.py",
     "06_Starter_Code/ready_to_teach/optuna_tuning_template.py",
     "09_Teacher_Planning/Phase_Overviews/README.md",
     "09_Teacher_Planning/Phase_Overviews/Phase_8_Competition_Sprint.md",
@@ -105,7 +108,7 @@ PRECLASS_DELIVERY_FILES = {
     "12-neural-network-foundations/lesson-02.md": "Pre-class required viewing",
     "28-competition-sprint-task-data-tuning/lesson-05-classical-model-tuning.md": "Pre-class required viewing",
     "28-competition-sprint-task-data-tuning/lesson-06-deep-learning-tuning.md": "Pre-class required viewing",
-    "28-competition-sprint-task-data-tuning/lesson-07-pytorch-automated-tuning.md": "Pre-class required viewing",
+    "28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md": "Pre-class required viewing",
 }
 
 PATH_REFERENCE_FILES = (
@@ -342,6 +345,16 @@ def main() -> int:
     require_text(
         "02_Class_Missions/28-competition-sprint-task-data-tuning/README.md",
         ("pre-class preparation", "37 minutes", "43 minutes", "33 minutes"),
+        errors,
+    )
+    require_text(
+        "02_Class_Missions/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md",
+        ("Pre-class required viewing", "33 minutes", "0–8 min"),
+        errors,
+    )
+    require_text(
+        "03_Templates/Competition_Sprint_Model_Ensembling_Record.md",
+        ("out-of-fold", "best single model"),
         errors,
     )
     require_text(
