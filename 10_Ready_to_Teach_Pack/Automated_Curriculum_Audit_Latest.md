@@ -1,14 +1,10 @@
 # Automated Curriculum Audit
 
-- Commit: `4a9bd955445f232d913caef26e5d3d2bc2d6296d`
+- Commit: `db4aede0cf2b221af918fb13da4e9e0b81d9f04a`
 - Runner: GitHub Actions / Python 3.12
-- Exit code: `0`
+- Exit code: `1`
 
 ```text
-Curriculum structure validation passed.
-Mainline lesson files: 155
-Optional Bohrium resource lesson files: 16
-Total public lesson files: 171
-Public file-structure and internal-consistency coverage: 100%
-Operational, pilot, privacy, runtime, and annual-rule readiness remain separate.
+Curriculum structure validation failed:
+- '72–75' not found in 00_Course_Overview/Course_Map.md
 ```
