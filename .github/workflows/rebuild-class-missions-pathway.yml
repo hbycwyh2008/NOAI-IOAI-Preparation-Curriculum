@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - agent/rebuild-class-missions-pathway
+  workflow_dispatch:
 
 permissions:
   contents: write
