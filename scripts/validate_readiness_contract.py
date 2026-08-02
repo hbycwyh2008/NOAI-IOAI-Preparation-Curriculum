@@ -5,7 +5,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+MISSIONS = ROOT / "02_Class_Missions"
+LIBRARY = (MISSIONS / "_Lesson_Library").resolve()
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+ROW_RE = re.compile(r"^\|\s*(\d{1,3})\s*\|")
 
 REQUIRED_FILES = (
     "README.md",
@@ -52,6 +55,36 @@ def validate_links(path: Path, errors: list[str]) -> None:
             errors.append(f"Broken internal link in {path.relative_to(ROOT)}: {raw}")
 
 
+def validate_launcher_targets(errors: list[str]) -> None:
+    for launcher in ROOT.glob("02_Class_Missions/[0-9][0-9]_*/SESSION_LAUNCHER.md"):
+        phase = launcher.parent.resolve()
+        for line in launcher.read_text(encoding="utf-8").splitlines():
+            if not ROW_RE.match(line):
+                continue
+            for _label, raw in LINK_RE.findall(line):
+                if raw.startswith(("http://", "https://", "mailto:", "#")):
+                    continue
+                target = raw.split("#", 1)[0].strip()
+                if not target:
+                    continue
+                resolved = (launcher.parent / target).resolve()
+                if resolved.suffix.lower() != ".md":
+                    continue
+                try:
+                    resolved.relative_to(LIBRARY)
+                    errors.append(
+                        f"Canonical launcher enters _Lesson_Library: {launcher.relative_to(ROOT)} -> {raw}"
+                    )
+                except ValueError:
+                    pass
+                try:
+                    resolved.relative_to(phase)
+                except ValueError:
+                    errors.append(
+                        f"Canonical launcher target is outside its Phase: {launcher.relative_to(ROOT)} -> {raw}"
+                    )
+
+
 def main() -> int:
     errors: list[str] = []
     for relative in REQUIRED_FILES:
@@ -71,12 +104,7 @@ def main() -> int:
     if len(list(overview_dir.glob("Canonical_Phase_*.md"))) != 9:
         errors.append("Expected nine canonical teacher phase overviews")
 
-    launcher_text = "\n".join(
-        path.read_text(encoding="utf-8")
-        for path in ROOT.glob("02_Class_Missions/[0-9][0-9]_*/SESSION_LAUNCHER.md")
-    )
-    if "_Lesson_Library" in launcher_text:
-        errors.append("A canonical launcher still references _Lesson_Library")
+    validate_launcher_targets(errors)
 
     dashboard = ROOT / "10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md"
     if dashboard.exists():
@@ -106,6 +134,7 @@ def main() -> int:
     print("Readiness contract validation passed.")
     print("Canonical pathway: 78 sessions")
     print("Canonical lesson storage: numbered Phase folders")
+    print("Canonical launcher links into _Lesson_Library: 0")
     print("AI History seminars: 8")
     print("Andrew ML mathematics transition: Sessions 41–43")
     print("Canonical teacher overviews: 9")
