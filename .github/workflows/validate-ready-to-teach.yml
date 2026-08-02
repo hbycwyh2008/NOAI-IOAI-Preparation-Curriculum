@@ -23,6 +23,7 @@ on:
       - "scripts/check_required_links.py"
       - "scripts/validate_curriculum.py"
       - "scripts/validate_curriculum_structure.py"
+      - "scripts/validate_readiness_contract.py"
       - "scripts/normalize_lesson_timelines.py"
       - ".github/workflows/validate-ready-to-teach.yml"
       - ".github/workflows/normalise-lesson-timelines.yml"
@@ -71,6 +72,9 @@ jobs:
 
       - name: Validate curriculum structure and internal consistency
         run: python scripts/validate_curriculum_structure.py
+
+      - name: Validate public readiness contract
+        run: python scripts/validate_readiness_contract.py
 
       - name: Install validation environment
         run: |
