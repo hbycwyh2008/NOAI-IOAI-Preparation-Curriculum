@@ -2,7 +2,7 @@
 
 This directory has one clear teaching route. Start with the phase folders below; do not browse the lesson bank as if every file were a scheduled class.
 
-## Canonical 75-Session Route
+## Canonical 78-Session Route
 
 | Stage | Sessions | Main spine | Student outcome |
 |---|---:|---|---|
@@ -10,19 +10,20 @@ This directory has one clear teaching route. Start with the phase folders below;
 | [01 — CS50P Python](01_CS50P_Python/README.md) | 3–12 | Harvard CS50’s Introduction to Programming with Python | writes, traces, tests, and debugs Python independently |
 | [02 — NumPy, Pandas, and Visualisation](02_NumPy_Pandas_Visualisation/README.md) | 13–18 | NumPy, Pandas, Matplotlib | reads, audits, transforms, summarises, and plots data |
 | [03 — Bohrium ML Foundations](03_Bohrium_ML_Foundations/README.md) | 19–32 | 北京市十一学校《中学机器学习十五讲》 | builds a Chinese-language concept map before Andrew Ng |
-| [04 — Kaggle ML Refresh](04_Kaggle_ML_Refresh/README.md) | 33–37 | Kaggle Learn micro-courses | rehearses the fit–validate–predict workflow |
-| [05 — Andrew Ng ML and Model Labs](05_Andrew_Ng_ML_Model_Labs/README.md) | 38–55 | Machine Learning Specialization | learns models through recognition, mathematics, code, and typical tasks |
-| [06 — Andrew Ng DL and PyTorch](06_Andrew_Ng_DL_PyTorch/README.md) | 56–67 | Deep Learning Specialization + PyTorch | pairs concepts with implementations and domain tasks |
-| [07 — Model Comparison, EDA, and Evaluation](07_Model_Comparison_EDA_Evaluation/README.md) | 68–71 | cross-model synthesis and trustworthy validation | compares models and systematises EDA, features, metrics, and error analysis |
-| [08 — Tuning, Ensembling, and Competition](08_Tuning_Ensembling_Competition/README.md) | 72–75 | diagnosis-first improvement and full simulation | tunes, ensembles, and completes a reproducible competition workflow |
+| [04 — AI History and Thinking Humans](04_AI_History_and_Thinking_Humans/README.md) | 33–40 | Melanie Mitchell, *Artificial Intelligence: A Guide for Thinking Humans* | explains AI history, audits claims, and distinguishes performance from understanding |
+| [05 — Andrew Ng ML and Model Labs](05_Andrew_Ng_ML_Model_Labs/README.md) | 41–58 | Machine Learning Specialization + embedded Kaggle practice | learns models through recognition, mathematics, code, and typical tasks |
+| [06 — Andrew Ng DL and PyTorch](06_Andrew_Ng_DL_PyTorch/README.md) | 59–70 | Deep Learning Specialization + PyTorch | pairs concepts with implementations and domain tasks |
+| [07 — Model Comparison, EDA, and Evaluation](07_Model_Comparison_EDA_Evaluation/README.md) | 71–74 | cross-model synthesis and trustworthy validation | compares models and systematises EDA, features, metrics, and error analysis |
+| [08 — Tuning, Ensembling, and Competition](08_Tuning_Ensembling_Competition/README.md) | 75–78 | diagnosis-first improvement and full simulation | tunes, ensembles, and completes a reproducible competition workflow |
 
 ## Resource Roles
 
 - **CS50P** is the Python programming spine.
 - **NumPy, Pandas, and Matplotlib** form the data-tool foundation.
-- **北京市十一学校《中学机器学习十五讲》 on Bohrium** is completed before Andrew Ng ML.
-- **Kaggle Learn** is a short practical refresh, not the main theory course.
+- **北京市十一学校《中学机器学习十五讲》 on Bohrium** is completed before the reading phase.
+- **Melanie Mitchell’s book** supplies AI history, conceptual boundaries, evidence-based argument, and critical judgement before formal model study.
 - **Andrew Ng Machine Learning Specialization** is the classical-machine-learning spine.
+- **Kaggle Learn** is embedded inside Andrew ML model labs as practical workflow rehearsal, not taught as a separate phase.
 - **StatQuest** supplements statistics, loss functions, and model intuition.
 - **3Blue1Brown** supplements linear algebra and calculus intuition.
 - **Andrew Ng Deep Learning Specialization** supplies deep-learning concepts.
