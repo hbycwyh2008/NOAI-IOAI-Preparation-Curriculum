@@ -63,24 +63,43 @@ Reading is completed before class. Each 70-minute seminar preserves retrieval, d
 
 ## Phase 5 — Andrew Ng ML and Model Labs
 
-41. Machine-learning workflow, model-recognition routine, and an embedded Kaggle baseline
-42. Linear regression: vectors, dot products, slope, and residuals
-43. Multiple regression, scaling, cost surfaces, and gradient descent
-44. Logistic regression, sigmoid, probability, and decision boundaries
-45. Thresholds, confusion matrix, and classification errors
-46. Regularisation, generalisation, bias, and variance
-47. Neural-network introduction in the Machine Learning Specialization
-48. Decision trees and split criteria
-49. Random forests and bagging
-50. Boosting and model correction
-51. K-nearest neighbours and distance reasoning
-52. Support vector machines and margin intuition
-53. K-means clustering
-54. PCA and dimensionality-reduction intuition
-55. Anomaly detection
-56. Recommender systems and vector similarity
-57. Embedded Kaggle tabular workflow: pipeline, validation, one controlled improvement, and postmortem
-58. Classical-machine-learning capstone and mixed model-recognition assessment
+41. Andrew ML mathematics transition I: task formalisation, notation, scalar/vector/matrix objects, shapes, equation-to-code translation, model-recognition routine, and an embedded Kaggle baseline
+42. Andrew ML mathematics transition II and linear regression: weighted sums, dot products, slope, intercept, predictions, residuals, and mean squared error
+43. Andrew ML mathematics transition III and multiple regression: feature scaling, cost surfaces, derivatives, partial derivatives, gradients, learning rate, and gradient descent
+44. Logistic regression: exponential, sigmoid, probability, logarithm, log loss, and decision boundaries
+45. Thresholds, confusion matrix, classification errors, and metric choice
+46. Regularisation, parameter norms, generalisation, bias, and variance
+47. Neural-network introduction in the Machine Learning Specialization: matrix multiplication, activation composition, and chain-rule intuition
+48. Decision trees, proportions, impurity, entropy, and split criteria
+49. Random forests, bagging, averaging, and variance reduction
+50. Boosting, residual correction, and model improvement
+51. K-nearest neighbours, Euclidean distance, and scaling
+52. Support vector machines, distance to boundary, margin, and support points
+53. K-means clustering, centroids, squared distance, and iterative improvement
+54. PCA, centring, projection, variance direction, and dimensionality-reduction intuition
+55. Anomaly detection, mean, variance, density intuition, and thresholds
+56. Recommender systems, vectors, dot products, similarity, and latent factors
+57. Embedded Kaggle tabular workflow: pipeline, validation, one controlled improvement, mathematical explanation, and postmortem
+58. Classical-machine-learning capstone and mixed model-recognition/mathematics assessment
+
+### Andrew ML Mathematics Transition Rule
+
+Sessions 41–43 are the explicit bridge from conceptual AI study into Andrew Ng’s mathematical model language. The bridge covers:
+
+```text
+task
+→ notation and shapes
+→ prediction function
+→ loss or objective
+→ gradient or model rule
+→ metric
+→ code
+→ limitations
+```
+
+Mathematics then continues just in time for every model in Sessions 44–58. Students do not complete a detached university-mathematics course, but model mastery is not credited without equation meaning, shape reasoning, a representative hand calculation, code translation, and explanation of model behaviour.
+
+Use the [Andrew ML Mathematics Transition Bridge](../02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Andrew_ML_Mathematics_Bridge.md), [evidence template](../03_Templates/Andrew_ML_Mathematics_Bridge_Evidence_Template.md), and [rubric](../04_Assessment/Andrew_ML_Mathematics_Bridge_Rubric.md).
 
 ## Phase 6 — Andrew Ng DL and PyTorch
 
