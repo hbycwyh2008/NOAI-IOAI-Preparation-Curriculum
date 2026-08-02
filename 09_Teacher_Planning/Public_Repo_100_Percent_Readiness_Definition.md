@@ -2,6 +2,8 @@
 
 This file defines what **100% public file-structure and internal-consistency coverage** means for the student-facing NOAI / IOAI preparation repository.
 
+For compatibility with existing validator terminology, this standard includes **100% public file-structure coverage**. The current contract is stricter because it additionally requires pathway, readiness-artifact, and source-of-truth consistency.
+
 It deliberately does not use the phrase “100% ready” as a blanket claim. Runtime reliability, authenticated access, current-rule alignment, private assessment security, and real classroom evidence are evaluated separately.
 
 ## Public Coverage Is 100% When
