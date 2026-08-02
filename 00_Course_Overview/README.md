@@ -27,10 +27,24 @@ Use this folder to choose the teaching pathway before opening individual Class M
 | Layer | Count | Use |
 |---|---:|---|
 | Core scheduled pathway | 67 sessions | compressed full NOAI preparation route |
-| Competition sprint | 8 sessions | task recognition, data engineering, tuning, and full simulation |
+| Competition sprint | 8 sessions | task formalisation, data quality, feature engineering, model selection, tuning, model ensembling, and full simulation |
 | Recommended full pathway | 75 sessions | 67 core plus eight sprint sessions |
 | Mainline mission bank | 155 lessons | deeper practice, alternatives, reteaching, and extension |
 | Optional Bohrium resource hub | 16 lessons | two full-video missions plus fourteen 70-minute lessons |
+
+## Competition-Sprint Rule
+
+The final sprint uses the fixed modelling sequence:
+
+```text
+data quality
+→ feature engineering
+→ model selection
+→ tuning
+→ model ensembling
+```
+
+Task definition comes before the sequence. Fresh-runtime and submission validation come after it. Optuna and broad automated search are optional extensions after a manual tuning cycle.
 
 ## Teacher Rule
 
