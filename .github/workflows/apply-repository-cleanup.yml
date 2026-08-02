@@ -21,8 +21,8 @@ jobs:
           ref: agent/repository-cleanup-audit
           fetch-depth: 0
 
-      - name: Apply repository cleanup
-        run: python scripts/apply_repository_cleanup.py
+      - name: Apply corrected repository cleanup
+        run: python scripts/apply_repository_cleanup_v2.py
 
       - name: Run static validation before commit
         run: |
@@ -34,6 +34,7 @@ jobs:
       - name: Commit cleanup and remove one-time machinery
         run: |
           git rm -f scripts/apply_repository_cleanup.py
+          git rm -f scripts/apply_repository_cleanup_v2.py
           git rm -f .github/workflows/apply-repository-cleanup.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
