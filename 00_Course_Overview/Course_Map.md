@@ -8,7 +8,7 @@
 | 3 | 19–32 | Bohrium machine-learning foundations | core task and model vocabulary established |
 | 4 | 33–40 | AI History and Thinking Humans | evidence-based AI claim audit completed |
 | 5 | 41–58 | Andrew Ng ML, mathematics transition, model labs, embedded Kaggle | defensible classical baseline and model card |
-| 6 | 59–70 | Andrew Ng DL and PyTorch | fresh training loop and domain-task comparison |
+| 6 | 59–70 | Andrew Ng DL, selected D2L concept-to-code bridges, and PyTorch | fresh training loop, independent mechanism reconstruction, and domain-task comparison |
 | 7 | 71–74 | model comparison, EDA, features, evaluation | valid model and evaluation design defended |
 | 8 | 75–78 | tuning, ensembling, simulation, postmortem | reproducible competition workflow completed |
 

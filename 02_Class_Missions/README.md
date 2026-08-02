@@ -22,7 +22,7 @@ Read [How to Use Class Missions](HOW_TO_USE_CLASS_MISSIONS.md) once before teach
 | 3 — Bohrium ML Foundations | 19–32 | [Launch Sessions 19–32](03_Bohrium_ML_Foundations/SESSION_LAUNCHER.md) | Chinese-language ML concept foundation |
 | 4 — AI History and Thinking Humans | 33–40 | [Launch Sessions 33–40](04_AI_History_and_Thinking_Humans/SESSION_LAUNCHER.md) | AI history, claim auditing, evidence, and conceptual limits |
 | 5 — Andrew Ng ML and Model Labs | 41–58 | [Launch Sessions 41–58](05_Andrew_Ng_ML_Model_Labs/SESSION_LAUNCHER.md) | mathematics transition, classical models, embedded practice, and model cards |
-| 6 — Andrew Ng DL and PyTorch | 59–70 | [Launch Sessions 59–70](06_Andrew_Ng_DL_PyTorch/SESSION_LAUNCHER.md) | deep-learning concepts paired with PyTorch and domain tasks |
+| 6 — Andrew Ng DL, selected D2L bridges, and PyTorch | 59–70 | [Launch Sessions 59–70](06_Andrew_Ng_DL_PyTorch/SESSION_LAUNCHER.md) | deep-learning concepts, concept-to-code reconstruction, PyTorch implementation, and domain tasks |
 | 7 — Model Comparison, EDA, and Evaluation | 71–74 | [Launch Sessions 71–74](07_Model_Comparison_EDA_Evaluation/SESSION_LAUNCHER.md) | model selection, systematic EDA, features, validation, and error analysis |
 | 8 — Tuning, Ensembling, and Competition | 75–78 | [Launch Sessions 75–78](08_Tuning_Ensembling_Competition/SESSION_LAUNCHER.md) | tuning, ensembling, full simulation, and readiness decision |
 

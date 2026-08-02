@@ -8,7 +8,7 @@
 | Bohrium foundations | 19–32 | 14 |
 | AI History and Thinking Humans | 33–40 | 8 |
 | Andrew Ng ML and model labs | 41–58 | 18 |
-| Andrew Ng DL and PyTorch | 59–70 | 12 |
+| Andrew Ng DL, selected D2L bridges, and PyTorch | 59–70 | 12 |
 | Model comparison, EDA, and evaluation | 71–74 | 4 |
 | Tuning, ensembling, and competition | 75–78 | 4 |
 
@@ -16,4 +16,4 @@
 
 Ordinary missions use 75 minutes. Sessions 19–32 and 33–40 are named 70-minute exceptions. Long competition simulations use the target event duration.
 
-Reading, video completion, or external-course progress does not replace the Session gate. Teachers assign extensions from the former extension library only after opening the canonical phase-local lesson.
+D2L bridge packets are embedded inside Sessions 61, 62, 63, 65, 66, and 68 and do not add sessions. Reading, video completion, or external-course progress does not replace the Session gate. Teachers assign extensions from the former extension library only after opening the canonical phase-local lesson.

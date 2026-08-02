@@ -7,11 +7,12 @@
 | Canonical pathway | 78 Sessions, complete |
 | Phase launchers | nine, complete |
 | Phase-local canonical lesson storage | complete |
-| Unique phase-local launcher targets | 95 |
+| Unique phase-local launcher targets | 101 |
 | Canonical links into Lesson Library | zero |
 | Extension/remediation lessons | 96 |
 | AI History seminars | eight, complete |
 | Andrew ML mathematics transition | Sessions 41–43, complete |
+| D2L concept-to-code bridge | six required packets in Sessions 61, 62, 63, 65, 66, and 68 |
 | Internal consistency validators | present and enforced in CI |
 
 The maintained public repository has **100% public file-structure and internal-consistency coverage**.
