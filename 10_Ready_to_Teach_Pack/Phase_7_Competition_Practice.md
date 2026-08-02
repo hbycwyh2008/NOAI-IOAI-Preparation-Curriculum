@@ -16,16 +16,16 @@ When a summary conflicts with a Class Mission, use the Class Mission and correct
 
 | Session | Duration | Canonical Class Mission | Required outcome |
 |---:|---:|---|---|
-| 58 | 75 minutes | [`24-round-2-project-training/lesson-01.md`](../02_Class_Missions/24-round-2-project-training/lesson-01.md) | defensible data audit, validation split, leakage analysis, and validation memo |
-| 59 | 75 minutes | [`24-round-2-project-training/lesson-02.md`](../02_Class_Missions/24-round-2-project-training/lesson-02.md) | first valid baseline, local metric, valid submission, and fresh-runtime evidence |
-| 60 | 75 minutes | [`24-round-2-project-training/lesson-03.md`](../02_Class_Missions/24-round-2-project-training/lesson-03.md) | one controlled experiment, keep/reject decision, and leaderboard-risk explanation |
-| 61 | 180 minutes | [`25-past-paper-reproduction/lesson-01.md`](../02_Class_Missions/25-past-paper-reproduction/lesson-01.md) | natural-language-processing reproduction with baseline, sequence route, validation, and postmortem |
-| 62 | 180 minutes | [`25-past-paper-reproduction/lesson-02.md`](../02_Class_Missions/25-past-paper-reproduction/lesson-02.md) | tabular or AI4Science reproduction with group-aware validation and multiple baselines |
-| 63 | 180 minutes | [`25-past-paper-reproduction/lesson-03.md`](../02_Class_Missions/25-past-paper-reproduction/lesson-03.md) | audio or image reproduction with source-aware split and shortcut analysis |
-| 64 | 120 minutes | [`26-mock-contests/lesson-01.md`](../02_Class_Missions/26-mock-contests/lesson-01.md) | closed-note Round 1 mock, confidence coding, and later correction evidence |
-| 65 | 240 minutes | [`26-mock-contests/lesson-02.md`](../02_Class_Missions/26-mock-contests/lesson-02.md) | timed Round 2 tabular mock with valid submission and fresh run |
-| 66 | 360 minutes | [`26-mock-contests/lesson-03.md`](../02_Class_Missions/26-mock-contests/lesson-03.md) | timed Round 2 multimodal mock with single-modality baselines, fusion, and stress tests |
-| 67 | 45 minutes per student | [`26-mock-contests/lesson-04.md`](../02_Class_Missions/26-mock-contests/lesson-04.md) | evidence-based readiness status and three dated next actions |
+| 58 | 75 minutes | [`24-round-2-project-training/lesson-01.md`](../02_Class_Missions/_Lesson_Library/24-round-2-project-training/lesson-01.md) | defensible data audit, validation split, leakage analysis, and validation memo |
+| 59 | 75 minutes | [`24-round-2-project-training/lesson-02.md`](../02_Class_Missions/_Lesson_Library/24-round-2-project-training/lesson-02.md) | first valid baseline, local metric, valid submission, and fresh-runtime evidence |
+| 60 | 75 minutes | [`24-round-2-project-training/lesson-03.md`](../02_Class_Missions/_Lesson_Library/24-round-2-project-training/lesson-03.md) | one controlled experiment, keep/reject decision, and leaderboard-risk explanation |
+| 61 | 180 minutes | [`25-past-paper-reproduction/lesson-01.md`](../02_Class_Missions/_Lesson_Library/25-past-paper-reproduction/lesson-01.md) | natural-language-processing reproduction with baseline, sequence route, validation, and postmortem |
+| 62 | 180 minutes | [`25-past-paper-reproduction/lesson-02.md`](../02_Class_Missions/_Lesson_Library/25-past-paper-reproduction/lesson-02.md) | tabular or AI4Science reproduction with group-aware validation and multiple baselines |
+| 63 | 180 minutes | [`25-past-paper-reproduction/lesson-03.md`](../02_Class_Missions/_Lesson_Library/25-past-paper-reproduction/lesson-03.md) | audio or image reproduction with source-aware split and shortcut analysis |
+| 64 | 120 minutes | [`26-mock-contests/lesson-01.md`](../02_Class_Missions/_Lesson_Library/26-mock-contests/lesson-01.md) | closed-note Round 1 mock, confidence coding, and later correction evidence |
+| 65 | 240 minutes | [`26-mock-contests/lesson-02.md`](../02_Class_Missions/_Lesson_Library/26-mock-contests/lesson-02.md) | timed Round 2 tabular mock with valid submission and fresh run |
+| 66 | 360 minutes | [`26-mock-contests/lesson-03.md`](../02_Class_Missions/_Lesson_Library/26-mock-contests/lesson-03.md) | timed Round 2 multimodal mock with single-modality baselines, fusion, and stress tests |
+| 67 | 45 minutes per student | [`26-mock-contests/lesson-04.md`](../02_Class_Missions/_Lesson_Library/26-mock-contests/lesson-04.md) | evidence-based readiness status and three dated next actions |
 
 ## Entry Gate
 

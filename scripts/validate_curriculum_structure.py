@@ -6,6 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MISSIONS = ROOT / "02_Class_Missions"
+LIBRARY = MISSIONS / "_Lesson_Library"
 
 EXPECTED_MAINLINE_COUNTS = {
     "00-course-overview": 2,
@@ -74,8 +75,27 @@ REQUIRED_FILES = (
     "00_Course_Overview/Detailed_Lesson_Sequence.md",
     "00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md",
     "00_Course_Overview/Curriculum_Completeness_Audit.md",
-    "02_Class_Missions/Class_Mission_Resource_Architecture.md",
-    "02_Class_Missions/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md",
+    "02_Class_Missions/_Curriculum_Governance/Class_Mission_Resource_Architecture.md",
+    "02_Class_Missions/00_Orientation_and_Evidence/README.md",
+    "02_Class_Missions/01_CS50P_Python/README.md",
+    "02_Class_Missions/02_NumPy_Pandas_Visualisation/README.md",
+    "02_Class_Missions/03_Bohrium_ML_Foundations/README.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/README.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-01-what-counts-as-intelligence.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-02-neural-networks-and-ai-cycles.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-03-how-machines-recognise-images.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-04-what-did-the-model-learn.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-05-reward-games-and-reinforcement-learning.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-06-language-processing-and-understanding.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-07-common-sense-abstraction-and-analogy.md",
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-08-how-intelligent-is-ai.md",
+    "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/README.md",
+    "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Math_Intuition_Map.md",
+    "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Model_Recognition_Routine.md",
+    "02_Class_Missions/06_Andrew_Ng_DL_PyTorch/README.md",
+    "02_Class_Missions/07_Model_Comparison_EDA_Evaluation/README.md",
+    "02_Class_Missions/08_Tuning_Ensembling_Competition/README.md",
+    "02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md",
     "03_Templates/Competition_Sprint_Experiment_Log_Template.md",
     "03_Templates/Competition_Sprint_Model_Ensembling_Record.md",
     "03_Templates/Competition_Sprint_Submission_Checklist.md",
@@ -147,7 +167,7 @@ def linked_lesson_files(module_folder: Path) -> set[Path]:
 
 
 def validate_module(module: str, expected: int, errors: list[str]) -> int:
-    folder = MISSIONS / module
+    folder = LIBRARY / module
     if not folder.exists():
         errors.append(f"Missing module folder: {module}")
         return 0
@@ -167,7 +187,7 @@ def validate_module(module: str, expected: int, errors: list[str]) -> int:
         )
 
     for path in files:
-        relative = path.relative_to(MISSIONS).as_posix()
+        relative = path.relative_to(LIBRARY).as_posix()
         text = path.read_text(encoding="utf-8")
         lines = text.splitlines()
 
@@ -213,7 +233,7 @@ def resolve_code_path(document: Path, raw_path: str) -> Path | None:
 
     first = candidate.parts[0]
     if first in EXPECTED_MAINLINE_COUNTS or first == RESOURCE_HUB:
-        return (MISSIONS / candidate).resolve()
+        return (LIBRARY / candidate).resolve()
 
     return (ROOT / candidate).resolve()
 
@@ -233,7 +253,7 @@ def validate_selected_content_paths(errors: list[str]) -> None:
 
 def validate_preclass_delivery(errors: list[str]) -> None:
     for relative, marker in PRECLASS_DELIVERY_FILES.items():
-        path = MISSIONS / relative
+        path = LIBRARY / relative
         if not path.exists():
             errors.append(f"Missing pre-class-delivery lesson: {relative}")
             continue
@@ -315,20 +335,20 @@ def main() -> int:
     validate_legacy_boundaries(errors)
     validate_exact_timestamp_map(errors)
 
-    require_text("README.md", ("75 sessions", "155 lessons", "Competition sprint"), errors)
+    require_text("README.md", ("78 sessions", "155 lessons", "Competition sprint"), errors)
     require_text(
         "00_Course_Overview/Pacing_Guide.md",
-        ("75 sessions", "155 lessons", "70-Minute Bohrium Exception"),
+        ("78 sessions", "155 lessons", "70-Minute Bohrium Exception"),
         errors,
     )
     require_text(
         "00_Course_Overview/Detailed_Lesson_Sequence.md",
-        ("75 scheduled sessions", "Phase 8 — Competition Sprint"),
+        ("78 scheduled sessions", "Phase 8 — Tuning, Ensembling, and Competition"),
         errors,
     )
     require_text(
         "00_Course_Overview/Course_Map.md",
-        ("Phase", "68–75", "155 lessons", "16 lessons"),
+        ("Phase", "75–78", "155 mainline lesson files", "16 Bohrium resource lessons"),
         errors,
     )
     require_text(
@@ -336,19 +356,19 @@ def main() -> int:
         ("100% public file-structure coverage", "171", "Operational"),
         errors,
     )
-    require_text("02_Class_Missions/README.md", ("28 — Competition Sprint",), errors)
+    require_text("02_Class_Missions/README.md", ("CS50P", "Bohrium", "AI History", "Andrew Ng Machine Learning", "Andrew Ng Deep Learning", "Model Comparison"), errors)
     require_text(
-        "02_Class_Missions/shared/full-bohrium-video-classroom-flow.md",
+        "02_Class_Missions/_Lesson_Library/shared/full-bohrium-video-classroom-flow.md",
         ("at least **five** pieces of evidence", "Named 70-Minute Exception"),
         errors,
     )
     require_text(
-        "02_Class_Missions/28-competition-sprint-task-data-tuning/README.md",
+        "02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/README.md",
         ("pre-class preparation", "37 minutes", "43 minutes", "33 minutes"),
         errors,
     )
     require_text(
-        "02_Class_Missions/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md",
+        "02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md",
         ("Pre-class required viewing", "33 minutes", "0–8 min"),
         errors,
     )

@@ -1,5 +1,10 @@
 # Class Mission Lesson Distribution and File-Structure Audit
 
+## Navigation Status
+
+The counted lesson files live under `02_Class_Missions/_Lesson_Library`. The scheduled route is defined by the phase folders; file coverage is not a teaching sequence.
+
+
 This audit checks whether `02_Class_Missions` contains the intended lesson bank and whether each module has enough files for concept formation, practice, independent rebuild, and evidence.
 
 ## Coverage Standard

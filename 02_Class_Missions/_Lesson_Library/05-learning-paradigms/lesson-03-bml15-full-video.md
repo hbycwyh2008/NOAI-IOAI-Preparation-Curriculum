@@ -8,7 +8,7 @@
 
 **Placement:** This lesson belongs in the Round 1 A/B concept-building sequence because it supports artificial-intelligence foundations, supervised/unsupervised learning, regression, classification, clustering, and paper-test explanations.
 
-**Detailed split:** [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
+**Detailed split:** [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
 
 ## Timeline
 

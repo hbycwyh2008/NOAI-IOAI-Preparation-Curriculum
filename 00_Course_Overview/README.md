@@ -1,51 +1,11 @@
 # Course Overview
 
-Use this folder to choose the teaching pathway before opening individual Class Missions.
+The canonical 78-session route is organised by learning dependency rather than by a flat topic bank.
 
-## Read in This Order
+- [Course Map](Course_Map.md)
+- [Detailed 75-Session Sequence](Detailed_Lesson_Sequence.md)
+- [Pacing Guide](Pacing_Guide.md)
+- [Cohort Pathways and Required / Optional Map](Cohort_Pathways_and_Required_Optional_Map.md)
+- [Class Missions](../02_Class_Missions/README.md)
 
-1. [Cohort Pathways and Required / Optional Map](Cohort_Pathways_and_Required_Optional_Map.md)  
-   Choose the Round 1, full NOAI, competition-sprint, or IOAI-extension pathway. This file explains why the repository has more lesson files than a single cohort should complete.
-
-2. [Pacing Guide](Pacing_Guide.md)  
-   Distinguishes the 67-session core, eight-session sprint, 75-session full pathway, 155-lesson mainline bank, optional Bohrium resource hub, ordinary 75-minute classes, the named 70-minute video exception, and long simulations.
-
-3. [Detailed Lesson Sequence](Detailed_Lesson_Sequence.md)  
-   Lists the recommended Sessions 1–75 in order.
-
-4. [Expanded Lesson Architecture](Expanded_Lesson_Architecture.md)  
-   Explains lesson density, module roles, and why major competition modules contain more than two lessons.
-
-5. [Class Mission Resource Architecture](../02_Class_Missions/Class_Mission_Resource_Architecture.md)  
-   Maps every Class Mission module to complete resource names and explains which resources are primary or supplementary.
-
-6. [Curriculum Readiness Audit](../10_Ready_to_Teach_Pack/Curriculum_Readiness_Audit.md)  
-   Separates structural completeness, runtime validation, assessment security, annual-rule alignment, and classroom pilot evidence.
-
-## Current Curriculum Layers
-
-| Layer | Count | Use |
-|---|---:|---|
-| Core scheduled pathway | 67 sessions | compressed full NOAI preparation route |
-| Competition sprint | 8 sessions | task formalisation, data quality, feature engineering, model selection, tuning, model ensembling, and full simulation |
-| Recommended full pathway | 75 sessions | 67 core plus eight sprint sessions |
-| Mainline mission bank | 155 lessons | deeper practice, alternatives, reteaching, and extension |
-| Optional Bohrium resource hub | 16 lessons | two full-video missions plus fourteen 70-minute lessons |
-
-## Competition-Sprint Rule
-
-The final sprint uses the fixed modelling sequence:
-
-```text
-data quality
-→ feature engineering
-→ model selection
-→ tuning
-→ model ensembling
-```
-
-Task definition comes before the sequence. Fresh-runtime and submission validation come after it. Optuna and broad automated search are optional extensions after a manual tuning cycle.
-
-## Teacher Rule
-
-Do not begin by scheduling all lesson files. Choose the target pathway, identify the exit gates, schedule required lessons, and reserve optional lessons for evidence-based reteaching or extension.
+The 171 public lesson/resource files remain available in the lesson library. They are selected by phase need and are not automatically scheduled.

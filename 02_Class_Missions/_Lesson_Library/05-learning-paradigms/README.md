@@ -15,7 +15,7 @@ This module turns supervised, unsupervised, and reinforcement learning from voca
 
 Use Lesson 03 when the teacher wants students to watch the full 北京市十一学校《中学机器学习十五讲》 Bohrium video and then process it through the seven-step after-school club flow.
 
-For the full 14-session 70-minute split, see [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md).
+For the full 14-session 70-minute split, see [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../../09_Teacher_Planning/BML15_70min_Lesson_Split.md).
 
 ## Minimum Evidence
 

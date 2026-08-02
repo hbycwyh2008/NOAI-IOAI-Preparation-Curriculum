@@ -38,7 +38,7 @@ The fixed five-stage modelling sequence is:
 
 Open:
 
-`02_Class_Missions/28-competition-sprint-task-data-tuning/`
+`02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/`
 
 The Class Mission files are the source of truth for lesson content, classroom flow, evidence, and exit standards.
 
@@ -59,7 +59,7 @@ The Class Mission files are the source of truth for lesson content, classroom fl
 
 Use:
 
-`02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`
+`02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`
 
 ### Session 72 — Classical Machine-Learning Tuning
 
@@ -91,7 +91,7 @@ PyTorch schedulers, Optuna, and efficiency resources remain available as an opti
 
 Use:
 
-- `02_Class_Missions/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md`;
+- `02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md`;
 - `06_Starter_Code/ready_to_teach/optuna_tuning_template.py`.
 
 The optional video package takes **33 minutes** and must not be replayed inside the eight-minute classroom warm-up.

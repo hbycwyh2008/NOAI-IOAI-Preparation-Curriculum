@@ -33,7 +33,7 @@ The video is the Skill Warm-Up. Watching the video is not the final product. Eac
 
 ## Source Planning File
 
-See [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../../09_Teacher_Planning/BML15_70min_Lesson_Split.md) for the overview, timing templates, and evidence matrix. The filename is retained for compatibility; the displayed course name is always written in full.
+See [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../../../09_Teacher_Planning/BML15_70min_Lesson_Split.md) for the overview, timing templates, and evidence matrix. The filename is retained for compatibility; the displayed course name is always written in full.
 
 ## Teacher Use
 

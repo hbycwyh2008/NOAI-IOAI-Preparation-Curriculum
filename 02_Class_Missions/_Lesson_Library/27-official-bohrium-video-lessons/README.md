@@ -13,7 +13,7 @@ Use this folder when the teacher wants students to watch the full assigned Bohri
 
 ## Full-Series Split
 
-- [北京市十一学校《中学机器学习十五讲》70-Minute Lesson Split](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
+- [北京市十一学校《中学机器学习十五讲》70-Minute Lesson Split](../../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
 
 Use this split when teaching 北京市十一学校《中学机器学习十五讲》 as a multi-session Round 1 A/B concept-building and review sequence.
 

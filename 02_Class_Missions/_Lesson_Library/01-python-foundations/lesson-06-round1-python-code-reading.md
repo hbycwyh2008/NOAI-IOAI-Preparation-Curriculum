@@ -20,7 +20,7 @@
 **Harvard CS50’s Introduction to Programming with Python on edX**  
 https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/block-v1:HarvardX+CS50P+Python+type@sequential+block@5c4566382df54814ba604df6369ca2fc/block-v1:HarvardX+CS50P+Python+type@vertical+block@8cbabae6d04047638c12604d810d127f
 
-Exact map: [`05_Resources/CS50P_edX_Timestamp_Map.md`](../../05_Resources/CS50P_edX_Timestamp_Map.md)
+Exact map: [`05_Resources/CS50P_edX_Timestamp_Map.md`](../../../05_Resources/CS50P_edX_Timestamp_Map.md)
 
 ### Review Ranges
 
