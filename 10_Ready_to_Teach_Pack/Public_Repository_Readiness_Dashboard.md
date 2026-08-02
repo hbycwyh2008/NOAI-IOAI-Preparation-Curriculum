@@ -7,10 +7,12 @@ This dashboard prevents one percentage from hiding different kinds of readiness.
 | Dimension | Public-repository target | Current claim after validator passes | Evidence source | Can the public repo prove it alone? |
 |---|---:|---|---|---|
 | Canonical pathway and navigation | 100% | structurally complete | `02_Class_Missions/README.md`, course map, pacing guide | yes |
-| Scheduled-phase teacher guidance | 100% | complete when every phase has a delivery entry and gate | phase READMEs and Ready-to-Teach pack | yes |
+| Class Missions click path | 100% | nine Phase launchers cover Sessions 1–78 exactly once and link to exact lessons | `HOW_TO_USE_CLASS_MISSIONS.md`, Phase launchers, launcher validator | yes |
+| Scheduled-phase teacher guidance | 100% | complete when every phase has a delivery entry and gate | Phase READMEs, launchers, and Ready-to-Teach pack | yes |
 | Student-facing lesson/resource bank | 100% | 155 mainline + 16 Bohrium resource lessons | lesson-distribution audit | yes |
 | Phase 04 reading curriculum | 100% | eight English seminars, teacher pack, evidence template, and rubric | Phase 04 folder and linked artifacts | yes |
-| Internal links, counts, naming, and source boundaries | 100% | complete when strict validator passes | `scripts/validate_curriculum_structure.py` | yes |
+| Andrew ML mathematics transition | 100% | Sessions 41–43 bridge, just-in-time map, teacher pack, evidence template, and rubric | Phase 05 folder and linked artifacts | yes |
+| Internal links, counts, naming, and source boundaries | 100% | complete when strict validators pass | three public validators | yes |
 | Maintained notebooks and starter code | 100% of maintained assets | complete when release workflow passes | Ready-to-Teach workflow output | yes, for CI environment |
 | Required public links | 100% HTTP reachability | complete when link checker passes | link-check workflow output | partly; authenticated access needs manual evidence |
 | Student runtime qualification | cohort-specific | pending until exact environment is tested | `Student_Runtime_Qualification_Record.md` | no |
@@ -24,7 +26,7 @@ This dashboard prevents one percentage from hiding different kinds of readiness.
 
 When automated checks pass, the repository may state:
 
-> **100% public file-structure and internal-consistency coverage for the maintained curriculum assets.**
+> **100% public file-structure, launcher-coverage, and internal-consistency coverage for the maintained curriculum assets.**
 
 It may also state, separately, which maintained notebooks, scripts, and links passed on the release commit.
 
@@ -33,13 +35,19 @@ It must not state “100% operationally ready” unless the named cohort, runtim
 ## Public-Repository Completion Checklist
 
 - [ ] all overview documents use the 78-session pathway;
+- [ ] Class Missions has one documented normal path: Phase → Session Launcher → exact lesson;
+- [ ] nine launchers cover Sessions 1–78 exactly once;
+- [ ] every launcher’s internal lesson links resolve;
+- [ ] Phase READMEs expose the launcher as the primary entry point;
+- [ ] normal delivery does not require manual `_Lesson_Library` browsing;
 - [ ] Phase 04 is AI History and Thinking Humans, not a standalone Kaggle phase;
 - [ ] Kaggle is documented as embedded Andrew ML practice;
+- [ ] Andrew ML has an explicit mathematics transition and model-by-model mathematics evidence;
 - [ ] every scheduled phase has purpose, prerequisites, sequence, evidence, and gate;
 - [ ] Phase 04 has eight complete lesson files, a teacher pack, student evidence template, and rubric;
 - [ ] all 155 mainline and 16 Bohrium resource lessons are indexed;
 - [ ] internal links and selected-content paths resolve;
-- [ ] the validator requires the current source-of-truth files;
+- [ ] the validators require the current source-of-truth files;
 - [ ] Ready-to-Teach automation executes maintained notebooks and starter code;
 - [ ] required public links pass the blocking link check;
 - [ ] public/private assessment boundaries are explicit;
