@@ -15,7 +15,7 @@ The teacher must verify URLs, access terms, annual competition rules, model rest
 5. Use official documentation as the source of truth for changing APIs.
 6. Watching a resource is not evidence; students must practise, rebuild, explain, and submit proof.
 7. Current official NOAI/IOAI rules override this repository.
-8. Automated tuning is used only after task recognition, validation, data engineering, and a valid baseline are correct.
+8. Automated tuning is optional and is used only after task definition, data quality, validation, feature engineering, model selection, error analysis, and a manual tuning cycle are correct.
 
 ## Full Resource Names and Links
 
@@ -32,12 +32,12 @@ The teacher must verify URLs, access terms, annual competition rules, model rest
 | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | https://github.com/ageron/handson-ml3 | practical scikit-learn workflow, preprocessing, evaluation, trees/ensembles, and end-to-end projects |
 | DeepLearning.AI PyTorch for Deep Learning Professional Certificate | https://www.coursera.org/professional-certificates/pytorch-for-deep-learning | main structured PyTorch course series |
 | Course 1 — PyTorch: Fundamentals | https://www.coursera.org/learn/pytorch-fundamentals | tensors, datasets, dataloaders, neural networks, and training pipelines |
-| Course 2 — PyTorch: Techniques and Ecosystem Tools | https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools | TorchVision, Hugging Face, transfer learning, tuning, Optuna, and efficient pipelines |
+| Course 2 — PyTorch: Techniques and Ecosystem Tools | https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools | TorchVision, Hugging Face, transfer learning, tuning, optional Optuna, and efficient pipelines |
 | Course 3 — PyTorch: Advanced Architectures and Deployment | https://www.coursera.org/learn/pytorch-advanced-architectures-and-deployment | optional advanced architectures, compression, export, and deployment |
 | Google Machine Learning Crash Course | https://developers.google.com/machine-learning/crash-course | concise regression, classification, metrics, generalisation, and feature reinforcement |
 | StatQuest Video Index | https://statquest.org/video-index/ | statistics, distributions, metrics, trees, ensembles, and clarification |
 | 3Blue1Brown Neural Networks | https://www.3blue1brown.com/topics/neural-networks | neural-network, gradient-descent, and backpropagation intuition |
-| Scikit-Learn User Guide | https://scikit-learn.org/stable/user_guide.html | current preprocessing, Pipeline, metrics, cross-validation, and tuning APIs |
+| Scikit-Learn User Guide | https://scikit-learn.org/stable/user_guide.html | current preprocessing, Pipeline, metrics, cross-validation, tuning, voting, and stacking APIs |
 | PyTorch Tutorials | https://docs.pytorch.org/tutorials/ | current PyTorch API and implementation reference |
 | Hugging Face LLM Course | https://huggingface.co/learn/llm-course/en/chapter1/1 | tokenisation, Transformers, classification, and fine-tuning |
 | Hugging Face Audio Course | https://huggingface.co/learn/audio-course/en/chapter0/introduction | waveforms, spectrograms, audio classification, automatic speech recognition, and text-to-speech |
@@ -73,7 +73,7 @@ The teacher must verify URLs, access terms, annual competition rules, model rest
 | Confusion matrix, accuracy, precision, recall, specificity, F1, ROC/AUC | `09-model-evaluation` | Google Machine Learning Crash Course; StatQuest; Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | confusion-matrix worksheet and metric decision memo | Round 1 and Round 2 metric gate |
 | Cross-validation and evaluation design | `09-model-evaluation`, `18-sklearn-workflow` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Scikit-Learn User Guide | split diagram, cross-validation result, reliability memo | Round 2 gate |
 | Underfitting, overfitting, learning curves, and regularisation | `10-generalization-regularization`, `28-competition-sprint-task-data-tuning` | selected Machine Learning Specialization content; Course 2 — Advanced Learning Algorithms; Course 2 — Improving Deep Neural Networks | bias/variance diagnosis and controlled remedy | short answer and tuning log |
-| Decision trees, bagging, random forests, and boosting | `11-trees-and-ensembles` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; selected Machine Learning Specialization content; StatQuest | impurity calculation and model-comparison table | Round 1 and model selection |
+| Decision trees, bagging, random forests, boosting, voting, and stacking | `11-trees-and-ensembles`, `28-competition-sprint-task-data-tuning` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; selected Machine Learning Specialization content; Scikit-Learn User Guide; StatQuest | impurity calculation, model-comparison table, OOF/held-out ensemble evidence | Round 1, model selection, and sprint fusion |
 | Perceptrons, neurons, multilayer perceptrons, and forward propagation | `12-neural-network-foundations` | 台湾大学李宏毅《机器学习》内容精选版; 3Blue1Brown Neural Networks; selected Deep Learning Specialization content | numerical neuron, parameter count, hand forward pass | Round 1 short answer |
 | Gradient descent and backpropagation | `13-backprop-optimization` | 台湾大学李宏毅《机器学习》内容精选版; 3Blue1Brown Neural Networks; selected Deep Learning Specialization content | computational-graph trace and gradient explanation | Round 1 and oral defence |
 | Adam, AdamW, learning-rate decay, and optimisation choices | `13-backprop-optimization`, `19-pytorch-foundations`, `28-competition-sprint-task-data-tuning` | Course 2 — Improving Deep Neural Networks; Course 1 — PyTorch: Fundamentals; PyTorch Tutorials | controlled optimiser/learning-rate experiment | implementation and tuning log |
@@ -87,7 +87,7 @@ The teacher must verify URLs, access terms, annual competition rules, model rest
 | Pandas data manipulation and audit | `16-numpy-pandas-matplotlib`, `28-competition-sprint-task-data-tuning` | Pandas documentation; Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | reproducible audit notebook and missing-value table | tabular mock |
 | Matplotlib visualisation | `16-numpy-pandas-matplotlib` and project modules | Matplotlib documentation; Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow | labelled diagnostic figures | report rubric |
 | Missing values, categorical data, scaling, and leakage-safe preprocessing | `17-data-cleaning-feature-engineering`, `18-sklearn-workflow`, `28-competition-sprint-task-data-tuning` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Scikit-Learn User Guide | Pipeline/ColumnTransformer and leakage checklist | Round 2 gate |
-| Feature engineering | `17-data-cleaning-feature-engineering`, `28-competition-sprint-task-data-tuning` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; task-specific official documentation | feature hypothesis, before/after validation result | project and sprint |
+| Feature engineering | `17-data-cleaning-feature-engineering`, `28-competition-sprint-task-data-tuning` | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; task-specific official documentation | feature hypothesis, before/after validation result, and ablation | project and sprint |
 | Image augmentation and transforms | `20-computer-vision` | Course 2 — PyTorch: Techniques and Ecosystem Tools; PyTorch/torchvision tutorials | augmentation policy and controlled experiment | image project |
 | Tokenisation, vocabulary, padding, and embeddings | `21-nlp-sequence-models` | Hugging Face LLM Course; Course 2 — PyTorch: Techniques and Ecosystem Tools | tokenizer/collator tests and shape ledger | natural-language-processing project |
 | Audio features and spectrograms | `22-audio-speech` | Hugging Face Audio Course; torchaudio documentation | waveform/spectrogram pipeline | audio reproduction |
@@ -109,17 +109,19 @@ The teacher must verify URLs, access terms, annual competition rules, model rest
 
 # Competition Sprint Crosswalk
 
-| Sprint skill | Module 28 lessons | Required resources | Required evidence |
+| Sprint skill | Module 28 lesson | Required resources | Required evidence |
 |---|---|---|---|
-| Task recognition | Lessons 01–02 | current official NOAI/IOAI task statements; Course 2 — Advanced Learning Algorithms selected material | task-recognition sheet and baseline/metric memo |
-| Data audit and validation | Lesson 03 | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Scikit-Learn User Guide | audit table, split design, leakage checklist |
-| Data cleaning and feature engineering | Lesson 04 | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; task-specific documentation | feature hypothesis and before/after result |
-| Classical machine-learning tuning | Lesson 05 | Course 2 — Advanced Learning Algorithms, Week 3: Advice for Applying Machine Learning | diagnosis-first experiment log |
-| Deep-learning tuning | Lesson 06 | Course 2 — Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization | learning-rate, regularisation, batch-size, and optimiser record |
-| PyTorch schedulers, Optuna, and efficiency | Lesson 07 | Course 2 — PyTorch: Techniques and Ecosystem Tools, Module 1: Hyperparameter Optimization | manual-versus-automated comparison, search-space rationale, efficiency record |
-| Full sprint simulation | Lesson 08 | current official task format and permitted tools | full solution package, fresh-runtime record, submission validation, postmortem |
+| Task recognition and formalisation | Lesson 01 | current official NOAI/IOAI task statements | task card with X, y, metric, prediction-time boundary, constraints, and submission schema |
+| Data quality and validation | Lesson 02 | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Scikit-Learn User Guide; task documentation | quality audit, frozen split, split diagram, distribution checks, and leakage checklist |
+| Feature engineering and reproducible pipeline | Lesson 03 | Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow; Scikit-Learn User Guide; task-specific documentation | feature hypothesis, pipeline, before/after result, rejected experiment, and ablation |
+| Model selection, baseline ladder, and error analysis | Lesson 04 | Course 2 — Advanced Learning Algorithms selected Week 3 material; previous model lessons | constant/rule, simple, and contrasting model comparison plus error-analysis memo |
+| Classical machine-learning tuning | Lesson 05 | Course 2 — Advanced Learning Algorithms, Week 3: Advice for Applying Machine Learning | diagnosis-first controlled-experiment log |
+| Deep-learning tuning | Lesson 06 | Course 2 — Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization | learning-rate, regularisation, batch-size, optimiser, and scheduler decision record |
+| Model ensembling | Lesson 07 | prior ensemble lessons; Scikit-Learn User Guide; saved held-out or OOF predictions | diversity table, averaging/voting/stacking ladder, leakage checks, and best-single-versus-ensemble decision |
+| Optional automated tuning | optional extension after Lesson 06 | Course 2 — PyTorch: Techniques and Ecosystem Tools, Module 1; Optuna documentation | manual-versus-automated comparison, justified search space, trial budget, and efficiency record |
+| Full sprint simulation | Lesson 08 | current official task format and permitted tools | full stage-gate evidence, solution package, fresh-runtime record, submission validation, and postmortem |
 
-Use the exact video assignments in:
+Use the exact required and optional video assignments in:
 
 `02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`
 
@@ -136,7 +138,7 @@ Use the exact video assignments in:
 | Round 1 mocks | broad A/B coverage, code, calculations, and explanations |
 | Tabular mock | audit, validation, pipeline, metric, threshold, and submission |
 | Domain projects | computer vision, natural-language processing, audio, large language models, and multimodality |
-| Competition sprint | task recognition, data engineering, diagnosis-first tuning, efficiency, and submission risk |
+| Competition sprint | task formalisation, data quality, feature engineering, model selection, diagnosis-first tuning, model ensembling, and submission risk |
 | Final conference | cold knowledge, code defence, reproducibility, and time management |
 
 # Maintenance Checklist Before Every Cohort
@@ -148,7 +150,8 @@ Use the exact video assignments in:
 - [ ] verify every required resource link and access requirement;
 - [ ] verify exact course modules, videos, durations, chapters, and timestamps;
 - [ ] rerun starter notebooks and scripts in the final student environment;
-- [ ] validate Module 28 Optuna, scheduler, and efficiency activities;
+- [ ] validate Module 28 data-quality, feature, model-selection, tuning, OOF/ensemble, and submission activities;
+- [ ] validate the optional Optuna extension separately when it will be used;
 - [ ] keep hidden labels, answer keys, and scoring packages outside the public repository;
 - [ ] confirm the teacher-key repository is private;
 - [ ] update this crosswalk whenever the official syllabus or curriculum architecture changes.

@@ -1,0 +1,14 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+nbformat
+nbclient
+ipykernel
+requests
+torch
+torchvision
+torchaudio
+librosa
+opencv-python-headless
+optuna

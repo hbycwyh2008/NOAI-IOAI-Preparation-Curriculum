@@ -21,14 +21,29 @@ This repository is organised around official NOAI/IOAI skill demands rather than
 | 5 | 39–44 | NumPy, Pandas, Matplotlib, data cleaning, feature engineering, and scikit-learn workflow | student can audit data and build a leakage-safe tabular baseline |
 | 6 | 45–57 | PyTorch foundations and domain tasks in computer vision, natural-language processing, audio, large language models, and multimodality | student can build and validate task-appropriate PyTorch/domain baselines |
 | 7 | 58–67 | project workflow, official-style reproduction, long mocks, submission reliability, and final readiness | student can solve open-ended tasks under realistic time and compute limits |
-| 8 | 68–75 | competition sprint: task recognition, data engineering, diagnosis-first tuning, Optuna/efficiency, and full simulation | student can rapidly move from unfamiliar task to reliable baseline, controlled improvement, valid submission, and postmortem |
+| 8 | 68–75 | competition sprint: task formalisation, data quality, feature engineering, model selection, diagnosis-first tuning, model ensembling, and full simulation | student can move from unfamiliar task to trustworthy validation, reproducible features, justified models, controlled improvement, optional fusion, valid submission, and postmortem |
+
+## Phase 8 Fixed Order
+
+```text
+Task definition
+→ data quality and validation
+→ feature engineering
+→ model selection and baseline
+→ error analysis
+→ tuning
+→ model ensembling
+→ submission and fresh-runtime validation
+```
+
+Optuna and broad automated search are optional extension work after a manual tuning cycle; they are not a required scheduled replacement for model ensembling.
 
 ## Curriculum Layers
 
 | Layer | Count | Use |
 |---|---:|---|
 | Core scheduled pathway | 67 sessions | full NOAI preparation through competition practice |
-| Competition sprint | 8 sessions | late-stage integration and tuning |
+| Competition sprint | 8 sessions | late-stage workflow integration from data quality through model ensembling |
 | Recommended full pathway | 75 sessions | core plus sprint |
 | Mainline Class Mission bank | 155 lessons | required lessons plus deeper practice, remediation, alternatives, and extension |
 | Optional Bohrium resource hub | 16 lessons | two full-video missions plus fourteen 70-minute lessons for 北京市十一学校《中学机器学习十五讲》 |
