@@ -8,8 +8,8 @@ Your teacher assigns one phase and one mission at a time. You are not expected t
 CS50P Python
 → data tools
 → Bohrium machine-learning foundations
-→ Kaggle workflow refresh
-→ Andrew Ng ML + model tasks
+→ AI history and critical reading
+→ Andrew Ng ML + embedded Kaggle practice + model tasks
 → Andrew Ng DL + PyTorch
 → model comparison, EDA, features, and evaluation
 → tuning, ensembling, and competition
@@ -27,11 +27,22 @@ Open [Class Missions](02_Class_Missions/README.md) and select the phase assigned
 6. Independent Rebuild
 7. Talk Robin 2 + Evidence
 
-Watching a video or running an example once is not completion. You must explain, rebuild, test, modify, analyse errors, and record evidence.
+Watching a video, finishing a chapter, or running an example once is not completion. You must explain, reconstruct, test, modify, analyse errors, and record evidence.
+
+## Sessions 33–40: Reading Evidence
+
+Read the assigned section of Melanie Mitchell’s *Artificial Intelligence: A Guide for Thinking Humans* before class. Bring:
+
+- one central claim;
+- one supporting case;
+- one unresolved question;
+- one AI claim that should be tested rather than accepted immediately.
+
+A chapter summary is not enough. You must distinguish the author’s argument, the evidence, and your own judgement.
 
 ## Model-Recognition Habit
 
-For every task, identify X, y, label availability, required output, task family, baseline, metric, candidate models, and likely limitations before choosing a favourite algorithm.
+For every task, identify `X`, `y`, label availability, required output, task family, baseline, metric, candidate models, and likely limitations before choosing a favourite algorithm.
 
 ## First Steps
 
