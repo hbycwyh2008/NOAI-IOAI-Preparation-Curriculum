@@ -53,6 +53,21 @@ AUTHORITATIVE_MARKERS = {
         "41–58",
         "75–78",
     ),
+    "02_Class_Missions/_Curriculum_Governance/Class_Mission_Resource_Architecture.md": (
+        "AI History and Thinking Humans",
+        "embedded workflow rehearsal inside Andrew ML model labs",
+        "78 scheduled sessions",
+    ),
+    "02_Class_Missions/_Curriculum_Governance/Lesson_Distribution_Audit.md": (
+        "78 scheduled sessions across nine phases",
+        "eight AI History seminars",
+        "171 total reusable public lesson/resource files",
+    ),
+    "00_Course_Overview/README.md": (
+        "Detailed 78-Session Sequence",
+        "AI History and Thinking Humans",
+        "embedded Kaggle practice",
+    ),
     "00_Course_Overview/Course_Map.md": ("78 scheduled sessions", "33–40", "75–78"),
     "00_Course_Overview/Pacing_Guide.md": ("Total: 78 sessions", "AI History and Thinking Humans"),
     "00_Course_Overview/Detailed_Lesson_Sequence.md": (
@@ -60,10 +75,30 @@ AUTHORITATIVE_MARKERS = {
         "Phase 4 — AI History and Thinking Humans",
         "Kaggle Learn is embedded",
     ),
+    "00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md": (
+        "Sessions 1–78",
+        "AI History and Thinking Humans",
+        "selected embedded practice inside Andrew ML model labs",
+    ),
+    "00_Course_Overview/Expanded_Lesson_Architecture.md": (
+        "78-session canonical pathway",
+        "Eight scheduled AI History seminars",
+        "171 reusable public lesson/resource files",
+    ),
     "00_Course_Overview/Curriculum_Completeness_Audit.md": (
         "Canonical scheduled pathway | 78 sessions",
         "100% public file-structure and internal-consistency coverage",
         "validate_readiness_contract.py",
+    ),
+    "08_Public_Documents/Competition_Pathway.md": (
+        "canonical 78-session dependency path",
+        "AI history and critical reading through Melanie Mitchell",
+        "Sessions 75–78",
+    ),
+    "09_Teacher_Planning/75min_After_School_Club_Implementation.md": (
+        "AI History reading seminars are named 70-minute exceptions",
+        "Sessions 33–40",
+        "Representative_Pilot_Matrix.md",
     ),
     "09_Teacher_Planning/Phase_Overviews/README.md": (
         "Sessions 1–78",
@@ -93,7 +128,9 @@ BANNED_AUTHORITATIVE_TEXT = (
     "Sessions 1–75",
     "Recommended full pathway | 75 sessions",
     "67 core sessions plus eight competition-sprint sessions",
+    "Kaggle workflow refresh\n→ Andrew Ng ML",
     "Phase 4 | 33–40 | Kaggle Learn workflow refresh",
+    "Kaggle Learn | required short workflow refresh",
 )
 
 LESSON_MARKERS = (
@@ -200,6 +237,7 @@ def main() -> int:
     print("Canonical pathway: 78 sessions")
     print("AI History phase: 8 complete English seminars")
     print("Canonical teacher overviews: 9")
+    print("High-traffic pathway documents: current and internally consistent")
     print("Public readiness artifacts: present and internally consistent")
     print("Operational readiness remains cohort-, runtime-, security-, access-, and year-specific")
     return 0
