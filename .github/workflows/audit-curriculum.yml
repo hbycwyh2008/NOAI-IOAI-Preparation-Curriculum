@@ -15,6 +15,7 @@ on:
       - "10_Ready_to_Teach_Pack/**"
       - "scripts/validate_curriculum_structure.py"
       - "scripts/validate_readiness_contract.py"
+      - "scripts/validate_class_mission_launchers.py"
       - ".github/workflows/audit-curriculum.yml"
   pull_request:
     paths:
@@ -29,6 +30,7 @@ on:
       - "10_Ready_to_Teach_Pack/**"
       - "scripts/validate_curriculum_structure.py"
       - "scripts/validate_readiness_contract.py"
+      - "scripts/validate_class_mission_launchers.py"
       - ".github/workflows/audit-curriculum.yml"
   workflow_dispatch:
 
@@ -45,7 +47,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run strict curriculum and readiness audits
+      - name: Run strict curriculum, readiness, and launcher audits
         id: audit
         shell: bash
         run: |
@@ -54,8 +56,10 @@ jobs:
           structure_code=$?
           python scripts/validate_readiness_contract.py >> /tmp/audit.log 2>&1
           readiness_code=$?
+          python scripts/validate_class_mission_launchers.py >> /tmp/audit.log 2>&1
+          launcher_code=$?
 
-          if [ "$structure_code" -ne 0 ] || [ "$readiness_code" -ne 0 ]; then
+          if [ "$structure_code" -ne 0 ] || [ "$readiness_code" -ne 0 ] || [ "$launcher_code" -ne 0 ]; then
             combined_code=1
           else
             combined_code=0
