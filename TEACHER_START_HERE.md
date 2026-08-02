@@ -30,7 +30,7 @@ The repository is a curriculum bank. Choose a pathway before scheduling individu
 | Layer | Count | Use |
 |---|---:|---|
 | Core scheduled pathway | 67 sessions | compressed full NOAI route |
-| Competition sprint | 8 sessions | task recognition, data engineering, tuning, and full simulation |
+| Competition sprint | 8 sessions | task formalisation, data quality, feature engineering, model selection, tuning, ensembling, and full simulation |
 | Recommended full pathway | 75 sessions | core plus sprint |
 | Mainline mission bank | 155 lessons | deeper practice, reteaching, alternatives, and extension |
 | Optional Bohrium resource hub | 16 lessons | full-video and 70-minute sequence resources |
@@ -48,19 +48,42 @@ Do not schedule all lesson files automatically.
 7. Assign one class mission at a time and collect evidence.
 8. Use the [Evidence System](04_Assessment/Evidence_System.md) and [Readiness Checklist](04_Assessment/Readiness_Checklist.md).
 9. Schedule Round 1 and Round 2 mocks.
-10. Finish with [Module 28 — Competition Sprint](02_Class_Missions/28-competition-sprint-task-data-tuning/README.md) when students can already build a valid baseline.
+10. Finish with [Module 28 — Competition Sprint](02_Class_Missions/28-competition-sprint-task-data-tuning/README.md) when students can already train a basic model.
 
 ## Competition Sprint
 
 Use:
 
 - [Phase 8 — Competition Sprint](10_Ready_to_Teach_Pack/Phase_8_Competition_Sprint.md)
+- [Module 28 — Competition Sprint Lessons](02_Class_Missions/28-competition-sprint-task-data-tuning/README.md)
 - [Hyperparameter-Tuning Video Resource Map](02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md)
 - [Competition Sprint Experiment Log Template](03_Templates/Competition_Sprint_Experiment_Log_Template.md)
+- [Competition Sprint Model Ensembling Record](03_Templates/Competition_Sprint_Model_Ensembling_Record.md)
 - [Competition Sprint Submission Checklist](03_Templates/Competition_Sprint_Submission_Checklist.md)
 - [Competition Sprint Starter Code](06_Starter_Code/ready_to_teach/README.md)
 
-Do not permit automated tuning before students can justify the metric, split, baseline, manual experiment, and search space.
+Enforce this order:
+
+```text
+Task definition
+→ data quality and validation
+→ feature engineering
+→ model selection and baseline
+→ error analysis
+→ tuning
+→ model ensembling
+→ submission and fresh-runtime validation
+```
+
+Do not permit:
+
+- model comparison before the validation and leakage gate;
+- tuning before model selection and error analysis;
+- automated search before a justified manual tuning cycle;
+- stacking without out-of-fold base predictions;
+- ensemble claims that are not compared with the best single model.
+
+Optuna is an optional extension, not a substitute for model ensembling or submission reliability.
 
 ## Separation of Repositories
 
