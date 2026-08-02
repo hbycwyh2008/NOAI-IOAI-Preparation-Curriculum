@@ -91,8 +91,10 @@ PyTorch schedulers, Optuna, and efficiency resources remain available as an opti
 
 Use:
 
-- `lesson-07-pytorch-automated-tuning.md`;
+- `02_Class_Missions/28-competition-sprint-task-data-tuning/Optional_Automated_Tuning_Extension.md`;
 - `06_Starter_Code/ready_to_teach/optuna_tuning_template.py`.
+
+The optional video package takes **33 minutes** and must not be replayed inside the eight-minute classroom warm-up.
 
 ## Stage Gates
 
