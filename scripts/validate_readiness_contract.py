@@ -24,6 +24,13 @@ REQUIRED_FILES = (
     "03_Templates/AI_History_Reading_Evidence_Template.md",
     "04_Assessment/AI_History_Phase_Rubric.md",
     "10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md",
+    "05_Resources/D2L_Selective_Reading_Map.md",
+    "02_Class_Missions/06_Andrew_Ng_DL_PyTorch/session-61-d2l-autograd-backprop-bridge.md",
+    "02_Class_Missions/06_Andrew_Ng_DL_PyTorch/session-62-d2l-regularisation-optimisation-bridge.md",
+    "02_Class_Missions/06_Andrew_Ng_DL_PyTorch/session-63-d2l-convolution-shape-bridge.md",
+    "02_Class_Missions/06_Andrew_Ng_DL_PyTorch/session-65-d2l-fine-tuning-bridge.md",
+    "02_Class_Missions/06_Andrew_Ng_DL_PyTorch/session-66-d2l-rnn-lstm-bridge.md",
+    "02_Class_Missions/06_Andrew_Ng_DL_PyTorch/session-68-d2l-attention-transformer-bridge.md",
     "10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md",
     "10_Ready_to_Teach_Pack/Release_Readiness_Gates.md",
     "10_Ready_to_Teach_Pack/Student_Runtime_Qualification_Record.md",
@@ -125,6 +132,21 @@ def main() -> int:
             if marker not in text:
                 errors.append(f"Mathematics bridge missing marker: {marker}")
 
+    d2l_map = ROOT / "05_Resources/D2L_Selective_Reading_Map.md"
+    if d2l_map.exists():
+        text = d2l_map.read_text(encoding="utf-8")
+        for marker in (
+            "Session 61",
+            "Session 62",
+            "Session 63",
+            "Session 65",
+            "Session 66",
+            "Session 68",
+            "independent rebuild",
+        ):
+            if marker not in text:
+                errors.append(f"D2L selective map missing marker: {marker}")
+
     if errors:
         print("Readiness contract validation failed:", file=sys.stderr)
         for error in errors:
@@ -137,6 +159,7 @@ def main() -> int:
     print("Canonical launcher links into _Lesson_Library: 0")
     print("AI History seminars: 8")
     print("Andrew ML mathematics transition: Sessions 41–43")
+    print("D2L concept-to-code bridges: Sessions 61, 62, 63, 65, 66, and 68")
     print("Canonical teacher overviews: 9")
     print("Operational readiness remains cohort-, runtime-, access-, security-, pilot-, and year-specific")
     return 0
