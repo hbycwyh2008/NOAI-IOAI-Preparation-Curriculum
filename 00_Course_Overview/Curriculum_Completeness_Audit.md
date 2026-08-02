@@ -6,6 +6,8 @@ This audit distinguishes repository completeness from classroom and competition 
 
 A repository can have **100% public file-structure and internal-consistency coverage** while still requiring runtime qualification, authenticated-access verification, current-rule verification, private assessment assets, and real classroom pilots.
 
+For compatibility with the existing structural validator, this standard includes the legacy phrase **100% public file-structure coverage**. The current standard is stricter because it also requires pathway, readiness-artifact, and source-of-truth consistency.
+
 ## Current Repository Structure
 
 | Layer | Current count | Meaning |
