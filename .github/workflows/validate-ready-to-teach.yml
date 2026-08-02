@@ -24,6 +24,7 @@ on:
       - "scripts/validate_curriculum.py"
       - "scripts/validate_curriculum_structure.py"
       - "scripts/validate_readiness_contract.py"
+      - "scripts/validate_class_mission_launchers.py"
       - "scripts/normalize_lesson_timelines.py"
       - ".github/workflows/validate-ready-to-teach.yml"
       - ".github/workflows/normalise-lesson-timelines.yml"
@@ -75,6 +76,9 @@ jobs:
 
       - name: Validate public readiness contract
         run: python scripts/validate_readiness_contract.py
+
+      - name: Validate Class Missions launchers
+        run: python scripts/validate_class_mission_launchers.py
 
       - name: Install validation environment
         run: |
