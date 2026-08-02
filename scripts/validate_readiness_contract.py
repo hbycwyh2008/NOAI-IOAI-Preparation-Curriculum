@@ -33,6 +33,7 @@ REQUIRED_FILES = (
     *AI_HISTORY_LESSONS,
     "03_Templates/AI_History_Reading_Evidence_Template.md",
     "04_Assessment/AI_History_Phase_Rubric.md",
+    "05_Resources/Kaggle_Learn_Refresh_Map.md",
     "09_Teacher_Planning/Pilot/Representative_Pilot_Matrix.md",
     "09_Teacher_Planning/Phase_Overviews/README.md",
     *CANONICAL_TEACHER_OVERVIEWS,
@@ -90,6 +91,11 @@ AUTHORITATIVE_MARKERS = {
         "100% public file-structure and internal-consistency coverage",
         "validate_readiness_contract.py",
     ),
+    "05_Resources/Kaggle_Learn_Refresh_Map.md": (
+        "Kaggle Learn is not a separate scheduled phase",
+        "Embedded Practice Touchpoints",
+        "| 57 | integrated tabular workflow",
+    ),
     "08_Public_Documents/Competition_Pathway.md": (
         "canonical 78-session dependency path",
         "AI history and critical reading through Melanie Mitchell",
@@ -131,6 +137,8 @@ BANNED_AUTHORITATIVE_TEXT = (
     "Kaggle workflow refresh\n→ Andrew Ng ML",
     "Phase 4 | 33–40 | Kaggle Learn workflow refresh",
     "Kaggle Learn | required short workflow refresh",
+    "five-session workflow refresh after the Bohrium foundation sequence",
+    "| 33 | Pandas:",
 )
 
 LESSON_MARKERS = (
@@ -238,6 +246,7 @@ def main() -> int:
     print("AI History phase: 8 complete English seminars")
     print("Canonical teacher overviews: 9")
     print("High-traffic pathway documents: current and internally consistent")
+    print("Kaggle practice map: embedded in Andrew ML model labs")
     print("Public readiness artifacts: present and internally consistent")
     print("Operational readiness remains cohort-, runtime-, security-, access-, and year-specific")
     return 0
