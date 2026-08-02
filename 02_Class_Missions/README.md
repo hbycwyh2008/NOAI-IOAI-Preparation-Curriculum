@@ -44,4 +44,4 @@ These are not normal student entry points:
 - [`_Lesson_Library`](./_Lesson_Library/README.md) — reusable lesson bodies, remediation, extension, and competition practice;
 - [`_Curriculum_Governance`](./_Curriculum_Governance/README.md) — audits, counts, architecture, and maintenance.
 
-The library contains 171 reusable public lesson/resource files. The launchers select which of those files belong in the 78-session scheduled route.
+The library contains the maintained phase-local and extension lesson files. The launchers select which of those files belong in the 78-session scheduled route.

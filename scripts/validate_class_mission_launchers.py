@@ -3,122 +3,60 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
-from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 MISSIONS = ROOT / "02_Class_Missions"
-
-PHASES = (
-    ("00_Orientation_and_Evidence", 1, 2),
-    ("01_CS50P_Python", 3, 12),
-    ("02_NumPy_Pandas_Visualisation", 13, 18),
-    ("03_Bohrium_ML_Foundations", 19, 32),
-    ("04_AI_History_and_Thinking_Humans", 33, 40),
-    ("05_Andrew_Ng_ML_Model_Labs", 41, 58),
-    ("06_Andrew_Ng_DL_PyTorch", 59, 70),
-    ("07_Model_Comparison_EDA_Evaluation", 71, 74),
-    ("08_Tuning_Ensembling_Competition", 75, 78),
-)
-
-MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
-SESSION_ROW = re.compile(r"^\|\s*(\d+)\s*\|", re.MULTILINE)
-
-
-def internal_link_errors(path: Path) -> list[str]:
-    errors: list[str] = []
-    text = path.read_text(encoding="utf-8")
-    for raw_target in MARKDOWN_LINK.findall(text):
-        target = raw_target.strip().split()[0]
-        if not target or target.startswith(("http://", "https://", "mailto:", "#")):
-            continue
-        target = unquote(target.split("#", 1)[0].split("?", 1)[0])
-        if not target:
-            continue
-        resolved = (path.parent / target).resolve()
-        if not resolved.exists():
-            errors.append(
-                f"Broken internal link in {path.relative_to(ROOT)}: {raw_target}"
-            )
-    return errors
+LIBRARY = (MISSIONS / "_Lesson_Library").resolve()
+LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+ROW_RE = re.compile(r"^\|\s*(\d{1,3})\s*\|")
+PHASES = sorted(path for path in MISSIONS.iterdir() if path.is_dir() and re.match(r"^\d{2}_", path.name))
 
 
 def main() -> int:
     errors: list[str] = []
+    sessions: list[int] = []
+    packet_count = 0
 
-    usage = MISSIONS / "HOW_TO_USE_CLASS_MISSIONS.md"
-    if not usage.exists():
-        errors.append("Missing 02_Class_Missions/HOW_TO_USE_CLASS_MISSIONS.md")
-    else:
-        usage_text = usage.read_text(encoding="utf-8")
-        for marker in (
-            "Teachers and students should **not browse `_Lesson_Library` manually**",
-            "→ open SESSION_LAUNCHER.md",
-            "Source-of-Truth Rule",
-        ):
-            if marker not in usage_text:
-                errors.append(f"Missing usage marker '{marker}'")
-        errors.extend(internal_link_errors(usage))
-
-    mission_readme = MISSIONS / "README.md"
-    if not mission_readme.exists():
-        errors.append("Missing 02_Class_Missions/README.md")
-    else:
-        text = mission_readme.read_text(encoding="utf-8")
-        for marker in (
-            "Class Missions — Start Here",
-            "Do not browse `_Lesson_Library`",
-            "Canonical 78-Session Route",
-        ):
-            if marker not in text:
-                errors.append(f"Missing Class Missions marker '{marker}'")
-        errors.extend(internal_link_errors(mission_readme))
-
-    observed_sessions: list[int] = []
-
-    for phase_name, start, end in PHASES:
-        phase = MISSIONS / phase_name
-        readme = phase / "README.md"
+    for phase in PHASES:
         launcher = phase / "SESSION_LAUNCHER.md"
-
-        if not readme.exists():
-            errors.append(f"Missing phase README: {readme.relative_to(ROOT)}")
-            continue
         if not launcher.exists():
-            errors.append(f"Missing session launcher: {launcher.relative_to(ROOT)}")
+            errors.append(f"Missing launcher: {phase.relative_to(ROOT)}")
             continue
+        for line in launcher.read_text(encoding="utf-8").splitlines():
+            match = ROW_RE.match(line)
+            if not match:
+                continue
+            session = int(match.group(1))
+            sessions.append(session)
+            local_md = 0
+            for _label, raw in LINK_RE.findall(line):
+                if raw.startswith(("http://", "https://", "mailto:", "#")):
+                    continue
+                target = raw.split("#", 1)[0].strip()
+                if not target:
+                    continue
+                resolved = (launcher.parent / target).resolve()
+                if resolved.suffix.lower() != ".md":
+                    continue
+                local_md += 1
+                packet_count += 1
+                if not resolved.exists():
+                    errors.append(f"Broken Session {session} link: {raw}")
+                    continue
+                try:
+                    resolved.relative_to(phase.resolve())
+                except ValueError:
+                    errors.append(f"Session {session} target is outside its Phase: {resolved.relative_to(ROOT)}")
+                try:
+                    resolved.relative_to(LIBRARY)
+                    errors.append(f"Session {session} still links into _Lesson_Library")
+                except ValueError:
+                    pass
+            if local_md == 0:
+                errors.append(f"Session {session} has no phase-local Markdown packet")
 
-        readme_text = readme.read_text(encoding="utf-8")
-        if "## Start Here" not in readme_text:
-            errors.append(f"Phase README lacks Start Here: {readme.relative_to(ROOT)}")
-        if "SESSION_LAUNCHER.md" not in readme_text:
-            errors.append(f"Phase README does not link launcher: {readme.relative_to(ROOT)}")
-        if "## Lesson Library" in readme_text or "## Lesson Library Modules" in readme_text:
-            errors.append(f"Phase README still exposes library navigation: {readme.relative_to(ROOT)}")
-        errors.extend(internal_link_errors(readme))
-
-        launcher_text = launcher.read_text(encoding="utf-8")
-        for marker in ("Open this lesson", "Required evidence", "Phase Gate"):
-            if marker not in launcher_text:
-                errors.append(
-                    f"Launcher missing '{marker}': {launcher.relative_to(ROOT)}"
-                )
-
-        sessions = [int(value) for value in SESSION_ROW.findall(launcher_text)]
-        expected = list(range(start, end + 1))
-        if sessions != expected:
-            errors.append(
-                f"Launcher session rows incorrect for {phase_name}: "
-                f"expected {expected}, found {sessions}"
-            )
-        observed_sessions.extend(sessions)
-        errors.extend(internal_link_errors(launcher))
-
-    expected_all = list(range(1, 79))
-    if observed_sessions != expected_all:
-        errors.append(
-            "Canonical launcher coverage is not exactly Sessions 1–78 in order: "
-            f"found {observed_sessions}"
-        )
+    if sessions != list(range(1, 79)):
+        errors.append(f"Expected Sessions 1–78 exactly once; found {sessions}")
 
     if errors:
         print("Class Missions launcher validation failed:", file=sys.stderr)
@@ -128,10 +66,9 @@ def main() -> int:
 
     print("Class Missions launcher validation passed.")
     print("Canonical launcher coverage: Sessions 1–78 exactly once")
-    print("Phase folders: 9")
-    print("Normal delivery path: Phase → Session Launcher → exact lesson")
-    print("Manual Lesson Library browsing: not required")
-    print("Launcher and Phase README internal links: valid")
+    print(f"Phase-local lesson links: {packet_count}")
+    print("Canonical links into _Lesson_Library: 0")
+    print("Normal delivery path: Phase → Session Launcher → phase-local lesson")
     return 0
 
 

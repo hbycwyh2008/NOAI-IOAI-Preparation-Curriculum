@@ -24,4 +24,4 @@ CS50P Python
 → tuning + ensembling + competition
 ```
 
-The 171 reusable public lesson/resource files remain available in `_Lesson_Library`. They are selected by phase need and are not automatically scheduled. The eight Phase 04 reading seminars are scheduled directly in Sessions 33–40.
+The the maintained phase-local and extension lesson files remain available in `_Lesson_Library`. They are selected by phase need and are not automatically scheduled. The eight Phase 04 reading seminars are scheduled directly in Sessions 33–40.
