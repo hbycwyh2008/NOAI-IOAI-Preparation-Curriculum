@@ -1,13 +1,21 @@
 # Teacher Planning
 
-This folder contains teacher-facing implementation notes, timing adaptations, readiness definitions, validation checklists, and cohort-planning documents.
+This folder contains teacher-facing implementation notes, canonical phase overviews, timing adaptations, readiness definitions, validation checklists, privacy boundaries, and cohort-planning documents.
 
 ## Start With the Pathway
 
+- [Class Missions canonical pathway](../02_Class_Missions/README.md)
+- [Canonical teacher phase overviews](Phase_Overviews/README.md)
 - [Cohort Pathways and Required / Optional Map](../00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md)
 - [Pacing Guide](../00_Course_Overview/Pacing_Guide.md)
-- [Detailed 75-Session Sequence](../00_Course_Overview/Detailed_Lesson_Sequence.md)
+- [Detailed 78-Session Sequence](../00_Course_Overview/Detailed_Lesson_Sequence.md)
 - [Class Mission Resource Architecture](../02_Class_Missions/_Curriculum_Governance/Class_Mission_Resource_Architecture.md)
+
+## Phase 04 Delivery
+
+- [AI History and Thinking Humans teacher pack](../10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md)
+- [AI History reading evidence template](../03_Templates/AI_History_Reading_Evidence_Template.md)
+- [AI History phase rubric](../04_Assessment/AI_History_Phase_Rubric.md)
 
 ## After-School Club Delivery
 
@@ -18,9 +26,14 @@ This folder contains teacher-facing implementation notes, timing adaptations, re
 
 ## Validation and Readiness
 
+- [Public Repository Readiness Dashboard](../10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md)
 - [Curriculum Readiness Audit](../10_Ready_to_Teach_Pack/Curriculum_Readiness_Audit.md)
-- [Public Repository 100 Percent Readiness Definition](Public_Repo_100_Percent_Readiness_Definition.md)
+- [Release Readiness Gates](../10_Ready_to_Teach_Pack/Release_Readiness_Gates.md)
+- [Public Repository 100 Percent Coverage Definition](Public_Repo_100_Percent_Readiness_Definition.md)
 - [Validation and Pilot Checklist](Validation_and_Pilot_Checklist.md)
+- [Representative Pilot Matrix](Pilot/Representative_Pilot_Matrix.md)
+- [Student Runtime Qualification Record](../10_Ready_to_Teach_Pack/Student_Runtime_Qualification_Record.md)
+- [External Access Verification Record](../10_Ready_to_Teach_Pack/External_Access_Verification_Record.md)
 - [Teacher-Key Private Repository Manifest](Teacher_Key_Private_Repo_Manifest.md)
 
 ## Student-Facing Sprint Assets
@@ -34,8 +47,10 @@ This folder contains teacher-facing implementation notes, timing adaptations, re
 Before teaching a cohort:
 
 1. choose the pathway and required lessons;
-2. verify every exact resource segment and access requirement;
-3. confirm the current official rules and platform constraints;
-4. run the required notebooks and scripts in the actual student environment;
-5. keep teacher keys, hidden labels, private test data, and scored-assessment packages private;
-6. pilot lesson timing and revise based on evidence.
+2. verify every exact resource segment, reading assignment, and access requirement;
+3. confirm current official rules and platform constraints;
+4. run both validators and the Ready-to-Teach workflow;
+5. qualify notebooks and scripts in the actual student environment;
+6. keep teacher keys, hidden labels, private test data, secure scoring, and calibration examples private;
+7. pilot every representative lesson type and revise from evidence;
+8. complete release gates before formal graded use.
