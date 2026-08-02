@@ -1,0 +1,42 @@
+name: Apply Repository Cleanup
+
+on:
+  push:
+    branches:
+      - agent/repository-cleanup-audit
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.event_name == 'push' || github.head_ref == 'agent/repository-cleanup-audit'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/repository-cleanup-audit
+          fetch-depth: 0
+
+      - name: Apply repository cleanup
+        run: python scripts/apply_repository_cleanup.py
+
+      - name: Run static validation before commit
+        run: |
+          python scripts/validate_curriculum_structure.py
+          python scripts/validate_readiness_contract.py
+          python scripts/validate_class_mission_launchers.py
+          python scripts/validate_repository_hygiene.py
+
+      - name: Commit cleanup and remove one-time machinery
+        run: |
+          git rm -f scripts/apply_repository_cleanup.py
+          git rm -f .github/workflows/apply-repository-cleanup.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Remove redundant files and enforce repository hygiene"
+          git push origin HEAD:agent/repository-cleanup-audit
