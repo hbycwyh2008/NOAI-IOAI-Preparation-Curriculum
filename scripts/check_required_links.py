@@ -15,6 +15,7 @@ URLS = {
     "Deep Learning Specialization": "https://www.coursera.org/specializations/deep-learning",
     "Course 2 — Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization": "https://www.coursera.org/learn/deep-neural-network",
     "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow": "https://github.com/ageron/handson-ml3",
+    "Dive into Deep Learning Chinese Edition": "https://zh.d2l.ai/",
     "DeepLearning.AI PyTorch for Deep Learning Professional Certificate": "https://www.coursera.org/professional-certificates/pytorch-for-deep-learning",
     "Course 1 — PyTorch: Fundamentals": "https://www.coursera.org/learn/pytorch-fundamentals",
     "Course 2 — PyTorch: Techniques and Ecosystem Tools": "https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools",
@@ -94,6 +95,7 @@ def main() -> int:
         "",
         "- Authenticated edX, Coursera, and Bohrium pages must be opened from the actual teacher/student account.",
         "- Course week, module, video title, duration, and access terms must be checked before each cohort.",
+        "- D2L section numbering, PyTorch tabs, Colab notebooks, and external assets must be checked before each cohort.",
         "- The current NOAI China handbook/syllabus supplied by the organiser or teacher must be archived locally with its version and date. It is not replaced by an inferred public URL.",
         "- Current competition rules override links, historical repositories, and curriculum assumptions.",
     ]
