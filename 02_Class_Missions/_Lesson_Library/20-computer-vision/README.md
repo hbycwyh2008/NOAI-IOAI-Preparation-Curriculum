@@ -14,12 +14,12 @@ Use PyTorch and torchvision official tutorials to verify current APIs.
 
 ## Lessons
 
+> Canonical session lesson bodies have moved into their numbered Phase folders. This module now indexes only remaining remediation, extension, or reference material. Use the Phase session launcher for scheduled teaching.
+
+
 - [Lesson 01 — OpenCV structural baselines and preprocessing](lesson-01.md) — classical non-neural baseline
-- [Lesson 02 — Convolutional-neural-network baseline, augmentation, and transfer learning](lesson-02.md) — Course 2: TorchVision/image workflow
 - [Lesson 03 — Detection/segmentation workflow and error analysis](lesson-03.md) — official PyTorch tutorials plus extension material
 - [Lesson 04 — Image datasets, transforms, and train/validation leakage](lesson-04-image-datasets-and-transforms.md) — Course 2: data processing and efficient pipelines
-- [Lesson 05 — Transfer learning and fine-tuning under time limits](lesson-05-transfer-learning-finetuning.md) — Course 2: pretrained models, transfer learning, and fine-tuning
-- [Lesson 06 — Error analysis, class imbalance, and submission strategy](lesson-06-image-error-analysis-submission.md) — competition workflow and controlled improvement
 
 ## Resource Boundary
 

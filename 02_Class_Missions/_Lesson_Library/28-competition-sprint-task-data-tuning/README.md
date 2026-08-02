@@ -29,10 +29,6 @@ Task definition comes before the five stages. Error analysis is used throughout,
 2. [Lesson 02 — Data quality, validation design, and leakage prevention](lesson-02-data-quality-validation.md)
 3. [Lesson 03 — Feature engineering and reproducible pipelines](lesson-03-feature-engineering.md)
 4. [Lesson 04 — Model selection, baseline ladder, and error analysis](lesson-04-model-selection-baseline.md)
-5. [Lesson 05 — Classical machine-learning tuning: diagnose before searching](lesson-05-classical-model-tuning.md)
-6. [Lesson 06 — Deep-learning tuning: learning rate, batch size, regularisation, and optimiser](lesson-06-deep-learning-tuning.md)
-7. [Lesson 07 — Model ensembling: voting, averaging, and stacking](lesson-07-model-ensembling.md)
-8. [Lesson 08 — Full competition sprint simulation and postmortem](lesson-08-full-sprint-simulation.md)
 
 ## Optional Automated-Tuning Extension
 
@@ -139,3 +135,5 @@ Students must submit:
 ## Migration Note
 
 The former Lesson 02–04 and automated-tuning filenames were replaced so Module 28 retains exactly eight scheduled lesson files with names that match their current purpose. Use the links in this README as the source of truth.
+
+> Canonical session lesson bodies have moved into their numbered Phase folders. This module now indexes only remaining remediation, extension, or reference material. Use the Phase session launcher for scheduled teaching.

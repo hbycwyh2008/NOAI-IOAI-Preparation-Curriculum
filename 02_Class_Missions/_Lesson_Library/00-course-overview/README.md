@@ -1,5 +1,5 @@
 # 00 — Competition Workflow and Baseline Thinking
 
 ## Lessons
-- [Lesson 01 — Competition workflow and baseline thinking](lesson-01.md)
-- [Lesson 02 — Evidence system, GitHub, and Bohrium readiness](lesson-02.md)
+
+> Canonical session lesson bodies have moved into their numbered Phase folders. This module now indexes only remaining remediation, extension, or reference material. Use the Phase session launcher for scheduled teaching.

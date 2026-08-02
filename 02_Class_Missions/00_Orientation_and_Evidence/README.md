@@ -2,13 +2,18 @@
 
 **Scheduled sessions:** 1–2
 
+## Start Here
+
+[**Open the Phase 0 Session Launcher**](SESSION_LAUNCHER.md)
+
+Use the launcher to select Session 1 or 2. Do not browse `_Lesson_Library` manually.
+
 ## Purpose
 
 Establish the official competition context, student repository, evidence system, Bohrium access, Jupyter environment, and classroom routine before CS50P begins.
 
-## Use
+## Supporting Resources
 
-- `00-course-overview` from the lesson library
 - [Student setup](../../01_Student_Start/00_How_This_Course_Works.md)
 - [Evidence system](../../04_Assessment/Evidence_System.md)
 

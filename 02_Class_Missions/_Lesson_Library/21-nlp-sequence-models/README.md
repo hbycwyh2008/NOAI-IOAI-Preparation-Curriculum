@@ -4,12 +4,13 @@ This module supports NOAI Round 2 text tasks such as word segmentation, classifi
 
 ## Lessons
 
+> Canonical session lesson bodies have moved into their numbered Phase folders. This module now indexes only remaining remediation, extension, or reference material. Use the Phase session launcher for scheduled teaching.
+
+
 - [Lesson 01 — Tokenisation, vocabulary, padding, and embeddings](lesson-01.md)
-- [Lesson 02 — RNN and LSTM sequence modelling](lesson-02.md)
 - [Lesson 03 — Hugging Face text classification and fine-tuning](lesson-03.md)
 - [Lesson 04 — Text preprocessing and leakage-safe train/test split](lesson-04-text-preprocessing-and-splits.md)
 - [Lesson 05 — Sequence length, padding, batching, and shape debugging](lesson-05-sequence-shapes-and-debugging.md)
-- [Lesson 06 — NLP Round 2 reproduction: baseline, model, metric, submission](lesson-06-nlp-round2-reproduction.md)
 
 ## Minimum Evidence
 

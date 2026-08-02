@@ -3,32 +3,24 @@
 **Scheduled sessions:** 3–12  
 **Primary course:** Harvard CS50’s Introduction to Programming with Python
 
-CS50P is the Python course spine. Machine-learning libraries are not substitutes for programming fundamentals.
+## Start Here
 
-## Sequence
+[**Open the Phase 1 Session Launcher**](SESSION_LAUNCHER.md)
 
-1. Functions, variables, input, and output
-2. Types, conversion, and debugging
-3. Conditionals and Boolean reasoning
-4. Loops
-5. Strings, lists, dictionaries, and tuples
-6. Function decomposition and code tracing
-7. Libraries, modules, imports, and documentation
-8. Exceptions and defensive input handling
-9. Files, CSV records, and data-oriented scripts
-10. Unit tests, classes, and the Python mastery checkpoint
+The launcher maps every scheduled session to the exact lesson file and required evidence. Do not choose lessons by browsing `_Lesson_Library`.
 
-## Lesson Library
+## Purpose
 
-- `01-python-foundations`
-- `02-control-flow-and-data-structures`
-- `03-libraries-sorting-searching`
-- [Exact CS50P timestamp map](../../05_Resources/CS50P_edX_Timestamp_Map.md)
+Build programming independence before machine-learning libraries: functions, control flow, data structures, files, exceptions, tests, classes, tracing, and debugging.
+
+## Resource Rule
+
+Use the [exact CS50P timestamp map](../../05_Resources/CS50P_edX_Timestamp_Map.md) only for the segment assigned by the session launcher or lesson.
 
 ## Data-Oriented Transfer
 
-Each topic ends with a small data task: statistics functions, category counting, CSV validation, error handling, tests, or a simple experiment-record class.
+Every topic ends with a data-oriented task such as statistics functions, category counting, CSV validation, error handling, tests, or a simple experiment-record class.
 
 ## Gate
 
-Students can write and test a small program from a specification, read a CSV, explain state changes, handle invalid input, and debug without relying on a copied notebook.
+Students write and test a small program from a specification, read a CSV, explain state changes, handle invalid input, and debug without relying on a copied notebook.

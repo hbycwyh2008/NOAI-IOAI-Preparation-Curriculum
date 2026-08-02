@@ -125,4 +125,4 @@ The student must explain:
 
 Return to the scheduled sprint sequence at:
 
-[Lesson 07 — Model Ensembling](lesson-07-model-ensembling.md).
+[Lesson 07 — Model Ensembling](../../08_Tuning_Ensembling_Competition/session-76-model-ensembling.md).

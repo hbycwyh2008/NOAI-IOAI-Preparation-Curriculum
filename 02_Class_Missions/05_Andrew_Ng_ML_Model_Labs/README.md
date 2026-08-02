@@ -3,65 +3,51 @@
 **Scheduled sessions:** 41–58  
 **Primary course:** Machine Learning Specialization by Andrew Ng
 
-## Learning Loop for Every Model
+## Start Here
+
+[**Open the Phase 5 Session Launcher**](SESSION_LAUNCHER.md)
+
+The launcher maps every scheduled model session to the exact lesson packet, mathematical evidence, typical task, Kaggle practice, and gate. Do not browse `_Lesson_Library` manually.
+
+## Mathematics Transition
+
+Sessions 41–43 explicitly bridge from conceptual AI study into formal model language:
+
+1. task notation, scalar/vector/matrix objects, shapes, and equation-to-code translation;
+2. linear prediction, dot products, residuals, and loss;
+3. cost surfaces, derivatives, gradients, learning rate, and gradient descent.
+
+Use:
+
+- [Andrew ML Mathematics Transition Bridge](Andrew_ML_Mathematics_Bridge.md)
+- [Mathematics Intuition Map](Math_Intuition_Map.md)
+- [Student Mathematics Bridge Evidence Template](../../03_Templates/Andrew_ML_Mathematics_Bridge_Evidence_Template.md)
+- [Mathematics Bridge Rubric](../../04_Assessment/Andrew_ML_Mathematics_Bridge_Rubric.md)
+- [Phase 5 Mathematics Teacher Pack](../../10_Ready_to_Teach_Pack/Phase_5_Andrew_Ng_ML_Mathematics_Bridge.md)
+
+## Model Learning Loop
 
 ```text
 recognise the task
+→ identify X, y, output, metric, symbols, and shapes
 → learn the required mathematical intuition
 → study the Andrew Ng lesson
-→ use StatQuest or 3Blue1Brown where clarification is needed
-→ implement the model
-→ complete a typical task or selected Kaggle exercise
-→ analyse errors
+→ use StatQuest or 3Blue1Brown for clarification
+→ translate equation to code and code back to mathematics
+→ implement a baseline
+→ complete a typical task or embedded Kaggle exercise
+→ analyse errors and limitations
 → update the model card
 ```
 
 ## Resource Roles
 
-- **Andrew Ng Machine Learning Specialization:** model and workflow spine.
-- **StatQuest:** statistics, probability, losses, trees, ensembles, PCA, clustering, and evaluation intuition.
-- **3Blue1Brown:** vectors, matrices, dot products, projections, eigen-directions, derivatives, gradients, and chain-rule intuition.
-- **Kaggle Learn:** selected workflow rehearsal embedded at the point of need; it is not a separate phase.
-- **scikit-learn and official documentation:** implementation source of truth.
-- **Model-recognition drills:** continuous task-selection practice.
+- Andrew Ng Machine Learning is the model and workflow spine.
+- StatQuest supplies statistics, probability, loss, tree, ensemble, PCA, clustering, and evaluation intuition.
+- 3Blue1Brown supplies linear-algebra and calculus intuition.
+- Kaggle Learn is embedded workflow rehearsal, not a separate phase.
+- scikit-learn and official documentation are implementation references.
 
-## Scheduled Model Sequence
+## Phase Gate
 
-1. Machine-learning workflow, model-recognition routine, and an embedded Kaggle baseline
-2. Linear regression: vectors, dot products, slope, and residuals
-3. Multiple regression, scaling, cost surfaces, and gradient descent
-4. Logistic regression, sigmoid, probability, and decision boundaries
-5. Thresholds, confusion matrix, and classification errors
-6. Regularisation, generalisation, bias, and variance
-7. Neural-network introduction inside the Machine Learning Specialization
-8. Decision trees and split criteria
-9. Random forests and bagging
-10. Boosting and model correction
-11. K-nearest neighbours and distance-based reasoning
-12. Support vector machines and margin intuition
-13. K-means clustering
-14. PCA and dimensionality-reduction intuition
-15. Anomaly detection
-16. Recommender systems and vector similarity
-17. Embedded Kaggle tabular workflow: pipeline, validation, one controlled improvement, and postmortem
-18. Classical-machine-learning capstone and mixed model-recognition assessment
-
-## Embedded Kaggle Practice
-
-Selected Kaggle exercises rehearse Pandas, train/validation splits, decision-tree baselines, missing-value handling, categorical encoding, pipelines, cross-validation, and leakage prevention. Every Kaggle activity must serve the model currently being learned and produce baseline, validation, and error-analysis evidence.
-
-See [Kaggle Learn Embedded Practice Map](../../05_Resources/Kaggle_Learn_Refresh_Map.md).
-
-## Supporting Documents
-
-- [Mathematics Intuition Map](Math_Intuition_Map.md)
-- [Model Recognition Routine](Model_Recognition_Routine.md)
-- [Typical Task Map](Typical_Task_Map.md)
-
-## Lesson Library Modules
-
-`05-learning-paradigms`, `06-linear-regression`, `07-logistic-regression`, `08-statistics-probability-distance`, `09-model-evaluation`, `10-generalization-regularization`, and `11-trees-and-ensembles`.
-
-## Gate
-
-Given an unfamiliar scenario, students identify `X`, `y`, label availability, output type, task family, valid baseline, candidate models, metric, and one reason a model may fail.
+Students recognise an unfamiliar task, formalise its mathematical objects and shapes, perform a representative calculation, implement a defensible classical baseline, evaluate it under a valid protocol, and explain assumptions and failure modes.

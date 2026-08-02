@@ -1,96 +1,38 @@
 # Ready-to-Teach Curriculum Pack
 
-This directory supplies teacher-facing delivery, assessment, runtime, and resource records for the canonical 78-session pathway.
+This directory supports the canonical 78-Session pathway.
 
-## Canonical Delivery Structure
+## Normal Delivery
 
-| Phase | Sessions | Main spine |
-|---:|---:|---|
-| 0 | 1–2 | orientation and evidence |
-| 1 | 3–12 | CS50P Python |
-| 2 | 13–18 | NumPy, Pandas, and Matplotlib |
-| 3 | 19–32 | 北京市十一学校《中学机器学习十五讲》 on Bohrium |
-| 4 | 33–40 | Kaggle Learn workflow refresh |
-| 5 | 41–58 | Andrew Ng Machine Learning Specialization + StatQuest + 3Blue1Brown + model labs |
-| 6 | 59–70 | Andrew Ng Deep Learning Specialization + PyTorch + domain tasks |
-| 7 | 71–74 | model comparison, EDA, feature engineering, evaluation, and error analysis |
-| 8 | 75–78 | tuning, ensembling, full simulation, and postmortem |
+1. Open [Class Missions](../02_Class_Missions/README.md).
+2. Open the assigned numbered Phase.
+3. Open `SESSION_LAUNCHER.md`.
+4. Open the phase-local lesson packet.
+5. Collect the named evidence and apply the Session or Phase gate.
 
-The authoritative order is the [Detailed 75-Session Sequence](../00_Course_Overview/Detailed_Lesson_Sequence.md). The [Class Missions phase navigation](../02_Class_Missions/README.md) defines prerequisites, resource roles, and gates.
+Canonical teaching does not require browsing `_Lesson_Library`.
 
-## Curriculum Bank
+## Current Public Architecture
 
-The repository preserves:
+- 78 canonical Sessions;
+- 95 unique phase-local launcher targets;
+- 96 remaining optional extension/remediation lessons;
+- eight AI History seminars;
+- Andrew ML mathematics transition in Sessions 41–43.
 
-- 155 mainline lesson files;
-- 16 Bohrium resource lessons;
-- 171 public lesson/resource files in total.
+## Canonical Delivery Packs
 
-The complete bank now lives under [`02_Class_Missions/_Lesson_Library`](../02_Class_Missions/_Lesson_Library/README.md). It supports remediation, deeper practice, alternative explanations, domain extensions, and competition preparation; it is not a second scheduled route.
+- [Phase 4 — AI History and Thinking Humans](Phase_4_AI_History_and_Thinking_Humans.md)
+- [Phase 5 — Andrew ML Mathematics Bridge](Phase_5_Andrew_Ng_ML_Mathematics_Bridge.md)
+- [Phase 8 — Tuning, Ensembling, and Competition](Phase_8_Competition_Sprint.md)
 
-## What Is Included
+## Readiness Records
 
-- exact phase and session navigation;
-- entry checks, guided practice, independent rebuilds, and evidence requirements;
-- Round 1 paper-test work and mock forms;
-- Round 2 tabular, image, text, audio, scientific, and multimodal work;
-- model-recognition routines and model-comparison evidence;
-- competition experiment, ensembling, and submission templates;
-- generated starter notebooks and executable starter code;
-- syllabus and resource crosswalks;
-- runtime, link, annual-rule, pilot, privacy, and licensing records.
+- [Public Repository Readiness Dashboard](Public_Repository_Readiness_Dashboard.md)
+- [Curriculum Readiness Audit](Curriculum_Readiness_Audit.md)
+- [Release Readiness Gates](Release_Readiness_Gates.md)
+- [Student Runtime Qualification Record](Student_Runtime_Qualification_Record.md)
+- [External Access Verification Record](External_Access_Verification_Record.md)
+- [Representative Pilot Matrix](../09_Teacher_Planning/Pilot/Representative_Pilot_Matrix.md)
 
-Assessment-sensitive teacher keys, hidden labels, private tests, secure scoring packages, and calibration examples remain in the private teacher-key repository.
-
-## Resource Maps
-
-- [CS50P exact timestamp map](../05_Resources/CS50P_edX_Timestamp_Map.md)
-- [Kaggle Learn refresh map](../05_Resources/Kaggle_Learn_Refresh_Map.md)
-- [Andrew Ng ML mathematics intuition map](../02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Math_Intuition_Map.md)
-- [Deep Learning Specialization selected-content map](DLS_Selected_Content_Map.md)
-- [Hands-On ML and PyTorch selected-content map](HandsOnML_PyTorch_Selected_Content_Map.md)
-- [Resource map and NOAI syllabus crosswalk](Resource_Map_and_Syllabus_Crosswalk.md)
-
-## Competition Integration
-
-Use:
-
-- [Phase 8 teacher pack](Phase_8_Competition_Sprint.md)
-- [Competition workflow lesson bank](../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/README.md)
-- [Experiment log](../03_Templates/Competition_Sprint_Experiment_Log_Template.md)
-- [Model ensembling record](../03_Templates/Competition_Sprint_Model_Ensembling_Record.md)
-- [Submission checklist](../03_Templates/Competition_Sprint_Submission_Checklist.md)
-
-The required order is:
-
-```text
-diagnose the limitation
-→ tune a selected model
-→ compare stable single models
-→ ensemble only valid complementary models
-→ execute from a fresh environment
-→ validate the submission
-→ write the postmortem
-```
-
-Automated tuning is optional and follows a justified manual tuning cycle. Stacking requires out-of-fold base predictions.
-
-## Classroom Flow
-
-Every ordinary 75-minute class follows:
-
-**Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
-
-The fourteen-session Bohrium sequence is a named 70-minute exception. Long competitions and reproductions use their stated realistic durations.
-
-## Minimum Evidence Per Lesson
-
-- completed notes or worksheet section;
-- one independently produced artifact;
-- one documented error, misconception, or revision;
-- one oral or written explanation;
-- an artificial-intelligence-use record when assistance was used;
-- a meaningful Git commit;
-- fresh-runtime evidence when the mission produces competition code.
-
-Before formal graded use, read the [Curriculum Readiness Audit](Curriculum_Readiness_Audit.md). Structural consistency, runtime validation, assessment security, annual-rule alignment, authenticated resource access, and classroom evidence are separate readiness decisions.
+Public structural readiness does not replace real-cohort runtime, access, security, pilot, or annual-rule evidence.

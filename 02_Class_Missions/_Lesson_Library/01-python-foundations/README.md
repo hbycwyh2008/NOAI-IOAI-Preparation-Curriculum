@@ -19,11 +19,9 @@ The timestamp tables are precise assignments, but many lesson packages exceed ei
 
 ## Lessons
 
-- [Lesson 01 — Functions, variables, and expressions](lesson-01.md)
-- [Lesson 02 — Input/output, types, conversion, and debugging](lesson-02.md)
-- [Lesson 03 — Function decomposition and return-value tracing](lesson-03-function-decomposition-tracing.md)
-- [Lesson 04 — Standard modules, imports, and documentation reading](lesson-04-modules-imports-docs.md)
-- [Lesson 05 — Error messages, defensive checks, and debugging evidence](lesson-05-debugging-evidence.md)
+> Canonical session lesson bodies have moved into their numbered Phase folders. This module now indexes only remaining remediation, extension, or reference material. Use the Phase session launcher for scheduled teaching.
+
+
 - [Lesson 06 — Round 1 Python code-reading mixed practice](lesson-06-round1-python-code-reading.md)
 
 ## Minimum Evidence

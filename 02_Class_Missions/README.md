@@ -1,40 +1,47 @@
-# Class Missions — Canonical Learning Pathway
+# Class Missions — Start Here
 
-This directory has one clear teaching route. Start with the phase folders below; do not browse the lesson bank as if every file were a scheduled class.
+## Normal Use
+
+```text
+choose the assigned Phase
+→ open its Session Launcher
+→ click the assigned Session
+→ teach or complete the phase-local lesson
+→ submit the named evidence
+```
+
+Read [How to Use Class Missions](HOW_TO_USE_CLASS_MISSIONS.md) once before teaching the course.
+
+> **Do not browse `_Lesson_Library` to choose a class.** Every canonical lesson body is stored directly inside its numbered Phase folder, and the launchers below point to the exact file.
 
 ## Canonical 78-Session Route
 
-| Stage | Sessions | Main spine | Student outcome |
-|---|---:|---|---|
-| [00 — Orientation and Evidence](00_Orientation_and_Evidence/README.md) | 1–2 | official rules, GitHub, Bohrium, evidence system | understands the course, tools, and submissions |
-| [01 — CS50P Python](01_CS50P_Python/README.md) | 3–12 | Harvard CS50’s Introduction to Programming with Python | writes, traces, tests, and debugs Python independently |
-| [02 — NumPy, Pandas, and Visualisation](02_NumPy_Pandas_Visualisation/README.md) | 13–18 | NumPy, Pandas, Matplotlib | reads, audits, transforms, summarises, and plots data |
-| [03 — Bohrium ML Foundations](03_Bohrium_ML_Foundations/README.md) | 19–32 | 北京市十一学校《中学机器学习十五讲》 | builds a Chinese-language concept map before Andrew Ng |
-| [04 — AI History and Thinking Humans](04_AI_History_and_Thinking_Humans/README.md) | 33–40 | Melanie Mitchell, *Artificial Intelligence: A Guide for Thinking Humans* | explains AI history, audits claims, and distinguishes performance from understanding |
-| [05 — Andrew Ng ML and Model Labs](05_Andrew_Ng_ML_Model_Labs/README.md) | 41–58 | Machine Learning Specialization + embedded Kaggle practice | learns models through recognition, mathematics, code, and typical tasks |
-| [06 — Andrew Ng DL and PyTorch](06_Andrew_Ng_DL_PyTorch/README.md) | 59–70 | Deep Learning Specialization + PyTorch | pairs concepts with implementations and domain tasks |
-| [07 — Model Comparison, EDA, and Evaluation](07_Model_Comparison_EDA_Evaluation/README.md) | 71–74 | cross-model synthesis and trustworthy validation | compares models and systematises EDA, features, metrics, and error analysis |
-| [08 — Tuning, Ensembling, and Competition](08_Tuning_Ensembling_Competition/README.md) | 75–78 | diagnosis-first improvement and full simulation | tunes, ensembles, and completes a reproducible competition workflow |
+| Phase | Sessions | Open this launcher | Main outcome |
+|---:|---:|---|---|
+| 0 — Orientation and Evidence | 1–2 | [Launch Sessions 1–2](00_Orientation_and_Evidence/SESSION_LAUNCHER.md) | tools, workflow, evidence, and baseline discipline |
+| 1 — CS50P Python | 3–12 | [Launch Sessions 3–12](01_CS50P_Python/SESSION_LAUNCHER.md) | independent Python programming, testing, debugging, and CSV work |
+| 2 — NumPy, Pandas, and Visualisation | 13–18 | [Launch Sessions 13–18](02_NumPy_Pandas_Visualisation/SESSION_LAUNCHER.md) | arrays, DataFrames, data quality, plots, and a fresh-run audit notebook |
+| 3 — Bohrium ML Foundations | 19–32 | [Launch Sessions 19–32](03_Bohrium_ML_Foundations/SESSION_LAUNCHER.md) | Chinese-language ML concept foundation |
+| 4 — AI History and Thinking Humans | 33–40 | [Launch Sessions 33–40](04_AI_History_and_Thinking_Humans/SESSION_LAUNCHER.md) | AI history, claim auditing, evidence, and conceptual limits |
+| 5 — Andrew Ng ML and Model Labs | 41–58 | [Launch Sessions 41–58](05_Andrew_Ng_ML_Model_Labs/SESSION_LAUNCHER.md) | mathematics transition, classical models, task recognition, Kaggle practice, and model cards |
+| 6 — Andrew Ng DL and PyTorch | 59–70 | [Launch Sessions 59–70](06_Andrew_Ng_DL_PyTorch/SESSION_LAUNCHER.md) | deep-learning concepts paired with PyTorch and domain tasks |
+| 7 — Model Comparison, EDA, and Evaluation | 71–74 | [Launch Sessions 71–74](07_Model_Comparison_EDA_Evaluation/SESSION_LAUNCHER.md) | model selection, systematic EDA, features, validation, and error analysis |
+| 8 — Tuning, Ensembling, and Competition | 75–78 | [Launch Sessions 75–78](08_Tuning_Ensembling_Competition/SESSION_LAUNCHER.md) | tuning, ensembling, full simulation, and readiness decision |
 
 ## Resource Roles
 
-- **CS50P** is the Python programming spine.
-- **NumPy, Pandas, and Matplotlib** form the data-tool foundation.
-- **北京市十一学校《中学机器学习十五讲》 on Bohrium** is completed before the reading phase.
-- **Melanie Mitchell’s book** supplies AI history, conceptual boundaries, evidence-based argument, and critical judgement before formal model study.
-- **Andrew Ng Machine Learning Specialization** is the classical-machine-learning spine.
-- **Kaggle Learn** is embedded inside Andrew ML model labs as practical workflow rehearsal, not taught as a separate phase.
-- **StatQuest** supplements statistics, loss functions, and model intuition.
-- **3Blue1Brown** supplements linear algebra and calculus intuition.
-- **Andrew Ng Deep Learning Specialization** supplies deep-learning concepts.
-- **PyTorch courses and official tutorials** supply implementation.
-- **Typical tasks and model-recognition drills** run alongside every model.
+- CS50P is the Python spine.
+- NumPy, Pandas, and Matplotlib form the data-tool foundation.
+- 北京市十一学校《中学机器学习十五讲》 on Bohrium precedes formal model study.
+- Melanie Mitchell’s *Artificial Intelligence: A Guide for Thinking Humans* supplies AI history and critical judgement.
+- Andrew Ng Machine Learning is paired with an explicit mathematics transition, StatQuest, 3Blue1Brown, embedded Kaggle practice, model recognition, and typical tasks.
+- Andrew Ng Deep Learning is paired immediately with PyTorch implementations.
 
-## How to Use This Directory
+## Maintainer and Extension Areas
 
-1. Open the assigned phase.
-2. Follow its scheduled sequence and mastery gate.
-3. Use linked lessons from `_Lesson_Library` only when the phase calls for them.
-4. Use `_Curriculum_Governance` only for planning, auditing, and maintenance.
+These are not normal student entry points:
 
-The lesson library contains 171 public lesson/resource files for selection, reteaching, extension, and competition practice. It is not a second teaching order.
+- [`_Lesson_Library`](./_Lesson_Library/README.md) — remediation, alternative explanations, domain extensions, reproductions, mocks, and optional competition practice;
+- [`_Curriculum_Governance`](./_Curriculum_Governance/README.md) — audits, architecture, and maintenance.
+
+The numbered Phase folders are the sole storage and delivery location for canonical Sessions 1–78.

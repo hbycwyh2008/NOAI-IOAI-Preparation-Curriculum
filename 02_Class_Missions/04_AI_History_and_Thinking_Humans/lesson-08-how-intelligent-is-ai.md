@@ -26,6 +26,19 @@ Students must be able to:
 - One failure invalidates an entire technical approach.
 - A strong personal reaction is sufficient evidence for or against machine understanding.
 
+## Core Pattern
+
+```text
+task
+→ inputs and outputs
+→ training data, rules, or rewards
+→ metric and test conditions
+→ demonstrated capability
+→ failure boundary
+→ supported conclusion
+→ unsupported conclusion
+```
+
 ## AI Claim Audit
 
 Students must answer:
@@ -53,7 +66,7 @@ Students must answer:
 | 48–62 | **Independent Rebuild** | Produce a **Thinking Human’s AI Brief** containing a historical map, a capability–limitation matrix, and an evidence-based position using at least three cases from the book plus one counterargument. |
 | 62–70 | **Talk Robin 2 + Evidence** | Defend the brief and state what new evidence could change the conclusion. |
 
-## Phase Exit Evidence
+## Exit Evidence
 
 The final brief must contain:
 

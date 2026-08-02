@@ -23,6 +23,8 @@ on:
       - "scripts/check_required_links.py"
       - "scripts/validate_curriculum.py"
       - "scripts/validate_curriculum_structure.py"
+      - "scripts/validate_readiness_contract.py"
+      - "scripts/validate_class_mission_launchers.py"
       - "scripts/normalize_lesson_timelines.py"
       - ".github/workflows/validate-ready-to-teach.yml"
       - ".github/workflows/normalise-lesson-timelines.yml"
@@ -71,6 +73,12 @@ jobs:
 
       - name: Validate curriculum structure and internal consistency
         run: python scripts/validate_curriculum_structure.py
+
+      - name: Validate public readiness contract
+        run: python scripts/validate_readiness_contract.py
+
+      - name: Validate Class Missions launchers
+        run: python scripts/validate_class_mission_launchers.py
 
       - name: Install validation environment
         run: |
@@ -158,8 +166,8 @@ jobs:
       - name: Check required external resource links
         run: python scripts/check_required_links.py
 
-      - name: Commit generated and validated materials
-        if: github.event_name != 'pull_request'
+      - name: Commit generated and validated materials on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'

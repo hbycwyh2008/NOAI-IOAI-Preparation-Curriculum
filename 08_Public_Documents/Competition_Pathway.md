@@ -1,53 +1,78 @@
 # NOAI / IOAI Competition Preparation Pathway
 
-The curriculum develops competition readiness in stages rather than asking students to jump directly into advanced models.
+The curriculum develops competition readiness through the canonical 78-session dependency path rather than asking students to jump directly into advanced models.
 
 ```text
-Competition orientation and evidence habits
-→ Python code reading, tracing, debugging, and small programs
-→ artificial-intelligence and machine-learning foundations
-→ neural-network and convolutional-neural-network reasoning
-→ NOAI Round 1 paper-test preparation
-→ data audit, feature engineering, and scikit-learn workflow
-→ PyTorch and computer-vision / natural-language-processing / audio / large-language-model tasks
-→ official-style reproductions and timed Round 2 mocks
-→ competition sprint: task definition → data quality → feature engineering → model selection → tuning → model ensembling → reliable submission
-→ selected IOAI-style advanced tasks
+orientation and evidence habits
+→ CS50P Python
+→ NumPy, Pandas, and visualisation
+→ Bohrium machine-learning foundations
+→ AI history and critical reading through Melanie Mitchell
+→ Andrew Ng Machine Learning
+   + StatQuest
+   + 3Blue1Brown
+   + embedded Kaggle practice
+   + model recognition
+   + typical tasks
+→ Andrew Ng Deep Learning + PyTorch + domain tasks
+→ model comparison + EDA + feature engineering + evaluation
+→ diagnosis-first tuning + ensembling + competition simulation
 ```
 
-## Scheduled Options
+## Canonical Scheduled Pathway
 
-| Pathway | Sessions | Best use |
-|---|---:|---|
-| Round 1 preparation | 1–38 | students preparing mainly for the paper-based stage |
-| Full NOAI preparation | 1–67 | students preparing for Round 1 and Round 2 |
-| Full competition pathway | 1–75 | full NOAI preparation plus the eight-session competition sprint |
-| IOAI extension | selected after Session 75 | students who meet data, validation, modelling, reproducibility, and mock-readiness gates |
+| Phase | Sessions | Competition contribution |
+|---:|---:|---|
+| 0 | 1–2 | environment, evidence, Git, and responsible assistance |
+| 1 | 3–12 | Python code reading, tracing, testing, debugging, and programs |
+| 2 | 13–18 | data inspection, transformation, and visual reasoning |
+| 3 | 19–32 | Chinese-language machine-learning concept foundation |
+| 4 | 33–40 | AI history, claim auditing, understanding, and limitations |
+| 5 | 41–58 | classical models, maths intuition, task recognition, and tabular workflows |
+| 6 | 59–70 | PyTorch, image, text, audio, and multimodal tasks |
+| 7 | 71–74 | model comparison, EDA, features, validation, metrics, and error analysis |
+| 8 | 75–78 | tuning, ensembling, full simulation, and postmortem |
 
-## Competition Sprint
+Students preparing for a narrower competition stage may use a cohort-specific shortened route, but no public overview may redefine the canonical session numbering.
 
-The final eight sessions focus on:
+## Competition Integration
 
-1. formalising the real task, input `X`, output/target `y`, metric, prediction-time boundary, constraints, and submission schema;
-2. auditing data quality, freezing the validation split, and preventing target, duplicate, identity, group, temporal, and preprocessing leakage;
-3. building a reproducible feature pipeline and proving feature value through controlled tests and ablations;
-4. preserving a constant or rule baseline, comparing a simple model with a contrasting model, and analysing error categories;
-5. tuning a classical model only after diagnosing its dominant limitation;
-6. tuning deep-learning training in a disciplined order;
-7. ensembling only individually strong, complementary models using identical held-out or valid out-of-fold predictions;
-8. completing a full simulation with configuration freeze, submission validation, fresh-runtime evidence, and a postmortem.
+Competition habits begin early:
+
+- define the real task, input `X`, output or target `y`, metric, prediction-time boundary, constraints, and submission schema;
+- inspect data quality and prevent target, duplicate, identity, group, temporal, and preprocessing leakage;
+- preserve a simple baseline under one validation protocol;
+- keep feature generation reproducible;
+- compare model families from evidence;
+- analyse errors before tuning;
+- record every controlled experiment;
+- validate final artifacts from a fresh environment.
+
+## Final Competition Phase
+
+Sessions 75–78 focus on:
+
+1. diagnosis-first tuning and controlled search;
+2. model ensembling with valid held-out or out-of-fold predictions;
+3. a full competition simulation from task reading to valid submission;
+4. a postmortem and readiness decision based on evidence.
+
+The reusable eight-lesson competition-sprint bank remains available for deeper practice under `02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/`. It is not an additional automatic eight-session block after Session 78.
 
 ## Fixed Modelling Order
 
 ```text
 data quality
+→ valid split and baseline
 → feature engineering
 → model selection
+→ error diagnosis
 → tuning
 → model ensembling
+→ fresh-runtime submission validation
 ```
 
-Optuna and broad automated search are optional extensions after a manual tuning cycle. They do not replace model ensembling, reproducibility, or submission validation.
+Optuna and broad automated search are optional extensions after a manual tuning cycle. They do not replace model understanding, validation independence, reproducibility, or submission checks.
 
 ## Core Principle
 
@@ -58,6 +83,7 @@ A sophisticated model is not competition-ready unless the student can:
 - reproduce the feature pipeline;
 - preserve and beat a simple baseline under one protocol;
 - connect tuning changes to visible evidence;
-- prove that an ensemble beats the best single model rather than only a weak baseline;
+- prove that an ensemble beats the best single model beyond validation noise;
 - produce a valid submission;
-- run the final system from a fresh environment.
+- run the final system from a fresh environment;
+- explain characteristic failure modes and limitations.

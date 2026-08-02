@@ -1,29 +1,47 @@
 # Cohort Pathways and Required / Optional Map
 
-## Full Competition Pathway
+## Canonical Full Competition Pathway
 
-All phases from Orientation through Competition Integration are required and preserve the dependency order.
+All nine phases and Sessions 1–78 are required and preserve the dependency order:
+
+```text
+orientation
+→ CS50P Python
+→ NumPy / Pandas / visualisation
+→ Bohrium ML foundations
+→ AI History and Thinking Humans
+→ Andrew Ng ML + embedded Kaggle practice + model labs
+→ Andrew Ng DL + PyTorch
+→ model comparison + EDA + evaluation
+→ tuning + ensembling + competition
+```
 
 ## Compressed NOAI Round 1 Pathway
 
+A compressed pathway is a cohort-specific selection, not a renumbering of the canonical sequence.
+
 Required:
 
-- orientation;
-- CS50P Python;
-- NumPy/Pandas essentials;
-- the fourteen-session Bohrium concept sequence;
-- selected Kaggle workflow practice;
+- orientation and evidence;
+- CS50P Python essentials;
+- NumPy/Pandas essentials needed for code and data interpretation;
+- selected Bohrium foundation lessons;
+- selected AI History seminars or claim-audit evidence sufficient to distinguish capability from unsupported conclusions;
 - selected Andrew Ng ML model lessons;
-- paper-based model recognition, calculations, code tracing, and mocks.
+- embedded Kaggle workflow exercises only when they support the selected model task;
+- paper-based model recognition, calculations, code tracing, short answers, mocks, and correction.
 
 Selected rather than automatic:
 
-- Andrew Ng DL and the full PyTorch domain sequence;
-- long Round 2 projects.
+- the full Andrew Ng DL and PyTorch domain sequence;
+- long Round 2 projects;
+- all eight Phase 04 seminars when the cohort has a narrow, short preparation window.
+
+The teacher must preserve prerequisite gates even when reducing breadth.
 
 ## IOAI Extension Pathway
 
-Complete the full path, then select deeper computer-vision, natural-language-processing, audio, multimodal, reproducibility, and open-ended project lessons from `_Lesson_Library`.
+Complete the canonical path, then select deeper computer-vision, natural-language-processing, audio, multimodal, reproducibility, scientific, and open-ended project lessons from `_Lesson_Library`.
 
 ## Required Resource Roles
 
@@ -31,9 +49,10 @@ Complete the full path, then select deeper computer-vision, natural-language-pro
 |---|---|
 | CS50P | required Python spine |
 | NumPy/Pandas/Matplotlib | required data-tool foundation |
-| Bohrium BML15 | required before Andrew Ng ML in the full pathway |
-| Kaggle Learn | required short workflow refresh |
+| 北京市十一学校《中学机器学习十五讲》 on Bohrium | required pre-Andrew foundation in the full pathway |
+| Melanie Mitchell, *Artificial Intelligence: A Guide for Thinking Humans* | required eight-session history and claim-audit phase in the full pathway |
 | Andrew Ng Machine Learning Specialization | required classical ML spine |
+| Kaggle Learn | selected embedded practice inside Andrew ML model labs, not a standalone phase |
 | StatQuest | selected just-in-time clarification |
 | 3Blue1Brown | selected just-in-time mathematics intuition |
 | Andrew Ng Deep Learning Specialization | required deep-learning concept spine for the full pathway |
@@ -42,9 +61,19 @@ Complete the full path, then select deeper computer-vision, natural-language-pro
 
 ## Selection Meanings
 
-- **Required:** necessary for the pathway and its exit gate.
-- **Selected:** assigned when the current model or mathematical idea needs it.
+- **Required:** necessary for the selected pathway and its exit gate.
+- **Selected:** assigned when the current model, mathematical idea, language need, or competition task requires it.
 - **Optional:** remediation or extension.
 - **Lesson library:** reusable material, not a second sequence.
 
-Do not assign all 171 public files.
+## Compression Rules
+
+When shortening a pathway:
+
+1. remove breadth before removing prerequisites;
+2. keep task recognition, baseline, validation, error analysis, and evidence;
+3. do not rename or renumber the canonical sessions;
+4. record omitted phases and the resulting capability limits;
+5. do not claim full-pathway readiness from a compressed route.
+
+Do not assign all 171 reusable public files automatically.

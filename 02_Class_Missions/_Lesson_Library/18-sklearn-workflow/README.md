@@ -4,12 +4,11 @@ This module prepares students for Round 2 C/D tabular tasks and model-comparison
 
 ## Lessons
 
-- [Lesson 01 — Split, preprocessing, and baseline pipeline](lesson-01.md)
+> Canonical session lesson bodies have moved into their numbered Phase folders. This module now indexes only remaining remediation, extension, or reference material. Use the Phase session launcher for scheduled teaching.
+
+
 - [Lesson 02 — Model comparison, cross-validation, and tuning](lesson-02.md)
 - [Lesson 03 — 台湾大学李宏毅《机器学习》内容精选版完整视频：Machine-Learning Workflow Bridge](lesson-03-lhy-ml-full-video.md)
-- [Lesson 04 — ColumnTransformer, Pipeline, and leakage-safe preprocessing](lesson-04-columntransformer-pipeline-leakage.md)
-- [Lesson 05 — Model selection, hyperparameter search, and validation memo](lesson-05-model-selection-validation-memo.md)
-- [Lesson 06 — Submission file, reproducibility, and Round 2 baseline report](lesson-06-submission-reproducibility-report.md)
 
 ## Official-Aligned Video Placement
 
