@@ -1,0 +1,33 @@
+name: Move Canonical Lessons Into Phases
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.head_ref == 'agent/close-public-readiness-gaps'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/close-public-readiness-gaps
+          fetch-depth: 0
+
+      - name: Move canonical lesson bodies into phase folders
+        run: python scripts/move_canonical_lessons_into_phases.py
+
+      - name: Commit migration and remove one-time machinery
+        run: |
+          git rm -f scripts/move_canonical_lessons_into_phases.py
+          git rm -f .github/workflows/move-canonical-lessons-into-phases.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Move canonical lesson bodies into their phase folders"
+          git push origin HEAD:agent/close-public-readiness-gaps
