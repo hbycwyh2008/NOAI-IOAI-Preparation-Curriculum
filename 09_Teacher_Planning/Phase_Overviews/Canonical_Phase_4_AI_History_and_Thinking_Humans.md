@@ -37,4 +37,4 @@ These eight lessons use the named 70-minute reading-seminar exception. Assigned 
 
 The student independently applies the AI Claim Audit to a new system, formalises the task and evidence, identifies limitations, presents a counterargument, and states what new evidence could change the conclusion.
 
-See the [Phase 4 Teacher Pack](../../../10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md).
+See the [Phase 4 Teacher Pack](../../10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md).
