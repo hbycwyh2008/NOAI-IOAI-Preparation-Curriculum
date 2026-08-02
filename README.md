@@ -21,7 +21,9 @@ CS50P Python
    + StatQuest and 3Blue1Brown
    + embedded Kaggle practice
    + model recognition and typical tasks
-→ Andrew Ng Deep Learning + PyTorch
+→ Andrew Ng Deep Learning
+   + selected Dive into Deep Learning concept-to-code bridges
+   + PyTorch implementation and independent reconstruction
 → model comparison, EDA, features, and evaluation
 → tuning, ensembling, and competition simulation
 ```
@@ -39,14 +41,15 @@ All canonical lesson bodies for Sessions 1–78 live directly inside their numbe
 ## Current Architecture
 
 - **78 canonical Sessions** across nine numbered Phases;
-- **95 unique phase-local Markdown packets** linked by the Session launchers;
+- phase-local Markdown packets linked by the Session launchers;
+- six required D2L bridge packets embedded inside Phase 6 without adding sessions;
 - eight English AI History seminars in Sessions 33–40;
 - an explicit Andrew ML mathematics transition in Sessions 41–43;
 - permanent structure, readiness, launcher, hygiene, notebook, code, and link validation.
 
 ## Evidence Standard
 
-Watching, reading, or running supplied code is not mastery. Students must recognise, explain, reconstruct, calculate, implement, debug, evaluate, analyse errors, and submit reproducible evidence.
+Watching, reading, or running supplied code is not mastery. Students must recognise, explain, reconstruct, calculate, implement, debug, evaluate, analyse errors, and submit reproducible evidence. D2L code may be used for guided study, but a copied notebook does not satisfy an independent-reconstruction gate.
 
 ## Readiness Boundary
 
