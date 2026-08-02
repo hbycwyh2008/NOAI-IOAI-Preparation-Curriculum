@@ -105,14 +105,26 @@ This is a compressed scheduled pathway. The larger `02_Class_Missions` curriculu
 
 ## Phase 8 — Competition Sprint
 
-68. **Task Recognition from an Unfamiliar Competition Statement** — 75 minutes
-69. **Baseline, Metric, and Model-Family Selection** — 75 minutes
-70. **Data Audit, Validation Split, and Leakage Prevention** — 75 minutes
-71. **Data Cleaning and Feature Engineering Under Time Limits** — 75 minutes
+68. **Task Recognition and Task Formalisation** — 75 minutes
+69. **Data Quality, Validation Design, and Leakage Prevention** — 75 minutes
+70. **Feature Engineering and Reproducible Pipelines** — 75 minutes
+71. **Model Selection, Baseline Ladder, and Error Analysis** — 75 minutes
 72. **Classical Machine-Learning Tuning: Diagnose Before Searching** — 75 minutes
 73. **Deep-Learning Tuning: Learning Rate, Batch Size, Regularisation, and Optimiser** — 75 minutes
-74. **PyTorch Tuning with Schedulers, Optuna, and Efficiency Constraints** — 75 minutes
+74. **Model Ensembling: Voting, Averaging, and Stacking** — 75 minutes
 75. **Full Competition Sprint Simulation and Postmortem** — use the target competition duration
+
+The required Phase 8 modelling sequence is:
+
+```text
+data quality
+→ feature engineering
+→ model selection
+→ tuning
+→ model ensembling
+```
+
+PyTorch schedulers, Optuna, and broader automated search remain available as optional extension work after Session 73. They are not counted as a separate required session and do not replace Session 74 model ensembling.
 
 ## Optional Bohrium Resource Sequence
 
