@@ -1,6 +1,6 @@
 # Automated Curriculum Audit
 
-- Commit: `50bc4cf5a6e2f4aa41571eb4ff344c3e964ea8fc`
+- Commit: `27155fb0b6e3ac2fa54bcb5326cb43e191022c85`
 - Runner: GitHub Actions / Python 3.12
 - Exit code: `0`
 
@@ -16,6 +16,7 @@ Canonical pathway: 78 sessions
 AI History phase: 8 complete English seminars
 Canonical teacher overviews: 9
 High-traffic pathway documents: current and internally consistent
+Kaggle practice map: embedded in Andrew ML model labs
 Public readiness artifacts: present and internally consistent
 Operational readiness remains cohort-, runtime-, security-, access-, and year-specific
 ```
