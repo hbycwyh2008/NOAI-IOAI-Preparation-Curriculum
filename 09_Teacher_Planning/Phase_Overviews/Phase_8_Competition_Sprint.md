@@ -29,8 +29,8 @@ This phase corrects a common competition mistake: choosing or tuning a model bef
 ## Canonical Files
 
 - [Phase 8 Competition Sprint Index](../../10_Ready_to_Teach_Pack/Phase_8_Competition_Sprint.md)
-- [Module 28 — Competition Sprint](../../02_Class_Missions/28-competition-sprint-task-data-tuning/README.md)
-- [Hyperparameter-Tuning Video Resource Map](../../02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md)
+- [Module 28 — Competition Sprint](../../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/README.md)
+- [Hyperparameter-Tuning Video Resource Map](../../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md)
 - [Competition Sprint Experiment Log Template](../../03_Templates/Competition_Sprint_Experiment_Log_Template.md)
 - [Competition Sprint Model Ensembling Record](../../03_Templates/Competition_Sprint_Model_Ensembling_Record.md)
 - [Competition Sprint Submission Checklist](../../03_Templates/Competition_Sprint_Submission_Checklist.md)

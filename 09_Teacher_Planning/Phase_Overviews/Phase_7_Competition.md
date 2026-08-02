@@ -11,9 +11,9 @@ Students integrate task reading, data audit, leakage-safe validation, baseline-f
 ## Canonical Files
 
 - [Phase 7 Competition Practice Index](../../10_Ready_to_Teach_Pack/Phase_7_Competition_Practice.md)
-- [Module 24 — Round 2 Project Training](../../02_Class_Missions/24-round-2-project-training/README.md)
-- [Module 25 — Past-Paper Reproduction](../../02_Class_Missions/25-past-paper-reproduction/README.md)
-- [Module 26 — Timed Mock Contests](../../02_Class_Missions/26-mock-contests/README.md)
+- [Module 24 — Round 2 Project Training](../../02_Class_Missions/_Lesson_Library/24-round-2-project-training/README.md)
+- [Module 25 — Past-Paper Reproduction](../../02_Class_Missions/_Lesson_Library/25-past-paper-reproduction/README.md)
+- [Module 26 — Timed Mock Contests](../../02_Class_Missions/_Lesson_Library/26-mock-contests/README.md)
 - [Detailed Sessions 1–75](../../00_Course_Overview/Detailed_Lesson_Sequence.md)
 
 The Class Mission files are the source of truth for lesson content and duration. This overview does not duplicate lesson bodies.

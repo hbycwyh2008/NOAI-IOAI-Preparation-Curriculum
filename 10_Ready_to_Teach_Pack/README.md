@@ -59,7 +59,7 @@ Executable scaffolds are in `06_Starter_Code/ready_to_teach/`.
 ## Competition-Sprint Evidence Files
 
 - [Phase 8 — Competition Sprint](Phase_8_Competition_Sprint.md)
-- [Module 28 — Competition Sprint Lessons](../02_Class_Missions/28-competition-sprint-task-data-tuning/README.md)
+- [Module 28 — Competition Sprint Lessons](../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/README.md)
 - [Competition Sprint Experiment Log](../03_Templates/Competition_Sprint_Experiment_Log_Template.md)
 - [Competition Sprint Model Ensembling Record](../03_Templates/Competition_Sprint_Model_Ensembling_Record.md)
 - [Competition Sprint Submission Checklist](../03_Templates/Competition_Sprint_Submission_Checklist.md)
@@ -71,7 +71,7 @@ PyTorch schedulers, Optuna, and broader automated search remain optional extensi
 - [Deep Learning Specialization Selected Content Map](DLS_Selected_Content_Map.md) — explains that the five-course specialization is selected conceptual support, not a second full curriculum.
 - [Hands-On Machine Learning and DeepLearning.AI PyTorch Selected Content Map](HandsOnML_PyTorch_Selected_Content_Map.md) — maps practical scikit-learn and PyTorch implementation resources.
 - [Resource Map and NOAI Syllabus Crosswalk](Resource_Map_and_Syllabus_Crosswalk.md) — maps full resource names to NOAI A–D areas and Class Mission modules.
-- [Competition Sprint Hyperparameter-Tuning Video Map](../02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md) — gives exact required and optional Coursera sections, video titles, durations, and sprint use.
+- [Competition Sprint Hyperparameter-Tuning Video Map](../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md) — gives exact required and optional Coursera sections, video titles, durations, and sprint use.
 
 ## 75-Minute After-School Club Classroom Flow
 

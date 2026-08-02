@@ -85,10 +85,10 @@ These files are scaffolds, not complete competition solutions. Students must ada
 
 Use:
 
-- [`Competition Sprint Experiment Log Template`](../../03_Templates/Competition_Sprint_Experiment_Log_Template.md)
-- [`Competition Sprint Model Ensembling Record`](../../03_Templates/Competition_Sprint_Model_Ensembling_Record.md)
-- [`Competition Sprint Submission Checklist`](../../03_Templates/Competition_Sprint_Submission_Checklist.md)
-- [`Round 2 Notebook Lab Template`](../../03_Templates/Round_2_Notebook_Lab_Template.md)
+- [`Competition Sprint Experiment Log Template`](../../../03_Templates/Competition_Sprint_Experiment_Log_Template.md)
+- [`Competition Sprint Model Ensembling Record`](../../../03_Templates/Competition_Sprint_Model_Ensembling_Record.md)
+- [`Competition Sprint Submission Checklist`](../../../03_Templates/Competition_Sprint_Submission_Checklist.md)
+- [`Round 2 Notebook Lab Template`](../../../03_Templates/Round_2_Notebook_Lab_Template.md)
 
 ## Resource Structure
 

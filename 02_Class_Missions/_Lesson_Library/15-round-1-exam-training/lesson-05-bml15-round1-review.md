@@ -8,7 +8,7 @@
 
 **Placement:** This lesson is a Round 1 review lesson. Use it after students have studied Python foundations and basic artificial-intelligence / machine-learning concepts, before full paper-test mocks.
 
-**Detailed split:** [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
+**Detailed split:** [`09_Teacher_Planning/BML15_70min_Lesson_Split.md`](../../../09_Teacher_Planning/BML15_70min_Lesson_Split.md)
 
 ## Timeline
 

@@ -73,7 +73,7 @@ Repo placements:
 - `19-pytorch-foundations/lesson-07-pytorch-mini-project-validation.md`
 - `28-competition-sprint-task-data-tuning/lesson-06-deep-learning-tuning.md`
 
-The exact sprint video package and timing are defined in `02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`.
+The exact sprint video package and timing are defined in `02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`.
 
 Concept explanation may come from this course; implementation should use the DeepLearning.AI PyTorch for Deep Learning Professional Certificate plus PyTorch official tutorials.
 

@@ -6,7 +6,7 @@ This module builds NOAI Round 1 Python fluency. Students must read, trace, debug
 
 **Harvard CS50’s Introduction to Programming with Python on edX**
 
-Use the exact ranges in [`05_Resources/CS50P_edX_Timestamp_Map.md`](../../05_Resources/CS50P_edX_Timestamp_Map.md).
+Use the exact ranges in [`05_Resources/CS50P_edX_Timestamp_Map.md`](../../../05_Resources/CS50P_edX_Timestamp_Map.md).
 
 ## Video Delivery Rule
 

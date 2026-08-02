@@ -20,7 +20,7 @@ print('Working directory:', Path.cwd())
 
 LESSONS = [
     {
-        "id": "N01", "file": "python_trace_and_debug.ipynb", "sessions": "3-8",
+        "id": "N01", "file": "python_trace_and_debug.ipynb", "sessions": "3-12",
         "title": "Python Trace and Debug",
         "target": "Trace state changes, repair programs, validate input, and verify behaviour with tests.",
         "concepts": ["trace variables after every executed statement", "distinguish syntax, runtime, and logic errors", "validate boundaries and malformed input", "use assertions and small test cases"],
@@ -46,7 +46,7 @@ assert safe_average([1, 2, None, 3]) == 2.0
         "independent": "Build a CSV-row validator with required-key checks, numeric conversion, human-readable errors, and at least five tests."
     },
     {
-        "id": "N02", "file": "statistics_and_metrics.ipynb", "sessions": "17-20",
+        "id": "N02", "file": "statistics_and_metrics.ipynb", "sessions": "68-71",
         "title": "Statistics and Metrics Agreement",
         "target": "Make hand, NumPy, and scikit-learn calculations agree.",
         "concepts": ["population versus sample variance", "confusion-matrix orientation", "precision, recall, specificity, F1", "metric choice depends on error cost"],
@@ -67,7 +67,7 @@ assert np.isclose(manual['f1'], f1_score(y_true, y_pred))
         "independent": "Implement a validated metric function for tp/fp/fn/tn, including zero-denominator policy and balanced accuracy."
     },
     {
-        "id": "N03", "file": "linear_logistic_models.ipynb", "sessions": "13-16",
+        "id": "N03", "file": "linear_logistic_models.ipynb", "sessions": "38-43",
         "title": "Linear and Logistic Models",
         "target": "Interpret residuals, probabilities, coefficients, and decision thresholds.",
         "concepts": ["linear output versus sigmoid probability", "residual analysis", "threshold is a decision rule", "split before fitting"],
@@ -91,7 +91,7 @@ print(pd.DataFrame([{'threshold':t,'f1':f1_score(yva,p>=t),'positives':int((p>=t
         "independent": "Compare a constant baseline, logistic regression, and one alternative model under one fixed validation design."
     },
     {
-        "id": "N04", "file": "trees_and_ensembles.ipynb", "sessions": "24-26",
+        "id": "N04", "file": "trees_and_ensembles.ipynb", "sessions": "45-47",
         "title": "Trees and Ensembles",
         "target": "Diagnose depth, compare bagging and boosting, and explain bias/variance behaviour.",
         "concepts": ["impurity and split selection", "depth controls capacity", "bagging reduces variance", "boosting is sequential"],
@@ -115,7 +115,7 @@ for name,m in {'forest':RandomForestClassifier(n_estimators=80,random_state=SEED
         "independent": "Repeat with grouped or time-aware validation and one controlled hyperparameter experiment."
     },
     {
-        "id": "N05", "file": "numpy_pandas_audit.ipynb", "sessions": "39-42",
+        "id": "N05", "file": "numpy_pandas_audit.ipynb", "sessions": "13-18, 69-70",
         "title": "NumPy and Pandas Data Audit",
         "target": "Audit schema, missingness, duplicates, distributions, groups, and leakage risks before modelling.",
         "concepts": ["one row/entity/prediction", "identifier versus feature", "duplicate row versus duplicate entity", "plots must answer a diagnostic question"],
@@ -132,7 +132,7 @@ assert audit['duplicate_rows']==1 and audit['missing']['hours']==8
         "independent": "Produce audit.json, two labelled diagnostic plots, five assertions, and a leakage-risk memo for an unfamiliar CSV."
     },
     {
-        "id": "N06", "file": "sklearn_mixed_pipeline.ipynb", "sessions": "41-44",
+        "id": "N06", "file": "sklearn_mixed_pipeline.ipynb", "sessions": "33-37, 69-72",
         "title": "Leakage-Safe Mixed Scikit-learn Pipeline",
         "target": "Build mixed preprocessing, group-aware validation, a baseline, and a validated submission.",
         "concepts": ["fit preprocessing inside the pipeline", "group-aware splitting", "unknown-category handling", "validate ID order and prediction range"],
@@ -161,7 +161,7 @@ print('F1',f1_score(df.loc[va,'target'],p>=.5),submission.head())
         "independent": "Add one justified feature and one alternative model while keeping the split and evaluation fixed."
     },
     {
-        "id": "N07", "file": "pytorch_mlp.ipynb", "sessions": "45-47",
+        "id": "N07", "file": "pytorch_mlp.ipynb", "sessions": "56-59",
         "title": "PyTorch MLP Training Loop",
         "target": "Create tensors, loaders, a model, train/validate loops, and a best-checkpoint record.",
         "concepts": ["tensor shape and dtype", "train versus eval mode", "zero_grad/forward/loss/backward/step", "validation uses no_grad"],
@@ -189,7 +189,7 @@ print('validation accuracy',acc); assert acc>.75
         "independent": "Close the example and rebuild the complete train/validate/checkpoint workflow, then test one controlled regularisation change."
     },
     {
-        "id": "N08", "file": "opencv_structural_baseline.ipynb", "sessions": "48",
+        "id": "N08", "file": "opencv_structural_baseline.ipynb", "sessions": "60-62",
         "title": "OpenCV Structural Baseline",
         "target": "Expose preprocessing stages and measure connected components and contours.",
         "concepts": ["thresholding and morphology", "connected components", "contour area/perimeter/bounding box", "evaluate across source styles"],
@@ -208,7 +208,7 @@ assert count-1>=3
         "independent": "Create contrast/noise/rotation source styles and report component-count accuracy and failure cases by source."
     },
     {
-        "id": "N09", "file": "cnn_transfer_learning.ipynb", "sessions": "49-50",
+        "id": "N09", "file": "cnn_transfer_learning.ipynb", "sessions": "60-62",
         "title": "CNN and Offline Transfer-Learning Readiness",
         "target": "Train a tiny CNN and document the contract for rule-permitted offline pretrained assets.",
         "concepts": ["convolution/pooling shape flow", "augmentation only on training data", "freeze/unfreeze policy", "asset licence and hash"],
@@ -236,7 +236,7 @@ print('accuracy',acc); assert acc>.8
         "independent": "Compare with a teacher-provided locally cached checkpoint and record filename, SHA-256, source, licence, preprocessing, and frozen layers."
     },
     {
-        "id": "N10", "file": "text_baseline_and_lstm.ipynb", "sessions": "51-53",
+        "id": "N10", "file": "text_baseline_and_lstm.ipynb", "sessions": "63-65",
         "title": "Text Baseline and LSTM",
         "target": "Compare TF-IDF with a sequence model and analyse disagreement cases.",
         "concepts": ["tokenisation/vocabulary/padding", "simple baseline before deep model", "source and duplicate leakage", "slice errors by negation and length"],
@@ -256,7 +256,7 @@ pred=pipe.predict([texts[i] for i in va]); print('TF-IDF F1',f1_score(np.array(l
         "independent": "Build a compact LSTM or transformer classifier and compare disagreement slices for negation, length, source, and rare words."
     },
     {
-        "id": "N11", "file": "audio_mel_classifier.ipynb", "sessions": "54-55",
+        "id": "N11", "file": "audio_mel_classifier.ipynb", "sessions": "66",
         "title": "Audio Mel Classifier",
         "target": "Audit audio, generate Mel features, split by source, and classify reproducibly.",
         "concepts": ["waveform versus spectrogram", "Mel frequency scale", "speaker/device/source leakage", "ASR/TTS/classification are different tasks"],
@@ -282,7 +282,7 @@ assert not(set(groups[tr]) & set(groups[va])); print('F1',f1_score(y[va],pipe.pr
         "independent": "Add a source shift such as noise, gain, or sample-rate change and report performance by source and shift."
     },
     {
-        "id": "N12", "file": "local_llm_multimodal.ipynb", "sessions": "56-57",
+        "id": "N12", "file": "local_llm_multimodal.ipynb", "sessions": "65-67",
         "title": "Local LLM and Multimodal Offline Readiness",
         "target": "Validate local assets, structured output, modality baselines, and an offline execution record.",
         "concepts": ["no credentials or network dependency", "schema-constrained output", "text-only/image-only/fusion baselines", "asset hashes and licence record"],

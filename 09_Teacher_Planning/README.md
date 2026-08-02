@@ -7,14 +7,14 @@ This folder contains teacher-facing implementation notes, timing adaptations, re
 - [Cohort Pathways and Required / Optional Map](../00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md)
 - [Pacing Guide](../00_Course_Overview/Pacing_Guide.md)
 - [Detailed 75-Session Sequence](../00_Course_Overview/Detailed_Lesson_Sequence.md)
-- [Class Mission Resource Architecture](../02_Class_Missions/Class_Mission_Resource_Architecture.md)
+- [Class Mission Resource Architecture](../02_Class_Missions/_Curriculum_Governance/Class_Mission_Resource_Architecture.md)
 
 ## After-School Club Delivery
 
 - [75-Minute After-School Club Implementation](75min_After_School_Club_Implementation.md)
 - [北京市十一学校《中学机器学习十五讲》70-Minute Lesson Split](BML15_70min_Lesson_Split.md)
 - [Phase 8 — Competition Sprint](../10_Ready_to_Teach_Pack/Phase_8_Competition_Sprint.md)
-- [Hyperparameter-Tuning Video Resource Map](../02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md)
+- [Hyperparameter-Tuning Video Resource Map](../02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md)
 
 ## Validation and Readiness
 

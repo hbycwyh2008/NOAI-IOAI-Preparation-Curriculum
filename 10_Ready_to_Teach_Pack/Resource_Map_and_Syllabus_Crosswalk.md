@@ -123,7 +123,7 @@ The teacher must verify URLs, access terms, annual competition rules, model rest
 
 Use the exact required and optional video assignments in:
 
-`02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`
+`02_Class_Missions/_Lesson_Library/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`
 
 ---
 

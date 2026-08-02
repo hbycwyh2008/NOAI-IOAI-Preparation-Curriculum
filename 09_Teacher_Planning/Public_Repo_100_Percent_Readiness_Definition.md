@@ -57,4 +57,4 @@ Use `10_Ready_to_Teach_Pack/Curriculum_Readiness_Audit.md` for those decisions.
 
 ## Validation Rule
 
-`02_Class_Missions/Lesson_Distribution_Audit.md` and `scripts/validate_curriculum_structure.py` may report 100% **public file-structure coverage** only. They must not convert that result into a blanket operational-readiness claim.
+`02_Class_Missions/_Curriculum_Governance/Lesson_Distribution_Audit.md` and `scripts/validate_curriculum_structure.py` may report 100% **public file-structure coverage** only. They must not convert that result into a blanket operational-readiness claim.
