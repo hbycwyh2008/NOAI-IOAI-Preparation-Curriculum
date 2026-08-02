@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -173,6 +174,28 @@ OVERVIEW_MARKERS = (
     "## Exit Gate",
 )
 
+MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+
+
+def validate_internal_links(relative_files: set[str], errors: list[str]) -> None:
+    for relative in sorted(relative_files):
+        path = ROOT / relative
+        if not path.exists() or path.suffix.lower() != ".md":
+            continue
+        text = path.read_text(encoding="utf-8")
+        for raw_target in MARKDOWN_LINK.findall(text):
+            target = raw_target.strip().split()[0]
+            if not target or target.startswith(("http://", "https://", "mailto:", "#")):
+                continue
+            target = target.split("#", 1)[0].split("?", 1)[0]
+            if not target:
+                continue
+            resolved = (path.parent / target).resolve()
+            if not resolved.exists():
+                errors.append(
+                    f"Broken internal link in {relative}: {raw_target}"
+                )
+
 
 def main() -> int:
     errors: list[str] = []
@@ -197,6 +220,13 @@ def main() -> int:
         for banned in BANNED_AUTHORITATIVE_TEXT:
             if banned in text:
                 errors.append(f"Stale pathway text '{banned}' in {relative}")
+
+    validate_internal_links(
+        set(REQUIRED_FILES)
+        | set(AUTHORITATIVE_MARKERS)
+        | set(CANONICAL_TEACHER_OVERVIEWS),
+        errors,
+    )
 
     phase = ROOT / "02_Class_Missions/04_AI_History_and_Thinking_Humans"
     lesson_files = sorted(phase.glob("lesson-*.md")) if phase.exists() else []
@@ -263,6 +293,7 @@ def main() -> int:
     print("High-traffic pathway documents: current and internally consistent")
     print("Kaggle practice map: embedded in Andrew ML model labs")
     print("Competition packs: canonical Phase 8 separated from reusable extensions")
+    print("Readiness-document internal links: valid")
     print("Public readiness artifacts: present and internally consistent")
     print("Operational readiness remains cohort-, runtime-, security-, access-, and year-specific")
     return 0
