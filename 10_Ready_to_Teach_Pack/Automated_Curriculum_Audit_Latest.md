@@ -1,12 +1,16 @@
 # Automated Curriculum Audit
 
-- Commit: `30ad324e1daeaff7e9b5834952ebe7b487abab52`
+- Commit: `dc525813e33bb908f85deb6bc3126a54dbe5d05a`
 - Runner: GitHub Actions / Python 3.12
-- Exit code: ``
+- Exit code: `0`
 
 ```text
-Curriculum structure validation failed:
-- '100% public file-structure coverage' not found in 09_Teacher_Planning/Public_Repo_100_Percent_Readiness_Definition.md
+Curriculum structure validation passed.
+Mainline lesson files: 155
+Optional Bohrium resource lesson files: 16
+Total public lesson files: 171
+Public file-structure and internal-consistency coverage: 100%
+Operational, pilot, privacy, runtime, and annual-rule readiness remain separate.
 Readiness contract validation passed.
 Canonical pathway: 78 sessions
 AI History phase: 8 complete English seminars
