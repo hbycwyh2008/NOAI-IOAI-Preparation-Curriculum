@@ -33,6 +33,9 @@ jobs:
 
       - name: Commit cleanup and remove one-time machinery
         run: |
+          # Permanent workflow changes are committed separately through the GitHub connector.
+          git restore --source=HEAD -- .github/workflows/audit-curriculum.yml
+          git restore --source=HEAD -- .github/workflows/validate-ready-to-teach.yml
           git rm -f scripts/apply_repository_cleanup.py
           git rm -f scripts/apply_repository_cleanup_v2.py
           git rm -f scripts/apply_repository_cleanup_v3.py
