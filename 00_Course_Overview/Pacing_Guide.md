@@ -36,4 +36,4 @@ Do not advance because a video playlist is finished. Advance when the student pa
 
 ## Lesson Bank Policy
 
-The repository still contains 155 mainline lessons and 16 Bohrium resource lessons. Use extra files only for remediation, deeper practice, alternative modality work, or extension.
+The repository preserves **155 lessons** in the mainline bank and 16 Bohrium resource lessons. Use extra files only for remediation, deeper practice, alternative modality work, or extension.
