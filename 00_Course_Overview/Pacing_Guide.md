@@ -7,7 +7,7 @@ This repository is a **curriculum bank**, not a requirement that every cohort co
 | Layer | Count | Meaning |
 |---|---:|---|
 | Core scheduled pathway | 67 sessions | compressed full pathway from orientation through mocks and final readiness |
-| Competition sprint | 8 sessions | task recognition, data engineering, classical/deep-learning tuning, PyTorch tuning, and full sprint simulation |
+| Competition sprint | 8 sessions | task formalisation, data quality, feature engineering, model selection, classical/deep tuning, model ensembling, and full sprint simulation |
 | Recommended full scheduled pathway | 75 sessions | 67 core sessions plus the eight-session competition sprint |
 | Mainline mission bank | 155 lessons | all lesson files across Modules 00–26 and Module 28; includes deeper practice and alternatives |
 | Optional Bohrium resource hub | 16 lessons | two full-video hub missions plus the fourteen-session 70-minute sequence for 北京市十一学校《中学机器学习十五讲》 |
@@ -55,10 +55,25 @@ Use Sessions 1–67.
 
 Use Sessions 1–75, including Module 28 as Sessions 68–75.
 
+The final eight sessions retain the existing total but follow this order:
+
+```text
+68 task formalisation
+69 data quality and validation
+70 feature engineering
+71 model selection and error analysis
+72 classical tuning
+73 deep-learning tuning
+74 model ensembling
+75 full simulation
+```
+
+PyTorch schedulers, Optuna, and broad automated search are optional extension work after Session 73; they are not an additional required session.
+
 ### IOAI extension
 
 After the 75-session pathway, select advanced lessons from Modules 20–28 and official IOAI tasks according to student readiness and task modality.
 
 ## Scheduling Rule
 
-Do not schedule all 171 public mission/resource lesson files automatically. Use the shortest pathway that reaches the required competition standard, and add lessons only when entry checks, phase gates, mocks, or project evidence justify them.
+Do not schedule all public mission/resource lesson files automatically. Use the shortest pathway that reaches the required competition standard, and add lessons only when entry checks, phase gates, mocks, or project evidence justify them.
