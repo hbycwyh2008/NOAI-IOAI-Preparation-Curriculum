@@ -33,6 +33,7 @@ Evidence:
 ## Gate 3 — Student Runtime
 
 - [ ] A clean student environment can be installed from the documented instructions.
+- [ ] Root `requirements.txt` is present and matches the validation environment.
 - [ ] All maintained starter notebooks execute from fresh kernels.
 - [ ] Classical machine-learning, PyTorch, Optuna, data-generation, metric, and submission-validation scripts pass their smoke tests.
 - [ ] CPU/GPU assumptions, memory limits, package versions, and download requirements are recorded.
