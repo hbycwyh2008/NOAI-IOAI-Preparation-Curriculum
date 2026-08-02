@@ -2,6 +2,8 @@
 
 Use this template only after at least two single models have passed the same validation protocol.
 
+**Terminology:** OOF means **out-of-fold** prediction. Each OOF prediction must be produced by a base model that was not trained on that row.
+
 ## Entry Gate
 
 ```text
@@ -18,7 +20,7 @@ Available time, memory, and inference budget:
 Confirm:
 
 - [ ] every base model uses the same task definition and metric;
-- [ ] every base model has been evaluated on identical held-out rows or by valid OOF prediction;
+- [ ] every base model has been evaluated on identical held-out rows or by valid out-of-fold prediction;
 - [ ] no test labels or public-leaderboard iteration were used to choose the ensemble;
 - [ ] in-sample predictions will not be used to train a stacking meta-model;
 - [ ] runtime and memory constraints are known.
@@ -61,7 +63,7 @@ Test the simplest valid combination first.
 ## Leakage and Reproducibility Check
 
 ```text
-How were held-out or OOF predictions generated?
+How were held-out or out-of-fold predictions generated?
 Were base models trained without seeing the rows they predict for ensemble selection?
 How were weights selected?
 How was repeated weight searching limited?
@@ -87,7 +89,7 @@ Rejected ensemble attempts and why:
 - [ ] best single model remains the comparison reference;
 - [ ] diversity was measured, not assumed;
 - [ ] simple averaging or voting was tested before stacking;
-- [ ] stacking, when used, relies on OOF predictions;
+- [ ] stacking, when used, relies on out-of-fold predictions;
 - [ ] ensemble weights were not tuned on the hidden test or leaderboard;
 - [ ] gain is stable across folds or seeds;
 - [ ] final runtime, memory, checkpoint, and submission logic are documented;
