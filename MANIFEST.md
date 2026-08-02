@@ -6,10 +6,11 @@
 |---|---|
 | Scheduled pathway | 78 Sessions across nine numbered Phase folders |
 | Canonical lesson storage | directly inside the relevant Phase folder |
-| Canonical launcher targets | 95 unique phase-local Markdown packets |
+| Canonical launcher targets | 101 unique phase-local Markdown packets |
 | Supporting assets | indexed setup, templates, assessments, resources, public documents, teacher planning, and readiness records |
 | AI History | eight English seminars, Sessions 33–40 |
 | Andrew ML mathematics bridge | Sessions 41–43 |
+| D2L concept-to-code bridge | six required packets embedded in Sessions 61, 62, 63, 65, 66, and 68 |
 
 ## Source Priority
 
