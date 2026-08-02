@@ -5,7 +5,7 @@ This directory converts the curriculum architecture into a directly teachable af
 ## Delivery Structure
 
 - **67-session core pathway** — orientation, Python, artificial-intelligence and machine-learning foundations, Round 1, data/scikit-learn, PyTorch/domain tasks, projects, reproductions, mocks, and final readiness.
-- **8-session competition sprint** — task recognition, data engineering, diagnosis-first tuning, PyTorch tuning, Optuna, efficiency, and a full sprint simulation.
+- **8-session competition sprint** — task formalisation, data quality, feature engineering, model selection, diagnosis-first tuning, model ensembling, and a full sprint simulation.
 - **75-session recommended full competition pathway** — the 67-session core plus the eight-session sprint.
 - **155-lesson mainline mission bank** — deeper practice, alternatives, reteaching, and extension.
 
@@ -20,7 +20,8 @@ See [Cohort Pathways and Required / Optional Map](../00_Course_Overview/Cohort_P
 - exact resource module, week, video, chapter, or timestamp assignments;
 - Round 1 paper-test drills and two mock forms;
 - Round 2 baseline, validation, experiment, submission, and timed-mock workflows;
-- an eight-session task-recognition, data-engineering, and hyperparameter-tuning sprint;
+- an eight-session workflow sprint using data quality → feature engineering → model selection → tuning → model ensembling;
+- stage gates for leakage, validation, feature evidence, model comparison, tuning, ensembling, and submission reliability;
 - starter-notebook specifications and reproducible dataset generators;
 - executable metrics, scikit-learn, PyTorch, data-generation, and submission-validation scripts;
 - a syllabus crosswalk and readiness audit;
@@ -55,12 +56,22 @@ Assessment-sensitive teacher keys belong in a separate private package. They mus
 
 Executable scaffolds are in `06_Starter_Code/ready_to_teach/`.
 
+## Competition-Sprint Evidence Files
+
+- [Phase 8 — Competition Sprint](Phase_8_Competition_Sprint.md)
+- [Module 28 — Competition Sprint Lessons](../02_Class_Missions/28-competition-sprint-task-data-tuning/README.md)
+- [Competition Sprint Experiment Log](../03_Templates/Competition_Sprint_Experiment_Log_Template.md)
+- [Competition Sprint Model Ensembling Record](../03_Templates/Competition_Sprint_Model_Ensembling_Record.md)
+- [Competition Sprint Submission Checklist](../03_Templates/Competition_Sprint_Submission_Checklist.md)
+
+PyTorch schedulers, Optuna, and broader automated search remain optional extension material after a manual tuning cycle. They do not replace Session 74 model ensembling.
+
 ## Selected Resource Maps
 
 - [Deep Learning Specialization Selected Content Map](DLS_Selected_Content_Map.md) — explains that the five-course specialization is selected conceptual support, not a second full curriculum.
 - [Hands-On Machine Learning and DeepLearning.AI PyTorch Selected Content Map](HandsOnML_PyTorch_Selected_Content_Map.md) — maps practical scikit-learn and PyTorch implementation resources.
 - [Resource Map and NOAI Syllabus Crosswalk](Resource_Map_and_Syllabus_Crosswalk.md) — maps full resource names to NOAI A–D areas and Class Mission modules.
-- [Competition Sprint Hyperparameter-Tuning Video Map](../02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md) — gives exact Coursera course sections, video titles, durations, and sprint use.
+- [Competition Sprint Hyperparameter-Tuning Video Map](../02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md) — gives exact required and optional Coursera sections, video titles, durations, and sprint use.
 
 ## 75-Minute After-School Club Classroom Flow
 
