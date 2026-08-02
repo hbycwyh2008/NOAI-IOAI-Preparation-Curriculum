@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 import re
 import sys
 from pathlib import Path
@@ -68,8 +67,14 @@ def main() -> int:
             continue
         if not readme.exists():
             errors.append(f"Missing phase README: {readme.relative_to(ROOT)}")
-        elif "Open the Session Launcher" not in readme.read_text(encoding="utf-8"):
-            errors.append(f"Phase README does not start from launcher: {readme.relative_to(ROOT)}")
+        else:
+            readme_text = readme.read_text(encoding="utf-8")
+            launcher_linked = any(
+                raw.split("#", 1)[0].strip() == "SESSION_LAUNCHER.md"
+                for _label, raw in LINK_RE.findall(readme_text)
+            )
+            if not launcher_linked:
+                errors.append(f"Phase README does not link to its launcher: {readme.relative_to(ROOT)}")
 
         local_sessions: list[int] = []
         for line in launcher.read_text(encoding="utf-8").splitlines():
