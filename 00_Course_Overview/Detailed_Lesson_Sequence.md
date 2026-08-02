@@ -101,20 +101,38 @@ Mathematics then continues just in time for every model in Sessions 44–58. Stu
 
 Use the [Andrew ML Mathematics Transition Bridge](../02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Andrew_ML_Mathematics_Bridge.md), [evidence template](../03_Templates/Andrew_ML_Mathematics_Bridge_Evidence_Template.md), and [rubric](../04_Assessment/Andrew_ML_Mathematics_Bridge_Rubric.md).
 
-## Phase 6 — Andrew Ng DL and PyTorch
+## Phase 6 — Andrew Ng DL, Selected D2L Bridges, and PyTorch
 
-59. Deep-learning map, tensor shapes, and baseline discipline
-60. Forward propagation and PyTorch tensors/`nn.Module`
-61. Backpropagation, autograd, and complete training loop
-62. Initialisation, optimisers, BatchNorm, Dropout, and regularisation
-63. Convolutional-neural-network concepts and shape reasoning
-64. PyTorch image-classification task
-65. Transfer learning and augmentation
-66. Recurrent neural networks and long short-term memory networks
-67. PyTorch text or time-series classification
-68. Attention and Transformer intuition
-69. Audio or multimodal task
-70. Deep-learning capstone: baseline versus deep model
+59. Deep-learning map, tensor shapes, and baseline discipline; optional D2L tensor/device reference
+60. Forward propagation and PyTorch tensors/`nn.Module`; optional D2L layers, blocks, and parameter-management reference
+61. Backpropagation, autograd, complete training loop, and required D2L autograd/computational-graph reconstruction
+62. Initialisation, optimisers, BatchNorm, Dropout, regularisation, and required D2L controlled-comparison bridge
+63. Convolutional-neural-network concepts, hand convolution, parameter counts, shape reasoning, and required D2L convolution bridge
+64. PyTorch image-classification task; optional D2L ResNet reference
+65. Transfer learning, augmentation, and required D2L fine-tuning comparison
+66. Recurrent neural networks, backpropagation through time, long short-term memory networks, and required D2L sequence bridge
+67. PyTorch text or time-series classification; optional D2L preprocessing or seq2seq reference
+68. Attention and Transformer intuition, hand calculation, masked tensor trace, and required D2L attention bridge
+69. Audio or multimodal task; use task-specific official documentation rather than forcing a D2L chapter
+70. Deep-learning capstone: baseline versus deep model; revisit only the D2L sections needed to explain the selected model
+
+### D2L Selection Rule
+
+D2L is a concept-to-code bridge, not a separate course or additional phase. Required D2L bridge packets are embedded in Sessions 61, 62, 63, 65, 66, and 68 without increasing the 78-session schedule. Sessions 59, 60, 64, and 67 contain optional references only.
+
+Use the [D2L Selective Reading Map](../05_Resources/D2L_Selective_Reading_Map.md). Every required bridge follows this evidence path:
+
+```text
+assigned D2L fragment
+→ equations, shapes, and assumptions
+→ guided reproduction
+→ close the source
+→ independent PyTorch rebuild
+→ failure test and correction
+→ explanation and limitation
+```
+
+A completed or copied D2L notebook is not mastery evidence.
 
 ## Phase 7 — Model Comparison, EDA, and Evaluation
 
