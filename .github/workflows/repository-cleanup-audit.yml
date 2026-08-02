@@ -1,0 +1,40 @@
+name: Repository Cleanup Audit
+
+on:
+  push:
+    branches:
+      - agent/repository-cleanup-audit
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-clean-merged-branches:
+    if: github.event_name == 'push' || github.head_ref == 'agent/repository-cleanup-audit'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/repository-cleanup-audit
+          fetch-depth: 0
+
+      - name: Generate repository cleanup audit
+        run: python scripts/repository_cleanup_audit.py
+
+      - name: Remove merged historical branches
+        run: |
+          git push origin --delete agent/close-public-readiness-gaps || true
+          git push origin --delete agent/rebuild-class-missions-pathway || true
+
+      - name: Commit audit and remove one-time machinery
+        run: |
+          git rm -f scripts/repository_cleanup_audit.py
+          git rm -f .github/workflows/repository-cleanup-audit.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Audit repository redundancy, links, and stale files"
+          git push origin HEAD:agent/repository-cleanup-audit
