@@ -224,7 +224,7 @@ for i in range(160):
     else:
         yy,xx=np.ogrid[:20,:20]; canvas[(xx-10)**2+(yy-10)**2<=22]=1
     images.append(np.clip(canvas+rng.normal(0,.1,canvas.shape),0,1)); labels.append(label)
-X=torch.tensor(np.array(images)[:,None]); y=torch.tensor(labels); train=DataLoader(TensorDataset(X[:120],y[:120]),batch_size=24,shuffle=True)
+X=torch.tensor(np.array(images)[:,None],dtype=torch.float32); y=torch.tensor(labels,dtype=torch.long); train=DataLoader(TensorDataset(X[:120],y[:120]),batch_size=24,shuffle=True)
 model=nn.Sequential(nn.Conv2d(1,8,3,padding=1),nn.ReLU(),nn.MaxPool2d(2),nn.Conv2d(8,12,3,padding=1),nn.ReLU(),nn.AdaptiveAvgPool2d(1),nn.Flatten(),nn.Linear(12,2)).to(device)
 opt=torch.optim.Adam(model.parameters(),lr=.01); loss_fn=nn.CrossEntropyLoss()
 for _ in range(3):
