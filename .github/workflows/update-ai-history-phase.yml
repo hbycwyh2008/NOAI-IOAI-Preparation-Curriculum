@@ -4,12 +4,16 @@ on:
   push:
     branches:
       - agent/rebuild-class-missions-pathway
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
   update:
+    if: github.event_name == 'push' || github.head_ref == 'agent/rebuild-class-missions-pathway'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
