@@ -5,8 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-REQUIRED_FILES = (
-    "02_Class_Missions/04_AI_History_and_Thinking_Humans/README.md",
+AI_HISTORY_LESSONS = (
     "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-01-what-counts-as-intelligence.md",
     "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-02-neural-networks-and-ai-cycles.md",
     "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-03-how-machines-recognise-images.md",
@@ -15,9 +14,28 @@ REQUIRED_FILES = (
     "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-06-language-processing-and-understanding.md",
     "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-07-common-sense-abstraction-and-analogy.md",
     "02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-08-how-intelligent-is-ai.md",
+)
+
+CANONICAL_TEACHER_OVERVIEWS = (
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_0_Orientation_and_Evidence.md",
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_1_CS50P_Python.md",
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_2_NumPy_Pandas_Visualisation.md",
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_3_Bohrium_ML_Foundations.md",
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_4_AI_History_and_Thinking_Humans.md",
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_5_Andrew_Ng_ML_Model_Labs.md",
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_6_Andrew_Ng_DL_PyTorch.md",
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_7_Model_Comparison_EDA_Evaluation.md",
+    "09_Teacher_Planning/Phase_Overviews/Canonical_Phase_8_Tuning_Ensembling_Competition.md",
+)
+
+REQUIRED_FILES = (
+    "02_Class_Missions/04_AI_History_and_Thinking_Humans/README.md",
+    *AI_HISTORY_LESSONS,
     "03_Templates/AI_History_Reading_Evidence_Template.md",
     "04_Assessment/AI_History_Phase_Rubric.md",
     "09_Teacher_Planning/Pilot/Representative_Pilot_Matrix.md",
+    "09_Teacher_Planning/Phase_Overviews/README.md",
+    *CANONICAL_TEACHER_OVERVIEWS,
     "10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md",
     "10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md",
     "10_Ready_to_Teach_Pack/Student_Runtime_Qualification_Record.md",
@@ -28,6 +46,7 @@ REQUIRED_FILES = (
 
 AUTHORITATIVE_MARKERS = {
     "README.md": ("78 sessions", "AI history", "embedded Kaggle practice"),
+    "MANIFEST.md": ("Sessions 1–78", "validate_readiness_contract.py", "embedded Kaggle practice"),
     "02_Class_Missions/README.md": (
         "Canonical 78-Session Route",
         "AI History and Thinking Humans",
@@ -40,6 +59,16 @@ AUTHORITATIVE_MARKERS = {
         "78 scheduled sessions",
         "Phase 4 — AI History and Thinking Humans",
         "Kaggle Learn is embedded",
+    ),
+    "00_Course_Overview/Curriculum_Completeness_Audit.md": (
+        "Canonical scheduled pathway | 78 sessions",
+        "100% public file-structure and internal-consistency coverage",
+        "validate_readiness_contract.py",
+    ),
+    "09_Teacher_Planning/Phase_Overviews/README.md": (
+        "Sessions 1–78",
+        "Canonical_Phase_4_AI_History_and_Thinking_Humans.md",
+        "Legacy Thematic Summaries",
     ),
     "10_Ready_to_Teach_Pack/README.md": (
         "canonical 78-session pathway",
@@ -63,6 +92,7 @@ BANNED_AUTHORITATIVE_TEXT = (
     "75 scheduled sessions",
     "Sessions 1–75",
     "Recommended full pathway | 75 sessions",
+    "67 core sessions plus eight competition-sprint sessions",
     "Phase 4 | 33–40 | Kaggle Learn workflow refresh",
 )
 
@@ -75,9 +105,13 @@ LESSON_MARKERS = (
     "## Gate",
 )
 
-
-def read(relative: str) -> str:
-    return (ROOT / relative).read_text(encoding="utf-8")
+OVERVIEW_MARKERS = (
+    "## Purpose",
+    "## Entry Conditions",
+    "## Delivery Priorities",
+    "## Required Evidence",
+    "## Exit Gate",
+)
 
 
 def main() -> int:
@@ -119,6 +153,17 @@ def main() -> int:
         if "Required reading before class" not in text:
             errors.append(f"Missing pre-class reading assignment: {path.relative_to(ROOT)}")
 
+    for relative in CANONICAL_TEACHER_OVERVIEWS:
+        path = ROOT / relative
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for marker in OVERVIEW_MARKERS:
+            if marker not in text:
+                errors.append(f"Missing '{marker}': {relative}")
+        if "**Sessions:**" not in text or "**Canonical folder:**" not in text:
+            errors.append(f"Missing session or canonical-folder metadata: {relative}")
+
     teacher_pack = ROOT / "10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md"
     if teacher_pack.exists():
         text = teacher_pack.read_text(encoding="utf-8")
@@ -154,6 +199,7 @@ def main() -> int:
     print("Readiness contract validation passed.")
     print("Canonical pathway: 78 sessions")
     print("AI History phase: 8 complete English seminars")
+    print("Canonical teacher overviews: 9")
     print("Public readiness artifacts: present and internally consistent")
     print("Operational readiness remains cohort-, runtime-, security-, access-, and year-specific")
     return 0
