@@ -3,7 +3,7 @@
 **Status:** Optional extension; not one of the eight scheduled competition-sprint sessions.  
 **Suggested duration:** 75 minutes after Lesson 06, or independent enrichment.  
 **Pre-class required viewing:** up to 33 minutes.  
-**In-class boundary:** the ordinary Skill Warm-Up remains eight minutes; do not replay the full package in class.
+**In-class boundary:** do not replay the full package during the lesson.
 
 ## Why This Is Optional
 
@@ -33,6 +33,20 @@ Module 1 — Hyperparameter Optimization
 4. Optimizing Model Efficiency — 11 min
 
 Total optional package: **33 minutes**.
+
+## Optional Skill Warm-Up — 0–8 min
+
+Do not replay the 33-minute package. Complete this retrieval check:
+
+```text
+Objective metric and direction:
+Fixed validation protocol:
+One logarithmic parameter range:
+One categorical parameter set:
+Maximum trials or time budget:
+Invalid-trial rule:
+Stopping rule:
+```
 
 ## Entry Gate
 
