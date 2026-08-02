@@ -1,13 +1,26 @@
-# Lesson 07 — PyTorch Tuning with Schedulers, Optuna, and Efficiency Constraints
+# Optional Extension — PyTorch Schedulers, Optuna, and Efficiency Constraints
 
-**Duration:** 75 minutes  
-**Pre-class required viewing:** 33 minutes
+**Status:** Optional extension; not one of the eight scheduled competition-sprint sessions.  
+**Suggested duration:** 75 minutes after Lesson 06, or independent enrichment.  
+**Pre-class viewing:** up to 33 minutes.
+
+## Why This Is Optional
+
+Automated search can improve an already valid system, but it is lower priority than:
+
+1. data quality and leakage prevention;
+2. a reproducible feature pipeline;
+3. model selection and baseline comparison;
+4. manual diagnosis-first tuning;
+5. model ensembling and submission reliability.
+
+Students should use this extension only when they can already explain a manual controlled experiment and the competition has enough compute and time budget.
 
 ## Learning Target
 
-Students can move from manual controlled experiments to limited automated search without wasting the competition compute budget.
+Students can design a small automated search with a fixed validation protocol, justified ranges, strict resource limits, pruning rules, and an efficiency-aware selection decision.
 
-## Pre-Class Required Video Resource
+## Pre-Class Resource
 
 **Course 2 — PyTorch: Techniques and Ecosystem Tools**, part of the **DeepLearning.AI PyTorch for Deep Learning Professional Certificate**  
 Coursera: https://www.coursera.org/learn/pytorch-techniques-and-ecosystem-tools  
@@ -18,81 +31,59 @@ Module 1 — Hyperparameter Optimization
 3. Hyperparameter Optimization with Optuna — 10 min
 4. Optimizing Model Efficiency — 11 min
 
-**Pre-class required viewing time:** 33 minutes.
+## Entry Gate
 
-Before class, submit a note identifying the optimisation objective, one justified search range, one efficiency constraint, and one reason a trial should be stopped or rejected.
+Automated tuning is allowed only when all are true:
 
-See [Hyperparameter-Tuning Video Resource Map](Hyperparameter_Tuning_Video_Resource_Map.md).
+- a valid baseline and selected model exist;
+- data and feature pipelines are frozen;
+- the metric and validation protocol are fixed;
+- at least one manual tuning cycle is documented;
+- the student can state what each searchable parameter controls;
+- the trial, time, GPU, memory, and checkpoint budget is explicit.
 
-## 1. Skill Warm-Up — 0–8 min
-
-Do not replay the full 33-minute package. Complete this retrieval check:
-
-```text
-Objective metric and direction:
-Fixed validation protocol:
-One logarithmic parameter range:
-One categorical parameter set:
-Maximum trials or time budget:
-Invalid-trial rule:
-Stopping rule:
-```
-
-## 2. Talk Robin 1 — 8–15 min
-
-Discuss what should be manually understood before an automated search is allowed.
-
-## 3. Entry Check — 15–22 min
-
-Answer:
-
-1. What metric will the search optimise?
-2. What validation split will every trial use?
-3. Which parameters are searchable?
-4. Which parameters must remain fixed?
-5. What is the trial/time/GPU budget?
-6. What makes a trial invalid?
-
-## 4. Core Pattern — 22–35 min
+## Core Pattern
 
 ```text
-Manual Baseline
+Manual Tuning Evidence
 → Justified Search Space
 → Fixed Validation Protocol
-→ Trial Budget
-→ Pruning / Early Stop
+→ Trial and Time Budget
+→ Pruning / Invalid-Trial Rules
 → Score + Runtime + Memory Comparison
-→ Refit or Confirm
+→ Confirm the Winner Outside the Search Loop
 ```
 
-Search-space rules:
+## Search-Space Rules
 
 - use logarithmic scales for learning rate and weight decay;
 - use small categorical sets for optimisers and schedulers;
-- bound architecture choices tightly;
-- save the seed, configuration, checkpoint, and metric history;
-- do not optimise only for score when runtime or memory can invalidate the submission.
+- tightly bound architecture choices;
+- keep data, features, folds, metric, and seed policy fixed;
+- save configuration, checkpoint, best epoch, metric history, runtime, and rejection reason;
+- reject configurations that exceed memory, latency, or submission limits even if their validation score is high.
 
-## 5. Guided Practice — 35–53 min
-
-Design an automated-search specification:
+## Required Search Specification
 
 | Item | Decision |
 |---|---|
-| Objective metric |  |
-| Direction | maximise / minimise |
-| Learning-rate range |  |
-| Weight-decay range |  |
+| Objective metric and direction |  |
+| Fixed validation protocol |  |
+| Searchable parameters |  |
+| Fixed parameters |  |
+| Learning-rate scale/range |  |
+| Weight-decay scale/range |  |
 | Batch-size choices |  |
-| Optimiser choices |  |
+| Optimiser/scheduler choices |  |
 | Maximum trials |  |
-| Time limit |  |
+| Time/GPU budget |  |
 | Pruning rule |  |
 | Invalid-trial rule |  |
+| Final confirmation procedure |  |
 
-## 6. Independent Rebuild — 53–67 min
+## Implementation Evidence
 
-Use `06_Starter_Code/ready_to_teach/optuna_tuning_template.py` or write pseudocode for a small search wrapper that records:
+Use `06_Starter_Code/ready_to_teach/optuna_tuning_template.py` or an equivalent wrapper that records:
 
 ```text
 trial number
@@ -105,18 +96,16 @@ checkpoint path
 keep / reject reason
 ```
 
-Then choose one configuration using both performance and efficiency.
-
-## 7. Talk Robin 2 + Evidence — 67–75 min
-
-Submit:
-
-- pre-class viewing note;
-- Skill Warm-Up search specification;
-- justified search-space table;
-- trial log or pseudocode;
-- one explanation of why the highest validation score may not be the best competition model.
-
 ## Exit Standard
 
-Automated tuning is allowed only after students can explain the baseline, search space, objective, budget, and stopping rule.
+The student must explain:
+
+- why the search space follows from prior evidence;
+- why the budget is safe;
+- why the best trial is not automatically the final model;
+- how the selected configuration was rerun or confirmed;
+- whether automated search produced enough gain to justify its cost.
+
+Return to the scheduled sprint sequence at:
+
+[Lesson 07 — Model Ensembling](lesson-07-model-ensembling.md).
