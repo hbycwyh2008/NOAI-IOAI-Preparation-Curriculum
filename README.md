@@ -26,6 +26,8 @@ CS50P Python
 → full competition simulation
 ```
 
+The final **Competition sprint** integrates diagnosis-first tuning, model ensembling, fresh-runtime execution, submission validation, and postmortem practice.
+
 ## Curriculum Layers
 
 | Layer | Count | Purpose |
