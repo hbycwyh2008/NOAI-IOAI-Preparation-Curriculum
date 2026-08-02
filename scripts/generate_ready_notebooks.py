@@ -225,9 +225,9 @@ for i in range(160):
         yy,xx=np.ogrid[:20,:20]; canvas[(xx-10)**2+(yy-10)**2<=22]=1
     images.append(np.clip(canvas+rng.normal(0,.1,canvas.shape),0,1)); labels.append(label)
 X=torch.tensor(np.array(images)[:,None],dtype=torch.float32); y=torch.tensor(labels,dtype=torch.long); train=DataLoader(TensorDataset(X[:120],y[:120]),batch_size=24,shuffle=True)
-model=nn.Sequential(nn.Conv2d(1,8,3,padding=1),nn.ReLU(),nn.MaxPool2d(2),nn.Conv2d(8,12,3,padding=1),nn.ReLU(),nn.AdaptiveAvgPool2d(1),nn.Flatten(),nn.Linear(12,2)).to(device)
+model=nn.Sequential(nn.Conv2d(1,8,3,padding=1),nn.ReLU(),nn.MaxPool2d(2),nn.Conv2d(8,16,3,padding=1),nn.ReLU(),nn.MaxPool2d(2),nn.Flatten(),nn.Linear(16*5*5,16),nn.ReLU(),nn.Linear(16,2)).to(device)
 opt=torch.optim.Adam(model.parameters(),lr=.01); loss_fn=nn.CrossEntropyLoss()
-for _ in range(3):
+for _ in range(5):
     for xb,yb in train:
         xb,yb=xb.to(device),yb.to(device); opt.zero_grad(); loss=loss_fn(model(xb),yb); loss.backward(); opt.step()
 with torch.no_grad(): acc=(model(X[120:].to(device)).argmax(1).cpu()==y[120:]).float().mean().item()
