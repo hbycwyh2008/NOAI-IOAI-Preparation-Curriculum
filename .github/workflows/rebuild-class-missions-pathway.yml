@@ -1,0 +1,31 @@
+name: Rebuild Class Missions Pathway
+
+on:
+  push:
+    branches:
+      - agent/rebuild-class-missions-pathway
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/rebuild-class-missions-pathway
+          fetch-depth: 0
+
+      - name: Reorganise Class Missions
+        run: python scripts/restructure_class_missions.py
+
+      - name: Commit migration
+        run: |
+          git rm scripts/restructure_class_missions.py
+          git rm .github/workflows/rebuild-class-missions-pathway.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Rebuild Class Missions around the learning pathway"
+          git push origin HEAD:agent/rebuild-class-missions-pathway
