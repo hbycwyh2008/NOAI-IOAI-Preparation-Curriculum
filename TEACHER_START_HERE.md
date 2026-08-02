@@ -1,10 +1,21 @@
 # Teacher Start Here
 
-## Use One Teaching Order
+## Normal Teaching Workflow
 
-Begin at [Class Missions — Canonical Learning Pathway](02_Class_Missions/README.md). The phase folders define the scheduled route; `_Lesson_Library` is a bank for selection and remediation, not an alternative sequence.
+```text
+open Class Missions
+→ choose the assigned Phase
+→ open SESSION_LAUNCHER.md
+→ click the assigned Session
+→ teach the exact linked lesson
+→ collect the named evidence
+```
 
-Use the [canonical teacher phase overviews](09_Teacher_Planning/Phase_Overviews/README.md) for concise planning summaries. Legacy thematic overview files do not define session ranges.
+Begin at [Class Missions — Start Here](02_Class_Missions/README.md) and read [How to Use Class Missions](02_Class_Missions/HOW_TO_USE_CLASS_MISSIONS.md).
+
+Do **not** browse `_Lesson_Library` to choose a class. The library is a storage bank for lesson bodies, remediation, extension, and maintenance; the Phase launchers define the scheduled route.
+
+Use the [canonical teacher phase overviews](09_Teacher_Planning/Phase_Overviews/README.md) for planning summaries. They do not replace the session launchers.
 
 ## Required Order
 
@@ -13,8 +24,8 @@ Use the [canonical teacher phase overviews](09_Teacher_Planning/Phase_Overviews/
 3. NumPy, Pandas, and Matplotlib — Sessions 13–18
 4. 北京市十一学校《中学机器学习十五讲》 on Bohrium — Sessions 19–32
 5. AI history and critical reading through Melanie Mitchell’s *Artificial Intelligence: A Guide for Thinking Humans* — Sessions 33–40
-6. Andrew Ng Machine Learning Specialization with StatQuest, 3Blue1Brown, embedded Kaggle practice, model recognition, and typical tasks — Sessions 41–58
-7. Andrew Ng Deep Learning Specialization paired with PyTorch and domain tasks — Sessions 59–70
+6. Andrew Ng Machine Learning, mathematics transition, StatQuest, 3Blue1Brown, embedded Kaggle practice, model recognition, and typical tasks — Sessions 41–58
+7. Andrew Ng Deep Learning paired with PyTorch and domain tasks — Sessions 59–70
 8. Model comparison, EDA, data quality, feature engineering, evaluation, and error analysis — Sessions 71–74
 9. Diagnosis-first tuning, model ensembling, competition simulation, and postmortem — Sessions 75–78
 
@@ -22,33 +33,50 @@ Use the [canonical teacher phase overviews](09_Teacher_Planning/Phase_Overviews/
 
 1. Archive current official NOAI/IOAI rules and permitted-tool information.
 2. Run the student diagnostic.
-3. Use the [Detailed 78-Session Sequence](00_Course_Overview/Detailed_Lesson_Sequence.md).
-4. Review the [Public Repository Readiness Dashboard](10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md).
-5. Ensure that students have legal access to the Melanie Mitchell book before Sessions 33–40.
-6. Use the [Phase 4 Teacher Pack](10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md), reading template, and rubric.
-7. Select remediation or extension only from linked lesson-library modules.
-8. Complete the [External Access Verification Record](10_Ready_to_Teach_Pack/External_Access_Verification_Record.md).
-9. Complete the [Student Runtime Qualification Record](10_Ready_to_Teach_Pack/Student_Runtime_Qualification_Record.md).
-10. Run both public validators and the Ready-to-Teach workflow.
-11. Collect one evidence package per mission.
+3. Open the assigned Phase launcher rather than selecting a lesson-bank module.
+4. Use the [Detailed 78-Session Sequence](00_Course_Overview/Detailed_Lesson_Sequence.md) only as an overview.
+5. Review the [Public Repository Readiness Dashboard](10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md).
+6. Confirm legal book access before Sessions 33–40 and use the [Phase 4 Teacher Pack](10_Ready_to_Teach_Pack/Phase_4_AI_History_and_Thinking_Humans.md).
+7. Before Session 41, run the mathematics diagnostic and use the [Phase 5 Mathematics Teacher Pack](10_Ready_to_Teach_Pack/Phase_5_Andrew_Ng_ML_Mathematics_Bridge.md).
+8. Select remediation or extension from `_Lesson_Library` only after a launcher/lesson identifies the need.
+9. Complete the [External Access Verification Record](10_Ready_to_Teach_Pack/External_Access_Verification_Record.md).
+10. Complete the [Student Runtime Qualification Record](10_Ready_to_Teach_Pack/Student_Runtime_Qualification_Record.md).
+11. Collect one evidence package per session.
 12. Record representative pilots using the [Representative Pilot Matrix](09_Teacher_Planning/Pilot/Representative_Pilot_Matrix.md).
 13. Keep solutions, hidden labels, private tests, and calibration material in the private teacher-key repository.
 14. Complete the [Release Readiness Gates](10_Ready_to_Teach_Pack/Release_Readiness_Gates.md) before formal graded use.
 
-## Reading-Seminar Rule
+## Special Phase Rules
 
-Sessions 33–40 assume that assigned pages are read before class. Do not replace the learning cycle with seventy minutes of silent reading. The seminar must preserve retrieval, discussion, entry checking, claim analysis, guided practice, independent reconstruction, and evidence.
+### Sessions 33–40 — Reading Seminars
+
+Assigned pages are read before class. Preserve retrieval, discussion, entry checking, claim analysis, guided practice, independent reconstruction, and evidence.
+
+### Sessions 41–43 — Andrew ML Mathematics Transition
+
+Do not add a disconnected university-mathematics prerequisite and do not skip mathematics. Use the bridge:
+
+```text
+task
+→ notation and shapes
+→ prediction
+→ loss/objective
+→ gradient or rule
+→ metric
+→ code
+→ limitations
+```
+
+Students must translate equations into task language and code, perform small calculations, and explain gradient direction and scale effects.
 
 ## Resource Boundaries
 
 - CS50P is the Python spine.
-- Bohrium foundations are completed before the AI-history phase.
-- Melanie Mitchell’s book supplies historical context, conceptual boundaries, and evidence-based judgement.
-- Kaggle is embedded practice within Andrew Ng ML, not a separate theory phase.
-- Andrew Ng ML is paired with just-in-time StatQuest and 3Blue1Brown intuition.
-- Model recognition and typical tasks are continuous.
-- Andrew Ng DL concepts are paired immediately with PyTorch implementations.
-- EDA and evaluation are introduced inside tasks, then systematised after the model curriculum.
+- Bohrium foundations precede the AI-history and Andrew ML phases.
+- Melanie Mitchell supplies historical context and evidence-based judgement.
+- Kaggle is embedded practice inside Andrew ML, not a separate phase.
+- StatQuest and 3Blue1Brown are selected just in time.
+- Andrew Ng DL concepts are paired immediately with PyTorch.
 - Tuning follows diagnosis; ensembling follows stable single models.
 
 ## Validation Commands
@@ -56,6 +84,7 @@ Sessions 33–40 assume that assigned pages are read before class. Do not replac
 ```bash
 python scripts/validate_curriculum_structure.py
 python scripts/validate_readiness_contract.py
+python scripts/validate_class_mission_launchers.py
 python scripts/check_required_links.py
 ```
 
@@ -66,5 +95,3 @@ Passing automated checks establishes public repository coverage for maintained a
 Every ordinary lesson follows:
 
 **Skill Warm-Up → Talk Robin 1 → Entry Check → Core Pattern → Guided Practice → Independent Rebuild → Talk Robin 2 + Evidence**
-
-Do not schedule all 171 reusable lesson/resource files.
