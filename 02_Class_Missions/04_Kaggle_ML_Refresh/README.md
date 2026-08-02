@@ -5,6 +5,8 @@
 
 Kaggle Learn is used as a short workflow refresh. It is not the principal theory course and does not replace Andrew Ng Machine Learning Specialization.
 
+Use the [Kaggle Learn Refresh Map](../../05_Resources/Kaggle_Learn_Refresh_Map.md) for the official courses, selected material, student actions, and evidence.
+
 ## Five Sessions
 
 1. Pandas refresh — features, labels, types, and missingness
