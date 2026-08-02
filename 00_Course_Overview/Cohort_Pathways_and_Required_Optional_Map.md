@@ -117,28 +117,60 @@ Module:
 Sequence:
 
 ```text
-Task recognition
-→ baseline and metric selection
-→ data audit and validation
-→ data cleaning and feature engineering
+Task recognition and formalisation
+→ data quality, validation, and leakage prevention
+→ feature engineering and reproducible pipelines
+→ model selection, baseline ladder, and error analysis
 → classical machine-learning tuning
 → deep-learning tuning
-→ PyTorch schedulers and automated tuning
+→ model ensembling with held-out or OOF predictions
 → full sprint simulation
 ```
 
-Students enter this pathway only after they can already build a valid baseline.
+The fixed modelling order is:
 
-### Required tuning resources
+```text
+data quality
+→ feature engineering
+→ model selection
+→ tuning
+→ model ensembling
+```
 
+Students enter this pathway only after they can train a basic model. The sprint retrains them to protect data and validation quality before model complexity.
+
+### Required sprint resources
+
+- Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow.
+- Scikit-Learn User Guide.
 - Course 2 — Advanced Learning Algorithms, Week 3: Advice for Applying Machine Learning.
 - Course 2 — Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization.
-- Course 2 — PyTorch: Techniques and Ecosystem Tools, Module 1: Hyperparameter Optimization.
+- `02_Class_Missions/28-competition-sprint-task-data-tuning/README.md`.
 - `02_Class_Missions/28-competition-sprint-task-data-tuning/Hyperparameter_Tuning_Video_Resource_Map.md`.
+- `03_Templates/Competition_Sprint_Experiment_Log_Template.md`.
+- `03_Templates/Competition_Sprint_Model_Ensembling_Record.md`.
+
+### Optional extension resources
+
+- Course 2 — PyTorch: Techniques and Ecosystem Tools, Module 1: Hyperparameter Optimization.
+- `lesson-07-pytorch-automated-tuning.md`.
+- `06_Starter_Code/ready_to_teach/optuna_tuning_template.py`.
+
+Optuna and broad automated search are assigned only after the student can explain a manual tuning cycle and when the compute/time budget justifies them.
 
 ### Exit gate
 
-Students should be able to identify the highest-value next experiment instead of tuning randomly, maintain an experiment log, stop unproductive searches, and reserve enough time for error analysis, fresh-runtime execution, and submission validation.
+Students should be able to:
+
+1. formalise `X`, `y`, metric, prediction-time boundary, constraints, and submission schema;
+2. defend the data-quality audit, frozen split, and leakage tests;
+3. build one reproducible feature pipeline and prove feature value with an ablation;
+4. preserve a constant/rule baseline and compare simple and contrasting models under one protocol;
+5. use error analysis to select a tuning action;
+6. document a stable manual tuning gain;
+7. measure model diversity and compare an ensemble with the best single model;
+8. stop complexity early enough for fresh-runtime and submission validation;
+9. complete a full sprint postmortem with the highest-value next action.
 
 ## Pathway 4 — IOAI Advanced Extension
 
@@ -174,4 +206,4 @@ Before the cohort begins, create a schedule that identifies:
 6. the exact required resource segment for each lesson;
 7. the contingency plan when a student fails an entry or phase gate.
 
-Do not schedule all 171 lesson files automatically. Assign the shortest pathway that still reaches the required competition standard, then add lessons based on evidence.
+Do not schedule all lesson files automatically. Assign the shortest pathway that still reaches the required competition standard, then add lessons based on evidence.
