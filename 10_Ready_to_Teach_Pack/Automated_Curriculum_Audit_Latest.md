@@ -1,6 +1,6 @@
 # Automated Curriculum Audit
 
-- Commit: `c31384528b1c74214ffccb49b7e9a1b7f39e74d0`
+- Commit: `58e08018a41814232ae40d331aca59f52fee52f6`
 - Runner: GitHub Actions / Python 3.12
 - Exit code: ``
 
@@ -8,7 +8,9 @@
 Curriculum structure validation failed:
 - '100% public file-structure coverage' not found in 00_Course_Overview/Curriculum_Completeness_Audit.md
 - '100% public file-structure coverage' not found in 09_Teacher_Planning/Public_Repo_100_Percent_Readiness_Definition.md
-Readiness contract validation failed:
-- Missing '## Core Pattern': 02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-08-how-intelligent-is-ai.md
-- Missing '## Exit Evidence': 02_Class_Missions/04_AI_History_and_Thinking_Humans/lesson-08-how-intelligent-is-ai.md
+Readiness contract validation passed.
+Canonical pathway: 78 sessions
+AI History phase: 8 complete English seminars
+Public readiness artifacts: present and internally consistent
+Operational readiness remains cohort-, runtime-, security-, access-, and year-specific
 ```
