@@ -6,6 +6,7 @@ The canonical 78-Session route is organised by learning dependency.
 
 - [Course Map](Course_Map.md)
 - [Detailed 78-Session Sequence](Detailed_Lesson_Sequence.md)
+- [Workflow Competency Crosswalk](Workflow_Competency_Crosswalk.md)
 - [Pacing Guide](Pacing_Guide.md)
 - [Cohort Pathways and Required / Optional Map](Cohort_Pathways_and_Required_Optional_Map.md)
 - [Round 1 and Round 2 Pathway](Round_1_and_Round_2_Pathway.md)
@@ -19,6 +20,8 @@ The canonical 78-Session route is organised by learning dependency.
 - [Curriculum Completeness and Consistency Audit](Curriculum_Completeness_Audit.md)
 - [Repository Architecture Manifest](../MANIFEST.md)
 - [Class Missions](../02_Class_Missions/README.md)
+- [Student Mastery Dashboard](../01_Student_Start/07_Mastery_Dashboard.md)
+- [Cohort Mastery Review Protocol](../09_Teacher_Planning/Cohort_Mastery_Review_Protocol.md)
 - [Public Repository Readiness Dashboard](../10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md)
 
 ```text
@@ -32,4 +35,16 @@ CS50P Python
 → tuning + ensembling + competition
 ```
 
-Canonical lesson bodies live inside numbered Phase folders. the former extension library contains extension and remediation material only.
+The recurring modeling backbone is:
+
+```text
+task formalisation
+→ data quality
+→ feature engineering
+→ model selection and baseline
+→ diagnosis and controlled tuning
+→ ensembling
+→ reproducibility check and postmortem
+```
+
+Canonical lesson bodies live inside numbered Phase folders. The former extension library contains extension and remediation material only. The workflow crosswalk and mastery records support this pathway without creating parallel Sessions.

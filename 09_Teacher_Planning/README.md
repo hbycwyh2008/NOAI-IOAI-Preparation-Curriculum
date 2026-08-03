@@ -5,9 +5,18 @@
 - [Class Missions](../02_Class_Missions/README.md)
 - [Canonical teacher phase overviews](Phase_Overviews/README.md)
 - [Detailed 78-Session Sequence](../00_Course_Overview/Detailed_Lesson_Sequence.md)
+- [Workflow Competency Crosswalk](../00_Course_Overview/Workflow_Competency_Crosswalk.md)
 - [Pacing Guide](../00_Course_Overview/Pacing_Guide.md)
 - [Cohort Pathways](../00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md)
 - [Repository Architecture Manifest](../MANIFEST.md)
+
+## Mastery and Cohort Review
+
+- [Cohort Mastery Review Protocol](Cohort_Mastery_Review_Protocol.md)
+- [Student Mastery Dashboard](../01_Student_Start/07_Mastery_Dashboard.md)
+- [Diagnostic Guides](Diagnostic_Guides/README.md)
+
+Use the cohort protocol after every three ordinary Sessions, at the end of each Phase, and at the named workflow checkpoints. Distinguish completion, reconstruction, and transfer before advancing students.
 
 ## Special Delivery Packs
 

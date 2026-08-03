@@ -9,5 +9,8 @@ Complete these files in order before or during the opening sessions:
 5. [How to Submit Evidence](04_How_To_Submit_Evidence.md)
 6. [AI Use Policy](05_AI_Use_Policy.md)
 7. [Competition Notebook Rules](06_Competition_Notebook_Rules.md)
+8. [Student Mastery Dashboard](07_Mastery_Dashboard.md)
 
-The canonical class entry point remains [Class Missions](../02_Class_Missions/README.md).
+Copy the mastery dashboard into your own course repository and update it after every assigned Session. Each claimed level must link to evidence that you can explain and reconstruct.
+
+The canonical class entry point remains [Class Missions](../02_Class_Missions/README.md). Use the [Workflow Competency Crosswalk](../00_Course_Overview/Workflow_Competency_Crosswalk.md) to understand the evidence gates that recur across the course.

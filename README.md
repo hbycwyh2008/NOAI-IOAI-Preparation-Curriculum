@@ -8,6 +8,7 @@ A mastery-focused artificial-intelligence curriculum for secondary-school studen
 - [Student Start Here](STUDENT_START_HERE.md)
 - [Class Missions](02_Class_Missions/README.md)
 - [Detailed 78-Session Sequence](00_Course_Overview/Detailed_Lesson_Sequence.md)
+- [Workflow Competency Crosswalk](00_Course_Overview/Workflow_Competency_Crosswalk.md)
 
 ## Canonical Learning Path
 
@@ -28,6 +29,29 @@ CS50P Python
 → tuning, ensembling, and competition simulation
 ```
 
+## Modeling Workflow Backbone
+
+Every substantial data or model task uses the same evidence-backed decision loop:
+
+```text
+task formalisation
+→ data quality
+→ feature engineering
+→ model selection and baseline
+→ diagnosis and controlled tuning
+→ ensembling
+→ reproducibility check and postmortem
+```
+
+The five core competition stages are **data quality → feature engineering → model selection → tuning → ensembling**. They are introduced gradually and then integrated in Sessions 71–78. See the [Workflow Competency Crosswalk](00_Course_Overview/Workflow_Competency_Crosswalk.md).
+
+## Mastery Execution System
+
+- Students maintain the [Student Mastery Dashboard](01_Student_Start/07_Mastery_Dashboard.md) and link every claimed level to reproducible evidence.
+- Teachers use the [Cohort Mastery Review Protocol](09_Teacher_Planning/Cohort_Mastery_Review_Protocol.md) to distinguish completion, reconstruction, and transfer.
+- Phase completion does not erase prerequisite debt. Red prerequisites receive a named intervention and delayed recheck.
+- Tuning begins only after a trustworthy split, baseline, and written diagnosis. Ensembling begins only after stable single-model evidence.
+
 ## Storage Model
 
 ```text
@@ -45,6 +69,7 @@ All canonical lesson bodies for Sessions 1–78 live directly inside their numbe
 - six required D2L bridge packets embedded inside Phase 6 without adding sessions;
 - eight English AI History seminars in Sessions 33–40;
 - an explicit Andrew ML mathematics transition in Sessions 41–43;
+- a workflow crosswalk, student mastery dashboard, and cohort review protocol;
 - permanent structure, readiness, launcher, hygiene, notebook, code, and link validation.
 
 ## Evidence Standard
