@@ -1,8 +1,8 @@
 # Automated Curriculum Audit
 
-- Commit: `7bba14e1d232bce636f04a239541a105d72a9d0b`
+- Commit: `cbba3198ceae60b6b3b7267f9d8ef5b52aeb941d`
 - Runner: GitHub Actions / Python 3.12
-- Exit code: `0`
+- Exit code: `1`
 
 ```text
 Curriculum structure validation passed.
@@ -27,9 +27,6 @@ Canonical launcher coverage: Sessions 1–78 exactly once
 Phase-local lesson links: 101
 Canonical links into _Lesson_Library: 0
 Normal delivery path: Phase → Session Launcher → phase-local lesson
-Repository hygiene validation passed.
-Markdown files checked: 258
-Internal Markdown links and anchors: valid
-Exact duplicate canonical packets: 0
-Obsolete pathway and generator files: absent
+Repository hygiene validation failed:
+- Stale architecture language in 10_Ready_to_Teach_Pack/Automated_Curriculum_Audit_Latest.md: _Lesson_Library
 ```
