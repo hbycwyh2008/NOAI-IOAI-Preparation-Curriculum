@@ -11,7 +11,7 @@ Before assigning a Session, choose and record one executable route:
 
 Do not use an undocumented “selected lesson” plan. Record exact Session IDs, prerequisites, pacing, assessment points, exit standard, and capability boundary.
 
-## Create the Student Progress Ledger
+## Create or Migrate the Student Progress Ledger
 
 Use one pseudonymous ledger in each student’s private course repository:
 
@@ -22,11 +22,28 @@ python scripts/manage_student_progress.py init \
   --pathway noai_round1
 ```
 
-The ledger records completed attempts, Red prerequisite debt, inspected pathway qualifications, drill assignments, and reviewed scores. Never store a real name, email address, private answer key, credential, or hidden label in it.
+For a schema-v1 ledger:
+
+```bash
+python scripts/manage_student_progress.py migrate \
+  --path student-progress/student-001.json
+```
+
+The schema-v2 ledger records route state, Red debt, qualifications, one daily assignment per date, dual accuracy scores, total score, and private-confirmation status. Never store a real name, email address, private answer key, credential, hidden label, or secured-set content.
+
+## Generate the Current Progress Report
+
+After reviewing evidence and updating the ledger:
+
+```bash
+python scripts/report_student_progress.py \
+  --progress student-progress/student-001.json \
+  --output reports/student-001-progress.md
+```
+
+The report separates pathway progress, Red debt, pending reviews, public streak eligibility, secured confirmation, and maintenance. It calculates eligibility from declared ledger evidence; it does not inspect answers or award pathway qualification.
 
 ## Generate the Next-Session Plan
-
-After reviewing current evidence and updating the ledger:
 
 ```bash
 python scripts/plan_learning_path.py \
@@ -34,14 +51,14 @@ python scripts/plan_learning_path.py \
   --limit 6
 ```
 
-The planner exposes entry blockers, Red debt, deferred recovery Sessions, and the next workflow checkpoint. It does not award mastery automatically. See [Pathway and Daily-Drill Operations](09_Teacher_Planning/Pathway_and_Drill_Operations.md).
+The planner exposes entry blockers, Red debt, deferred recovery Sessions, and the next workflow checkpoint. See [Pathway and Daily-Drill Operations](09_Teacher_Planning/Pathway_and_Drill_Operations.md).
 
 ## Normal Teaching Workflow
 
 ```text
 select the documented route
 → inspect evidence and update the progress ledger
-→ generate the next-Session plan
+→ generate the progress report and next-Session plan
 → open Class Missions and the Phase launcher
 → teach the phase-local lesson
 → collect named evidence
@@ -65,11 +82,11 @@ Use the [Workflow Competency Crosswalk](00_Course_Overview/Workflow_Competency_C
 8. Model comparison, EDA, features, and evaluation — Sessions 71–74
 9. Tuning, ensembling, simulation, and postmortem — Sessions 75–78
 
-Compressed routes preserve dependency logic while explicitly omitting named Sessions and limiting the resulting readiness claim. Round 1 completes Session 57 before Session 58. Round 2 does not repeat 58; it first recovers Sessions 32 and 47, then continues with 59–78.
+Compressed routes preserve dependency logic while explicitly omitting named Sessions and limiting readiness claims. Round 1 completes Session 57 before Session 58. Round 2 first recovers Sessions 32 and 47, then continues with 59–78.
 
 ## Daily Model-Recognition System
 
-Generate one five-scenario worksheet per assigned study day, avoid recent repeats, and record the assignment:
+Generate and record one worksheet per assigned study day:
 
 ```bash
 python scripts/generate_daily_model_drill.py \
@@ -80,25 +97,37 @@ python scripts/generate_daily_model_drill.py \
   --output daily-drills/student-001/YYYY-MM-DD.md
 ```
 
-Then:
+The same recorded date always restores the same assignment; a different second set on that date is rejected.
 
-1. require the complete reasoning fields before discussing models;
-2. keep detailed solutions and calibration examples private;
-3. score sample/X/y/labels, output/task, baseline, metric, validation, candidate families, and leakage/shift risk;
-4. record reviewed accuracy through `manage_student_progress.py score-drill`;
-5. require 90% for five consecutive daily sets plus one fresh secured set;
-6. after mastery, assign two maintenance sets per week.
+After review, record both required dimensions:
 
-Do not accept a model name without output, labels, baseline, metric, validation design, and limitation reasoning.
+```bash
+python scripts/manage_student_progress.py score-drill \
+  --path student-progress/student-001.json \
+  --set-id 0123456789 \
+  --task-family-accuracy 0.9 \
+  --baseline-metric-accuracy 0.9 \
+  --score-percent 90
+```
+
+Recognition mastery requires:
+
+1. five consecutive reviewed sets with task-family accuracy ≥90%;
+2. the same five sets with baseline/metric accuracy ≥90%;
+3. a fresh private secured set administered after the streak;
+4. `confirm-recognition` recorded only after that private pass;
+5. two qualifying mixed maintenance sets per seven-day window after confirmation.
+
+Do not accept a model name without output, labels, baseline, metric, validation design, and limitation reasoning. Public streak evidence is eligibility for secured confirmation, not mastery by itself.
 
 ## Mastery Review Rules
 
-- Distinguish **completion**, **reconstruction**, and **transfer**. Submission alone is not mastery.
-- Require each student to maintain the [Student Mastery Dashboard](01_Student_Start/07_Mastery_Dashboard.md) and the machine-readable progress ledger.
+- Distinguish **completion**, **reconstruction**, **transfer**, **public eligibility**, and **private confirmation**.
+- Require the [Student Mastery Dashboard](01_Student_Start/07_Mastery_Dashboard.md) and schema-v2 private ledger.
 - Do not average away a Red prerequisite with unrelated strengths.
-- When a student advances with unresolved prerequisite debt, name the debt, intervention, recheck task, and due date.
+- When a student advances with unresolved debt, name the debt, intervention, recheck task, and due date.
 - Run workflow gate reviews at Sessions 18, 24, 41, 57, 58, 70, 74, 77, and 78.
-- Do not begin tuning before the student has a trustworthy split, baseline, and written diagnosis.
+- Do not begin tuning before a trustworthy split, baseline, and written diagnosis.
 - Do not retain an ensemble without stable components, diversity evidence, and comparison with the best single model.
 
 ## Before Each Cohort
@@ -116,9 +145,9 @@ Do not accept a model name without output, labels, baseline, metric, validation 
 ## Special Phase Rules
 
 - **Sessions 33–40:** assigned reading occurs before class; preserve the full seminar cycle.
-- **Sessions 41–43:** use the mathematics bridge from task meaning through symbols, graphs, calculations, code, model behaviour, and limitations.
-- **Sessions 71–74:** require the full pre-tuning evidence gate: split, data audit, baseline, feature ledger, ablation, model comparison, and written error diagnosis.
-- **Sessions 75–78:** tuning follows diagnosis; ensembling follows stable single-model evidence; the final simulation must run from a fresh environment.
+- **Sessions 41–43:** translate task meaning through symbols, graphs, calculations, code, model behaviour, and limitations.
+- **Sessions 71–74:** require split, data audit, baseline, feature ledger, ablation, model comparison, and written error diagnosis.
+- **Sessions 75–78:** tuning follows diagnosis; ensembling follows stable single-model evidence; final simulation runs from a fresh environment.
 
 ## Validation Commands
 
@@ -129,6 +158,7 @@ python scripts/validate_readiness_contract.py
 python scripts/validate_class_mission_launchers.py
 python scripts/validate_repository_hygiene.py
 python scripts/manage_student_progress.py --self-test
+python scripts/report_student_progress.py --self-test
 python scripts/plan_learning_path.py --self-test
 python scripts/generate_daily_model_drill.py --self-test
 python scripts/check_required_links.py
