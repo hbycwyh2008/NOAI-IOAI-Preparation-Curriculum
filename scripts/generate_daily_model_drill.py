@@ -6,9 +6,12 @@ import json
 import random
 import re
 import sys
+import tempfile
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
+
+from manage_student_progress import load_progress, new_progress, record_drill_assignment, save_progress
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC_PATH = ROOT / "curriculum_spec.json"
@@ -78,9 +81,41 @@ def stable_seed(day: str, level: str, count: int) -> int:
     return int.from_bytes(digest[:8], "big")
 
 
-def select_scenarios(scenarios: list[Scenario], day: str, level: str, count: int) -> list[Scenario]:
+def recent_scenario_ids(progress: dict | None, window: int) -> list[str]:
+    if progress is None or window <= 0:
+        return []
+    ordered: list[str] = []
+    for record in reversed(progress.get("drill_history", [])):
+        for scenario_id in reversed(record.get("scenario_ids", [])):
+            if scenario_id not in ordered:
+                ordered.append(scenario_id)
+            if len(ordered) >= window:
+                return ordered
+    return ordered
+
+
+def prioritise_pool(pool: list[Scenario], rng: random.Random, recent_ids: list[str]) -> list[Scenario]:
+    recent_position = {identifier: index for index, identifier in enumerate(recent_ids)}
+    unseen = [scenario for scenario in pool if scenario.identifier not in recent_position]
+    seen = [scenario for scenario in pool if scenario.identifier in recent_position]
+    rng.shuffle(unseen)
+    # recent_ids is newest first, so larger positions are older and may return first when reuse is unavoidable.
+    seen.sort(key=lambda scenario: recent_position[scenario.identifier], reverse=True)
+    return unseen + seen
+
+
+def select_scenarios(
+    scenarios: list[Scenario],
+    day: str,
+    level: str,
+    count: int,
+    recent_ids: list[str] | None = None,
+) -> list[Scenario]:
     if count < 1:
         raise ValueError("--count must be at least 1")
+    if count > len(scenarios):
+        raise ValueError(f"Requested {count} scenarios but only {len(scenarios)} exist")
+    recent_ids = recent_ids or []
     rng = random.Random(stable_seed(day, level, count))
 
     if level != "mixed":
@@ -88,12 +123,12 @@ def select_scenarios(scenarios: list[Scenario], day: str, level: str, count: int
         pool = [scenario for scenario in scenarios if scenario.level == requested_level]
         if count > len(pool):
             raise ValueError(f"Requested {count} scenarios but Level {requested_level} has only {len(pool)}")
-        return rng.sample(pool, count)
+        return prioritise_pool(pool, rng, recent_ids)[:count]
 
-    by_level = {value: [scenario for scenario in scenarios if scenario.level == value] for value in (1, 2, 3)}
-    for pool in by_level.values():
-        rng.shuffle(pool)
-
+    by_level = {
+        value: prioritise_pool([scenario for scenario in scenarios if scenario.level == value], rng, recent_ids)
+        for value in (1, 2, 3)
+    }
     selected: list[Scenario] = []
     start = stable_seed(day, level, count) % 3
     cycle = [1, 2, 3]
@@ -116,10 +151,14 @@ def select_scenarios(scenarios: list[Scenario], day: str, level: str, count: int
     return selected
 
 
-def render(day: str, level: str, selected: list[Scenario], minutes: int) -> str:
-    set_id = hashlib.sha256(
+def build_set_id(day: str, selected: list[Scenario]) -> str:
+    return hashlib.sha256(
         (day + "|" + "|".join(scenario.identifier for scenario in selected)).encode("utf-8")
     ).hexdigest()[:10]
+
+
+def render(day: str, level: str, selected: list[Scenario], minutes: int, history_window: int) -> str:
+    set_id = build_set_id(day, selected)
     lines = [
         "# Daily Model-Recognition Drill",
         "",
@@ -127,6 +166,7 @@ def render(day: str, level: str, selected: list[Scenario], minutes: int) -> str:
         f"- Set ID: `{set_id}`",
         f"- Level: `{level}`",
         f"- Target time: {minutes} minutes",
+        f"- Recent-repeat window: {history_window} scenario assignments",
         "- Public answer key: none",
         "",
         "Complete the reasoning fields before naming a model. Record teacher feedback and the correction cause after submission.",
@@ -180,9 +220,36 @@ def run_self_test() -> None:
     assert first == second
     assert len({scenario.identifier for scenario in first}) == 5
     assert len({scenario.level for scenario in first}) >= 2
-    text = render("2026-08-04", "mixed", first, int(spec["model_recognition"]["daily_minutes"]))
+
+    with tempfile.TemporaryDirectory() as folder:
+        progress_path = Path(folder) / "progress.json"
+        progress = new_progress("student-001", "noai_round1", spec)
+        first_id = build_set_id("2026-08-04", first)
+        record_drill_assignment(
+            progress,
+            day="2026-08-04",
+            set_id=first_id,
+            level="mixed",
+            scenario_ids=[scenario.identifier for scenario in first],
+        )
+        save_progress(progress_path, progress, spec)
+        loaded = load_progress(progress_path, spec)
+        recent = recent_scenario_ids(loaded, 15)
+        next_set = select_scenarios(scenarios, "2026-08-05", "mixed", 5, recent)
+        assert not ({scenario.identifier for scenario in first} & {scenario.identifier for scenario in next_set})
+        record_drill_assignment(
+            loaded,
+            day="2026-08-04",
+            set_id=first_id,
+            level="mixed",
+            scenario_ids=[scenario.identifier for scenario in first],
+        )
+        assert len(loaded["drill_history"]) == 1
+
+    text = render("2026-08-04", "mixed", first, int(spec["model_recognition"]["daily_minutes"]), 15)
     assert "Public answer key: none" in text
     assert "candidate model family 2 + limitation" in text
+    assert "Recent-repeat window" in text
     print("Daily model-recognition drill generator self-test passed.")
 
 
@@ -191,6 +258,9 @@ def main() -> int:
     parser.add_argument("--date", default=date.today().isoformat(), help="YYYY-MM-DD; controls deterministic selection")
     parser.add_argument("--level", choices=("1", "2", "3", "mixed"), default="mixed")
     parser.add_argument("--count", type=int, help="Number of scenarios; defaults to curriculum_spec.json")
+    parser.add_argument("--progress", type=Path, help="Use recent assignments from a student progress ledger")
+    parser.add_argument("--history-window", type=int, help="Recent scenario assignments to avoid when possible")
+    parser.add_argument("--record-progress", action="store_true", help="Append the assigned set to --progress after output succeeds")
     parser.add_argument("--output", type=Path, help="Write Markdown to this path instead of stdout")
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
@@ -204,8 +274,25 @@ def main() -> int:
         spec = load_spec()
         scenarios = load_scenarios(spec)
         count = args.count or int(spec["model_recognition"]["daily_set_size"])
-        selected = select_scenarios(scenarios, args.date, args.level, count)
-        text = render(args.date, args.level, selected, int(spec["model_recognition"]["daily_minutes"]))
+        history_window = args.history_window
+        if history_window is None:
+            history_window = int(spec["model_recognition"].get("recent_repeat_window", 15))
+        if history_window < 0:
+            raise ValueError("--history-window must be zero or greater")
+        if args.record_progress and not args.progress:
+            raise ValueError("--record-progress requires --progress")
+
+        progress = load_progress(args.progress, spec) if args.progress else None
+        recent = recent_scenario_ids(progress, history_window)
+        selected = select_scenarios(scenarios, args.date, args.level, count, recent)
+        text = render(
+            args.date,
+            args.level,
+            selected,
+            int(spec["model_recognition"]["daily_minutes"]),
+            history_window,
+        )
+        set_id = build_set_id(args.date, selected)
     except (KeyError, TypeError, ValueError, json.JSONDecodeError) as error:
         print(f"Daily drill generation failed: {error}", file=sys.stderr)
         return 2
@@ -216,6 +303,17 @@ def main() -> int:
         print(f"Wrote daily model-recognition drill to {args.output}")
     else:
         print(text, end="")
+
+    if args.record_progress and args.progress and progress is not None:
+        record_drill_assignment(
+            progress,
+            day=args.date,
+            set_id=set_id,
+            level=args.level,
+            scenario_ids=[scenario.identifier for scenario in selected],
+        )
+        save_progress(args.progress, progress, spec)
+        print(f"Recorded drill set {set_id} in {args.progress}")
     return 0
 
 
