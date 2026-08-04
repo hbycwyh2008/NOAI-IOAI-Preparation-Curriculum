@@ -8,6 +8,7 @@ on:
       - 'TEACHER_START_HERE.md'
       - 'STUDENT_START_HERE.md'
       - 'MANIFEST.md'
+      - 'curriculum_spec.json'
       - '00_Course_Overview/**'
       - '01_Student_Start/**'
       - '02_Class_Missions/**'
@@ -20,6 +21,7 @@ on:
       - 'scripts/normalize_lesson_timelines.py'
       - 'scripts/validate_curriculum.py'
       - 'scripts/validate_curriculum_structure.py'
+      - 'scripts/validate_curriculum_spec.py'
       - '.github/workflows/normalise-lesson-timelines.yml'
       - '.github/workflows/validate-ready-to-teach.yml'
   pull_request:
@@ -28,6 +30,7 @@ on:
       - 'TEACHER_START_HERE.md'
       - 'STUDENT_START_HERE.md'
       - 'MANIFEST.md'
+      - 'curriculum_spec.json'
       - '00_Course_Overview/**'
       - '01_Student_Start/**'
       - '02_Class_Missions/**'
@@ -60,6 +63,9 @@ jobs:
 
       - name: Validate module counts, lesson links, lesson flow, resource delivery, and overview consistency
         run: python scripts/validate_curriculum_structure.py
+
+      - name: Validate machine-readable specification and execution layer
+        run: python scripts/validate_curriculum_spec.py
 
       - name: Confirm legacy entry points are non-destructive
         run: |
