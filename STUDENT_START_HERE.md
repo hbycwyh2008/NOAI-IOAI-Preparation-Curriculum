@@ -4,7 +4,7 @@ Your teacher assigns one documented route, one Phase, and one Session at a time.
 
 ```text
 confirm your assigned route
-→ review your private progress ledger
+→ review your private progress report
 → open Class Missions and the assigned launcher
 → complete the lesson and evidence
 → update the mastery dashboard
@@ -26,19 +26,22 @@ CS50P Python
 → tuning, ensembling, and competition
 ```
 
-A compressed route does not mean random skipping. It lists exact Session IDs and explains what you will not yet be qualified to do. Round 1 completes Session 57 before the Session 58 checkpoint. Students moving to Round 2 or IOAI may receive named recovery Sessions before continuing.
+A compressed route does not mean random skipping. It lists exact Session IDs and explains what you will not yet be qualified to do. Round 1 completes Session 57 before Session 58. Students moving to Round 2 or IOAI may receive named recovery Sessions before continuing.
 
 ## Private Progress Ledger
 
-Your teacher creates one JSON progress ledger in your private course repository. It uses a pseudonymous ID, not your name or email address. It records:
+Your teacher creates one schema-v2 JSON ledger in your private course repository. It uses a pseudonymous ID, not your name or email address. It records:
 
 - completed Session attempts;
 - unresolved Red Sessions;
 - pathways that passed an inspected exit gate;
-- assigned daily drill Set IDs;
-- reviewed drill accuracy.
+- one daily drill assignment per date;
+- task-family accuracy;
+- baseline/metric accuracy;
+- total score percentage;
+- whether and when the fresh private secured set passed.
 
-The ledger helps generate the next assignment, but it is not the evidence itself. Your notebook, code, explanation, tests, correction notes, and delayed recheck remain the evidence.
+The ledger helps generate assignments and reports, but it is not the evidence itself. Your notebook, code, explanation, tests, correction notes, and delayed recheck remain the evidence. Never place protected answers, credentials, hidden labels, or secured-set content in the ledger.
 
 ## Modeling Workflow
 
@@ -58,7 +61,7 @@ Use the [Workflow Competency Crosswalk](00_Course_Overview/Workflow_Competency_C
 
 ## Daily Model-Recognition Practice
 
-Complete one generated five-scenario worksheet on every assigned study day. When your teacher asks you to generate it, use your private ledger so recently assigned scenarios are avoided:
+Complete one generated five-scenario worksheet on every assigned study day:
 
 ```bash
 python scripts/generate_daily_model_drill.py \
@@ -69,7 +72,7 @@ python scripts/generate_daily_model_drill.py \
   --output daily-drills/YYYY-MM-DD.md
 ```
 
-The same date, level, count, and history state produce the same Set ID. The worksheet contains no public answer key. Do not edit the ledger to obtain an easier set or delete a difficult assignment.
+Rerunning the same recorded date restores the same worksheet. A different second assignment on that date is rejected. The worksheet contains no public answer key. Do not edit the ledger to obtain an easier set or delete a difficult assignment.
 
 Before naming a model, write:
 
@@ -85,7 +88,18 @@ Before naming a model, write:
 - leakage, shift, or failure risk;
 - output/submission checks.
 
-Mastery requires at least 90% for five consecutive daily sets and one fresh secured set. Memorising the public scenarios is not mastery; you must explain and transfer the reasoning.
+## Recognition Eligibility and Mastery
+
+A daily set counts toward public eligibility only when teacher review records:
+
+- task-family accuracy of at least 90%; and
+- baseline/metric accuracy of at least 90%.
+
+You need five qualifying reviewed sets in a row. That public streak does **not** award mastery. After the streak, you must pass a fresh private secured set that is not copied from the public bank. The teacher records only the pass date, not the protected questions or answers.
+
+After confirmation, complete two qualifying mixed maintenance sets in each seven-day window. Memorising public scenarios is never mastery; you must explain and transfer the reasoning.
+
+Your teacher can generate a report showing route progress, Red debt, pending review, current streak, secured-confirmation status, and maintenance due. The report is based only on the ledger and does not replace evidence inspection.
 
 ## Ordinary Class Cycle
 
@@ -110,7 +124,7 @@ After each Session:
 2. record your independence level from 0–4;
 3. name the error or misconception you found;
 4. record the correction and a future retrieval date;
-5. ask the teacher whether the progress ledger should show complete, Red, or pending review.
+5. ask whether the progress ledger should show complete, Red, or pending review.
 
 ## Special Evidence
 
