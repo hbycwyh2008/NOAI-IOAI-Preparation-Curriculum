@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 from datetime import datetime, timezone
 from pathlib import Path
 import requests
@@ -65,7 +66,19 @@ def check(name: str, url: str) -> tuple[str, int | None, str]:
         return "ERROR", None, f"{type(exc).__name__}: {exc}"
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Check required curriculum resource links.")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path("10_Ready_to_Teach_Pack/Link_Verification_Latest.md"),
+        help="Markdown report path. CI should use a temporary or artifact path.",
+    )
+    return parser.parse_args()
+
+
 def main() -> int:
+    args = parse_args()
     rows = []
     failures = 0
     for name, url in URLS.items():
@@ -74,7 +87,7 @@ def main() -> int:
         if status in {"FAIL", "ERROR"}:
             failures += 1
 
-    output = Path("10_Ready_to_Teach_Pack/Link_Verification_Latest.md")
+    output = args.output
     output.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         "# Required Resource Link Verification",
