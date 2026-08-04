@@ -206,6 +206,7 @@ def main() -> int:
         errors.append(f"Missing model-recognition drill index: {recognition['drill_index']}")
 
     scenario_ids: list[str] = []
+    global_scenario_numbers: list[int] = []
     scenario_count = 0
     for relative in recognition.get("scenario_files", []):
         path = ROOT / relative
@@ -219,13 +220,20 @@ def main() -> int:
         level = int(level_match.group(1))
         numbers = [int(value) for value in SCENARIO_HEADING.findall(path.read_text(encoding="utf-8"))]
         scenario_count += len(numbers)
+        global_scenario_numbers.extend(numbers)
         scenario_ids.extend(f"L{level}-D{number:02d}" for number in numbers)
-        if numbers != list(range(1, len(numbers) + 1)):
-            errors.append(f"Scenario numbering must be consecutive from 1 in {relative}: {numbers}")
+        if numbers:
+            expected_local = list(range(numbers[0], numbers[0] + len(numbers)))
+            if numbers != expected_local:
+                errors.append(f"Scenario numbering must be internally consecutive in {relative}: {numbers}")
 
     minimum = int(recognition["minimum_public_scenarios"])
     if scenario_count < minimum:
         errors.append(f"Model-recognition scenarios below minimum: {scenario_count} < {minimum}")
+    if global_scenario_numbers != list(range(1, scenario_count + 1)):
+        errors.append(
+            "Model-recognition scenario files must collectively cover one globally consecutive sequence from Day 1"
+        )
     if len(scenario_ids) != len(set(scenario_ids)):
         errors.append("Model-recognition scenario IDs are not unique")
     if int(recognition.get("daily_set_size", 0)) < 1:
@@ -252,7 +260,7 @@ def main() -> int:
     print(f"Canonical packets: {expected_packets}")
     print("Exact pathway routes and continuation dependencies: valid")
     print("Operational planning and daily-drill tools: present")
-    print(f"Model-recognition scenario bank: {scenario_count} unique scenarios")
+    print(f"Model-recognition scenario bank: {scenario_count} unique scenarios, globally numbered 1-{scenario_count}")
     print("Repository evidence and real-world evidence boundaries: explicit")
     return 0
 
