@@ -11,41 +11,42 @@ Before assigning a Session, choose and record one executable route:
 
 Do not use an undocumented “selected lesson” plan. Record exact Session IDs, prerequisites, pacing, assessment points, exit standard, and capability boundary.
 
+## Create the Student Progress Ledger
+
+Use one pseudonymous ledger in each student’s private course repository:
+
+```bash
+python scripts/manage_student_progress.py init \
+  --path student-progress/student-001.json \
+  --student-id student-001 \
+  --pathway noai_round1
+```
+
+The ledger records completed attempts, Red prerequisite debt, inspected pathway qualifications, drill assignments, and reviewed scores. Never store a real name, email address, private answer key, credential, or hidden label in it.
+
 ## Generate the Next-Session Plan
 
-Use the planner after reviewing the current mastery dashboard:
+After reviewing current evidence and updating the ledger:
 
 ```bash
 python scripts/plan_learning_path.py \
-  --pathway noai_round1 \
-  --completed 1-18,24-31 \
-  --red 17,25 \
+  --progress student-progress/student-001.json \
   --limit 6
 ```
 
-For Round 2, `--entry-qualified` is used only after the Round 1 exit evidence has been inspected:
-
-```bash
-python scripts/plan_learning_path.py \
-  --pathway noai_round2 \
-  --completed-pathway noai_round1 \
-  --entry-qualified
-```
-
-The planner exposes Red prerequisite debt, deferred bridge Sessions, and the next workflow checkpoint. It does not award mastery automatically. See [Pathway and Daily-Drill Operations](09_Teacher_Planning/Pathway_and_Drill_Operations.md).
+The planner exposes entry blockers, Red debt, deferred recovery Sessions, and the next workflow checkpoint. It does not award mastery automatically. See [Pathway and Daily-Drill Operations](09_Teacher_Planning/Pathway_and_Drill_Operations.md).
 
 ## Normal Teaching Workflow
 
 ```text
 select the documented route
-→ review evidence and generate the next-Session plan
-→ open Class Missions
-→ choose the assigned Phase
-→ open SESSION_LAUNCHER.md
-→ click the assigned Session
+→ inspect evidence and update the progress ledger
+→ generate the next-Session plan
+→ open Class Missions and the Phase launcher
 → teach the phase-local lesson
-→ collect the named evidence
-→ review mastery and assign the next action
+→ collect named evidence
+→ record completion or Red debt
+→ schedule delayed retrieval
 ```
 
 Begin at [Class Missions](02_Class_Missions/README.md) and read [How to Use Class Missions](02_Class_Missions/HOW_TO_USE_CLASS_MISSIONS.md). Use the [canonical teacher phase overviews](09_Teacher_Planning/Phase_Overviews/README.md) for planning summaries; they do not replace Session launchers.
@@ -68,13 +69,15 @@ Compressed routes preserve dependency logic while explicitly omitting named Sess
 
 ## Daily Model-Recognition System
 
-Generate one deterministic five-scenario worksheet per assigned study day:
+Generate one five-scenario worksheet per assigned study day, avoid recent repeats, and record the assignment:
 
 ```bash
 python scripts/generate_daily_model_drill.py \
   --date YYYY-MM-DD \
   --level mixed \
-  --output daily-drills/YYYY-MM-DD.md
+  --progress student-progress/student-001.json \
+  --record-progress \
+  --output daily-drills/student-001/YYYY-MM-DD.md
 ```
 
 Then:
@@ -82,15 +85,16 @@ Then:
 1. require the complete reasoning fields before discussing models;
 2. keep detailed solutions and calibration examples private;
 3. score sample/X/y/labels, output/task, baseline, metric, validation, candidate families, and leakage/shift risk;
-4. require 90% for five consecutive daily sets plus one fresh secured set;
-5. after mastery, assign two maintenance sets per week.
+4. record reviewed accuracy through `manage_student_progress.py score-drill`;
+5. require 90% for five consecutive daily sets plus one fresh secured set;
+6. after mastery, assign two maintenance sets per week.
 
 Do not accept a model name without output, labels, baseline, metric, validation design, and limitation reasoning.
 
 ## Mastery Review Rules
 
 - Distinguish **completion**, **reconstruction**, and **transfer**. Submission alone is not mastery.
-- Require each student to maintain the [Student Mastery Dashboard](01_Student_Start/07_Mastery_Dashboard.md).
+- Require each student to maintain the [Student Mastery Dashboard](01_Student_Start/07_Mastery_Dashboard.md) and the machine-readable progress ledger.
 - Do not average away a Red prerequisite with unrelated strengths.
 - When a student advances with unresolved prerequisite debt, name the debt, intervention, recheck task, and due date.
 - Run workflow gate reviews at Sessions 18, 24, 41, 57, 58, 70, 74, 77, and 78.
@@ -101,12 +105,13 @@ Do not accept a model name without output, labels, baseline, metric, validation 
 
 1. archive and review current official NOAI/IOAI rules;
 2. run the student diagnostic and select the route;
-3. confirm legal book/model/data and authenticated course access;
-4. qualify the exact student runtime;
-5. pilot every representative lesson type;
-6. keep solutions, hidden labels, tests, and calibration material private;
-7. complete the release-readiness gates;
-8. state external evidence as pending until the actual record is complete.
+3. create pseudonymous private progress ledgers;
+4. confirm legal book/model/data and authenticated course access;
+5. qualify the exact student runtime;
+6. pilot every representative lesson type;
+7. keep solutions, hidden labels, tests, and calibration material private;
+8. complete the release-readiness gates;
+9. state external evidence as pending until the actual record is complete.
 
 ## Special Phase Rules
 
@@ -123,6 +128,7 @@ python scripts/validate_curriculum_spec.py
 python scripts/validate_readiness_contract.py
 python scripts/validate_class_mission_launchers.py
 python scripts/validate_repository_hygiene.py
+python scripts/manage_student_progress.py --self-test
 python scripts/plan_learning_path.py --self-test
 python scripts/generate_daily_model_drill.py --self-test
 python scripts/check_required_links.py
