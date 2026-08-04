@@ -1,6 +1,6 @@
 # Course Overview
 
-The canonical 78-Session route is organised by learning dependency. `curriculum_spec.json` is the machine-readable source of truth for Session counts, Phase ranges, canonical packet counts, required execution documents, and evidence boundaries.
+The canonical 78-Session route is organised by learning dependency. `curriculum_spec.json` is the machine-readable source of truth for Session counts, Phase ranges, canonical packet counts, exact pathway routes, recovery bridges, operational tools, and evidence boundaries.
 
 ## Core Pathway Documents
 
@@ -16,11 +16,17 @@ The canonical 78-Session route is organised by learning dependency. `curriculum_
 
 ## Executable Preparation Routes
 
-- [NOAI Round 1 Compressed Path](NOAI_Round1_Compressed_Path.md) — exact 44-Session selection plus daily model-recognition practice.
-- [NOAI Round 2 Project Path](NOAI_Round2_Project_Path.md) — exact 22-Session project continuation after Round 1 qualification.
-- [IOAI Full Extension Path](IOAI_Full_Extension_Path.md) — Sessions 1–78 plus rule-controlled extension sprints.
+- [NOAI Round 1 Compressed Path](NOAI_Round1_Compressed_Path.md) — exact 45-Session selection plus daily model-recognition practice.
+- [NOAI Round 2 Project Path](NOAI_Round2_Project_Path.md) — exact 22-Session continuation after Round 1 qualification, including recovery Sessions 32 and 47.
+- [IOAI Full Extension Path](IOAI_Full_Extension_Path.md) — Sessions 1–78 plus rule-controlled extension sprints and an exact recovery set for students entering from compressed Round 1.
 
-These routes select from or extend the canonical pathway. They do not renumber Sessions, duplicate lesson files, or justify readiness beyond their stated capability boundary.
+These routes select from or extend the canonical pathway. They do not renumber Sessions, duplicate lesson files, repeat already completed continuation Sessions, or justify readiness beyond their stated capability boundary.
+
+## Operational Planning
+
+- [Pathway and Daily-Drill Operations](../09_Teacher_Planning/Pathway_and_Drill_Operations.md)
+- `scripts/plan_learning_path.py` — generates the next unresolved Sessions, blocking Red debt, recovery bridges, and next workflow checkpoint.
+- `scripts/generate_daily_model_drill.py` — generates deterministic answer-key-free five-scenario worksheets.
 
 ## Architecture and Readiness
 
