@@ -32,7 +32,14 @@ python scripts/manage_student_progress.py init \
   --pathway noai_round1
 ```
 
-Generate the next evidence-aware Session plan from that ledger:
+Migrate an earlier schema-v1 ledger before using current tools:
+
+```bash
+python scripts/manage_student_progress.py migrate \
+  --path student-progress/student-001.json
+```
+
+Generate the next evidence-aware Session plan:
 
 ```bash
 python scripts/plan_learning_path.py \
@@ -40,7 +47,7 @@ python scripts/plan_learning_path.py \
   --limit 6
 ```
 
-Generate a deterministic answer-key-free daily set, avoid recent repeats, and record the assignment:
+Generate and record one deterministic answer-key-free daily set:
 
 ```bash
 python scripts/generate_daily_model_drill.py \
@@ -50,7 +57,15 @@ python scripts/generate_daily_model_drill.py \
   --record-progress
 ```
 
-See [Pathway and Daily-Drill Operations](09_Teacher_Planning/Pathway_and_Drill_Operations.md). These tools schedule and document work; they do not award mastery or replace evidence review. Never store student names, email addresses, protected answers, credentials, or hidden labels in the public repository.
+Generate the route, Red-debt, streak, confirmation, and maintenance report:
+
+```bash
+python scripts/report_student_progress.py \
+  --progress student-progress/student-001.json \
+  --output reports/student-001-progress.md
+```
+
+See [Pathway and Daily-Drill Operations](09_Teacher_Planning/Pathway_and_Drill_Operations.md). These tools schedule work and calculate evidence eligibility; they do not inspect private answers or award pathway readiness automatically. Never store names, email addresses, protected answers, credentials, or hidden labels in the public repository.
 
 ## Canonical Learning Path
 
@@ -90,9 +105,11 @@ The five core competition stages are **data quality → feature engineering → 
 ## Mastery Execution System
 
 - Students maintain the [Student Mastery Dashboard](01_Student_Start/07_Mastery_Dashboard.md) and link every claimed level to reproducible evidence.
-- Each student also has one machine-readable progress ledger for route state, Red debt, pathway qualifications, drill assignments, and reviewed scores.
-- Students complete the [Model Recognition Daily Drills](04_Assessment/Model_Recognition_Drills/README.md): 36 public scenarios, deterministic five-scenario sets, recent-repeat control, a 15-minute daily protocol, a five-day mastery streak, and a fresh secured confirmation set.
-- Teachers use the [Cohort Mastery Review Protocol](09_Teacher_Planning/Cohort_Mastery_Review_Protocol.md) to distinguish completion, reconstruction, and transfer.
+- Each student also has one schema-v2 progress ledger for route state, Red debt, pathway qualifications, one daily assignment per date, reviewed scores, and private-confirmation status.
+- Students complete the [Model Recognition Daily Drills](04_Assessment/Model_Recognition_Drills/README.md): 36 public scenarios, deterministic five-scenario sets, recent-repeat control, and a 15-minute daily protocol.
+- Public recognition eligibility requires five consecutive reviewed sets with at least 90% task-family accuracy and at least 90% baseline/metric accuracy.
+- A fresh private secured set must then pass; after confirmation, two qualifying mixed maintenance sets are required per seven-day window.
+- Teachers use the generated progress report and the [Cohort Mastery Review Protocol](09_Teacher_Planning/Cohort_Mastery_Review_Protocol.md) to distinguish completion, reconstruction, transfer, eligibility, and confirmation.
 - Phase completion does not erase prerequisite debt. Red prerequisites receive a named intervention and delayed recheck.
 - Tuning begins only after a trustworthy split, baseline, and written diagnosis. Ensembling begins only after stable single-model evidence.
 
@@ -110,15 +127,15 @@ All canonical lesson bodies for Sessions 1–78 live directly inside their numbe
 
 - **78 canonical Sessions** across nine numbered Phases;
 - **101 unique phase-local canonical packets** linked by the Session launchers;
-- a machine-readable specification validated against launchers, exact routes, recovery bridges, progress records, and operational tools;
+- schema-v4 curriculum specification validated against launchers, exact routes, recovery bridges, progress records, mastery thresholds, and operational tools;
 - three executable NOAI/IOAI routes with exact Session IDs and no duplicated continuation Sessions;
-- one pseudonymous progress schema with an example, manager, validation rules, and Red-debt invariant;
-- 36 public daily model-recognition scenarios with deterministic worksheet generation, recent-repeat control, assignment history, and secured-key rules;
+- one pseudonymous progress schema with migration, one-set-per-date, Red-debt, score, and confirmation invariants;
+- four operational tools: progress manager, mastery-eligibility report, pathway planner, and recent-repeat daily-drill generator;
+- 36 public recognition scenarios with deterministic worksheet generation and secured-key rules;
 - six required D2L bridge packets embedded inside Phase 6 without adding Sessions;
 - eight English AI History seminars in Sessions 33–40;
 - an explicit Andrew ML mathematics transition in Sessions 41–43;
-- a workflow crosswalk, student mastery dashboard, and cohort review protocol;
-- permanent structure, specification, readiness, launcher, hygiene, notebook, code, link, progress-manager, planner, and drill-generator validation.
+- permanent structure, specification, readiness, launcher, hygiene, notebook, code, link, progress, report, planner, and drill validation.
 
 ## Evidence Standard
 
