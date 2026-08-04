@@ -7,6 +7,15 @@ These public rubrics, practice scenarios, and checklists define visible evidence
 - [Model Recognition Daily Drills](Model_Recognition_Drills/README.md) — 36 public scenarios across foundation, mixed, and competition levels.
 - [Model Recognition Answer Record](Model_Recognition_Drills/Answer_Record.md)
 - [Model Recognition Teacher Key Protocol](Model_Recognition_Drills/Teacher_Key_Protocol.md)
+- `scripts/generate_daily_model_drill.py` — deterministic answer-key-free five-scenario worksheet generation.
+
+Generate a mixed set with:
+
+```bash
+python scripts/generate_daily_model_drill.py --date YYYY-MM-DD --level mixed
+```
+
+The Set ID is stable for the same date, level, and count. This supports auditable feedback and correction without publishing an answer key.
 
 ## Rubrics and Evidence
 
