@@ -289,8 +289,9 @@ def run_self_test() -> None:
         save_progress(path, loaded, spec)
         confirmed = load_progress(path, spec)
         historical = analyse_progress(confirmed, spec, date(2026, 8, 5))
-        assert historical["recognition_status"] == "PUBLIC_STREAK_ELIGIBLE_FOR_SECURED_CONFIRMATION"
+        assert historical["recognition_status"] == "CONFIRMATION_NOT_YET_EFFECTIVE"
         assert historical["confirmation_effective"] is False
+        assert historical["mastery_confirmed"] is False
 
         after = analyse_progress(confirmed, spec, date(2026, 8, 14))
         assert after["mastery_confirmed"] is True
