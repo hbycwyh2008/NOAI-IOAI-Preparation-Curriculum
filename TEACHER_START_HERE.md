@@ -4,17 +4,41 @@
 
 Before assigning a Session, choose and record one executable route:
 
-- [NOAI Round 1 Compressed Path](00_Course_Overview/NOAI_Round1_Compressed_Path.md)
-- [NOAI Round 2 Project Path](00_Course_Overview/NOAI_Round2_Project_Path.md)
-- [IOAI Full Extension Path](00_Course_Overview/IOAI_Full_Extension_Path.md)
-- the complete [78-Session canonical sequence](00_Course_Overview/Detailed_Lesson_Sequence.md)
+- [NOAI Round 1 Compressed Path](00_Course_Overview/NOAI_Round1_Compressed_Path.md) — 45 Sessions;
+- [NOAI Round 2 Project Path](00_Course_Overview/NOAI_Round2_Project_Path.md) — 22 additional Sessions after inspected Round 1 qualification;
+- [IOAI Full Extension Path](00_Course_Overview/IOAI_Full_Extension_Path.md) — Sessions 1–78 plus rule-controlled extension sprints;
+- the complete [78-Session canonical sequence](00_Course_Overview/Detailed_Lesson_Sequence.md).
 
 Do not use an undocumented “selected lesson” plan. Record exact Session IDs, prerequisites, pacing, assessment points, exit standard, and capability boundary.
+
+## Generate the Next-Session Plan
+
+Use the planner after reviewing the current mastery dashboard:
+
+```bash
+python scripts/plan_learning_path.py \
+  --pathway noai_round1 \
+  --completed 1-18,24-31 \
+  --red 17,25 \
+  --limit 6
+```
+
+For Round 2, `--entry-qualified` is used only after the Round 1 exit evidence has been inspected:
+
+```bash
+python scripts/plan_learning_path.py \
+  --pathway noai_round2 \
+  --completed-pathway noai_round1 \
+  --entry-qualified
+```
+
+The planner exposes Red prerequisite debt, deferred bridge Sessions, and the next workflow checkpoint. It does not award mastery automatically. See [Pathway and Daily-Drill Operations](09_Teacher_Planning/Pathway_and_Drill_Operations.md).
 
 ## Normal Teaching Workflow
 
 ```text
 select the documented route
+→ review evidence and generate the next-Session plan
 → open Class Missions
 → choose the assigned Phase
 → open SESSION_LAUNCHER.md
@@ -40,18 +64,26 @@ Use the [Workflow Competency Crosswalk](00_Course_Overview/Workflow_Competency_C
 8. Model comparison, EDA, features, and evaluation — Sessions 71–74
 9. Tuning, ensembling, simulation, and postmortem — Sessions 75–78
 
-Compressed routes preserve this dependency logic while explicitly omitting named Sessions and limiting the resulting readiness claim.
+Compressed routes preserve dependency logic while explicitly omitting named Sessions and limiting the resulting readiness claim. Round 1 completes Session 57 before Session 58. Round 2 does not repeat 58; it first recovers Sessions 32 and 47, then continues with 59–78.
 
 ## Daily Model-Recognition System
 
-From the first model-workflow lesson onward:
+Generate one deterministic five-scenario worksheet per assigned study day:
 
-1. assign one 15-minute scenario from [Model Recognition Daily Drills](04_Assessment/Model_Recognition_Drills/README.md);
-2. require the complete answer record before discussing models;
-3. keep detailed solutions and calibration examples private;
-4. score sample/X/y/labels, output/task, baseline, metric, candidate families, and validation/leakage risk;
-5. require 90% for five consecutive daily sets plus one fresh secured set;
-6. after mastery, assign two maintenance drills per week.
+```bash
+python scripts/generate_daily_model_drill.py \
+  --date YYYY-MM-DD \
+  --level mixed \
+  --output daily-drills/YYYY-MM-DD.md
+```
+
+Then:
+
+1. require the complete reasoning fields before discussing models;
+2. keep detailed solutions and calibration examples private;
+3. score sample/X/y/labels, output/task, baseline, metric, validation, candidate families, and leakage/shift risk;
+4. require 90% for five consecutive daily sets plus one fresh secured set;
+5. after mastery, assign two maintenance sets per week.
 
 Do not accept a model name without output, labels, baseline, metric, validation design, and limitation reasoning.
 
@@ -91,6 +123,8 @@ python scripts/validate_curriculum_spec.py
 python scripts/validate_readiness_contract.py
 python scripts/validate_class_mission_launchers.py
 python scripts/validate_repository_hygiene.py
+python scripts/plan_learning_path.py --self-test
+python scripts/generate_daily_model_drill.py --self-test
 python scripts/check_required_links.py
 ```
 
