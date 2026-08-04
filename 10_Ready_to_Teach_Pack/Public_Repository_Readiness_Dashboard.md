@@ -11,14 +11,15 @@ This dashboard separates repository-controlled facts from evidence that only rea
 | phase-local canonical lesson storage | complete | 101 unique launcher targets |
 | canonical targets outside Phase folders | zero | launcher and readiness validators |
 | parallel canonical lesson directories | absent | hygiene validator |
-| machine-readable source of truth | schema v3 complete | `curriculum_spec.json` and specification validator |
+| machine-readable source of truth | schema v4 complete | `curriculum_spec.json` and specification validator |
 | NOAI Round 1 pathway | complete | exact 45 Sessions; Session 57 precedes Session 58 |
 | NOAI Round 2 continuation | complete | 22 non-duplicated Sessions; recovery 32 and 47, then 59–78 |
 | IOAI full pathway | complete | Sessions 1–78 and exact compressed-route recovery set |
-| pseudonymous student progress ledger | enforced | schema, example, manager self-test, privacy rule, Red-subset invariant |
+| pseudonymous student progress ledger | enforced | schema v2, migration, public example, recursive privacy scan, Red-subset and one-date invariants |
+| mastery-eligibility report | enforced | route, Red debt, dual-threshold streak, confirmation order, and maintenance self-tests |
 | evidence-aware pathway planner | enforced | reads ledger state; self-test in fast, audit, and full workflows |
-| recent-repeat-aware daily-drill generator | enforced | 15-assignment avoidance window and explicit assignment recording |
-| daily model-recognition system | complete | 36 unique public scenarios, generated five-scenario worksheets, answer record, secure-key protocol, mastery rule |
+| recent-repeat-aware daily-drill generator | enforced | 15-assignment avoidance window, same-date restoration, and explicit assignment recording |
+| daily model-recognition system | complete | 36 scenarios, five-set dual-threshold public eligibility, private secured confirmation, and two-set weekly maintenance |
 | AI History phase | complete | eight English seminars and evidence system |
 | Andrew ML mathematics transition | complete | Sessions 41–43 plus just-in-time model mathematics |
 | D2L concept-to-code bridge | complete | six required Phase 6 packets |
@@ -33,7 +34,9 @@ This dashboard separates repository-controlled facts from evidence that only rea
 
 The repository has **100% public file-structure and internal-consistency coverage** for the maintained assets listed above. That statement does not include external operational evidence.
 
-Progress ledgers, planner output, and generated drills are reproducible operational records. They are not proof that a student has mastered a Session or that a cohort is operationally qualified. Real ledgers remain private and must use pseudonymous IDs without protected answers.
+Progress ledgers, mastery reports, planner output, and generated drills are reproducible operational records. They are not proof that a student has mastered a Session or that a cohort is operationally qualified. Real ledgers remain private and must use pseudonymous IDs without protected answers.
+
+The public five-set streak is only eligibility for a fresh private secured confirmation. A report may state `CONFIRMED` only when the ledger contains five consecutive qualifying reviewed sets and a secured-confirmation date on or after the latest qualifying set. The repository never stores the protected secured-set content.
 
 ## External Evidence Still Required
 
@@ -54,8 +57,9 @@ Use statements such as:
 
 - repository structure and internal consistency pass CI;
 - exact pathway routes and recovery dependencies are machine-validated;
-- the progress schema and public example pass privacy and integrity checks;
-- progress, planning, and recent-repeat drill tools pass deterministic self-tests;
+- the schema-v2 progress example passes privacy, migration, score, and one-assignment-per-date checks;
+- the mastery report calculates public eligibility, private confirmation order, and maintenance from declared metadata;
+- progress, reporting, planning, and drill tools pass deterministic self-tests;
 - maintained notebooks execute in the declared GitHub Actions environment;
 - the named cohort runtime is not yet qualified;
 - authenticated access remains unverified;
@@ -63,4 +67,4 @@ Use statements such as:
 - IOAI 2026 pre-event public documents were reviewed on 2026-08-04;
 - post-event alignment remains pending.
 
-The project **must not state** “100% operationally ready,” “fully classroom validated,” or “IOAI 2026 task validated” until the corresponding evidence records are complete.
+The project **must not state** “100% operationally ready,” “fully classroom validated,” “recognition mastery confirmed” without the private confirmation record, or “IOAI 2026 task validated” until the corresponding evidence records are complete.
