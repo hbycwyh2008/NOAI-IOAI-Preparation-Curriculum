@@ -24,6 +24,7 @@ on:
       - "scripts/generate_ready_notebooks.py"
       - "scripts/generate_ready_notebooks_deterministic.py"
       - "scripts/manage_student_progress.py"
+      - "scripts/report_student_progress.py"
       - "scripts/generate_daily_model_drill.py"
       - "scripts/plan_learning_path.py"
       - "scripts/check_required_links.py"
@@ -90,10 +91,12 @@ jobs:
       - name: Validate machine-readable curriculum specification
         run: python scripts/validate_curriculum_spec.py
 
-      - name: Self-test progress, pathway planning, and daily drill generation
+      - name: Self-test progress, reporting, pathway planning, and daily drill generation
         run: |
           python scripts/manage_student_progress.py --self-test
           python scripts/manage_student_progress.py validate --path 03_Templates/Student_Progress.example.json
+          python scripts/report_student_progress.py --self-test
+          python scripts/report_student_progress.py --progress 03_Templates/Student_Progress.example.json --as-of 2026-08-04 --output /tmp/example-progress-report.md
           python scripts/plan_learning_path.py --self-test
           python scripts/generate_daily_model_drill.py --self-test
 
@@ -211,5 +214,6 @@ jobs:
           path: |
             /tmp/Runtime_Validation_Record.md
             /tmp/Link_Verification_Latest.md
+            /tmp/example-progress-report.md
           if-no-files-found: warn
           retention-days: 30
