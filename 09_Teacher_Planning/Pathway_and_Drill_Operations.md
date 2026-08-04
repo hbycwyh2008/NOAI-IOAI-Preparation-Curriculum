@@ -1,122 +1,155 @@
 # Pathway and Daily-Drill Operations
 
-This guide turns the pathway documents and mastery records into repeatable teacher actions. The scripts produce planning artifacts; they do not award mastery or replace inspection of student evidence.
+This guide turns pathway documents, mastery evidence, and daily recognition practice into repeatable teacher actions. The scripts produce planning records; they do not award mastery or replace inspection of student evidence.
 
-## 1. Select the Declared Pathway
+## 1. Create One Pseudonymous Progress Ledger
 
-Choose exactly one current route:
-
-- `noai_round1` — 45 scheduled Sessions plus daily model-recognition practice;
-- `noai_round2` — 22 additional Sessions after inspected Round 1 qualification;
-- `ioai_full` — Sessions 1–78, including every recovery Session omitted by a compressed route.
-
-Do not combine pathway claims. A student may complete a compressed route without completing the full canonical route.
-
-## 2. Generate the Next-Session Plan
-
-### Round 1 from the beginning
+Create one ledger in the student’s private course repository. Use a pseudonymous ID, never a name or email address.
 
 ```bash
-python scripts/plan_learning_path.py \
-  --pathway noai_round1 \
-  --limit 6
+python scripts/manage_student_progress.py init \
+  --path student-progress/student-001.json \
+  --student-id student-001 \
+  --pathway noai_round1
 ```
 
-### Round 1 with completed work and prerequisite debt
+The ledger stores:
+
+- current pathway;
+- completed Session attempts;
+- blocking Red Sessions;
+- inspected pathway qualifications;
+- assigned drill Set IDs and scenario history;
+- reviewed drill scores.
+
+The contract is defined by `student_progress.schema.json`; `03_Templates/Student_Progress.example.json` is an example only and must not be reused as a real student record.
+
+## 2. Update Evidence State
+
+Record completed attempts and unresolved prerequisite debt:
 
 ```bash
-python scripts/plan_learning_path.py \
-  --pathway noai_round1 \
-  --completed 1-18,24-31 \
-  --red 17,25 \
-  --limit 5
+python scripts/manage_student_progress.py update \
+  --path student-progress/student-001.json \
+  --complete 1-18,24-31 \
+  --mark-red 17,25
 ```
 
-Red Sessions appear first and block dependent advancement. Remove a Red Session only after delayed retrieval or changed-task evidence passes.
-
-### Round 2 after inspected Round 1 qualification
+After a delayed recheck passes:
 
 ```bash
-python scripts/plan_learning_path.py \
-  --pathway noai_round2 \
-  --completed-pathway noai_round1 \
-  --entry-qualified \
-  --limit 6
+python scripts/manage_student_progress.py update \
+  --path student-progress/student-001.json \
+  --clear-red 17
 ```
 
-The first recommendations should be the deferred bridge Sessions 32 and 47, followed by Session 59.
+When an exit gate has been inspected and passed:
 
-### IOAI transition from compressed Round 1
+```bash
+python scripts/manage_student_progress.py update \
+  --path student-progress/student-001.json \
+  --qualify noai_round1 \
+  --pathway noai_round2
+```
+
+A Red Session remains a completed attempt but blocks dependent advancement. Do not clear Red debt from attendance, video completion, or immediate imitation.
+
+## 3. Generate the Next-Session Plan
+
+Use the ledger instead of repeatedly typing completed and Red Session lists:
 
 ```bash
 python scripts/plan_learning_path.py \
+  --progress student-progress/student-001.json \
+  --limit 6 \
+  --output plans/student-001-next.md
+```
+
+To inspect a future transition before changing the stored pathway:
+
+```bash
+python scripts/plan_learning_path.py \
+  --progress student-progress/student-001.json \
   --pathway ioai_full \
-  --completed-pathway noai_round1 \
   --limit 15
 ```
 
-The planner exposes every omitted Session from 1–58 before moving into Session 59. Do not manually jump to deep learning and hide the recovery debt.
+The planner reports entry blockers, Red debt, route recovery, the next unresolved Sessions, and the next workflow checkpoint. A teacher override requires a written evidence-based reason.
 
-## 3. Generate the Daily Model-Recognition Set
+## 4. Generate a No-Recent-Repeat Daily Drill
 
 ```bash
 python scripts/generate_daily_model_drill.py \
   --date 2026-08-04 \
   --level mixed \
-  --output daily-drills/2026-08-04.md
+  --progress student-progress/student-001.json \
+  --record-progress \
+  --output daily-drills/student-001/2026-08-04.md
 ```
 
-- the same date, level, and count produce the same set;
-- `mixed` balances levels rather than drawing only easy cases;
-- the output contains no answer key;
-- every scenario requires task, baseline, metric, validation, model-family, limitation, and leakage/shift reasoning.
+The generator:
 
-Use `--level 1`, `--level 2`, or `--level 3` when a cohort needs targeted difficulty.
+- produces the same set for the same date, level, count, and history state;
+- balances Level 1–3 when `mixed` is selected;
+- avoids the most recent 15 assigned scenario IDs when possible;
+- reintroduces the oldest previously seen item first only when the pool is insufficient;
+- records the assigned Set ID and scenarios only when `--record-progress` is used;
+- never includes a public answer key.
 
-## 4. Review and Record
+Use `--history-window 0` only for a deliberate unrestricted diagnostic. Use `--level 1`, `--level 2`, or `--level 3` for targeted remediation.
 
-For every generated set:
+## 5. Review and Score the Set
 
-1. score the public answer fields;
-2. compare with the private teacher key and acceptable alternatives;
-3. record the reasoning error, not only the corrected category;
-4. set a recheck date;
-5. update the student mastery dashboard;
-6. return to daily practice after two task-family errors in one week.
+After teacher review, record two values from 0 to 1:
 
-A deterministic set ID prevents accidental substitution of an easier set after feedback.
+```bash
+python scripts/manage_student_progress.py score-drill \
+  --path student-progress/student-001.json \
+  --set-id 0123456789 \
+  --task-family-accuracy 0.8 \
+  --score-percent 0.75
+```
 
-## 5. Weekly Planning Cycle
+The public worksheet still carries the detailed correction record. The ledger stores only compact assignment and score metadata; protected solutions and calibration examples remain private.
+
+## 6. Weekly Operating Cycle
 
 ```text
-export current mastery evidence
+inspect evidence
+→ update the progress ledger
 → run the pathway planner
 → resolve Red prerequisite debt
-→ generate daily recognition sets
+→ generate and record daily drills
+→ score reviewed sets
 → inspect reconstruction and transfer
-→ update next Sessions and recheck dates
+→ schedule delayed rechecks
 ```
 
-The teacher may override a generated recommendation only with a written reason tied to current evidence, official rules, access, runtime, or scheduling constraints.
+Do not place real names, email addresses, private answers, hidden labels, credentials, or protected assessment material in the public curriculum repository.
 
-## 6. Validation and Troubleshooting
+## 7. Validation and Troubleshooting
 
 Run:
 
 ```bash
 python scripts/validate_curriculum_spec.py
+python scripts/manage_student_progress.py --self-test
 python scripts/plan_learning_path.py --self-test
 python scripts/generate_daily_model_drill.py --self-test
+python scripts/manage_student_progress.py validate \
+  --path student-progress/student-001.json
 ```
 
 Common errors:
 
-- **entry blocker:** the prior pathway has not been marked as inspected evidence;
+- **invalid progress ledger:** a required field, date, Set ID, pathway, or Session value is malformed;
+- **Red not completed:** every Red Session must also be recorded as a completed attempt;
+- **entry blocker:** the required earlier pathway is not listed under `qualified_pathways`;
 - **Session outside range:** a completed or Red value is not between 1 and 78;
 - **descending range:** use `3-12`, not `12-3`;
-- **scenario bank below minimum:** one or more Level files are missing or headings were changed;
+- **record-progress requires progress:** assignment history cannot be written without a ledger;
 - **document/spec mismatch:** an Exact Session Route table drifted from `curriculum_spec.json`.
 
-## 7. Evidence Boundary
+## 8. Evidence Boundary
 
-These tools establish route consistency and produce repeatable assignments. They do not establish student-device qualification, authenticated resource access, private assessment security, representative pilot success, current-year rule alignment, or full competition readiness.
+These tools establish route consistency, preserve assignment history, and produce repeatable next actions. They do not establish student-device qualification, authenticated resource access, private assessment security, representative pilot success, current-year rule alignment, or full competition readiness.
