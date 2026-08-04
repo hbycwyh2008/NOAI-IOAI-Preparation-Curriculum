@@ -22,6 +22,8 @@ on:
       - "10_Ready_to_Teach_Pack/**"
       - "scripts/generate_ready_notebooks.py"
       - "scripts/generate_ready_notebooks_deterministic.py"
+      - "scripts/generate_daily_model_drill.py"
+      - "scripts/plan_learning_path.py"
       - "scripts/check_required_links.py"
       - "scripts/validate_curriculum.py"
       - "scripts/validate_curriculum_structure.py"
@@ -84,6 +86,11 @@ jobs:
 
       - name: Validate machine-readable curriculum specification
         run: python scripts/validate_curriculum_spec.py
+
+      - name: Self-test pathway planning and daily drill generation
+        run: |
+          python scripts/plan_learning_path.py --self-test
+          python scripts/generate_daily_model_drill.py --self-test
 
       - name: Validate public readiness contract
         run: python scripts/validate_readiness_contract.py
