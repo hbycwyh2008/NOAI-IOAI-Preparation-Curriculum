@@ -2,7 +2,7 @@
 
 **Sessions:** 1–2
 
-Open the assigned session below. Do not browse the lesson library manually.
+Open the assigned phase-local Session packet below.
 
 | Session | Focus | Open this lesson | Required evidence |
 |---:|---|---|---|
