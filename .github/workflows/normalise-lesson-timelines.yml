@@ -9,6 +9,7 @@ on:
       - 'STUDENT_START_HERE.md'
       - 'MANIFEST.md'
       - 'curriculum_spec.json'
+      - 'student_progress.schema.json'
       - '00_Course_Overview/**'
       - '01_Student_Start/**'
       - '02_Class_Missions/**'
@@ -22,6 +23,7 @@ on:
       - 'scripts/validate_curriculum.py'
       - 'scripts/validate_curriculum_structure.py'
       - 'scripts/validate_curriculum_spec.py'
+      - 'scripts/manage_student_progress.py'
       - 'scripts/plan_learning_path.py'
       - 'scripts/generate_daily_model_drill.py'
       - '.github/workflows/normalise-lesson-timelines.yml'
@@ -33,6 +35,7 @@ on:
       - 'STUDENT_START_HERE.md'
       - 'MANIFEST.md'
       - 'curriculum_spec.json'
+      - 'student_progress.schema.json'
       - '00_Course_Overview/**'
       - '01_Student_Start/**'
       - '02_Class_Missions/**'
@@ -69,10 +72,12 @@ jobs:
       - name: Validate machine-readable specification and execution layer
         run: python scripts/validate_curriculum_spec.py
 
-      - name: Self-test pathway planning and daily drill generation
+      - name: Self-test progress, pathway planning, and daily drill generation
         run: |
+          python scripts/manage_student_progress.py --self-test
           python scripts/plan_learning_path.py --self-test
           python scripts/generate_daily_model_drill.py --self-test
+          python scripts/manage_student_progress.py validate --path 03_Templates/Student_Progress.example.json
 
       - name: Confirm legacy entry points are non-destructive
         run: |
