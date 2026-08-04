@@ -94,6 +94,16 @@ def main() -> int:
             if marker in workflow_text:
                 errors.append(f"Audit workflow must not mutate the repository: found {marker}")
 
+    ready_workflow = ROOT / ".github/workflows/validate-ready-to-teach.yml"
+    if ready_workflow.exists():
+        workflow_text = ready_workflow.read_text(encoding="utf-8")
+        for marker in (
+            "10_Ready_to_Teach_Pack/Runtime_Validation_Record.md",
+            "10_Ready_to_Teach_Pack/Link_Verification_Latest.md",
+        ):
+            if marker in workflow_text:
+                errors.append(f"Ready-to-Teach workflow must not commit volatile report path: {marker}")
+
     for document in markdown:
         text = document.read_text(encoding="utf-8", errors="replace")
         if not text.startswith("# "):
@@ -150,6 +160,7 @@ def main() -> int:
     print("Exact duplicate canonical packets: 0")
     print("Obsolete pathway, parallel lesson, and generator files: absent")
     print("Audit workflow repository mutation: disabled")
+    print("Volatile Ready-to-Teach reports in repository history: disabled")
     return 0
 
 
