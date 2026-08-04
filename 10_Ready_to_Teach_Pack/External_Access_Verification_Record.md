@@ -1,19 +1,21 @@
 # External Access Verification Record
 
-Automated link checks confirm public reachability only. Complete this record with the actual teacher and student account types used by the cohort.
+**Status: NOT VERIFIED until this record is completed with the intended teacher and student accounts in the actual region and network.**
+
+Automated link checks confirm only public HTTP reachability. They do not prove enrolment, payment, account permissions, school-network access, captions, notebook launch, legal reading access, or regional availability.
 
 ## Verification Identity
 
 | Field | Record |
 |---|---|
-| Curriculum commit | |
-| Cohort | |
-| Verification date | |
-| Country/region and network | |
-| Teacher account tested | |
-| Student account tested | |
-| Verified by | |
-| Reviewed by | |
+| Curriculum commit | REQUIRED |
+| Cohort | REQUIRED |
+| Verification date | REQUIRED |
+| Country/region and network | REQUIRED |
+| Teacher account type tested | REQUIRED |
+| Student account type tested | REQUIRED |
+| Verified by | REQUIRED |
+| Reviewed by | REQUIRED |
 
 ## Required Resource Check
 
@@ -25,13 +27,28 @@ Automated link checks confirm public reachability only. Complete this record wit
 | Kaggle Learn | embedded Andrew ML practice | | | | | | | |
 | Andrew Ng Machine Learning Specialization | classical ML spine | | | | | | | |
 | StatQuest | just-in-time intuition | | | | | | | |
-| 3Blue1Brown | linear algebra/calculus intuition | | | | | | | |
+| 3Blue1Brown | mathematics intuition | | | | | | | |
 | Andrew Ng Deep Learning Specialization | deep-learning concept spine | | | | | | | |
+| D2L selected fragments | concept-to-code bridge | | | | | | | |
 | PyTorch official tutorials/courses | implementation spine | | | | | | | |
+| current NOAI organiser material | annual syllabus/rules/tasks | exact version | | | | organiser access terms | Chinese | |
+| current IOAI official material | syllabus/rules/tasks | exact dated page/file | | | | public/organiser terms | English | |
+
+## Minimum Verification Actions
+
+For every required resource:
+
+- [ ] open the exact assigned page with a teacher account;
+- [ ] open it with the intended student account type;
+- [ ] confirm the named module/chapter/section still exists;
+- [ ] confirm video, notebook, quiz, download, or reading access as applicable;
+- [ ] record payment, enrolment, licence, caption, language, and regional constraints;
+- [ ] test the school/VPN/home network actually used by the cohort;
+- [ ] verify a replacement or offline plan before assigning a blocked resource.
 
 ## Access Failure Classification
 
-For each failure, classify it as:
+Classify each failure as:
 
 - changed URL or course structure;
 - authentication or enrolment issue;
@@ -41,18 +58,24 @@ For each failure, classify it as:
 - device incompatibility;
 - resource removed;
 - reading-copy availability;
-- unclear exact section assignment.
+- unclear exact section assignment;
+- organiser-only or permission-restricted material.
 
 ## Replacement Rule
 
-A replacement must preserve the learning objective, approximate workload, language/access requirement, and evidence task. Record the old resource, replacement, reason, verification date, and affected lessons.
+A replacement must preserve the learning objective, approximate workload, language/access requirement, and evidence task. Record the old resource, replacement, reason, verification date, affected Sessions, and the account/network used to test it.
 
 ## Release Decision
 
 - [ ] all required resources work for both intended account types;
-- [ ] every paid or enrolment requirement was communicated before the phase;
-- [ ] every blocked resource has a verified replacement or offline plan;
-- [ ] the exact assigned sections still match the lesson files;
-- [ ] Phase 04 students have legal access to the complete assigned reading.
+- [ ] every paid, licensed, or enrolment requirement was communicated before the phase;
+- [ ] every blocked resource has a tested replacement or offline plan;
+- [ ] exact assigned sections still match the lesson files;
+- [ ] Phase 04 students have legal access to the complete assigned reading;
+- [ ] current competition documents are archived or referenced according to their permissions.
 
-This record expires when a provider changes course structure, authentication, pricing, regional availability, or assigned content.
+Decision and limitations:
+
+Reviewer signature/date:
+
+This record expires when a provider changes course structure, authentication, pricing, regional availability, assigned content, licence terms, or the cohort’s account/network environment.

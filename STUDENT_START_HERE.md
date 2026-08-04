@@ -1,9 +1,10 @@
 # Student Start Here
 
-Your teacher assigns one Phase and one Session at a time.
+Your teacher assigns one documented route, one Phase, and one Session at a time.
 
 ```text
-open Class Missions
+confirm your assigned route
+→ open Class Missions
 → choose the assigned Phase
 → open SESSION_LAUNCHER.md
 → click the assigned Session
@@ -11,7 +12,7 @@ open Class Missions
 → update the mastery dashboard
 ```
 
-Start at [Class Missions](02_Class_Missions/README.md). Canonical lessons are stored directly inside their numbered Phase folders.
+Start at [Class Missions](02_Class_Missions/README.md). Canonical lessons are stored directly inside their numbered Phase folders. Your assigned route may be the NOAI Round 1 route, NOAI Round 2 project route, IOAI full-extension route, or the complete 78-Session route.
 
 ## Learning Route
 
@@ -25,6 +26,8 @@ CS50P Python
 → model comparison, EDA, features, and evaluation
 → tuning, ensembling, and competition
 ```
+
+A compressed route does not mean random skipping. It lists exact Session IDs and explains what you will not yet be qualified to do.
 
 ## Modeling Workflow
 
@@ -41,6 +44,26 @@ task formalisation
 ```
 
 Use the [Workflow Competency Crosswalk](00_Course_Overview/Workflow_Competency_Crosswalk.md) to see the evidence required at each gate.
+
+## Daily Model-Recognition Practice
+
+Complete one 15-minute scenario from the [Model Recognition Daily Drills](04_Assessment/Model_Recognition_Drills/README.md) on every assigned study day.
+
+Before naming a model, write:
+
+- one row/sample;
+- X/features and y/target;
+- whether labels exist during training;
+- the exact required output;
+- task family;
+- simplest valid baseline;
+- metric and error cost;
+- validation split;
+- two candidate model families;
+- leakage, shift, or failure risk;
+- output/submission checks.
+
+Mastery requires at least 90% for five consecutive daily sets and one fresh secured set. Memorising the public scenarios is not mastery; you must explain and transfer the reasoning.
 
 ## Ordinary Class Cycle
 
@@ -70,10 +93,10 @@ After each Session:
 
 - Sessions 33–40 require pre-class reading evidence from Melanie Mitchell’s book.
 - Sessions 41–43 require equation, graph, hand-calculation, shape, and code translation evidence.
-- Every model task begins by identifying `X`, `y`, output, labels, baseline, metric, mathematical objects, and limitations.
+- Every model task begins by identifying sample, `X`, `y`, output, labels, baseline, metric, validation, and limitations.
 - Sessions 71–74 must establish the pre-tuning evidence gate.
 - Sessions 75–78 require diagnosis-first tuning, ensemble-diversity evidence, fresh-environment reproducibility, and a postmortem.
 
 ## First Steps
 
-Open the [Student Setup and Evidence Index](01_Student_Start/README.md), complete the assigned setup records, copy the mastery dashboard, then open today’s Phase launcher.
+Open the [Student Setup and Evidence Index](01_Student_Start/README.md), complete the assigned setup records, copy the mastery dashboard and model-recognition answer record, then open today’s Phase launcher.

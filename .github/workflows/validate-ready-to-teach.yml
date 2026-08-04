@@ -7,6 +7,7 @@ on:
       - "TEACHER_START_HERE.md"
       - "STUDENT_START_HERE.md"
       - "MANIFEST.md"
+      - "curriculum_spec.json"
       - "requirements.txt"
       - "00_Course_Overview/**"
       - "01_Student_Start/**"
@@ -24,6 +25,7 @@ on:
       - "scripts/check_required_links.py"
       - "scripts/validate_curriculum.py"
       - "scripts/validate_curriculum_structure.py"
+      - "scripts/validate_curriculum_spec.py"
       - "scripts/validate_readiness_contract.py"
       - "scripts/validate_class_mission_launchers.py"
       - "scripts/validate_repository_hygiene.py"
@@ -36,6 +38,7 @@ on:
       - "TEACHER_START_HERE.md"
       - "STUDENT_START_HERE.md"
       - "MANIFEST.md"
+      - "curriculum_spec.json"
       - "requirements.txt"
       - "00_Course_Overview/**"
       - "01_Student_Start/**"
@@ -78,6 +81,9 @@ jobs:
 
       - name: Validate curriculum structure and internal consistency
         run: python scripts/validate_curriculum_structure.py
+
+      - name: Validate machine-readable curriculum specification
+        run: python scripts/validate_curriculum_spec.py
 
       - name: Validate public readiness contract
         run: python scripts/validate_readiness_contract.py
