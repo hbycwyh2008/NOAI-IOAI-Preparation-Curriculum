@@ -28,6 +28,15 @@
 
 The workflow crosswalk and mastery records support the scheduled pathway; they do not create parallel Sessions or replace launchers.
 
+## Repository Automation Contract
+
+- Validation and audit workflows are read-only. They may generate temporary files and Actions artifacts, but they must not commit or push to `main`.
+- `scripts/generate_ready_notebooks.py` defines notebook content. `scripts/generate_ready_notebooks_deterministic.py` is the CI entry point: it preserves IDs for unchanged cells and assigns content-derived IDs to new cells.
+- Generated starter notebooks must exactly match the stable generation pipeline. A mismatch fails CI and must be corrected in the pull-request branch.
+- Timestamped runtime and link-verification reports remain Actions artifacts rather than Git history.
+- After a same-repository pull request is merged, its source branch is deleted automatically. Closed but unmerged branches and fork branches are preserved.
+- The default branch is never a cleanup candidate.
+
 ## Validation
 
 ```bash
@@ -35,7 +44,8 @@ python scripts/validate_curriculum_structure.py
 python scripts/validate_readiness_contract.py
 python scripts/validate_class_mission_launchers.py
 python scripts/validate_repository_hygiene.py
+python scripts/generate_ready_notebooks_deterministic.py
 python scripts/check_required_links.py
 ```
 
-The validators require Sessions 1–78 exactly once, phase-local canonical links, valid internal paths and anchors, distinct canonical packets, current indexes, and an explicit operational-readiness boundary.
+The validators require Sessions 1–78 exactly once, phase-local canonical links, valid internal paths and anchors, distinct canonical packets, current indexes, an explicit operational-readiness boundary, stable notebook generation, read-only validation workflows, and merged-branch cleanup safeguards.

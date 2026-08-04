@@ -23,16 +23,30 @@ REQUIRED_INDEXES = (
     "10_Ready_to_Teach_Pack/README.md",
 )
 
+REQUIRED_WORKFLOWS = (
+    ".github/workflows/audit-curriculum.yml",
+    ".github/workflows/validate-ready-to-teach.yml",
+    ".github/workflows/cleanup-merged-branches.yml",
+)
+
 OBSOLETE_PATHS = (
     "PUBLISH_TO_GITHUB.md",
     "scripts/v1_chunks",
     "02_Class_Missions/_Lesson_Library",
+    ".github/workflows/attach-final-course-tree.yml",
     "10_Ready_to_Teach_Pack/Automated_Curriculum_Audit_Latest.md",
     "10_Ready_to_Teach_Pack/Completion_Audit_90.md",
     "10_Ready_to_Teach_Pack/Phase_0_1_Setup_Python.md",
     "10_Ready_to_Teach_Pack/Phase_7_Competition_Practice.md",
     "09_Teacher_Planning/Phase_Overviews/Phase_0_Setup.md",
     "09_Teacher_Planning/Phase_Overviews/Phase_8_Competition_Sprint.md",
+)
+
+DEPRECATED_ACTION_REFS = (
+    "actions/checkout@v4",
+    "actions/setup-python@v5",
+    "actions/upload-artifact@v4",
+    "actions/github-script@v7",
 )
 
 BANNED_TEXT = (
@@ -71,6 +85,17 @@ def anchors(path: Path) -> set[str]:
     return result
 
 
+def require_markers(path: Path, markers: tuple[str, ...], errors: list[str]) -> str:
+    if not path.exists():
+        errors.append(f"Missing required workflow: {path.relative_to(ROOT)}")
+        return ""
+    text = path.read_text(encoding="utf-8")
+    for marker in markers:
+        if marker not in text:
+            errors.append(f"{path.relative_to(ROOT)} missing required marker: {marker}")
+    return text
+
+
 def main() -> int:
     errors: list[str] = []
     markdown = sorted(ROOT.rglob("*.md"))
@@ -79,30 +104,95 @@ def main() -> int:
         if not (ROOT / relative).exists():
             errors.append(f"Missing repository index: {relative}")
 
+    for relative in REQUIRED_WORKFLOWS:
+        if not (ROOT / relative).exists():
+            errors.append(f"Missing required workflow: {relative}")
+
     for relative in OBSOLETE_PATHS:
         if (ROOT / relative).exists():
             errors.append(f"Obsolete path still exists: {relative}")
 
     audit_workflow = ROOT / ".github/workflows/audit-curriculum.yml"
-    if audit_workflow.exists():
-        workflow_text = audit_workflow.read_text(encoding="utf-8")
-        for marker in (
-            "contents: write",
-            "git push",
-            "Automated_Curriculum_Audit_Latest.md",
-        ):
-            if marker in workflow_text:
-                errors.append(f"Audit workflow must not mutate the repository: found {marker}")
+    audit_text = require_markers(
+        audit_workflow,
+        (
+            "contents: read",
+            "actions/checkout@v6",
+            "actions/setup-python@v6",
+            "actions/upload-artifact@v6",
+        ),
+        errors,
+    )
+    for marker in (
+        "contents: write",
+        "git push",
+        "git commit",
+        "Automated_Curriculum_Audit_Latest.md",
+    ):
+        if marker in audit_text:
+            errors.append(f"Audit workflow must not mutate the repository: found {marker}")
 
     ready_workflow = ROOT / ".github/workflows/validate-ready-to-teach.yml"
-    if ready_workflow.exists():
-        workflow_text = ready_workflow.read_text(encoding="utf-8")
-        for marker in (
-            "10_Ready_to_Teach_Pack/Runtime_Validation_Record.md",
-            "10_Ready_to_Teach_Pack/Link_Verification_Latest.md",
-        ):
-            if marker in workflow_text:
-                errors.append(f"Ready-to-Teach workflow must not commit volatile report path: {marker}")
+    ready_text = require_markers(
+        ready_workflow,
+        (
+            "contents: read",
+            "actions/checkout@v6",
+            "actions/setup-python@v6",
+            "actions/upload-artifact@v6",
+            "Verify generated notebooks are current",
+            "git status --porcelain -- 06_Starter_Notebooks/ready_to_teach",
+            "Upload volatile validation reports",
+        ),
+        errors,
+    )
+    for marker in (
+        "contents: write",
+        "git push",
+        "git commit",
+        "Commit generated notebooks on main",
+        "github-actions[bot]",
+        "10_Ready_to_Teach_Pack/Runtime_Validation_Record.md",
+        "10_Ready_to_Teach_Pack/Link_Verification_Latest.md",
+    ):
+        if marker in ready_text:
+            errors.append(f"Ready-to-Teach workflow must be read-only: found {marker}")
+
+    cleanup_workflow = ROOT / ".github/workflows/cleanup-merged-branches.yml"
+    cleanup_text = require_markers(
+        cleanup_workflow,
+        (
+            "types: [closed]",
+            "contents: write",
+            "pull-requests: read",
+            "actions/github-script@v9",
+            "pull.merged",
+            "pull.head.repo.full_name",
+            "defaultBranch",
+            "github.rest.git.deleteRef",
+            "closedPulls.data.some((pull) => pull.merged_at)",
+        ),
+        errors,
+    )
+    if "branches: [main]" not in cleanup_text:
+        errors.append("Merged-branch cleanup bootstrap must be scoped to main")
+    if ".github/workflows/cleanup-merged-branches.yml" not in cleanup_text:
+        errors.append("Merged-branch cleanup bootstrap must run only when its workflow is introduced or changed")
+
+    workflows = sorted((ROOT / ".github/workflows").glob("*.yml"))
+    for workflow in workflows:
+        text = workflow.read_text(encoding="utf-8")
+        for marker in DEPRECATED_ACTION_REFS:
+            if marker in text:
+                errors.append(f"Deprecated GitHub Action runtime in {workflow.relative_to(ROOT)}: {marker}")
+
+        if workflow == cleanup_workflow:
+            continue
+        for marker in ("git push", "git commit", "contents: write"):
+            if marker in text:
+                errors.append(
+                    f"Only merged-branch cleanup may mutate repository refs: {workflow.relative_to(ROOT)} contains {marker}"
+                )
 
     for document in markdown:
         text = document.read_text(encoding="utf-8", errors="replace")
@@ -158,9 +248,10 @@ def main() -> int:
     print(f"Markdown files checked: {len(markdown)}")
     print("Internal Markdown links and anchors: valid")
     print("Exact duplicate canonical packets: 0")
-    print("Obsolete pathway, parallel lesson, and generator files: absent")
-    print("Audit workflow repository mutation: disabled")
-    print("Volatile Ready-to-Teach reports in repository history: disabled")
+    print("Obsolete pathway, parallel lesson, migration, and generator files: absent")
+    print("Validation workflows: read-only and Node 24 compatible")
+    print("Volatile validation reports in repository history: disabled")
+    print("Merged same-repository branches: automatic cleanup enabled")
     return 0
 
 

@@ -1,0 +1,91 @@
+name: Clean merged branches
+
+on:
+  pull_request:
+    types: [closed]
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cleanup-merged-branches.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete merged same-repository branches
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const repository = await github.rest.repos.get({ owner, repo });
+            const defaultBranch = repository.data.default_branch;
+            const candidates = new Set();
+
+            if (context.eventName === 'pull_request') {
+              const pull = context.payload.pull_request;
+              if (!pull.merged) {
+                core.info('Pull request was closed without merging. No branch will be deleted.');
+                return;
+              }
+              if (pull.head.repo.full_name !== `${owner}/${repo}`) {
+                core.info('Head branch belongs to a fork. No repository branch will be deleted.');
+                return;
+              }
+              candidates.add(pull.head.ref);
+            } else {
+              const branches = await github.paginate(
+                github.rest.repos.listBranches,
+                { owner, repo, per_page: 100 }
+              );
+
+              for (const branch of branches) {
+                if (branch.name === defaultBranch) continue;
+
+                const openPulls = await github.rest.pulls.list({
+                  owner,
+                  repo,
+                  state: 'open',
+                  head: `${owner}:${branch.name}`,
+                  per_page: 1,
+                });
+                if (openPulls.data.length > 0) continue;
+
+                const closedPulls = await github.rest.pulls.list({
+                  owner,
+                  repo,
+                  state: 'closed',
+                  head: `${owner}:${branch.name}`,
+                  per_page: 100,
+                });
+                if (closedPulls.data.some((pull) => pull.merged_at)) {
+                  candidates.add(branch.name);
+                }
+              }
+            }
+
+            for (const branch of candidates) {
+              if (!branch || branch === defaultBranch) {
+                core.warning(`Refusing to delete protected/default branch: ${branch}`);
+                continue;
+              }
+
+              try {
+                await github.rest.git.deleteRef({
+                  owner,
+                  repo,
+                  ref: `heads/${branch}`,
+                });
+                core.info(`Deleted merged branch: ${branch}`);
+              } catch (error) {
+                if (error.status === 422) {
+                  core.info(`Branch already absent or cannot be deleted: ${branch}`);
+                  continue;
+                }
+                throw error;
+              }
+            }
