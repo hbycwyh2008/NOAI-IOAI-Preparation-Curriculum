@@ -16,7 +16,7 @@ The canonical 78-Session route is organised by learning dependency.
 
 ## Architecture and Readiness
 
-- [Expanded Lesson Architecture](Expanded_Lesson_Architecture.md)
+- [Canonical Lesson Architecture](Expanded_Lesson_Architecture.md)
 - [Curriculum Completeness and Consistency Audit](Curriculum_Completeness_Audit.md)
 - [Repository Architecture Manifest](../MANIFEST.md)
 - [Class Missions](../02_Class_Missions/README.md)
@@ -47,4 +47,4 @@ task formalisation
 → reproducibility check and postmortem
 ```
 
-Canonical lesson bodies live inside numbered Phase folders. The former extension library contains extension and remediation material only. The workflow crosswalk and mastery records support this pathway without creating parallel Sessions.
+Canonical lesson bodies live inside numbered Phase folders and are opened through each Phase Session launcher. Templates, assessments, resources, public documents, teacher planning, and readiness records support the pathway without creating parallel Sessions.
