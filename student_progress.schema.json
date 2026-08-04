@@ -71,7 +71,7 @@
           "score_percent": {
             "type": ["number", "null"],
             "minimum": 0,
-            "maximum": 1
+            "maximum": 100
           },
           "reviewed": {"type": "boolean"}
         }
