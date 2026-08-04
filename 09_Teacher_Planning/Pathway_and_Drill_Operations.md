@@ -100,14 +100,14 @@ Use `--history-window 0` only for a deliberate unrestricted diagnostic. Use `--l
 
 ## 5. Review and Score the Set
 
-After teacher review, record two values from 0 to 1:
+After teacher review, record task-family accuracy as a fraction from 0 to 1 and total score as a percentage from 0 to 100:
 
 ```bash
 python scripts/manage_student_progress.py score-drill \
   --path student-progress/student-001.json \
   --set-id 0123456789 \
   --task-family-accuracy 0.8 \
-  --score-percent 0.75
+  --score-percent 75
 ```
 
 The public worksheet still carries the detailed correction record. The ledger stores only compact assignment and score metadata; protected solutions and calibration examples remain private.
@@ -148,6 +148,7 @@ Common errors:
 - **Session outside range:** a completed or Red value is not between 1 and 78;
 - **descending range:** use `3-12`, not `12-3`;
 - **record-progress requires progress:** assignment history cannot be written without a ledger;
+- **score range:** task-family accuracy uses 0–1; score percentage uses 0–100;
 - **document/spec mismatch:** an Exact Session Route table drifted from `curriculum_spec.json`.
 
 ## 8. Evidence Boundary
