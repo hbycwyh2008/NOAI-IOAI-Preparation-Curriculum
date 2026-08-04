@@ -1,20 +1,34 @@
-# Expanded Lesson Architecture
+# Canonical Lesson Architecture
 
-## Canonical Layer
+## Scheduled Layer
 
-The scheduled curriculum contains 78 Sessions. Each Session appears exactly once in a numbered Phase launcher, and every linked canonical lesson body is stored in that same Phase folder.
+The curriculum contains 78 scheduled Sessions across nine numbered Phase folders. Each Session appears exactly once in a Phase launcher, and every canonical lesson body is stored in that same Phase folder.
 
 - Session launcher coverage: 1–78 exactly once;
 - unique phase-local linked packets: 101;
 - required D2L concept-to-code bridge packets: six;
-- canonical links into the former extension library: zero.
+- canonical targets outside their Phase folders: zero.
 
 Some Sessions deliberately use more than one packet, for example a concept packet plus a calculation, implementation, evaluation, or D2L reconstruction packet. The six D2L bridge packets are embedded in existing Sessions 61, 62, 63, 65, 66, and 68 and do not increase the scheduled Session count.
 
-## Extension Layer
+## Supporting Layer
 
-the former extension library contains 96 remaining lesson files for remediation, alternative explanations, deeper domain work, reproductions, mocks, and optional competition sprints. These files are not part of the canonical Session count unless a teacher records a cohort-specific extension.
+The following folders support delivery without creating another sequence:
+
+- `01_Student_Start` — student setup and mastery records;
+- `03_Templates` — reusable evidence and planning formats;
+- `04_Assessment` — public rubrics and readiness checks;
+- `05_Resources` — selective resource maps and references;
+- `06_Starter_Code` and maintained notebooks — implementation scaffolds;
+- `08_Public_Documents` — public pathway explanations;
+- `09_Teacher_Planning` — pacing, pilot, and cohort decisions;
+- `10_Ready_to_Teach_Pack` — release, runtime, access, and security records.
+
+Supporting assets may be assigned only through a named Session, remediation plan, extension plan, or competition-specific plan. They do not silently become canonical lessons.
 
 ## Maintenance Rule
 
-Do not place a new canonical lesson only in the former extension library. Add it to the relevant Phase and link it from that Phase launcher. Library material must remain optional.
+1. Add every new canonical lesson packet directly to the relevant numbered Phase.
+2. Link it from that Phase launcher and preserve Sessions 1–78 unless a deliberate curriculum-version change is approved.
+3. Record optional remediation or extension with its prerequisite, added time, evidence, and capability goal.
+4. Do not create a parallel schedule or another canonical storage location.
