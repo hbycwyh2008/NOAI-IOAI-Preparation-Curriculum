@@ -17,6 +17,7 @@ REQUIRED_FILES = (
     "student_progress.schema.json",
     "03_Templates/Student_Progress.example.json",
     "scripts/manage_student_progress.py",
+    "scripts/report_student_progress.py",
     "scripts/plan_learning_path.py",
     "scripts/generate_daily_model_drill.py",
     "00_Course_Overview/NOAI_Round1_Compressed_Path.md",
@@ -126,6 +127,7 @@ def main() -> int:
             "phase-local canonical lesson",
             "pseudonymous student progress ledger",
             "evidence-aware pathway planner",
+            "mastery-eligibility report",
             "recent-repeat-aware daily-drill generator",
             "External Evidence Still Required",
             "must not state",
@@ -157,22 +159,24 @@ def main() -> int:
 
     for tool in (
         ROOT / "scripts/manage_student_progress.py",
+        ROOT / "scripts/report_student_progress.py",
         ROOT / "scripts/plan_learning_path.py",
         ROOT / "scripts/generate_daily_model_drill.py",
     ):
-        if tool.exists():
-            text = tool.read_text(encoding="utf-8")
-            if "--self-test" not in text:
-                errors.append(f"Operational tool lacks self-test: {tool.relative_to(ROOT)}")
+        if tool.exists() and "--self-test" not in tool.read_text(encoding="utf-8"):
+            errors.append(f"Operational tool lacks self-test: {tool.relative_to(ROOT)}")
 
     operations = ROOT / "09_Teacher_Planning/Pathway_and_Drill_Operations.md"
     if operations.exists():
         text = operations.read_text(encoding="utf-8")
         for marker in (
             "manage_student_progress.py init",
+            "manage_student_progress.py migrate",
+            "report_student_progress.py",
+            "--baseline-metric-accuracy",
+            "confirm-recognition",
             "--progress student-progress/student-001.json",
             "--record-progress",
-            "score-drill",
             "pseudonymous",
         ):
             if marker not in text:
@@ -189,8 +193,8 @@ def main() -> int:
     print("Canonical lesson storage: numbered Phase folders")
     print("Canonical launcher targets outside Phase folders: 0")
     print("Executable pathways: exact routes and recovery dependencies")
-    print("Operational state: pseudonymous progress ledger with Red-debt and drill-history rules")
-    print("Operational tools: progress manager, pathway planner, and recent-repeat-aware daily drill generator")
+    print("Operational state: progress schema v2 with migration, Red-debt, one-set-per-date, and confirmation rules")
+    print("Operational tools: progress manager, mastery report, pathway planner, and daily drill generator")
     print("AI History seminars: 8")
     print("Andrew ML mathematics transition: Sessions 41–43")
     print("D2L concept-to-code bridges: Sessions 61, 62, 63, 65, 66, and 68")
