@@ -29,6 +29,7 @@ REQUIRED_OPERATIONAL_FILES = (
     "student_progress.schema.json",
     "03_Templates/Student_Progress.example.json",
     "scripts/manage_student_progress.py",
+    "scripts/report_student_progress.py",
     "scripts/plan_learning_path.py",
     "scripts/generate_daily_model_drill.py",
     "09_Teacher_Planning/Pathway_and_Drill_Operations.md",
@@ -80,6 +81,20 @@ BANNED_TEXT = (
     re.compile(r"complete\s+Sessions\s+1[–-]58\s+with\s+the\s+NOAI\s+Round\s+1\s+exit\s+standard", re.IGNORECASE),
 )
 
+FORBIDDEN_PROGRESS_KEYS = {
+    "name",
+    "email",
+    "answer",
+    "answers",
+    "solution",
+    "solutions",
+    "credential",
+    "credentials",
+    "password",
+    "hidden_label",
+    "hidden_labels",
+}
+
 
 def anchor(text: str) -> str:
     text = re.sub(r"[`*_~]", "", text.strip().lower())
@@ -114,6 +129,18 @@ def require_markers(path: Path, markers: tuple[str, ...], errors: list[str]) -> 
     return text
 
 
+def find_forbidden_keys(value: object) -> set[str]:
+    found: set[str] = set()
+    if isinstance(value, dict):
+        found |= FORBIDDEN_PROGRESS_KEYS & set(value)
+        for child in value.values():
+            found |= find_forbidden_keys(child)
+    elif isinstance(value, list):
+        for child in value:
+            found |= find_forbidden_keys(child)
+    return found
+
+
 def main() -> int:
     errors: list[str] = []
     markdown = sorted(ROOT.rglob("*.md"))
@@ -121,21 +148,19 @@ def main() -> int:
     for relative in REQUIRED_INDEXES:
         if not (ROOT / relative).exists():
             errors.append(f"Missing repository index: {relative}")
-
     for relative in REQUIRED_OPERATIONAL_FILES:
         if not (ROOT / relative).exists():
             errors.append(f"Missing required operational file: {relative}")
-
     for relative in REQUIRED_WORKFLOWS:
         if not (ROOT / relative).exists():
             errors.append(f"Missing required workflow: {relative}")
-
     for relative in OBSOLETE_PATHS:
         if (ROOT / relative).exists():
             errors.append(f"Obsolete path still exists: {relative}")
 
     operational_tools = (
         ROOT / "scripts/manage_student_progress.py",
+        ROOT / "scripts/report_student_progress.py",
         ROOT / "scripts/plan_learning_path.py",
         ROOT / "scripts/generate_daily_model_drill.py",
     )
@@ -152,19 +177,19 @@ def main() -> int:
             example = json.loads(progress_example.read_text(encoding="utf-8"))
             if "@" in str(example.get("student_id", "")):
                 errors.append("Public progress example must not use an email address")
-            forbidden_keys = {"name", "email", "answer", "answers", "solution", "solutions", "credential", "password"}
-            found_forbidden = forbidden_keys & set(example)
-            for record in example.get("drill_history", []):
-                if isinstance(record, dict):
-                    found_forbidden |= forbidden_keys & set(record)
+            found_forbidden = find_forbidden_keys(example)
             if found_forbidden:
-                errors.append(f"Public progress example contains forbidden identity/answer keys: {sorted(found_forbidden)}")
+                errors.append(
+                    f"Public progress example contains forbidden identity/answer keys: {sorted(found_forbidden)}"
+                )
         except json.JSONDecodeError as error:
             errors.append(f"Invalid public progress example JSON: {error}")
 
     common_tool_markers = (
         "python scripts/manage_student_progress.py --self-test",
         "python scripts/manage_student_progress.py validate --path 03_Templates/Student_Progress.example.json",
+        "python scripts/report_student_progress.py --self-test",
+        "python scripts/report_student_progress.py --progress 03_Templates/Student_Progress.example.json",
         "python scripts/plan_learning_path.py --self-test",
         "python scripts/generate_daily_model_drill.py --self-test",
     )
@@ -252,7 +277,6 @@ def main() -> int:
         for marker in DEPRECATED_ACTION_REFS:
             if marker in text:
                 errors.append(f"Deprecated GitHub Action runtime in {workflow.relative_to(ROOT)}: {marker}")
-
         if workflow == cleanup_workflow:
             continue
         for marker in ("git push", "git commit", "contents: write"):
@@ -274,7 +298,7 @@ def main() -> int:
                 target = document
                 fragment = raw[1:]
             else:
-                path_part, marker, fragment = raw.partition("#")
+                path_part, _marker, fragment = raw.partition("#")
                 target = (document.parent / path_part).resolve()
                 if not target.exists():
                     errors.append(f"Broken Markdown link: {document.relative_to(ROOT)} -> {raw}")
@@ -316,9 +340,8 @@ def main() -> int:
     print("Internal Markdown links and anchors: valid")
     print("Exact duplicate canonical packets: 0")
     print("Obsolete pathway, parallel lesson, migration, and generator files: absent")
-    print("Pseudonymous progress schema/example and protected-answer boundary: enforced")
-    print("Progress manager, planner, and recent-repeat drill generator: present and self-tested in all validation workflows")
-    print("Corrected pathway counts and recovery dependencies: stale language blocked")
+    print("Pseudonymous progress schema/example and recursive protected-answer boundary: enforced")
+    print("Progress manager, mastery report, planner, and daily drill generator: self-tested in all workflows")
     print("Validation workflows: read-only and Node 24 compatible")
     print("Volatile validation reports in repository history: disabled")
     print("Merged same-repository branches: automatic cleanup enabled")
