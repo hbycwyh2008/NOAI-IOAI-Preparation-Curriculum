@@ -16,4 +16,4 @@
 
 Ordinary missions use 75 minutes. Sessions 19–32 and 33–40 are named 70-minute exceptions. Long competition simulations use the target event duration.
 
-D2L bridge packets are embedded inside Sessions 61, 62, 63, 65, 66, and 68 and do not add sessions. Reading, video completion, or external-course progress does not replace the Session gate. Teachers assign extensions from the former extension library only after opening the canonical phase-local lesson.
+D2L bridge packets are embedded inside Sessions 61, 62, 63, 65, 66, and 68 and do not add sessions. Reading, video completion, or external-course progress does not replace the Session gate. Any cohort-specific remediation or extension must name its source, prerequisite, added time, evidence requirement, and capability goal without changing the canonical Session numbering.
