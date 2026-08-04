@@ -33,12 +33,20 @@ OBSOLETE_PATHS = (
     "PUBLISH_TO_GITHUB.md",
     "scripts/v1_chunks",
     "02_Class_Missions/_Lesson_Library",
+    ".github/workflows/attach-final-course-tree.yml",
     "10_Ready_to_Teach_Pack/Automated_Curriculum_Audit_Latest.md",
     "10_Ready_to_Teach_Pack/Completion_Audit_90.md",
     "10_Ready_to_Teach_Pack/Phase_0_1_Setup_Python.md",
     "10_Ready_to_Teach_Pack/Phase_7_Competition_Practice.md",
     "09_Teacher_Planning/Phase_Overviews/Phase_0_Setup.md",
     "09_Teacher_Planning/Phase_Overviews/Phase_8_Competition_Sprint.md",
+)
+
+DEPRECATED_ACTION_REFS = (
+    "actions/checkout@v4",
+    "actions/setup-python@v5",
+    "actions/upload-artifact@v4",
+    "actions/github-script@v7",
 )
 
 BANNED_TEXT = (
@@ -105,22 +113,33 @@ def main() -> int:
             errors.append(f"Obsolete path still exists: {relative}")
 
     audit_workflow = ROOT / ".github/workflows/audit-curriculum.yml"
-    if audit_workflow.exists():
-        workflow_text = audit_workflow.read_text(encoding="utf-8")
-        for marker in (
-            "contents: write",
-            "git push",
-            "git commit",
-            "Automated_Curriculum_Audit_Latest.md",
-        ):
-            if marker in workflow_text:
-                errors.append(f"Audit workflow must not mutate the repository: found {marker}")
+    audit_text = require_markers(
+        audit_workflow,
+        (
+            "contents: read",
+            "actions/checkout@v6",
+            "actions/setup-python@v6",
+            "actions/upload-artifact@v6",
+        ),
+        errors,
+    )
+    for marker in (
+        "contents: write",
+        "git push",
+        "git commit",
+        "Automated_Curriculum_Audit_Latest.md",
+    ):
+        if marker in audit_text:
+            errors.append(f"Audit workflow must not mutate the repository: found {marker}")
 
     ready_workflow = ROOT / ".github/workflows/validate-ready-to-teach.yml"
     ready_text = require_markers(
         ready_workflow,
         (
             "contents: read",
+            "actions/checkout@v6",
+            "actions/setup-python@v6",
+            "actions/upload-artifact@v6",
             "Verify generated notebooks are current",
             "git status --porcelain -- 06_Starter_Notebooks/ready_to_teach",
             "Upload volatile validation reports",
@@ -146,6 +165,7 @@ def main() -> int:
             "types: [closed]",
             "contents: write",
             "pull-requests: read",
+            "actions/github-script@v9",
             "pull.merged",
             "pull.head.repo.full_name",
             "defaultBranch",
@@ -159,10 +179,15 @@ def main() -> int:
     if ".github/workflows/cleanup-merged-branches.yml" not in cleanup_text:
         errors.append("Merged-branch cleanup bootstrap must run only when its workflow is introduced or changed")
 
-    for workflow in sorted((ROOT / ".github/workflows").glob("*.yml")):
+    workflows = sorted((ROOT / ".github/workflows").glob("*.yml"))
+    for workflow in workflows:
+        text = workflow.read_text(encoding="utf-8")
+        for marker in DEPRECATED_ACTION_REFS:
+            if marker in text:
+                errors.append(f"Deprecated GitHub Action runtime in {workflow.relative_to(ROOT)}: {marker}")
+
         if workflow == cleanup_workflow:
             continue
-        text = workflow.read_text(encoding="utf-8")
         for marker in ("git push", "git commit", "contents: write"):
             if marker in text:
                 errors.append(
@@ -223,8 +248,8 @@ def main() -> int:
     print(f"Markdown files checked: {len(markdown)}")
     print("Internal Markdown links and anchors: valid")
     print("Exact duplicate canonical packets: 0")
-    print("Obsolete pathway, parallel lesson, and generator files: absent")
-    print("Validation workflows: read-only")
+    print("Obsolete pathway, parallel lesson, migration, and generator files: absent")
+    print("Validation workflows: read-only and Node 24 compatible")
     print("Volatile validation reports in repository history: disabled")
     print("Merged same-repository branches: automatic cleanup enabled")
     return 0
