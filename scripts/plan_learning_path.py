@@ -4,7 +4,8 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Iterable
+
+from manage_student_progress import compact_ranges, load_progress, parse_sessions
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC_PATH = ROOT / "curriculum_spec.json"
@@ -12,43 +13,6 @@ SPEC_PATH = ROOT / "curriculum_spec.json"
 
 def load_spec() -> dict:
     return json.loads(SPEC_PATH.read_text(encoding="utf-8"))
-
-
-def parse_sessions(value: str) -> set[int]:
-    sessions: set[int] = set()
-    value = value.strip()
-    if not value:
-        return sessions
-    for token in value.split(","):
-        token = token.strip()
-        if not token:
-            continue
-        if "-" in token:
-            start_text, end_text = token.split("-", 1)
-            start = int(start_text)
-            end = int(end_text)
-            if start > end:
-                raise ValueError(f"Invalid descending range: {token}")
-            sessions.update(range(start, end + 1))
-        else:
-            sessions.add(int(token))
-    return sessions
-
-
-def compact_ranges(values: Iterable[int]) -> str:
-    ordered = sorted(set(values))
-    if not ordered:
-        return "none"
-    ranges: list[str] = []
-    start = previous = ordered[0]
-    for value in ordered[1:]:
-        if value == previous + 1:
-            previous = value
-            continue
-        ranges.append(str(start) if start == previous else f"{start}-{previous}")
-        start = previous = value
-    ranges.append(str(start) if start == previous else f"{start}-{previous}")
-    return ", ".join(ranges)
 
 
 def pathway_sessions(spec: dict, pathway_name: str) -> list[int]:
@@ -65,7 +29,9 @@ def build_plan(
     completed: set[int],
     red: set[int],
     limit: int,
+    qualified_pathways: set[str],
     entry_qualified: bool,
+    student_id: str | None = None,
 ) -> str:
     pathway = spec["pathways"][pathway_name]
     route = pathway_sessions(spec, pathway_name)
@@ -74,11 +40,17 @@ def build_plan(
     invalid = (completed | red) - canonical
     if invalid:
         raise ValueError(f"Sessions outside the canonical range: {compact_ranges(invalid)}")
+    if not red.issubset(completed):
+        raise ValueError("Red Sessions must also be recorded as completed attempts")
     if limit < 1:
         raise ValueError("--limit must be at least 1")
 
     required_pathway = pathway.get("requires_pathway")
-    entry_blocker = bool(required_pathway and not entry_qualified)
+    entry_blocker = bool(
+        required_pathway
+        and required_pathway not in qualified_pathways
+        and not entry_qualified
+    )
 
     route_set = set(route)
     completed_on_route = completed & route_set
@@ -93,8 +65,7 @@ def build_plan(
             for session in route[: first_red_index + 1]
             if session not in completed_on_route or session in red_on_route
         ]
-        recommendations = (red_in_order + before_or_at_blocker)[:limit]
-        recommendations = list(dict.fromkeys(recommendations))
+        recommendations = list(dict.fromkeys(red_in_order + before_or_at_blocker))[:limit]
     elif entry_blocker:
         recommendations = []
     else:
@@ -107,14 +78,16 @@ def build_plan(
     ]
     next_checkpoint = checkpoints[0] if checkpoints else None
 
-    lines = [
-        "# Learning Path Plan",
-        "",
+    lines = ["# Learning Path Plan", ""]
+    if student_id:
+        lines.append(f"- Student ID: `{student_id}`")
+    lines += [
         f"- Pathway: `{pathway_name}`",
         f"- Pathway document: `{pathway['document']}`",
         f"- Route length: {len(route)} Sessions",
         f"- Completed on route: {len(completed_on_route)}",
         f"- Remaining on route: {len(remaining)}",
+        f"- Qualified pathways: {', '.join(sorted(qualified_pathways)) or 'none'}",
         f"- Capability boundary: {pathway['claim_boundary']}",
         "",
     ]
@@ -124,7 +97,7 @@ def build_plan(
             "## Entry blocker",
             "",
             f"This route requires qualification through `{required_pathway}` or equivalent inspected evidence.",
-            "Run again with `--entry-qualified` only after that evidence has been reviewed.",
+            "Record that qualification in the progress ledger or use `--entry-qualified` only after review.",
             "",
         ]
 
@@ -164,6 +137,17 @@ def build_plan(
             lines.append("All declared bridge-recovery Sessions are complete.")
         lines.append("")
 
+    if pathway_name == "ioai_full":
+        compressed_recovery = pathway.get("recovery_sessions_from_noai_round1") or []
+        if "noai_round1" in qualified_pathways:
+            unresolved = [session for session in compressed_recovery if session not in completed]
+            lines += ["## Compressed-route recovery", ""]
+            if unresolved:
+                lines.append(f"Recover before Session 59: **{compact_ranges(unresolved)}**.")
+            else:
+                lines.append("Every Session omitted by compressed Round 1 has been recovered.")
+            lines.append("")
+
     lines += [
         "## Evidence rule",
         "",
@@ -176,14 +160,17 @@ def run_self_test() -> None:
     spec = load_spec()
     round1 = set(pathway_sessions(spec, "noai_round1"))
 
-    plan = build_plan(spec, "noai_round1", set(), set(), 3, False)
+    plan = build_plan(spec, "noai_round1", set(), set(), 3, set(), False)
     assert "Session 1" in plan and "Session 3" in plan
 
-    plan = build_plan(spec, "noai_round2", round1, set(), 4, True)
+    plan = build_plan(spec, "noai_round2", round1, set(), 4, {"noai_round1"}, False)
     assert "Session 32" in plan and "Session 47" in plan and "Session 59" in plan
+    assert "Entry blocker" not in plan
 
-    plan = build_plan(spec, "ioai_full", round1, {19}, 4, True)
+    plan = build_plan(spec, "ioai_full", round1 | {19}, {19}, 4, {"noai_round1"}, False, "student-001")
     assert "Blocking Red Sessions: **19**" in plan
+    assert "Student ID: `student-001`" in plan
+    assert "Recover before Session 59" in plan
 
     try:
         parse_sessions("8-3")
@@ -198,11 +185,12 @@ def run_self_test() -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate an evidence-aware next-Session plan from curriculum_spec.json.")
     parser.add_argument("--pathway", choices=("noai_round1", "noai_round2", "ioai_full"))
-    parser.add_argument("--completed", default="", help="Completed Sessions, for example 1-18,24-31")
+    parser.add_argument("--progress", type=Path, help="Read completed, Red, qualification, and pathway state from a progress ledger")
+    parser.add_argument("--completed", default="", help="Additional completed Sessions, for example 1-18,24-31")
     parser.add_argument("--completed-pathway", choices=("noai_round1", "noai_round2", "ioai_full"))
-    parser.add_argument("--red", default="", help="Blocking Red Sessions")
+    parser.add_argument("--red", default="", help="Additional blocking Red Sessions")
     parser.add_argument("--limit", type=int, default=6, help="Maximum number of next Sessions")
-    parser.add_argument("--entry-qualified", action="store_true", help="Confirm that a required earlier pathway has inspected evidence")
+    parser.add_argument("--entry-qualified", action="store_true", help="Confirm equivalent inspected entry evidence not stored in the ledger")
     parser.add_argument("--output", type=Path, help="Write Markdown to this path instead of stdout")
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
@@ -210,16 +198,45 @@ def main() -> int:
     if args.self_test:
         run_self_test()
         return 0
-    if not args.pathway:
-        parser.error("--pathway is required unless --self-test is used")
 
     try:
         spec = load_spec()
-        completed = parse_sessions(args.completed)
+        completed: set[int] = set()
+        red: set[int] = set()
+        qualified_pathways: set[str] = set()
+        student_id: str | None = None
+        pathway_name = args.pathway
+
+        if args.progress:
+            progress = load_progress(args.progress, spec)
+            completed.update(int(value) for value in progress["completed_sessions"])
+            red.update(int(value) for value in progress["red_sessions"])
+            qualified_pathways.update(str(value) for value in progress["qualified_pathways"])
+            student_id = str(progress["student_id"])
+            if pathway_name is None:
+                pathway_name = str(progress["pathway"])
+
+        if not pathway_name:
+            parser.error("--pathway is required unless a --progress ledger supplies it")
+
+        completed.update(parse_sessions(args.completed))
+        additional_red = parse_sessions(args.red)
+        completed.update(additional_red)
+        red.update(additional_red)
         if args.completed_pathway:
             completed.update(pathway_sessions(spec, args.completed_pathway))
-        red = parse_sessions(args.red)
-        text = build_plan(spec, args.pathway, completed, red, args.limit, args.entry_qualified)
+            qualified_pathways.add(args.completed_pathway)
+
+        text = build_plan(
+            spec,
+            pathway_name,
+            completed,
+            red,
+            args.limit,
+            qualified_pathways,
+            args.entry_qualified,
+            student_id,
+        )
     except (KeyError, TypeError, ValueError, json.JSONDecodeError) as error:
         print(f"Pathway planner failed: {error}", file=sys.stderr)
         return 2
