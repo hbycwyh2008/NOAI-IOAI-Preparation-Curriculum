@@ -6,7 +6,7 @@
 
 [**Open the Phase 7 Session Launcher**](SESSION_LAUNCHER.md)
 
-The launcher selects the exact comparison, EDA, feature-engineering, validation, and error-analysis lessons. Do not browse the lesson library manually.
+The launcher selects the exact phase-local comparison, EDA, feature-engineering, validation, and error-analysis packets for each Session.
 
 ## Purpose
 
