@@ -1,6 +1,6 @@
 # Ready-to-Teach Pack Index
 
-Canonical teaching begins in [Class Missions](../02_Class_Missions/README.md). This folder contains delivery support and release evidence, not a second lesson sequence.
+Canonical teaching begins in [Class Missions](../02_Class_Missions/README.md). This folder contains delivery support, evidence boundaries, and release records, not a second lesson sequence.
 
 ## Canonical Delivery Packs
 
@@ -32,13 +32,36 @@ Canonical teaching begins in [Class Missions](../02_Class_Missions/README.md). T
 - [Committed Link Verification Snapshot](Link_Verification_Latest.md)
 - [Repository Cleanup Audit](Repository_Cleanup_Audit.md)
 
-Automated curriculum checks run in GitHub Actions. Each curriculum audit publishes its result in the workflow summary and stores the complete log as a 30-day artifact. Ready-to-Teach validation stores its current runtime and link reports as a 30-day artifact. These volatile, timestamped reports are not committed back into the repository. The committed snapshot files remain historical reference points until intentionally replaced after review.
-
-The notebook generator may update the twelve maintained starter notebooks on `main` only when their reproducible content changes. The workflow does not commit runtime timestamps or link-check timestamps.
-
-## Annual Rules
+## Annual Rules and Event Review
 
 - [Annual Competition Rule Verification Template](Annual_Competition_Rule_Verification.md)
 - [2026 Rules Verification Record](Annual_Rules_2026_Verification.md)
+- [IOAI 2026 Post-Event Review](IOAI_2026_Post_Event_Review.md)
 
-Public repository checks do not replace cohort-specific runtime, access, privacy, pilot, or current-rule evidence.
+## Automation Boundary
+
+Automated curriculum checks run in GitHub Actions. Curriculum audits publish results in the workflow summary and retain complete logs as temporary artifacts. Ready-to-Teach validation:
+
+- validates structure, readiness contracts, launchers, repository hygiene, and the machine-readable curriculum specification;
+- regenerates the twelve starter notebooks through the deterministic wrapper;
+- fails when generated content differs from the committed notebooks;
+- executes all twelve notebooks from fresh kernels;
+- smoke-tests maintained starter code;
+- checks required public links;
+- stores volatile runtime and link reports as temporary Actions artifacts.
+
+Validation workflows are read-only. They do **not** commit notebooks, timestamps, audit reports, runtime reports, or link reports to `main`. A mismatch must be fixed deliberately in a pull-request branch and reviewed.
+
+## Evidence Boundary
+
+Public repository checks do not replace:
+
+- named-cohort student-device qualification;
+- authenticated teacher/student account verification;
+- legal reading and asset access;
+- private assessment and hidden-test security;
+- representative classroom pilots;
+- full-cohort timing, retention, and transfer evidence;
+- dated official-rule review and post-event task/environment comparison.
+
+Use dimension-specific status language. Do not describe the curriculum as fully evidenced for a cohort, platform, or competition year until the corresponding records are complete.
