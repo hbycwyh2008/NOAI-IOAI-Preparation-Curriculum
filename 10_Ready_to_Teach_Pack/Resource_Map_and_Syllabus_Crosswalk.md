@@ -17,7 +17,7 @@ This crosswalk uses the canonical nine phases and Session ranges. Current offici
 | Andrew Ng Deep Learning Specialization | deep-learning concept spine | Sessions 59–70 |
 | *Dive into Deep Learning* (selected PyTorch sections only) | concept-to-code bridge; independent reconstruction | Sessions 59–68, required bridges in 61, 62, 63, 65, 66, and 68 |
 | DeepLearning.AI PyTorch certificate and PyTorch tutorials | deep-learning implementation spine | Sessions 59–70 |
-| Hugging Face, torchaudio, OpenCV, and Qwen documentation | domain extensions | Sessions 64–70 and assigned library extensions |
+| Hugging Face, torchaudio, OpenCV, and Qwen documentation | domain-specific implementation references | Sessions 64–70 and documented cohort extensions |
 | current official NOAI / IOAI documents | scope, tools, runtime, and submission rules | every cohort and scored mock |
 
 ## Syllabus Crosswalk
