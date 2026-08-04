@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "student_id": "student-001",
+  "pathway": "noai_round1",
+  "completed_sessions": [1, 2, 3],
+  "red_sessions": [3],
+  "qualified_pathways": [],
+  "drill_history": [
+    {
+      "date": "2026-08-04",
+      "set_id": "0123456789",
+      "level": "mixed",
+      "scenario_ids": ["L1-D01", "L2-D13", "L3-D25"],
+      "task_family_accuracy": null,
+      "score_percent": null,
+      "reviewed": false
+    }
+  ],
+  "last_updated": "2026-08-04"
+}

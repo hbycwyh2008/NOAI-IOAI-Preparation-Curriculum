@@ -14,6 +14,9 @@ REQUIRED_FILES = (
     "STUDENT_START_HERE.md",
     "MANIFEST.md",
     "curriculum_spec.json",
+    "student_progress.schema.json",
+    "03_Templates/Student_Progress.example.json",
+    "scripts/manage_student_progress.py",
     "scripts/plan_learning_path.py",
     "scripts/generate_daily_model_drill.py",
     "00_Course_Overview/NOAI_Round1_Compressed_Path.md",
@@ -55,6 +58,7 @@ HIGH_TRAFFIC = (
     "00_Course_Overview/Pacing_Guide.md",
     "00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md",
     "09_Teacher_Planning/README.md",
+    "09_Teacher_Planning/Pathway_and_Drill_Operations.md",
     "10_Ready_to_Teach_Pack/README.md",
     "10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md",
 )
@@ -120,8 +124,9 @@ def main() -> int:
         for marker in (
             "100% public file-structure and internal-consistency coverage",
             "phase-local canonical lesson",
+            "pseudonymous student progress ledger",
             "evidence-aware pathway planner",
-            "deterministic daily-drill generator",
+            "recent-repeat-aware daily-drill generator",
             "External Evidence Still Required",
             "must not state",
         ):
@@ -151,6 +156,7 @@ def main() -> int:
                 errors.append(f"D2L selective map missing marker: {marker}")
 
     for tool in (
+        ROOT / "scripts/manage_student_progress.py",
         ROOT / "scripts/plan_learning_path.py",
         ROOT / "scripts/generate_daily_model_drill.py",
     ):
@@ -158,6 +164,19 @@ def main() -> int:
             text = tool.read_text(encoding="utf-8")
             if "--self-test" not in text:
                 errors.append(f"Operational tool lacks self-test: {tool.relative_to(ROOT)}")
+
+    operations = ROOT / "09_Teacher_Planning/Pathway_and_Drill_Operations.md"
+    if operations.exists():
+        text = operations.read_text(encoding="utf-8")
+        for marker in (
+            "manage_student_progress.py init",
+            "--progress student-progress/student-001.json",
+            "--record-progress",
+            "score-drill",
+            "pseudonymous",
+        ):
+            if marker not in text:
+                errors.append(f"Operations guide missing progress workflow marker: {marker}")
 
     if errors:
         print("Readiness contract validation failed:", file=sys.stderr)
@@ -170,7 +189,8 @@ def main() -> int:
     print("Canonical lesson storage: numbered Phase folders")
     print("Canonical launcher targets outside Phase folders: 0")
     print("Executable pathways: exact routes and recovery dependencies")
-    print("Operational tools: pathway planner and deterministic daily drill generator")
+    print("Operational state: pseudonymous progress ledger with Red-debt and drill-history rules")
+    print("Operational tools: progress manager, pathway planner, and recent-repeat-aware daily drill generator")
     print("AI History seminars: 8")
     print("Andrew ML mathematics transition: Sessions 41–43")
     print("D2L concept-to-code bridges: Sessions 61, 62, 63, 65, 66, and 68")

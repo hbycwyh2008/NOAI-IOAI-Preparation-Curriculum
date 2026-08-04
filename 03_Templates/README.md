@@ -18,5 +18,8 @@ Use only the template named by the current Session, assessment, or teacher plan.
 - [Round 1 Paper Practice Worksheet Template](Round_1_Paper_Practice_Worksheet_Template.md)
 - [Round 2 Notebook Lab Template](Round_2_Notebook_Lab_Template.md)
 - [Student NOAI Preparation Repository](Student_Repo_Template.md)
+- [Student Progress Ledger Example](Student_Progress.example.json)
 - [Student Worksheet Master Template](Student_Worksheet_Master_Template.md)
 - [Weekly Reflection](Weekly_Reflection_Template.md)
+
+The progress example is structural only. Create real ledgers with `scripts/manage_student_progress.py init` in private student repositories, use pseudonymous IDs, and never store names, emails, protected answers, credentials, or hidden labels.

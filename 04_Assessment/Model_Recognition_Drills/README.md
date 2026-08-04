@@ -4,24 +4,20 @@ Use one generated set per study day for approximately 15 minutes. These drills t
 
 ## Generate Today’s Set
 
-The default creates a deterministic five-scenario mixed set:
-
-```bash
-python scripts/generate_daily_model_drill.py \
-  --date YYYY-MM-DD \
-  --level mixed
-```
-
-To save the worksheet:
+The preferred workflow reads the student’s private progress ledger, avoids the most recent 15 scenario assignments when possible, and records the new assignment:
 
 ```bash
 python scripts/generate_daily_model_drill.py \
   --date YYYY-MM-DD \
   --level mixed \
+  --progress student-progress/student-001.json \
+  --record-progress \
   --output daily-drills/YYYY-MM-DD.md
 ```
 
-The same date, level, and count produce the same Set ID and scenario selection. This makes feedback, resubmission, and teacher records auditable. Use `--level 1`, `--level 2`, or `--level 3` for targeted difficulty.
+Without `--progress`, selection remains deterministic but cannot use assignment history. Use `--history-window 0` only for a deliberate unrestricted diagnostic. Use `--level 1`, `--level 2`, or `--level 3` for targeted difficulty.
+
+The same date, level, count, and history state produce the same Set ID and scenario selection. When the recent-repeat window exhausts a level pool, the oldest previously assigned item returns first. This makes feedback, resubmission, and teacher records auditable without falsely promising that a 36-scenario public bank can remain unique forever.
 
 ## Daily Procedure
 
@@ -33,6 +29,7 @@ The same date, level, and count produce the same Set ID and scenario selection. 
 6. Name two reasonable model families and one likely failure mode for each.
 7. Identify one leakage, distribution-shift, or submission risk.
 8. Compare with teacher feedback, correct the reasoning, and record the correction cause.
+9. Record reviewed task-family accuracy and total score in the progress ledger.
 
 ## Levels
 
@@ -42,11 +39,25 @@ The same date, level, and count produce the same Set ID and scenario selection. 
 - [Answer Record](Answer_Record.md): one reusable student response sheet.
 - [Teacher Key Protocol](Teacher_Key_Protocol.md): private-key and feedback rules.
 
+## Review and Score
+
+After feedback, record task-family accuracy as a fraction from 0 to 1 and the total score as a percentage from 0 to 100:
+
+```bash
+python scripts/manage_student_progress.py score-drill \
+  --path student-progress/student-001.json \
+  --set-id 0123456789 \
+  --task-family-accuracy 0.8 \
+  --score-percent 75
+```
+
+Detailed reasoning, correction notes, and recheck dates remain in the worksheet or answer record. Protected solutions and calibration material remain outside the public repository.
+
 ## Mastery Rule
 
 Mastery requires all of the following:
 
-- at least 90% task-family accuracy for five consecutive daily sets;
+- at least 90% task-family accuracy for five consecutive reviewed daily sets;
 - no confusion between labels, features, output, metric, validation, and model;
 - a valid baseline and metric for at least 90% of scenarios;
 - candidate models justified from data and output structure rather than keywords;
@@ -75,7 +86,8 @@ The teacher stores detailed solutions, alternative acceptable answers, and calib
 ## Tool Validation
 
 ```bash
+python scripts/manage_student_progress.py --self-test
 python scripts/generate_daily_model_drill.py --self-test
 ```
 
-The self-test verifies deterministic selection, unique scenarios, mixed-level coverage, minimum bank size, and answer-key-free output.
+The self-tests verify progress-ledger integrity, deterministic selection, recent-repeat avoidance, unique scenarios within a set, mixed-level coverage, minimum bank size, and answer-key-free output.

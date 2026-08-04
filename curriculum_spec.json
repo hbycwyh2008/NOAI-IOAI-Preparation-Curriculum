@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "canonical_sessions": 78,
   "canonical_packets": 101,
   "phases": [
@@ -51,8 +51,16 @@
     {"session": 78, "gate": "readiness_and_postmortem"}
   ],
   "operational_tools": {
+    "progress_manager": "scripts/manage_student_progress.py",
     "pathway_planner": "scripts/plan_learning_path.py",
     "daily_drill_generator": "scripts/generate_daily_model_drill.py"
+  },
+  "student_progress": {
+    "schema": "student_progress.schema.json",
+    "example": "03_Templates/Student_Progress.example.json",
+    "schema_version": 1,
+    "privacy_rule": "pseudonymous identifier only; no name or email address",
+    "red_must_be_completed": true
   },
   "model_recognition": {
     "routine": "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Model_Recognition_Routine.md",
@@ -65,6 +73,7 @@
     "minimum_public_scenarios": 36,
     "daily_minutes": 15,
     "daily_set_size": 5,
+    "recent_repeat_window": 15,
     "mastery_consecutive_days": 5,
     "mastery_minimum_accuracy": 0.9
   },

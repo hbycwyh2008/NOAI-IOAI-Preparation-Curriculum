@@ -4,12 +4,11 @@ Your teacher assigns one documented route, one Phase, and one Session at a time.
 
 ```text
 confirm your assigned route
-→ open Class Missions
-→ choose the assigned Phase
-→ open SESSION_LAUNCHER.md
-→ click the assigned Session
+→ review your private progress ledger
+→ open Class Missions and the assigned launcher
 → complete the lesson and evidence
 → update the mastery dashboard
+→ record completion, Red debt, or recheck
 ```
 
 Start at [Class Missions](02_Class_Missions/README.md). Canonical lessons are stored directly inside their numbered Phase folders. Your assigned route may be the NOAI Round 1 route, NOAI Round 2 project route, IOAI full-extension route, or the complete 78-Session route.
@@ -29,6 +28,18 @@ CS50P Python
 
 A compressed route does not mean random skipping. It lists exact Session IDs and explains what you will not yet be qualified to do. Round 1 completes Session 57 before the Session 58 checkpoint. Students moving to Round 2 or IOAI may receive named recovery Sessions before continuing.
 
+## Private Progress Ledger
+
+Your teacher creates one JSON progress ledger in your private course repository. It uses a pseudonymous ID, not your name or email address. It records:
+
+- completed Session attempts;
+- unresolved Red Sessions;
+- pathways that passed an inspected exit gate;
+- assigned daily drill Set IDs;
+- reviewed drill accuracy.
+
+The ledger helps generate the next assignment, but it is not the evidence itself. Your notebook, code, explanation, tests, correction notes, and delayed recheck remain the evidence.
+
 ## Modeling Workflow
 
 For every substantial modeling task, use this order:
@@ -47,16 +58,18 @@ Use the [Workflow Competency Crosswalk](00_Course_Overview/Workflow_Competency_C
 
 ## Daily Model-Recognition Practice
 
-Complete one generated five-scenario worksheet on every assigned study day:
+Complete one generated five-scenario worksheet on every assigned study day. When your teacher asks you to generate it, use your private ledger so recently assigned scenarios are avoided:
 
 ```bash
 python scripts/generate_daily_model_drill.py \
   --date YYYY-MM-DD \
   --level mixed \
+  --progress student-progress/student-001.json \
+  --record-progress \
   --output daily-drills/YYYY-MM-DD.md
 ```
 
-The same date, level, and count produce the same Set ID, so corrections and rechecks can be verified. The worksheet contains no public answer key.
+The same date, level, count, and history state produce the same Set ID. The worksheet contains no public answer key. Do not edit the ledger to obtain an easier set or delete a difficult assignment.
 
 Before naming a model, write:
 
@@ -83,7 +96,7 @@ Mastery requires at least 90% for five consecutive daily sets and one fresh secu
 5. Guided Practice
 6. Independent Rebuild
 7. Talk Robin 2 + Evidence
-8. Mastery dashboard update
+8. Mastery dashboard and progress update
 
 Watching, reading, or running an example once is not completion. You must explain, reconstruct, test, modify, analyse errors, and record evidence.
 
@@ -96,7 +109,8 @@ After each Session:
 1. link the named evidence;
 2. record your independence level from 0–4;
 3. name the error or misconception you found;
-4. record the correction and a future retrieval date.
+4. record the correction and a future retrieval date;
+5. ask the teacher whether the progress ledger should show complete, Red, or pending review.
 
 ## Special Evidence
 
@@ -108,4 +122,4 @@ After each Session:
 
 ## First Steps
 
-Open the [Student Setup and Evidence Index](01_Student_Start/README.md), complete the assigned setup records, copy the mastery dashboard and model-recognition answer record, generate today’s worksheet, then open today’s Phase launcher.
+Open the [Student Setup and Evidence Index](01_Student_Start/README.md), complete the assigned setup records, copy the mastery dashboard and model-recognition answer record, confirm the location of your private progress ledger, generate today’s assigned worksheet, then open today’s Phase launcher.

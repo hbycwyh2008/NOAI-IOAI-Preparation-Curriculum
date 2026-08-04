@@ -5,6 +5,8 @@ import re
 import sys
 from pathlib import Path
 
+from manage_student_progress import validate_progress
+
 ROOT = Path(__file__).resolve().parents[1]
 SPEC_PATH = ROOT / "curriculum_spec.json"
 MISSIONS = ROOT / "02_Class_Missions"
@@ -64,8 +66,8 @@ def main() -> int:
     except json.JSONDecodeError as error:
         return fail([f"Invalid curriculum_spec.json: {error}"])
 
-    if int(spec.get("schema_version", 0)) < 2:
-        errors.append("curriculum_spec.json must use schema_version 2 or later")
+    if int(spec.get("schema_version", 0)) < 3:
+        errors.append("curriculum_spec.json must use schema_version 3 or later")
 
     expected_sessions = int(spec["canonical_sessions"])
     expected_packets = int(spec["canonical_packets"])
@@ -197,6 +199,34 @@ def main() -> int:
         elif "--self-test" not in path.read_text(encoding="utf-8"):
             errors.append(f"Operational tool lacks --self-test support: {relative}")
 
+    progress_contract = spec.get("student_progress", {})
+    progress_schema = ROOT / str(progress_contract.get("schema", ""))
+    progress_example = ROOT / str(progress_contract.get("example", ""))
+    if not progress_schema.exists():
+        errors.append("Missing student progress JSON schema")
+    else:
+        try:
+            schema_data = json.loads(progress_schema.read_text(encoding="utf-8"))
+            if schema_data.get("properties", {}).get("schema_version", {}).get("const") != progress_contract.get("schema_version"):
+                errors.append("Student progress schema version does not match curriculum_spec.json")
+            if "student_id" not in schema_data.get("required", []):
+                errors.append("Student progress schema must require student_id")
+        except json.JSONDecodeError as error:
+            errors.append(f"Invalid student progress JSON schema: {error}")
+    if not progress_example.exists():
+        errors.append("Missing student progress example")
+    else:
+        try:
+            example_data = json.loads(progress_example.read_text(encoding="utf-8"))
+            progress_errors = validate_progress(example_data, spec)
+            errors.extend(f"Student progress example: {error}" for error in progress_errors)
+        except json.JSONDecodeError as error:
+            errors.append(f"Invalid student progress example JSON: {error}")
+    if progress_contract.get("privacy_rule") != "pseudonymous identifier only; no name or email address":
+        errors.append("Student progress privacy rule must forbid names and email addresses")
+    if progress_contract.get("red_must_be_completed") is not True:
+        errors.append("Student progress contract must require Red Sessions to be completed attempts")
+
     recognition = spec["model_recognition"]
     routine = ROOT / recognition["routine"]
     drill_index = ROOT / recognition["drill_index"]
@@ -236,8 +266,14 @@ def main() -> int:
         )
     if len(scenario_ids) != len(set(scenario_ids)):
         errors.append("Model-recognition scenario IDs are not unique")
-    if int(recognition.get("daily_set_size", 0)) < 1:
+    daily_set_size = int(recognition.get("daily_set_size", 0))
+    repeat_window = int(recognition.get("recent_repeat_window", 0))
+    if daily_set_size < 1:
         errors.append("model_recognition.daily_set_size must be at least 1")
+    if repeat_window < daily_set_size:
+        errors.append("model_recognition.recent_repeat_window must be at least one daily set")
+    if repeat_window >= scenario_count:
+        errors.append("model_recognition.recent_repeat_window must leave at least one unseen scenario available")
 
     required_readiness_markers = {
         "10_Ready_to_Teach_Pack/Student_Runtime_Qualification_Record.md": "NOT QUALIFIED until this record is completed",
@@ -259,8 +295,10 @@ def main() -> int:
     print(f"Canonical Sessions: {expected_sessions}")
     print(f"Canonical packets: {expected_packets}")
     print("Exact pathway routes and continuation dependencies: valid")
-    print("Operational planning and daily-drill tools: present")
+    print("Student progress schema, example, privacy, and Red-debt rules: valid")
+    print("Operational progress, planning, and daily-drill tools: present")
     print(f"Model-recognition scenario bank: {scenario_count} unique scenarios, globally numbered 1-{scenario_count}")
+    print(f"Recent-repeat window: {repeat_window} scenario assignments")
     print("Repository evidence and real-world evidence boundaries: explicit")
     return 0
 

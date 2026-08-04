@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 import sys
 from collections import defaultdict
@@ -9,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 HEADING_RE = re.compile(r"^#{1,6}\s+(.+?)\s*$")
-CODE_PATH_RE = re.compile(r"`((?:00_|01_|02_|03_|04_|05_|06_|08_|09_|10_|scripts/|README\.md|MANIFEST\.md|TEACHER_START_HERE\.md|STUDENT_START_HERE\.md|curriculum_spec\.json)[^`\n]*)`")
+CODE_PATH_RE = re.compile(r"`((?:00_|01_|02_|03_|04_|05_|06_|08_|09_|10_|scripts/|README\.md|MANIFEST\.md|TEACHER_START_HERE\.md|STUDENT_START_HERE\.md|curriculum_spec\.json|student_progress\.schema\.json)[^`\n]*)`")
 
 REQUIRED_INDEXES = (
     "01_Student_Start/README.md",
@@ -25,6 +26,9 @@ REQUIRED_INDEXES = (
 
 REQUIRED_OPERATIONAL_FILES = (
     "curriculum_spec.json",
+    "student_progress.schema.json",
+    "03_Templates/Student_Progress.example.json",
+    "scripts/manage_student_progress.py",
     "scripts/plan_learning_path.py",
     "scripts/generate_daily_model_drill.py",
     "09_Teacher_Planning/Pathway_and_Drill_Operations.md",
@@ -130,14 +134,40 @@ def main() -> int:
         if (ROOT / relative).exists():
             errors.append(f"Obsolete path still exists: {relative}")
 
-    planner = ROOT / "scripts/plan_learning_path.py"
-    drill_generator = ROOT / "scripts/generate_daily_model_drill.py"
-    for path in (planner, drill_generator):
+    operational_tools = (
+        ROOT / "scripts/manage_student_progress.py",
+        ROOT / "scripts/plan_learning_path.py",
+        ROOT / "scripts/generate_daily_model_drill.py",
+    )
+    for path in operational_tools:
         if path.exists():
             text = path.read_text(encoding="utf-8")
             for marker in ("--self-test", "curriculum_spec.json"):
                 if marker not in text:
                     errors.append(f"Operational tool missing required marker: {path.relative_to(ROOT)} -> {marker}")
+
+    progress_example = ROOT / "03_Templates/Student_Progress.example.json"
+    if progress_example.exists():
+        try:
+            example = json.loads(progress_example.read_text(encoding="utf-8"))
+            if "@" in str(example.get("student_id", "")):
+                errors.append("Public progress example must not use an email address")
+            forbidden_keys = {"name", "email", "answer", "answers", "solution", "solutions", "credential", "password"}
+            found_forbidden = forbidden_keys & set(example)
+            for record in example.get("drill_history", []):
+                if isinstance(record, dict):
+                    found_forbidden |= forbidden_keys & set(record)
+            if found_forbidden:
+                errors.append(f"Public progress example contains forbidden identity/answer keys: {sorted(found_forbidden)}")
+        except json.JSONDecodeError as error:
+            errors.append(f"Invalid public progress example JSON: {error}")
+
+    common_tool_markers = (
+        "python scripts/manage_student_progress.py --self-test",
+        "python scripts/manage_student_progress.py validate --path 03_Templates/Student_Progress.example.json",
+        "python scripts/plan_learning_path.py --self-test",
+        "python scripts/generate_daily_model_drill.py --self-test",
+    )
 
     audit_workflow = ROOT / ".github/workflows/audit-curriculum.yml"
     audit_text = require_markers(
@@ -147,17 +177,11 @@ def main() -> int:
             "actions/checkout@v6",
             "actions/setup-python@v6",
             "actions/upload-artifact@v6",
-            "python scripts/plan_learning_path.py --self-test",
-            "python scripts/generate_daily_model_drill.py --self-test",
+            *common_tool_markers,
         ),
         errors,
     )
-    for marker in (
-        "contents: write",
-        "git push",
-        "git commit",
-        "Automated_Curriculum_Audit_Latest.md",
-    ):
+    for marker in ("contents: write", "git push", "git commit", "Automated_Curriculum_Audit_Latest.md"):
         if marker in audit_text:
             errors.append(f"Audit workflow must not mutate the repository: found {marker}")
 
@@ -169,8 +193,7 @@ def main() -> int:
             "actions/checkout@v6",
             "actions/setup-python@v6",
             "actions/upload-artifact@v6",
-            "python scripts/plan_learning_path.py --self-test",
-            "python scripts/generate_daily_model_drill.py --self-test",
+            *common_tool_markers,
             "Verify generated notebooks are current",
             "git status --porcelain -- 06_Starter_Notebooks/ready_to_teach",
             "Upload volatile validation reports",
@@ -197,8 +220,7 @@ def main() -> int:
             "actions/checkout@v6",
             "actions/setup-python@v6",
             "python scripts/validate_curriculum_spec.py",
-            "python scripts/plan_learning_path.py --self-test",
-            "python scripts/generate_daily_model_drill.py --self-test",
+            *common_tool_markers,
         ),
         errors,
     )
@@ -294,7 +316,8 @@ def main() -> int:
     print("Internal Markdown links and anchors: valid")
     print("Exact duplicate canonical packets: 0")
     print("Obsolete pathway, parallel lesson, migration, and generator files: absent")
-    print("Operational planner and daily drill generator: present and self-tested in all validation workflows")
+    print("Pseudonymous progress schema/example and protected-answer boundary: enforced")
+    print("Progress manager, planner, and recent-repeat drill generator: present and self-tested in all validation workflows")
     print("Corrected pathway counts and recovery dependencies: stale language blocked")
     print("Validation workflows: read-only and Node 24 compatible")
     print("Volatile validation reports in repository history: disabled")
