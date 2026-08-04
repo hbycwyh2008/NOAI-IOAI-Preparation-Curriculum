@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "canonical_sessions": 78,
+  "canonical_packets": 101,
+  "phases": [
+    {"path": "00_Orientation_and_Evidence", "start": 1, "end": 2},
+    {"path": "01_CS50P_Python", "start": 3, "end": 12},
+    {"path": "02_NumPy_Pandas_Visualisation", "start": 13, "end": 18},
+    {"path": "03_Bohrium_ML_Foundations", "start": 19, "end": 32},
+    {"path": "04_AI_History_and_Thinking_Humans", "start": 33, "end": 40},
+    {"path": "05_Andrew_Ng_ML_Model_Labs", "start": 41, "end": 58},
+    {"path": "06_Andrew_Ng_DL_PyTorch", "start": 59, "end": 70},
+    {"path": "07_Model_Comparison_EDA_Evaluation", "start": 71, "end": 74},
+    {"path": "08_Tuning_Ensembling_Competition", "start": 75, "end": 78}
+  ],
+  "required_pathway_documents": [
+    "00_Course_Overview/NOAI_Round1_Compressed_Path.md",
+    "00_Course_Overview/NOAI_Round2_Project_Path.md",
+    "00_Course_Overview/IOAI_Full_Extension_Path.md"
+  ],
+  "model_recognition": {
+    "routine": "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Model_Recognition_Routine.md",
+    "drill_index": "04_Assessment/Model_Recognition_Drills/README.md",
+    "minimum_public_scenarios": 36,
+    "daily_minutes": 15,
+    "mastery_consecutive_days": 5,
+    "mastery_minimum_accuracy": 0.9
+  },
+  "readiness": {
+    "repository_controlled_status": "validated_by_ci",
+    "cohort_runtime_status": "requires_named_cohort_evidence",
+    "authenticated_access_status": "requires_named_accounts_and_region",
+    "pilot_status": "requires_real_students",
+    "competition_year_status": "requires_dated_official_review"
+  }
+}
