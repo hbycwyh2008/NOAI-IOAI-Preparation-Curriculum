@@ -53,6 +53,10 @@ on:
   schedule:
     - cron: "20 2 1 * *"
 
+concurrency:
+  group: validate-ready-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -144,7 +148,7 @@ jobs:
           lines += ['', '## Notebook results', '']
           lines += [f'- `{name}`: {status}' for name, status in results]
           lines += ['', 'All twelve notebooks executed from fresh kernels without manual state repair.']
-          Path('10_Ready_to_Teach_Pack/Runtime_Validation_Record.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          Path('/tmp/Runtime_Validation_Record.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
           PY
 
       - name: Smoke-test executable starter code
@@ -168,21 +172,29 @@ jobs:
           python 06_Starter_Code/ready_to_teach/model_ensembling_template.py --output /tmp/model-ensembling-results.json
 
       - name: Check required external resource links
-        run: python scripts/check_required_links.py
+        run: python scripts/check_required_links.py --output /tmp/Link_Verification_Latest.md
 
-      - name: Commit generated and validated materials on main
+      - name: Upload volatile validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ready-to-teach-validation-${{ github.sha }}
+          path: |
+            /tmp/Runtime_Validation_Record.md
+            /tmp/Link_Verification_Latest.md
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Commit generated notebooks on main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add \
-            06_Starter_Notebooks/ready_to_teach \
-            10_Ready_to_Teach_Pack/Runtime_Validation_Record.md \
-            10_Ready_to_Teach_Pack/Link_Verification_Latest.md
+          git add 06_Starter_Notebooks/ready_to_teach
           if git diff --cached --quiet; then
-            echo 'No generated changes.'
+            echo 'Generated notebooks already match the generator.'
           else
-            git commit -m 'Generate and validate ready-to-teach notebooks and sprint assets'
+            git commit -m 'Regenerate validated ready-to-teach notebooks'
             git push
           fi
