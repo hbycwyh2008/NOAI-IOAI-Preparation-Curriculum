@@ -13,12 +13,33 @@ A mastery-focused artificial-intelligence curriculum for secondary-school studen
 
 ## Choose an Executable Route
 
-- [NOAI Round 1 Compressed Path](00_Course_Overview/NOAI_Round1_Compressed_Path.md) — exact 44-Session selection plus daily model-recognition practice.
-- [NOAI Round 2 Project Path](00_Course_Overview/NOAI_Round2_Project_Path.md) — exact 22-Session project continuation after Round 1 qualification.
+- [NOAI Round 1 Compressed Path](00_Course_Overview/NOAI_Round1_Compressed_Path.md) — exact 45-Session selection plus daily model-recognition practice.
+- [NOAI Round 2 Project Path](00_Course_Overview/NOAI_Round2_Project_Path.md) — exact 22-Session continuation after Round 1 qualification, including deferred bridge Sessions 32 and 47.
 - [IOAI Full Extension Path](00_Course_Overview/IOAI_Full_Extension_Path.md) — Sessions 1–78 plus current-rule-controlled extension sprints.
 - [Canonical Full Sequence](00_Course_Overview/Detailed_Lesson_Sequence.md) — all 78 Sessions in dependency order.
 
 Do not build an undocumented route from vaguely “selected” lessons. Every compressed route states exact Session IDs, prerequisites, assessments, exit evidence, and capability limits.
+
+## Operational Tools
+
+Generate an evidence-aware next-Session plan:
+
+```bash
+python scripts/plan_learning_path.py \
+  --pathway noai_round1 \
+  --completed 1-18 \
+  --red 17
+```
+
+Generate a deterministic answer-key-free daily model-recognition set:
+
+```bash
+python scripts/generate_daily_model_drill.py \
+  --date YYYY-MM-DD \
+  --level mixed
+```
+
+See [Pathway and Daily-Drill Operations](09_Teacher_Planning/Pathway_and_Drill_Operations.md). These tools schedule and document work; they do not award mastery or replace evidence review.
 
 ## Canonical Learning Path
 
@@ -58,7 +79,7 @@ The five core competition stages are **data quality → feature engineering → 
 ## Mastery Execution System
 
 - Students maintain the [Student Mastery Dashboard](01_Student_Start/07_Mastery_Dashboard.md) and link every claimed level to reproducible evidence.
-- Students complete the [Model Recognition Daily Drills](04_Assessment/Model_Recognition_Drills/README.md): 36 public scenarios, a 15-minute daily protocol, a five-day mastery streak, and a fresh secured confirmation set.
+- Students complete the [Model Recognition Daily Drills](04_Assessment/Model_Recognition_Drills/README.md): 36 public scenarios, deterministic five-scenario sets, a 15-minute daily protocol, a five-day mastery streak, and a fresh secured confirmation set.
 - Teachers use the [Cohort Mastery Review Protocol](09_Teacher_Planning/Cohort_Mastery_Review_Protocol.md) to distinguish completion, reconstruction, and transfer.
 - Phase completion does not erase prerequisite debt. Red prerequisites receive a named intervention and delayed recheck.
 - Tuning begins only after a trustworthy split, baseline, and written diagnosis. Ensembling begins only after stable single-model evidence.
@@ -77,14 +98,14 @@ All canonical lesson bodies for Sessions 1–78 live directly inside their numbe
 
 - **78 canonical Sessions** across nine numbered Phases;
 - **101 unique phase-local canonical packets** linked by the Session launchers;
-- a machine-readable specification validated against the launchers and execution layer;
-- three executable NOAI/IOAI routes with exact Session IDs;
-- 36 public daily model-recognition scenarios with secured-key rules;
+- a machine-readable specification validated against launchers, exact routes, recovery bridges, and operational tools;
+- three executable NOAI/IOAI routes with exact Session IDs and no duplicated continuation Sessions;
+- 36 public daily model-recognition scenarios with deterministic worksheet generation and secured-key rules;
 - six required D2L bridge packets embedded inside Phase 6 without adding Sessions;
 - eight English AI History seminars in Sessions 33–40;
 - an explicit Andrew ML mathematics transition in Sessions 41–43;
 - a workflow crosswalk, student mastery dashboard, and cohort review protocol;
-- permanent structure, specification, readiness, launcher, hygiene, notebook, code, and link validation.
+- permanent structure, specification, readiness, launcher, hygiene, notebook, code, link, planner, and drill-generator validation.
 
 ## Evidence Standard
 

@@ -6,8 +6,16 @@ This is the international-preparation route. It preserves the complete canonical
 
 Students enter through one of two routes:
 
-- complete Sessions 1–58 with the NOAI Round 1 exit standard, then continue Sessions 59–78; or
-- demonstrate equivalent evidence for Sessions 1–58 and pass the secured mixed assessment before joining Session 59.
+- complete the full canonical Sessions 1–58 and pass the secured mixed assessment; or
+- complete the NOAI Round 1 compressed route, then recover every omitted prerequisite before Session 59.
+
+The compressed-route recovery set is exactly:
+
+```text
+Sessions 19–23, 32, 34–39, and 47
+```
+
+These Sessions restore the omitted AI foundations, deep-network bridge, reading-and-claim-analysis seminars, and neural-network introduction. A compressed Round 1 completion must not be described as completion of Sessions 1–58.
 
 No student skips validation, reproducibility, error analysis, or the annual-rule check merely because they already know a model API.
 
@@ -15,12 +23,20 @@ No student skips validation, reproducibility, error analysis, or the annual-rule
 
 | Stage | Required Sessions | Purpose |
 |---|---|---|
-| foundations and classical ML | 1–58 | Python, data tools, ML foundations, AI reasoning, mathematical model language, classical models, mixed assessment |
+| foundations and classical ML | 1–58 | Python, data tools, ML foundations, AI reasoning, mathematical model language, classical models, controlled workflow, mixed assessment |
 | deep learning and modalities | 59–70 | PyTorch, CNN, transfer learning, sequence models, attention, audio/multimodal, capstone |
 | competition diagnosis | 71–74 | comparison, EDA, feature engineering, validation, calibration, error analysis |
 | competition execution | 75–78 | tuning, ensembling, full simulation, postmortem and readiness conference |
 
 **Canonical requirement:** Sessions 1–78 exactly once and in order.
+
+For a student coming from the compressed Round 1 route, use the pathway planner to expose the omitted prerequisites before assigning Session 59:
+
+```bash
+python scripts/plan_learning_path.py \
+  --pathway ioai_full \
+  --completed-pathway noai_round1
+```
 
 ## Extension Sprints
 
@@ -52,7 +68,8 @@ Historical rules are examples only. The dated official documents for the active 
 
 IOAI full-extension readiness requires:
 
-- completion or equivalent evidence for Sessions 1–78;
+- completion or equivalent inspected evidence for Sessions 1–78;
+- completion of every recovery Session when entering from a compressed pathway;
 - model-recognition mastery across classical, deep-learning, modality, and generation tasks;
 - at least one clean at-home-task reproduction and one novel-task rapid baseline;
 - fresh-environment execution with exact permitted assets and packages;

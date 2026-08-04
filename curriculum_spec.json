@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "canonical_sessions": 78,
   "canonical_packets": 101,
   "phases": [
@@ -13,16 +13,58 @@
     {"path": "07_Model_Comparison_EDA_Evaluation", "start": 71, "end": 74},
     {"path": "08_Tuning_Ensembling_Competition", "start": 75, "end": 78}
   ],
-  "required_pathway_documents": [
-    "00_Course_Overview/NOAI_Round1_Compressed_Path.md",
-    "00_Course_Overview/NOAI_Round2_Project_Path.md",
-    "00_Course_Overview/IOAI_Full_Extension_Path.md"
+  "pathways": {
+    "noai_round1": {
+      "document": "00_Course_Overview/NOAI_Round1_Compressed_Path.md",
+      "sessions": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,24,25,26,27,28,29,30,31,33,40,41,42,43,44,45,46,48,49,50,51,52,53,54,55,56,57,58],
+      "expected_count": 45,
+      "requires_pathway": null,
+      "recovery_sessions": [],
+      "claim_boundary": "first-round knowledge and reasoning only"
+    },
+    "noai_round2": {
+      "document": "00_Course_Overview/NOAI_Round2_Project_Path.md",
+      "sessions": [32,47,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78],
+      "expected_count": 22,
+      "requires_pathway": "noai_round1",
+      "recovery_sessions": [32,47],
+      "claim_boundary": "named project modality, runtime, ruleset, and cohort environment"
+    },
+    "ioai_full": {
+      "document": "00_Course_Overview/IOAI_Full_Extension_Path.md",
+      "sessions": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78],
+      "expected_count": 78,
+      "requires_pathway": null,
+      "recovery_sessions_from_noai_round1": [19,20,21,22,23,32,34,35,36,37,38,39,47],
+      "claim_boundary": "named year, cohort, environment, accounts, authorised assets, and evidence date"
+    }
+  },
+  "workflow_checkpoints": [
+    {"session": 18, "gate": "data_quality"},
+    {"session": 24, "gate": "task_and_baseline"},
+    {"session": 41, "gate": "mathematical_model_language"},
+    {"session": 57, "gate": "controlled_tabular_improvement"},
+    {"session": 58, "gate": "classical_ml_integration"},
+    {"session": 70, "gate": "deep_learning"},
+    {"session": 74, "gate": "pre_tuning"},
+    {"session": 77, "gate": "timed_competition_execution"},
+    {"session": 78, "gate": "readiness_and_postmortem"}
   ],
+  "operational_tools": {
+    "pathway_planner": "scripts/plan_learning_path.py",
+    "daily_drill_generator": "scripts/generate_daily_model_drill.py"
+  },
   "model_recognition": {
     "routine": "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Model_Recognition_Routine.md",
     "drill_index": "04_Assessment/Model_Recognition_Drills/README.md",
+    "scenario_files": [
+      "04_Assessment/Model_Recognition_Drills/Level_1_Foundations.md",
+      "04_Assessment/Model_Recognition_Drills/Level_2_Mixed_Tasks.md",
+      "04_Assessment/Model_Recognition_Drills/Level_3_Competition_Tasks.md"
+    ],
     "minimum_public_scenarios": 36,
     "daily_minutes": 15,
+    "daily_set_size": 5,
     "mastery_consecutive_days": 5,
     "mastery_minimum_accuracy": 0.9
   },

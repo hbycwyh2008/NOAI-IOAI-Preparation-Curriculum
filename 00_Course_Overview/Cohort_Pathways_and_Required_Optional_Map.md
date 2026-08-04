@@ -22,16 +22,20 @@ Select one documented route before assigning lessons. Do not create an undocumen
 
 | Goal | Required route | Scope |
 |---|---|---|
-| NOAI Round 1 knowledge/reasoning preparation | [NOAI Round 1 Compressed Path](NOAI_Round1_Compressed_Path.md) | exact 44-Session selection plus daily model-recognition practice |
-| NOAI Round 2 application-practice preparation | [NOAI Round 2 Project Path](NOAI_Round2_Project_Path.md) | exact 22-Session continuation after Round 1 qualification |
-| IOAI full-pathway preparation | [IOAI Full Extension Path](IOAI_Full_Extension_Path.md) | Sessions 1–78 plus annual-rule-controlled extension sprints |
+| NOAI Round 1 knowledge/reasoning preparation | [NOAI Round 1 Compressed Path](NOAI_Round1_Compressed_Path.md) | exact 45-Session selection, including Session 57 before the Session 58 checkpoint, plus daily model-recognition practice |
+| NOAI Round 2 application-practice preparation | [NOAI Round 2 Project Path](NOAI_Round2_Project_Path.md) | exact 22-Session continuation: recovery Sessions 32 and 47, then Sessions 59–78 |
+| IOAI full-pathway preparation | [IOAI Full Extension Path](IOAI_Full_Extension_Path.md) | Sessions 1–78 plus annual-rule-controlled extension sprints and exact compressed-route recovery |
 | complete long-form curriculum | canonical Sessions 1–78 | every Phase and Phase gate |
 
-Each route states its entry standard, exact Session IDs, assessments, exit standard, and capability boundary. Cohort adaptation may change pacing and remediation, but it must not silently omit prerequisites or expand readiness claims.
+Each route states its entry standard, exact Session IDs, assessments, exit standard, and capability boundary. Cohort adaptation may change pacing and remediation, but it must not silently omit prerequisites, repeat already credited Sessions, or expand readiness claims.
+
+Use the [Pathway and Daily-Drill Operations](../09_Teacher_Planning/Pathway_and_Drill_Operations.md) guide and `scripts/plan_learning_path.py` to expose omitted prerequisites, Red dependency debt, and the next workflow checkpoint.
 
 ## IOAI Extension Rule
 
-Complete the canonical path or demonstrate equivalent evidence, then use the extension sprints defined in the IOAI route. Every extension must record:
+Complete the canonical path or demonstrate equivalent evidence, then use the extension sprints defined in the IOAI route. A student entering from compressed Round 1 must first recover Sessions 19–23, 32, 34–39, and 47.
+
+Every extension must record:
 
 - the capability gap it addresses;
 - required prerequisite Sessions;
@@ -78,6 +82,7 @@ When shortening a pathway:
 4. do not rename or renumber canonical Sessions;
 5. record omitted Sessions and the resulting capability limits;
 6. do not claim full-pathway readiness from a compressed route;
-7. require a fresh secured assessment before promotion to the next route.
+7. require a fresh secured assessment before promotion to the next route;
+8. do not repeat a prior-pathway Session merely to preserve an old route count.
 
 Do not assign every supporting resource automatically, and do not use “selected lessons” without listing the exact Session IDs.

@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 HEADING_RE = re.compile(r"^#{1,6}\s+(.+?)\s*$")
-CODE_PATH_RE = re.compile(r"`((?:00_|01_|02_|03_|04_|05_|06_|08_|09_|10_|scripts/|README\.md|MANIFEST\.md|TEACHER_START_HERE\.md|STUDENT_START_HERE\.md)[^`\n]*)`")
+CODE_PATH_RE = re.compile(r"`((?:00_|01_|02_|03_|04_|05_|06_|08_|09_|10_|scripts/|README\.md|MANIFEST\.md|TEACHER_START_HERE\.md|STUDENT_START_HERE\.md|curriculum_spec\.json)[^`\n]*)`")
 
 REQUIRED_INDEXES = (
     "01_Student_Start/README.md",
@@ -23,9 +23,20 @@ REQUIRED_INDEXES = (
     "10_Ready_to_Teach_Pack/README.md",
 )
 
+REQUIRED_OPERATIONAL_FILES = (
+    "curriculum_spec.json",
+    "scripts/plan_learning_path.py",
+    "scripts/generate_daily_model_drill.py",
+    "09_Teacher_Planning/Pathway_and_Drill_Operations.md",
+    "00_Course_Overview/NOAI_Round1_Compressed_Path.md",
+    "00_Course_Overview/NOAI_Round2_Project_Path.md",
+    "00_Course_Overview/IOAI_Full_Extension_Path.md",
+)
+
 REQUIRED_WORKFLOWS = (
     ".github/workflows/audit-curriculum.yml",
     ".github/workflows/validate-ready-to-teach.yml",
+    ".github/workflows/normalise-lesson-timelines.yml",
     ".github/workflows/cleanup-merged-branches.yml",
 )
 
@@ -60,6 +71,9 @@ BANNED_TEXT = (
     re.compile(r"\b96\s+(?:remaining\s+)?(?:lesson|extension|remediation)", re.IGNORECASE),
     re.compile(r"extension/remediation\s+(?:lesson files|library)", re.IGNORECASE),
     re.compile(r"canonical\s+Library\s+links", re.IGNORECASE),
+    re.compile(r"exact\s+44[- ]Session", re.IGNORECASE),
+    re.compile(r"\b44\s+scheduled\s+sessions\b", re.IGNORECASE),
+    re.compile(r"complete\s+Sessions\s+1[–-]58\s+with\s+the\s+NOAI\s+Round\s+1\s+exit\s+standard", re.IGNORECASE),
 )
 
 
@@ -104,6 +118,10 @@ def main() -> int:
         if not (ROOT / relative).exists():
             errors.append(f"Missing repository index: {relative}")
 
+    for relative in REQUIRED_OPERATIONAL_FILES:
+        if not (ROOT / relative).exists():
+            errors.append(f"Missing required operational file: {relative}")
+
     for relative in REQUIRED_WORKFLOWS:
         if not (ROOT / relative).exists():
             errors.append(f"Missing required workflow: {relative}")
@@ -111,6 +129,15 @@ def main() -> int:
     for relative in OBSOLETE_PATHS:
         if (ROOT / relative).exists():
             errors.append(f"Obsolete path still exists: {relative}")
+
+    planner = ROOT / "scripts/plan_learning_path.py"
+    drill_generator = ROOT / "scripts/generate_daily_model_drill.py"
+    for path in (planner, drill_generator):
+        if path.exists():
+            text = path.read_text(encoding="utf-8")
+            for marker in ("--self-test", "curriculum_spec.json"):
+                if marker not in text:
+                    errors.append(f"Operational tool missing required marker: {path.relative_to(ROOT)} -> {marker}")
 
     audit_workflow = ROOT / ".github/workflows/audit-curriculum.yml"
     audit_text = require_markers(
@@ -120,6 +147,8 @@ def main() -> int:
             "actions/checkout@v6",
             "actions/setup-python@v6",
             "actions/upload-artifact@v6",
+            "python scripts/plan_learning_path.py --self-test",
+            "python scripts/generate_daily_model_drill.py --self-test",
         ),
         errors,
     )
@@ -140,6 +169,8 @@ def main() -> int:
             "actions/checkout@v6",
             "actions/setup-python@v6",
             "actions/upload-artifact@v6",
+            "python scripts/plan_learning_path.py --self-test",
+            "python scripts/generate_daily_model_drill.py --self-test",
             "Verify generated notebooks are current",
             "git status --porcelain -- 06_Starter_Notebooks/ready_to_teach",
             "Upload volatile validation reports",
@@ -157,6 +188,20 @@ def main() -> int:
     ):
         if marker in ready_text:
             errors.append(f"Ready-to-Teach workflow must be read-only: found {marker}")
+
+    fast_workflow = ROOT / ".github/workflows/normalise-lesson-timelines.yml"
+    require_markers(
+        fast_workflow,
+        (
+            "contents: read",
+            "actions/checkout@v6",
+            "actions/setup-python@v6",
+            "python scripts/validate_curriculum_spec.py",
+            "python scripts/plan_learning_path.py --self-test",
+            "python scripts/generate_daily_model_drill.py --self-test",
+        ),
+        errors,
+    )
 
     cleanup_workflow = ROOT / ".github/workflows/cleanup-merged-branches.yml"
     cleanup_text = require_markers(
@@ -249,6 +294,8 @@ def main() -> int:
     print("Internal Markdown links and anchors: valid")
     print("Exact duplicate canonical packets: 0")
     print("Obsolete pathway, parallel lesson, migration, and generator files: absent")
+    print("Operational planner and daily drill generator: present and self-tested in all validation workflows")
+    print("Corrected pathway counts and recovery dependencies: stale language blocked")
     print("Validation workflows: read-only and Node 24 compatible")
     print("Volatile validation reports in repository history: disabled")
     print("Merged same-repository branches: automatic cleanup enabled")

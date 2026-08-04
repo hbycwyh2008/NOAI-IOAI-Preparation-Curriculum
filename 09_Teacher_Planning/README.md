@@ -8,13 +8,17 @@
 - [Workflow Competency Crosswalk](../00_Course_Overview/Workflow_Competency_Crosswalk.md)
 - [Pacing Guide](../00_Course_Overview/Pacing_Guide.md)
 - [Cohort Pathways](../00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md)
+- [Pathway and Daily-Drill Operations](Pathway_and_Drill_Operations.md)
 - [Repository Architecture Manifest](../MANIFEST.md)
+
+Use the pathway operations guide to generate evidence-aware next-Session plans and deterministic daily model-recognition sets. The planner does not replace teacher review: `--entry-qualified` is used only after the earlier pathway evidence has been inspected.
 
 ## Mastery and Cohort Review
 
 - [Cohort Mastery Review Protocol](Cohort_Mastery_Review_Protocol.md)
 - [Student Mastery Dashboard](../01_Student_Start/07_Mastery_Dashboard.md)
 - [Diagnostic Guides](Diagnostic_Guides/README.md)
+- [Model Recognition Daily Drills](../04_Assessment/Model_Recognition_Drills/README.md)
 
 Use the cohort protocol after every three ordinary Sessions, at the end of each Phase, and at the named workflow checkpoints. Distinguish completion, reconstruction, and transfer before advancing students.
 

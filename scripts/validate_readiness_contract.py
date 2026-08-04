@@ -13,11 +13,19 @@ REQUIRED_FILES = (
     "TEACHER_START_HERE.md",
     "STUDENT_START_HERE.md",
     "MANIFEST.md",
+    "curriculum_spec.json",
+    "scripts/plan_learning_path.py",
+    "scripts/generate_daily_model_drill.py",
+    "00_Course_Overview/NOAI_Round1_Compressed_Path.md",
+    "00_Course_Overview/NOAI_Round2_Project_Path.md",
+    "00_Course_Overview/IOAI_Full_Extension_Path.md",
+    "09_Teacher_Planning/Pathway_and_Drill_Operations.md",
     "02_Class_Missions/README.md",
     "02_Class_Missions/HOW_TO_USE_CLASS_MISSIONS.md",
     "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Andrew_ML_Mathematics_Bridge.md",
     "03_Templates/Andrew_ML_Mathematics_Bridge_Evidence_Template.md",
     "04_Assessment/Andrew_ML_Mathematics_Bridge_Rubric.md",
+    "04_Assessment/Model_Recognition_Drills/README.md",
     "10_Ready_to_Teach_Pack/Phase_5_Andrew_Ng_ML_Mathematics_Bridge.md",
     "03_Templates/AI_History_Reading_Evidence_Template.md",
     "04_Assessment/AI_History_Phase_Rubric.md",
@@ -45,6 +53,8 @@ HIGH_TRAFFIC = (
     "02_Class_Missions/HOW_TO_USE_CLASS_MISSIONS.md",
     "00_Course_Overview/Course_Map.md",
     "00_Course_Overview/Pacing_Guide.md",
+    "00_Course_Overview/Cohort_Pathways_and_Required_Optional_Map.md",
+    "09_Teacher_Planning/README.md",
     "10_Ready_to_Teach_Pack/README.md",
     "10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md",
 )
@@ -110,6 +120,8 @@ def main() -> int:
         for marker in (
             "100% public file-structure and internal-consistency coverage",
             "phase-local canonical lesson",
+            "evidence-aware pathway planner",
+            "deterministic daily-drill generator",
             "External Evidence Still Required",
             "must not state",
         ):
@@ -138,6 +150,15 @@ def main() -> int:
             if marker not in text:
                 errors.append(f"D2L selective map missing marker: {marker}")
 
+    for tool in (
+        ROOT / "scripts/plan_learning_path.py",
+        ROOT / "scripts/generate_daily_model_drill.py",
+    ):
+        if tool.exists():
+            text = tool.read_text(encoding="utf-8")
+            if "--self-test" not in text:
+                errors.append(f"Operational tool lacks self-test: {tool.relative_to(ROOT)}")
+
     if errors:
         print("Readiness contract validation failed:", file=sys.stderr)
         for error in errors:
@@ -148,6 +169,8 @@ def main() -> int:
     print("Canonical pathway: 78 sessions")
     print("Canonical lesson storage: numbered Phase folders")
     print("Canonical launcher targets outside Phase folders: 0")
+    print("Executable pathways: exact routes and recovery dependencies")
+    print("Operational tools: pathway planner and deterministic daily drill generator")
     print("AI History seminars: 8")
     print("Andrew ML mathematics transition: Sessions 41–43")
     print("D2L concept-to-code bridges: Sessions 61, 62, 63, 65, 66, and 68")

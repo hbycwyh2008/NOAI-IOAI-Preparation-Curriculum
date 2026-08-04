@@ -11,9 +11,13 @@ This dashboard separates repository-controlled facts from evidence that only rea
 | phase-local canonical lesson storage | complete | 101 unique launcher targets |
 | canonical targets outside Phase folders | zero | launcher and readiness validators |
 | parallel canonical lesson directories | absent | hygiene validator |
-| machine-readable source of truth | complete | `curriculum_spec.json` and specification validator |
-| executable NOAI/IOAI pathways | complete | exact Session routes, entry/exit standards, capability boundaries |
-| daily model-recognition system | complete | 36 public scenarios, answer record, secure-key protocol, mastery rule |
+| machine-readable source of truth | schema v2 complete | `curriculum_spec.json` and specification validator |
+| NOAI Round 1 pathway | complete | exact 45 Sessions; Session 57 precedes Session 58 |
+| NOAI Round 2 continuation | complete | 22 non-duplicated Sessions; recovery 32 and 47, then 59–78 |
+| IOAI full pathway | complete | Sessions 1–78 and exact compressed-route recovery set |
+| evidence-aware pathway planner | enforced | self-test in fast, audit, and full workflows |
+| deterministic daily-drill generator | enforced | self-test in fast, audit, and full workflows |
+| daily model-recognition system | complete | 36 unique public scenarios, generated five-scenario worksheets, answer record, secure-key protocol, mastery rule |
 | AI History phase | complete | eight English seminars and evidence system |
 | Andrew ML mathematics transition | complete | Sessions 41–43 plus just-in-time model mathematics |
 | D2L concept-to-code bridge | complete | six required Phase 6 packets |
@@ -27,6 +31,8 @@ This dashboard separates repository-controlled facts from evidence that only rea
 | IOAI 2026 post-event comparison | pending by date/evidence | post-event review record |
 
 The repository has **100% public file-structure and internal-consistency coverage** for the maintained assets listed above. That statement does not include external operational evidence.
+
+Planner output and generated drills are reproducible repository assets. They are not proof that a student has mastered a Session or that a cohort is operationally qualified.
 
 ## External Evidence Still Required
 
@@ -46,8 +52,9 @@ The repository has **100% public file-structure and internal-consistency coverag
 Use statements such as:
 
 - repository structure and internal consistency pass CI;
+- exact pathway routes and recovery dependencies are machine-validated;
+- planning and daily-drill tools pass deterministic self-tests;
 - maintained notebooks execute in the declared GitHub Actions environment;
-- exact compressed and full pathways are documented;
 - the named cohort runtime is not yet qualified;
 - authenticated access remains unverified;
 - representative pilot evidence remains pending;

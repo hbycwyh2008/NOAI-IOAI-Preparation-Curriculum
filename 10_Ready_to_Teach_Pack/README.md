@@ -8,6 +8,14 @@ Canonical teaching begins in [Class Missions](../02_Class_Missions/README.md). T
 - [Phase 5 — Andrew ML Mathematics Bridge](Phase_5_Andrew_Ng_ML_Mathematics_Bridge.md)
 - [Phase 8 — Tuning, Ensembling, and Competition](Phase_8_Competition_Sprint.md)
 
+## Operational Planning
+
+- [Pathway and Daily-Drill Operations](../09_Teacher_Planning/Pathway_and_Drill_Operations.md)
+- `scripts/plan_learning_path.py` — evidence-aware next-Session and recovery plan.
+- `scripts/generate_daily_model_drill.py` — deterministic answer-key-free daily worksheet.
+
+The planner and drill generator are repository-controlled tools. Their self-tests run in the fast structure workflow, consistency audit, and full Ready-to-Teach validation.
+
 ## Resource Crosswalks
 
 - [Resource and Syllabus Crosswalk](Resource_Map_and_Syllabus_Crosswalk.md)
@@ -42,7 +50,8 @@ Canonical teaching begins in [Class Missions](../02_Class_Missions/README.md). T
 
 Automated curriculum checks run in GitHub Actions. Curriculum audits publish results in the workflow summary and retain complete logs as temporary artifacts. Ready-to-Teach validation:
 
-- validates structure, readiness contracts, launchers, repository hygiene, and the machine-readable curriculum specification;
+- validates structure, exact pathway dependencies, readiness contracts, launchers, repository hygiene, and the machine-readable curriculum specification;
+- self-tests the pathway planner and daily drill generator;
 - regenerates the twelve starter notebooks through the deterministic wrapper;
 - fails when generated content differs from the committed notebooks;
 - executes all twelve notebooks from fresh kernels;
@@ -50,7 +59,7 @@ Automated curriculum checks run in GitHub Actions. Curriculum audits publish res
 - checks required public links;
 - stores volatile runtime and link reports as temporary Actions artifacts.
 
-Validation workflows are read-only. They do **not** commit notebooks, timestamps, audit reports, runtime reports, or link reports to `main`. A mismatch must be fixed deliberately in a pull-request branch and reviewed.
+Validation workflows are read-only. They do **not** commit notebooks, timestamps, audit reports, runtime reports, link reports, generated plans, or generated drills to `main`. A mismatch must be fixed deliberately in a pull-request branch and reviewed.
 
 ## Evidence Boundary
 
