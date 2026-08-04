@@ -41,14 +41,14 @@ The same date, level, count, and history state produce the same Set ID and scena
 
 ## Review and Score
 
-After feedback, record compact score metadata:
+After feedback, record task-family accuracy as a fraction from 0 to 1 and the total score as a percentage from 0 to 100:
 
 ```bash
 python scripts/manage_student_progress.py score-drill \
   --path student-progress/student-001.json \
   --set-id 0123456789 \
   --task-family-accuracy 0.8 \
-  --score-percent 0.75
+  --score-percent 75
 ```
 
 Detailed reasoning, correction notes, and recheck dates remain in the worksheet or answer record. Protected solutions and calibration material remain outside the public repository.
