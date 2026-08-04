@@ -20,6 +20,7 @@ on:
       - "09_Teacher_Planning/**"
       - "10_Ready_to_Teach_Pack/**"
       - "scripts/generate_ready_notebooks.py"
+      - "scripts/generate_ready_notebooks_deterministic.py"
       - "scripts/check_required_links.py"
       - "scripts/validate_curriculum.py"
       - "scripts/validate_curriculum_structure.py"
@@ -92,15 +93,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate twelve starter notebooks
-        run: python scripts/generate_ready_notebooks.py
+      - name: Generate twelve stable starter notebooks
+        run: python scripts/generate_ready_notebooks_deterministic.py
 
       - name: Verify generated notebooks are current
         shell: bash
         run: |
           changes="$(git status --porcelain -- 06_Starter_Notebooks/ready_to_teach)"
           if [ -n "$changes" ]; then
-            echo "Generated notebooks do not match scripts/generate_ready_notebooks.py."
+            echo "Generated notebooks do not match the deterministic generation pipeline."
             echo "$changes"
             git diff -- 06_Starter_Notebooks/ready_to_teach
             exit 1
