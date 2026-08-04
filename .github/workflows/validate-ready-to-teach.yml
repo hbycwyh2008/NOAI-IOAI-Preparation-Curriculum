@@ -8,6 +8,7 @@ on:
       - "STUDENT_START_HERE.md"
       - "MANIFEST.md"
       - "curriculum_spec.json"
+      - "student_progress.schema.json"
       - "requirements.txt"
       - "00_Course_Overview/**"
       - "01_Student_Start/**"
@@ -22,6 +23,7 @@ on:
       - "10_Ready_to_Teach_Pack/**"
       - "scripts/generate_ready_notebooks.py"
       - "scripts/generate_ready_notebooks_deterministic.py"
+      - "scripts/manage_student_progress.py"
       - "scripts/generate_daily_model_drill.py"
       - "scripts/plan_learning_path.py"
       - "scripts/check_required_links.py"
@@ -41,6 +43,7 @@ on:
       - "STUDENT_START_HERE.md"
       - "MANIFEST.md"
       - "curriculum_spec.json"
+      - "student_progress.schema.json"
       - "requirements.txt"
       - "00_Course_Overview/**"
       - "01_Student_Start/**"
@@ -87,8 +90,10 @@ jobs:
       - name: Validate machine-readable curriculum specification
         run: python scripts/validate_curriculum_spec.py
 
-      - name: Self-test pathway planning and daily drill generation
+      - name: Self-test progress, pathway planning, and daily drill generation
         run: |
+          python scripts/manage_student_progress.py --self-test
+          python scripts/manage_student_progress.py validate --path 03_Templates/Student_Progress.example.json
           python scripts/plan_learning_path.py --self-test
           python scripts/generate_daily_model_drill.py --self-test
 
