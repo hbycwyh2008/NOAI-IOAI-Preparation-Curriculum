@@ -6,7 +6,7 @@
 
 [**Open the Phase 2 Session Launcher**](SESSION_LAUNCHER.md)
 
-The launcher selects the exact NumPy, Pandas, cleaning, plotting, and audit lessons. Do not browse the lesson library manually.
+The launcher selects the exact phase-local NumPy, Pandas, cleaning, plotting, and audit packets for each Session.
 
 ## Purpose
 
