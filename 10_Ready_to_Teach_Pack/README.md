@@ -30,8 +30,9 @@ Canonical teaching begins in [Class Missions](../02_Class_Missions/README.md). T
 - [External Access Verification Record](External_Access_Verification_Record.md)
 - [Runtime Validation Record](Runtime_Validation_Record.md)
 - [Latest Link Verification](Link_Verification_Latest.md)
-- [Latest Automated Curriculum Audit](Automated_Curriculum_Audit_Latest.md)
 - [Repository Cleanup Audit](Repository_Cleanup_Audit.md)
+
+Automated curriculum checks run in GitHub Actions. Each run publishes its result in the workflow summary and stores the complete log as a 30-day artifact; generated audit output is not committed back into the repository.
 
 ## Annual Rules
 
