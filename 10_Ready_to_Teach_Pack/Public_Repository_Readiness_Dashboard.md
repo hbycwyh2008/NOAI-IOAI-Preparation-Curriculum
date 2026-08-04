@@ -11,12 +11,13 @@ This dashboard separates repository-controlled facts from evidence that only rea
 | phase-local canonical lesson storage | complete | 101 unique launcher targets |
 | canonical targets outside Phase folders | zero | launcher and readiness validators |
 | parallel canonical lesson directories | absent | hygiene validator |
-| machine-readable source of truth | schema v2 complete | `curriculum_spec.json` and specification validator |
+| machine-readable source of truth | schema v3 complete | `curriculum_spec.json` and specification validator |
 | NOAI Round 1 pathway | complete | exact 45 Sessions; Session 57 precedes Session 58 |
 | NOAI Round 2 continuation | complete | 22 non-duplicated Sessions; recovery 32 and 47, then 59–78 |
 | IOAI full pathway | complete | Sessions 1–78 and exact compressed-route recovery set |
-| evidence-aware pathway planner | enforced | self-test in fast, audit, and full workflows |
-| deterministic daily-drill generator | enforced | self-test in fast, audit, and full workflows |
+| pseudonymous student progress ledger | enforced | schema, example, manager self-test, privacy rule, Red-subset invariant |
+| evidence-aware pathway planner | enforced | reads ledger state; self-test in fast, audit, and full workflows |
+| recent-repeat-aware daily-drill generator | enforced | 15-assignment avoidance window and explicit assignment recording |
 | daily model-recognition system | complete | 36 unique public scenarios, generated five-scenario worksheets, answer record, secure-key protocol, mastery rule |
 | AI History phase | complete | eight English seminars and evidence system |
 | Andrew ML mathematics transition | complete | Sessions 41–43 plus just-in-time model mathematics |
@@ -32,7 +33,7 @@ This dashboard separates repository-controlled facts from evidence that only rea
 
 The repository has **100% public file-structure and internal-consistency coverage** for the maintained assets listed above. That statement does not include external operational evidence.
 
-Planner output and generated drills are reproducible repository assets. They are not proof that a student has mastered a Session or that a cohort is operationally qualified.
+Progress ledgers, planner output, and generated drills are reproducible operational records. They are not proof that a student has mastered a Session or that a cohort is operationally qualified. Real ledgers remain private and must use pseudonymous IDs without protected answers.
 
 ## External Evidence Still Required
 
@@ -53,7 +54,8 @@ Use statements such as:
 
 - repository structure and internal consistency pass CI;
 - exact pathway routes and recovery dependencies are machine-validated;
-- planning and daily-drill tools pass deterministic self-tests;
+- the progress schema and public example pass privacy and integrity checks;
+- progress, planning, and recent-repeat drill tools pass deterministic self-tests;
 - maintained notebooks execute in the declared GitHub Actions environment;
 - the named cohort runtime is not yet qualified;
 - authenticated access remains unverified;
