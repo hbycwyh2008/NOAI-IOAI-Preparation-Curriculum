@@ -60,7 +60,7 @@ numbered Phase
 → phase-local lesson packet
 ```
 
-All canonical lesson bodies for Sessions 1–78 live directly inside their numbered Phase folders. Supporting material lives in the named setup, template, assessment, resource, public-document, teacher-planning, and Ready-to-Teach directories. There is no parallel lesson-library schedule.
+All canonical lesson bodies for Sessions 1–78 live directly inside their numbered Phase folders. Supporting material lives in the named setup, template, assessment, resource, public-document, teacher-planning, and Ready-to-Teach directories. There is no parallel lesson schedule or canonical storage location.
 
 ## Current Architecture
 
