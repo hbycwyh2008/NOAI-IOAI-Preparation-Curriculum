@@ -27,7 +27,7 @@ CS50P Python
 → tuning, ensembling, and competition
 ```
 
-A compressed route does not mean random skipping. It lists exact Session IDs and explains what you will not yet be qualified to do.
+A compressed route does not mean random skipping. It lists exact Session IDs and explains what you will not yet be qualified to do. Round 1 completes Session 57 before the Session 58 checkpoint. Students moving to Round 2 or IOAI may receive named recovery Sessions before continuing.
 
 ## Modeling Workflow
 
@@ -47,7 +47,16 @@ Use the [Workflow Competency Crosswalk](00_Course_Overview/Workflow_Competency_C
 
 ## Daily Model-Recognition Practice
 
-Complete one 15-minute scenario from the [Model Recognition Daily Drills](04_Assessment/Model_Recognition_Drills/README.md) on every assigned study day.
+Complete one generated five-scenario worksheet on every assigned study day:
+
+```bash
+python scripts/generate_daily_model_drill.py \
+  --date YYYY-MM-DD \
+  --level mixed \
+  --output daily-drills/YYYY-MM-DD.md
+```
+
+The same date, level, and count produce the same Set ID, so corrections and rechecks can be verified. The worksheet contains no public answer key.
 
 Before naming a model, write:
 
@@ -99,4 +108,4 @@ After each Session:
 
 ## First Steps
 
-Open the [Student Setup and Evidence Index](01_Student_Start/README.md), complete the assigned setup records, copy the mastery dashboard and model-recognition answer record, then open today’s Phase launcher.
+Open the [Student Setup and Evidence Index](01_Student_Start/README.md), complete the assigned setup records, copy the mastery dashboard and model-recognition answer record, generate today’s worksheet, then open today’s Phase launcher.
