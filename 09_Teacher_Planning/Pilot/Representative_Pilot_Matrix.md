@@ -1,6 +1,8 @@
 # Representative Pilot Matrix
 
-This matrix turns the phrase “pilot the curriculum” into a minimum inspectable evidence set. A public repository can provide the protocol and blank records; only a real cohort can complete the evidence.
+**Status: NO PILOT CLAIM may be made until real delivery evidence is recorded for every required row.**
+
+This matrix turns the phrase “pilot the curriculum” into a minimum inspectable evidence set. A public repository can provide the protocol and blank records; only real students, actual timing, and the exact tested commit can complete the evidence.
 
 ## Required Representative Pilots
 
@@ -19,25 +21,27 @@ This matrix turns the phrase “pilot the curriculum” into a minimum inspectab
 
 ## Per-Pilot Record
 
+Create one completed copy for each matrix row.
+
 | Field | Record |
 |---|---|
-| Curriculum commit tested | |
-| Session and lesson file | |
-| Date and cohort | |
-| Number of students | |
-| Planned duration | |
-| Median actual duration | |
-| Entry-check success | |
-| Guided completion | |
-| Independent-rebuild completion | |
-| Exit-evidence accuracy | |
-| Technical failures | |
-| Language/access support required | |
-| Teacher intervention minutes | |
-| Shared misconception | |
-| Required revision | |
-| Revision commit | |
-| Reviewer | |
+| Curriculum commit tested | REQUIRED |
+| Session and lesson file | REQUIRED |
+| Date and cohort | REQUIRED |
+| Number of students | REQUIRED |
+| Planned duration | REQUIRED |
+| Median actual duration | REQUIRED |
+| Entry-check success | REQUIRED |
+| Guided completion | REQUIRED |
+| Independent-rebuild completion | REQUIRED |
+| Exit-evidence accuracy | REQUIRED |
+| Technical failures | REQUIRED, including none |
+| Language/access support required | REQUIRED, including none |
+| Teacher intervention minutes | REQUIRED |
+| Shared misconception | REQUIRED, including none observed |
+| Required revision | REQUIRED, including no revision |
+| Revision commit | required when revised |
+| Reviewer | REQUIRED |
 
 ## Revision Triggers
 
@@ -49,8 +53,11 @@ Revise the lesson when:
 - median timing exceeds the declared duration by more than 10 minutes;
 - setup consumes more than 10% of lesson time;
 - a shared misconception remains after the exit check;
-- students can run or quote material but cannot explain the mechanism or claim boundary.
+- students can run or quote material but cannot explain the mechanism or claim boundary;
+- teacher intervention hides a runtime, access, language, or prerequisite failure.
 
 ## Completion Rule
 
-Representative-pilot coverage is complete only when every row has a dated record linked to the exact curriculum commit. Full-pathway readiness remains separate and requires a real cohort to complete the selected route.
+Representative-pilot coverage is complete only when every row has a dated record linked to the exact curriculum commit and reviewed after any resulting revisions. Full-pathway readiness remains separate and requires a real cohort to complete the selected route.
+
+Blank rows, planned pilots, teacher-only dry runs, GitHub Actions, and notebook execution without students are not representative-pilot evidence.
