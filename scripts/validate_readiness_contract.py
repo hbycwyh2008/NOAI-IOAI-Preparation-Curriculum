@@ -5,8 +5,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MISSIONS = ROOT / "02_Class_Missions"
-LIBRARY = (MISSIONS / "_Lesson_Library").resolve()
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 ROW_RE = re.compile(r"^\|\s*(\d{1,3})\s*\|")
 
@@ -77,13 +75,6 @@ def validate_launcher_targets(errors: list[str]) -> None:
                 resolved = (launcher.parent / target).resolve()
                 if resolved.suffix.lower() != ".md":
                     continue
-                try:
-                    resolved.relative_to(LIBRARY)
-                    errors.append(
-                        f"Canonical launcher enters _Lesson_Library: {launcher.relative_to(ROOT)} -> {raw}"
-                    )
-                except ValueError:
-                    pass
                 try:
                     resolved.relative_to(phase)
                 except ValueError:
@@ -156,7 +147,7 @@ def main() -> int:
     print("Readiness contract validation passed.")
     print("Canonical pathway: 78 sessions")
     print("Canonical lesson storage: numbered Phase folders")
-    print("Canonical launcher links into _Lesson_Library: 0")
+    print("Canonical launcher targets outside Phase folders: 0")
     print("AI History seminars: 8")
     print("Andrew ML mathematics transition: Sessions 41–43")
     print("D2L concept-to-code bridges: Sessions 61, 62, 63, 65, 66, and 68")

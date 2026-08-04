@@ -6,7 +6,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MISSIONS = ROOT / "02_Class_Missions"
-LIBRARY = MISSIONS / "_Lesson_Library"
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 ROW_RE = re.compile(r"^\|\s*(\d{1,3})\s*\|")
 
@@ -36,6 +35,11 @@ REQUIRED_FILES = (
     "scripts/validate_class_mission_launchers.py",
 )
 
+OBSOLETE_MISSION_PATHS = (
+    MISSIONS / "04_Kaggle_ML_Refresh",
+    MISSIONS / "_Lesson_Library",
+)
+
 
 def split_target(raw: str) -> tuple[str, str]:
     path, marker, anchor = raw.strip().partition("#")
@@ -54,6 +58,10 @@ def main() -> int:
     for relative in REQUIRED_FILES:
         if not (ROOT / relative).exists():
             errors.append(f"Missing required file: {relative}")
+
+    for obsolete in OBSOLETE_MISSION_PATHS:
+        if obsolete.exists():
+            errors.append(f"Obsolete mission path still exists: {obsolete.relative_to(ROOT)}")
 
     for phase_name, start, end in PHASES:
         phase = MISSIONS / phase_name
@@ -104,13 +112,6 @@ def main() -> int:
                     errors.append(
                         f"Canonical lesson is not phase-local: Session {session} -> {resolved.relative_to(ROOT)}"
                     )
-                try:
-                    resolved.relative_to(LIBRARY.resolve())
-                    errors.append(
-                        f"Canonical launcher still enters _Lesson_Library: Session {session} -> {resolved.relative_to(ROOT)}"
-                    )
-                except ValueError:
-                    pass
                 canonical_packets.add(resolved)
             if local_targets == 0:
                 errors.append(f"Session {session} has no local Markdown lesson target")
@@ -129,23 +130,11 @@ def main() -> int:
         if "Evidence" not in text and "evidence" not in text:
             errors.append(f"Canonical packet lacks evidence requirement: {packet.relative_to(ROOT)}")
 
-    extension_lessons = sorted(LIBRARY.rglob("lesson-*.md"))
-    for lesson in extension_lessons:
-        text = lesson.read_text(encoding="utf-8")
-        if not text.startswith("# "):
-            errors.append(f"Extension lesson lacks H1: {lesson.relative_to(ROOT)}")
-        if "Evidence" not in text and "evidence" not in text:
-            errors.append(f"Extension lesson lacks evidence requirement: {lesson.relative_to(ROOT)}")
-
     for path in MISSIONS.rglob("*.md"):
         text = path.read_text(encoding="utf-8")
         for label in ("Andrew Ng MLS", "DLS Course", "LHY-ML", "DLAI-PT"):
             if label in text:
                 errors.append(f"Unexpanded resource label '{label}': {path.relative_to(ROOT)}")
-
-    obsolete = MISSIONS / "04_Kaggle_ML_Refresh"
-    if obsolete.exists():
-        errors.append("Obsolete standalone Kaggle Phase 04 still exists")
 
     if errors:
         print("Curriculum structure validation failed:", file=sys.stderr)
@@ -156,9 +145,8 @@ def main() -> int:
     print("Curriculum structure validation passed.")
     print("Canonical sessions: 78")
     print(f"Phase-local canonical lesson packets: {len(canonical_packets)}")
-    print(f"Extension/remediation lesson files: {len(extension_lessons)}")
     print("Normal delivery path: Phase → Session Launcher → phase-local lesson")
-    print("Canonical launcher links into _Lesson_Library: 0")
+    print("Obsolete parallel lesson directories: absent")
     print("Public file-structure and internal-consistency coverage: 100%")
     print("Operational, pilot, privacy, runtime, access, and annual-rule readiness remain separate.")
     return 0

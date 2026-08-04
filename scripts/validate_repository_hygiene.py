@@ -26,6 +26,8 @@ REQUIRED_INDEXES = (
 OBSOLETE_PATHS = (
     "PUBLISH_TO_GITHUB.md",
     "scripts/v1_chunks",
+    "02_Class_Missions/_Lesson_Library",
+    "10_Ready_to_Teach_Pack/Automated_Curriculum_Audit_Latest.md",
     "10_Ready_to_Teach_Pack/Completion_Audit_90.md",
     "10_Ready_to_Teach_Pack/Phase_0_1_Setup_Python.md",
     "10_Ready_to_Teach_Pack/Phase_7_Competition_Practice.md",
@@ -39,6 +41,11 @@ BANNED_TEXT = (
     re.compile(r"155 mainline|171 public lesson|171 reusable", re.IGNORECASE),
     re.compile(r"04_Kaggle_ML_Refresh", re.IGNORECASE),
     re.compile(r"_Lesson_Library", re.IGNORECASE),
+    re.compile(r"former extension library", re.IGNORECASE),
+    re.compile(r"\blesson[- ]library\b", re.IGNORECASE),
+    re.compile(r"\b96\s+(?:remaining\s+)?(?:lesson|extension|remediation)", re.IGNORECASE),
+    re.compile(r"extension/remediation\s+(?:lesson files|library)", re.IGNORECASE),
+    re.compile(r"canonical\s+Library\s+links", re.IGNORECASE),
 )
 
 
@@ -75,6 +82,27 @@ def main() -> int:
     for relative in OBSOLETE_PATHS:
         if (ROOT / relative).exists():
             errors.append(f"Obsolete path still exists: {relative}")
+
+    audit_workflow = ROOT / ".github/workflows/audit-curriculum.yml"
+    if audit_workflow.exists():
+        workflow_text = audit_workflow.read_text(encoding="utf-8")
+        for marker in (
+            "contents: write",
+            "git push",
+            "Automated_Curriculum_Audit_Latest.md",
+        ):
+            if marker in workflow_text:
+                errors.append(f"Audit workflow must not mutate the repository: found {marker}")
+
+    ready_workflow = ROOT / ".github/workflows/validate-ready-to-teach.yml"
+    if ready_workflow.exists():
+        workflow_text = ready_workflow.read_text(encoding="utf-8")
+        for marker in (
+            "10_Ready_to_Teach_Pack/Runtime_Validation_Record.md",
+            "10_Ready_to_Teach_Pack/Link_Verification_Latest.md",
+        ):
+            if marker in workflow_text:
+                errors.append(f"Ready-to-Teach workflow must not commit volatile report path: {marker}")
 
     for document in markdown:
         text = document.read_text(encoding="utf-8", errors="replace")
@@ -130,7 +158,9 @@ def main() -> int:
     print(f"Markdown files checked: {len(markdown)}")
     print("Internal Markdown links and anchors: valid")
     print("Exact duplicate canonical packets: 0")
-    print("Obsolete pathway and generator files: absent")
+    print("Obsolete pathway, parallel lesson, and generator files: absent")
+    print("Audit workflow repository mutation: disabled")
+    print("Volatile Ready-to-Teach reports in repository history: disabled")
     return 0
 
 

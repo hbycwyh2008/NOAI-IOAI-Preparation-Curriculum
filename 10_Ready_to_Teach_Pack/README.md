@@ -28,10 +28,13 @@ Canonical teaching begins in [Class Missions](../02_Class_Missions/README.md). T
 - [Release Readiness Gates](Release_Readiness_Gates.md)
 - [Student Runtime Qualification Record](Student_Runtime_Qualification_Record.md)
 - [External Access Verification Record](External_Access_Verification_Record.md)
-- [Runtime Validation Record](Runtime_Validation_Record.md)
-- [Latest Link Verification](Link_Verification_Latest.md)
-- [Latest Automated Curriculum Audit](Automated_Curriculum_Audit_Latest.md)
+- [Committed Runtime Validation Snapshot](Runtime_Validation_Record.md)
+- [Committed Link Verification Snapshot](Link_Verification_Latest.md)
 - [Repository Cleanup Audit](Repository_Cleanup_Audit.md)
+
+Automated curriculum checks run in GitHub Actions. Each curriculum audit publishes its result in the workflow summary and stores the complete log as a 30-day artifact. Ready-to-Teach validation stores its current runtime and link reports as a 30-day artifact. These volatile, timestamped reports are not committed back into the repository. The committed snapshot files remain historical reference points until intentionally replaced after review.
+
+The notebook generator may update the twelve maintained starter notebooks on `main` only when their reproducible content changes. The workflow does not commit runtime timestamps or link-check timestamps.
 
 ## Annual Rules
 

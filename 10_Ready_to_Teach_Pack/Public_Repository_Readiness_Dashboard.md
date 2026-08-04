@@ -8,12 +8,13 @@
 | numbered Phase launchers | complete |
 | phase-local canonical lesson storage | complete |
 | unique phase-local launcher targets | 101 |
-| canonical links into the former extension library | zero |
-| extension/remediation lesson files | 96 |
+| canonical targets outside Phase folders | zero |
+| parallel canonical lesson directories | absent |
 | AI History phase | complete |
 | Andrew ML mathematics transition | complete |
 | D2L concept-to-code bridge | six required packets complete |
 | internal links and CI contracts | enforced |
+| audit workflow repository mutation | disabled |
 
 The repository has **100% public file-structure and internal-consistency coverage** for maintained assets, including phase-local canonical lesson coverage.
 

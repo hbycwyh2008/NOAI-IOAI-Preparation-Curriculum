@@ -35,13 +35,25 @@ Selected rather than automatic:
 
 - the full Andrew Ng DL and PyTorch domain sequence;
 - long Round 2 projects;
-- all eight Phase 04 seminars when the cohort has a narrow, short preparation window.
+- all eight Phase 4 seminars when the cohort has a narrow, short preparation window.
 
 The teacher must preserve prerequisite gates even when reducing breadth.
 
 ## IOAI Extension Pathway
 
-Complete the canonical path, then select deeper computer-vision, natural-language-processing, audio, multimodal, reproducibility, scientific, and open-ended project lessons from the former extension library.
+Complete the canonical path, then define a cohort-specific extension plan from current official tasks, authorised datasets, official framework documentation, and named domain projects. The plan may deepen computer vision, natural-language processing, audio, multimodal learning, reproducibility, scientific machine learning, or open-ended competition work.
+
+Every extension plan must record:
+
+- the capability gap it addresses;
+- required prerequisite Sessions;
+- source and access conditions;
+- added classroom and independent-study time;
+- student deliverable and evidence standard;
+- runtime, model, API, data, and licensing constraints;
+- whether the work changes a mock, starter notebook, or annual-rule record.
+
+An extension does not alter canonical Session numbering or justify a claim of full-pathway readiness unless its evidence is separately reviewed.
 
 ## Required Resource Roles
 
@@ -57,14 +69,14 @@ Complete the canonical path, then select deeper computer-vision, natural-languag
 | 3Blue1Brown | selected just-in-time mathematics intuition |
 | Andrew Ng Deep Learning Specialization | required deep-learning concept spine for the full pathway |
 | PyTorch courses/tutorials | required implementation spine for the full pathway |
-| extra lesson-library files | diagnostic, remediation, extension, or competition-specific selection |
+| official tasks, authorised datasets, and framework documentation | selected extension sources with explicit access and evidence records |
 
 ## Selection Meanings
 
 - **Required:** necessary for the selected pathway and its exit gate.
 - **Selected:** assigned when the current model, mathematical idea, language need, or competition task requires it.
-- **Optional:** remediation or extension.
-- **Lesson library:** reusable material, not a second sequence.
+- **Optional:** documented remediation or extension with a named capability goal.
+- **Supporting asset:** a template, assessment, resource map, starter, or planning record that supports a Session without creating another sequence.
 
 ## Compression Rules
 
@@ -76,4 +88,4 @@ When shortening a pathway:
 4. record omitted phases and the resulting capability limits;
 5. do not claim full-pathway readiness from a compressed route.
 
-Do not assign every extension or remediation file automatically.
+Do not assign every supporting resource automatically.

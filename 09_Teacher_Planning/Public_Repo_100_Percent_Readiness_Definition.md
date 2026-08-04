@@ -13,11 +13,11 @@ The repository has **100% public file-structure and internal-consistency coverag
 7. Kaggle practice is embedded in Andrew ML rather than scheduled as a separate phase.
 8. Phase 6 pairs deep-learning concepts with PyTorch implementation.
 9. Phases 7–8 cover systematic EDA, evaluation, tuning, ensembling, simulation, and postmortem.
-10. the former extension library contains extension/remediation material only and has a current index.
+10. No parallel canonical lesson directory or schedule exists outside the numbered Phases.
 11. Student setup, templates, assessments, resources, public documents, teacher planning, and Ready-to-Teach records have clear indexes.
 12. Internal Markdown links and anchors resolve.
 13. Canonical Session packets are not exact duplicates.
-14. Obsolete generator fragments, legacy phase summaries, and superseded delivery packs are absent.
+14. Obsolete generator fragments, legacy phase summaries, superseded delivery packs, and generated audit commits are absent.
 15. Current validators pass:
 
 ```bash
@@ -40,4 +40,4 @@ Public coverage does not prove:
 - current-year competition alignment;
 - competition performance.
 
-Use the [Public Repository Readiness Dashboard](../10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md), [Release Readiness Gates](../10_Ready_to_Teach_Pack/Release_Readiness_Gates.md), and open operational-readiness Issue for those decisions.
+Use the [Public Repository Readiness Dashboard](../10_Ready_to_Teach_Pack/Public_Repository_Readiness_Dashboard.md) and [Release Readiness Gates](../10_Ready_to_Teach_Pack/Release_Readiness_Gates.md) for those decisions. Open an operational-readiness Issue when a real cohort, runtime, or competition year is selected.

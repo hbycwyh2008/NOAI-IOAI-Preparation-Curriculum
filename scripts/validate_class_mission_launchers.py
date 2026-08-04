@@ -6,7 +6,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MISSIONS = ROOT / "02_Class_Missions"
-LIBRARY = (MISSIONS / "_Lesson_Library").resolve()
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 ROW_RE = re.compile(r"^\|\s*(\d{1,3})\s*\|")
 PHASES = sorted(path for path in MISSIONS.iterdir() if path.is_dir() and re.match(r"^\d{2}_", path.name))
@@ -47,11 +46,6 @@ def main() -> int:
                     resolved.relative_to(phase.resolve())
                 except ValueError:
                     errors.append(f"Session {session} target is outside its Phase: {resolved.relative_to(ROOT)}")
-                try:
-                    resolved.relative_to(LIBRARY)
-                    errors.append(f"Session {session} still links into _Lesson_Library")
-                except ValueError:
-                    pass
             if local_md == 0:
                 errors.append(f"Session {session} has no phase-local Markdown packet")
 
@@ -67,7 +61,7 @@ def main() -> int:
     print("Class Missions launcher validation passed.")
     print("Canonical launcher coverage: Sessions 1–78 exactly once")
     print(f"Phase-local lesson links: {packet_count}")
-    print("Canonical links into _Lesson_Library: 0")
+    print("Canonical launcher targets outside Phase folders: 0")
     print("Normal delivery path: Phase → Session Launcher → phase-local lesson")
     return 0
 
