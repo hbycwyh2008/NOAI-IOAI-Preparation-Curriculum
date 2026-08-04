@@ -156,10 +156,19 @@ def validate_progress(data: dict, spec: dict) -> list[str]:
             errors.append(f"{prefix}.scenario_ids must contain valid public scenario IDs")
         elif len(scenario_ids) != len(set(scenario_ids)):
             errors.append(f"{prefix}.scenario_ids contains duplicates")
-        for numeric_field in ("task_family_accuracy", "score_percent"):
-            value = record.get(numeric_field)
-            if value is not None and (not isinstance(value, (int, float)) or not 0 <= float(value) <= 1):
-                errors.append(f"{prefix}.{numeric_field} must be null or a number from 0 to 1")
+
+        accuracy = record.get("task_family_accuracy")
+        if accuracy is not None and (
+            type(accuracy) not in (int, float) or not 0 <= float(accuracy) <= 1
+        ):
+            errors.append(f"{prefix}.task_family_accuracy must be null or a number from 0 to 1")
+
+        score_percent = record.get("score_percent")
+        if score_percent is not None and (
+            type(score_percent) not in (int, float) or not 0 <= float(score_percent) <= 100
+        ):
+            errors.append(f"{prefix}.score_percent must be null or a number from 0 to 100")
+
         if not isinstance(record.get("reviewed", False), bool):
             errors.append(f"{prefix}.reviewed must be boolean")
 
@@ -217,6 +226,10 @@ def record_drill_assignment(
 
 
 def score_drill(data: dict, set_id: str, task_family_accuracy: float, score_percent: float) -> None:
+    if not 0 <= task_family_accuracy <= 1:
+        raise ValueError("task_family_accuracy must be from 0 to 1")
+    if not 0 <= score_percent <= 100:
+        raise ValueError("score_percent must be from 0 to 100")
     for record in data["drill_history"]:
         if record.get("set_id") == set_id:
             record["task_family_accuracy"] = task_family_accuracy
@@ -244,13 +257,28 @@ def run_self_test() -> None:
         save_progress(path, data, spec)
         loaded = load_progress(path, spec)
         assert loaded["red_sessions"] == [3]
-        score_drill(loaded, "0123456789", 0.9, 0.8)
+        score_drill(loaded, "0123456789", 0.9, 80.0)
         save_progress(path, loaded, spec)
-        assert load_progress(path, spec)["drill_history"][0]["reviewed"] is True
+        reviewed = load_progress(path, spec)["drill_history"][0]
+        assert reviewed["reviewed"] is True and reviewed["score_percent"] == 80.0
 
         invalid = new_progress("student-002", "noai_round1", spec)
         invalid["red_sessions"] = [4]
         assert any("subset" in error for error in validate_progress(invalid, spec))
+
+        invalid_bool = new_progress("student-003", "noai_round1", spec)
+        invalid_bool["drill_history"] = [
+            {
+                "date": "2026-08-04",
+                "set_id": "abcdef1234",
+                "level": "mixed",
+                "scenario_ids": ["L1-D01"],
+                "task_family_accuracy": True,
+                "score_percent": 80,
+                "reviewed": True,
+            }
+        ]
+        assert any("task_family_accuracy" in error for error in validate_progress(invalid_bool, spec))
 
     print("Student progress manager self-test passed.")
 
@@ -280,8 +308,8 @@ def main() -> int:
     score_parser = subparsers.add_parser("score-drill")
     score_parser.add_argument("--path", type=Path, required=True)
     score_parser.add_argument("--set-id", required=True)
-    score_parser.add_argument("--task-family-accuracy", type=float, required=True)
-    score_parser.add_argument("--score-percent", type=float, required=True)
+    score_parser.add_argument("--task-family-accuracy", type=float, required=True, help="Fraction from 0 to 1")
+    score_parser.add_argument("--score-percent", type=float, required=True, help="Percentage from 0 to 100")
 
     args = parser.parse_args()
     if args.self_test:
