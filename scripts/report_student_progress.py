@@ -1,3 +1,5 @@
+"""Generate evidence-bounded progress reports using thresholds from curriculum_spec.json."""
+
 from __future__ import annotations
 
 import argparse
