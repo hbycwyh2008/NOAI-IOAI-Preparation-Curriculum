@@ -25,6 +25,7 @@ on:
       - "scripts/validate_class_mission_launchers.py"
       - "scripts/validate_repository_hygiene.py"
       - "scripts/manage_student_progress.py"
+      - "scripts/report_student_progress.py"
       - "scripts/plan_learning_path.py"
       - "scripts/generate_daily_model_drill.py"
       - ".github/workflows/audit-curriculum.yml"
@@ -52,6 +53,7 @@ on:
       - "scripts/validate_class_mission_launchers.py"
       - "scripts/validate_repository_hygiene.py"
       - "scripts/manage_student_progress.py"
+      - "scripts/report_student_progress.py"
       - "scripts/plan_learning_path.py"
       - "scripts/generate_daily_model_drill.py"
       - ".github/workflows/audit-curriculum.yml"
@@ -69,7 +71,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run structure, specification, progress, tools, readiness, launcher, and hygiene audits
+      - name: Run structure, specification, progress, reporting, tools, readiness, launcher, and hygiene audits
         id: audit
         shell: bash
         run: |
@@ -82,6 +84,10 @@ jobs:
           progress_code=$?
           python scripts/manage_student_progress.py validate --path 03_Templates/Student_Progress.example.json >> /tmp/audit.log 2>&1
           example_code=$?
+          python scripts/report_student_progress.py --self-test >> /tmp/audit.log 2>&1
+          report_code=$?
+          python scripts/report_student_progress.py --progress 03_Templates/Student_Progress.example.json --as-of 2026-08-04 --output /tmp/example-progress-report.md >> /tmp/audit.log 2>&1
+          report_example_code=$?
           python scripts/plan_learning_path.py --self-test >> /tmp/audit.log 2>&1
           planner_code=$?
           python scripts/generate_daily_model_drill.py --self-test >> /tmp/audit.log 2>&1
@@ -93,7 +99,7 @@ jobs:
           python scripts/validate_repository_hygiene.py >> /tmp/audit.log 2>&1
           hygiene_code=$?
 
-          if [ "$structure_code" -ne 0 ] || [ "$spec_code" -ne 0 ] || [ "$progress_code" -ne 0 ] || [ "$example_code" -ne 0 ] || [ "$planner_code" -ne 0 ] || [ "$drill_code" -ne 0 ] || [ "$readiness_code" -ne 0 ] || [ "$launcher_code" -ne 0 ] || [ "$hygiene_code" -ne 0 ]; then
+          if [ "$structure_code" -ne 0 ] || [ "$spec_code" -ne 0 ] || [ "$progress_code" -ne 0 ] || [ "$example_code" -ne 0 ] || [ "$report_code" -ne 0 ] || [ "$report_example_code" -ne 0 ] || [ "$planner_code" -ne 0 ] || [ "$drill_code" -ne 0 ] || [ "$readiness_code" -ne 0 ] || [ "$launcher_code" -ne 0 ] || [ "$hygiene_code" -ne 0 ]; then
             combined_code=1
           else
             combined_code=0

@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "canonical_sessions": 78,
   "canonical_packets": 101,
   "phases": [
@@ -52,15 +52,18 @@
   ],
   "operational_tools": {
     "progress_manager": "scripts/manage_student_progress.py",
+    "progress_report": "scripts/report_student_progress.py",
     "pathway_planner": "scripts/plan_learning_path.py",
     "daily_drill_generator": "scripts/generate_daily_model_drill.py"
   },
   "student_progress": {
     "schema": "student_progress.schema.json",
     "example": "03_Templates/Student_Progress.example.json",
-    "schema_version": 1,
+    "schema_version": 2,
     "privacy_rule": "pseudonymous identifier only; no name or email address",
-    "red_must_be_completed": true
+    "red_must_be_completed": true,
+    "one_daily_assignment_per_date": true,
+    "migration_command": "python scripts/manage_student_progress.py migrate --path PATH"
   },
   "model_recognition": {
     "routine": "02_Class_Missions/05_Andrew_Ng_ML_Model_Labs/Model_Recognition_Routine.md",
@@ -75,7 +78,10 @@
     "daily_set_size": 5,
     "recent_repeat_window": 15,
     "mastery_consecutive_days": 5,
-    "mastery_minimum_accuracy": 0.9
+    "mastery_minimum_accuracy": 0.9,
+    "mastery_minimum_baseline_metric_accuracy": 0.9,
+    "maintenance_sets_per_week": 2,
+    "secured_confirmation_required": true
   },
   "readiness": {
     "repository_controlled_status": "validated_by_ci",

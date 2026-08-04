@@ -22,4 +22,6 @@ Use only the template named by the current Session, assessment, or teacher plan.
 - [Student Worksheet Master Template](Student_Worksheet_Master_Template.md)
 - [Weekly Reflection](Weekly_Reflection_Template.md)
 
-The progress example is structural only. Create real ledgers with `scripts/manage_student_progress.py init` in private student repositories, use pseudonymous IDs, and never store names, emails, protected answers, credentials, or hidden labels.
+The progress example is structural only. Create real schema-v2 ledgers with `scripts/manage_student_progress.py init` in private student repositories. Migrate schema-v1 records with `scripts/manage_student_progress.py migrate` before planning, scoring, or reporting.
+
+Real ledgers use pseudonymous IDs and contain only route state, Red debt, assignment metadata, compact accuracy/score fields, and private-confirmation status. Never store names, emails, protected answers, credentials, hidden labels, or secured-set content.

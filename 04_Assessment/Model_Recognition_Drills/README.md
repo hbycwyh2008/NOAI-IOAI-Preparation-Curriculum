@@ -1,10 +1,8 @@
 # Model Recognition Daily Drills
 
-Use one generated set per study day for approximately 15 minutes. These drills train task formalisation before model selection; they are not a keyword-matching quiz and they intentionally contain no public answer key.
+Use one generated set per study day for approximately 15 minutes. These drills train task formalisation before model selection; they are not a keyword-matching quiz and intentionally contain no public answer key.
 
 ## Generate Today’s Set
-
-The preferred workflow reads the student’s private progress ledger, avoids the most recent 15 scenario assignments when possible, and records the new assignment:
 
 ```bash
 python scripts/generate_daily_model_drill.py \
@@ -15,9 +13,9 @@ python scripts/generate_daily_model_drill.py \
   --output daily-drills/YYYY-MM-DD.md
 ```
 
-Without `--progress`, selection remains deterministic but cannot use assignment history. Use `--history-window 0` only for a deliberate unrestricted diagnostic. Use `--level 1`, `--level 2`, or `--level 3` for targeted difficulty.
+The generator reads the private schema-v2 progress ledger, avoids the most recent 15 scenario assignments when possible, and records one assignment per date. Rerunning a recorded date restores the same Set ID and scenarios; a different second assignment on that date is rejected.
 
-The same date, level, count, and history state produce the same Set ID and scenario selection. When the recent-repeat window exhausts a level pool, the oldest previously assigned item returns first. This makes feedback, resubmission, and teacher records auditable without falsely promising that a 36-scenario public bank can remain unique forever.
+Without `--progress`, selection remains deterministic but cannot use assignment history. Use `--history-window 0` only for a deliberate unrestricted diagnostic. Use `--level 1`, `--level 2`, or `--level 3` for targeted difficulty.
 
 ## Daily Procedure
 
@@ -29,7 +27,7 @@ The same date, level, count, and history state produce the same Set ID and scena
 6. Name two reasonable model families and one likely failure mode for each.
 7. Identify one leakage, distribution-shift, or submission risk.
 8. Compare with teacher feedback, correct the reasoning, and record the correction cause.
-9. Record reviewed task-family accuracy and total score in the progress ledger.
+9. Record reviewed task-family accuracy, baseline/metric accuracy, and total score.
 
 ## Levels
 
@@ -41,31 +39,54 @@ The same date, level, count, and history state produce the same Set ID and scena
 
 ## Review and Score
 
-After feedback, record task-family accuracy as a fraction from 0 to 1 and the total score as a percentage from 0 to 100:
-
 ```bash
 python scripts/manage_student_progress.py score-drill \
   --path student-progress/student-001.json \
   --set-id 0123456789 \
-  --task-family-accuracy 0.8 \
-  --score-percent 75
+  --task-family-accuracy 0.9 \
+  --baseline-metric-accuracy 0.9 \
+  --score-percent 90
 ```
+
+- task-family accuracy is a fraction from 0 to 1;
+- baseline/metric accuracy is a fraction from 0 to 1;
+- total score is a percentage from 0 to 100.
 
 Detailed reasoning, correction notes, and recheck dates remain in the worksheet or answer record. Protected solutions and calibration material remain outside the public repository.
 
-## Mastery Rule
+## Public Eligibility Rule
 
-Mastery requires all of the following:
+A set qualifies for the public streak only when:
 
-- at least 90% task-family accuracy for five consecutive reviewed daily sets;
-- no confusion between labels, features, output, metric, validation, and model;
-- a valid baseline and metric for at least 90% of scenarios;
-- candidate models justified from data and output structure rather than keywords;
-- one realistic limitation plus one leakage or shift risk identified;
-- corrections explain the reasoning error, not only the final category;
-- a fresh secured mixed set confirms the result.
+- teacher review is complete;
+- task-family accuracy is at least 90%;
+- baseline/metric accuracy is at least 90%.
 
-After mastery, continue two mixed maintenance sets per week. Any two task-family errors in one week return the student to daily practice.
+The student needs five qualifying reviewed sets in a row. A high total score cannot compensate for either failed accuracy dimension. Migrated legacy records with missing baseline/metric accuracy remain visible but cannot count toward the streak until properly rescored.
+
+Generate the current status report with:
+
+```bash
+python scripts/report_student_progress.py \
+  --progress student-progress/student-001.json \
+  --output reports/student-001-progress.md
+```
+
+## Private Confirmation Rule
+
+The five-set public streak creates eligibility only. After the streak, administer a fresh private secured mixed set. If it passes, record only the result date:
+
+```bash
+python scripts/manage_student_progress.py confirm-recognition \
+  --path student-progress/student-001.json \
+  --date YYYY-MM-DD
+```
+
+The confirmation date must be on or after the latest qualifying public set. Never store secured questions, protected answers, hidden labels, or detailed keys in the ledger.
+
+## Maintenance Rule
+
+After confirmed mastery, complete two qualifying mixed maintenance sets per seven-day window. The progress report marks maintenance due after a full week when fewer than two qualifying mixed sets appear in the current window. Any material regression returns the student to targeted or daily practice.
 
 ## Scoring
 
@@ -81,13 +102,14 @@ Each scenario is scored out of 12:
 | two candidate families | 1 |
 | limitations, leakage, shift, or submission risk | 3 |
 
-The teacher stores detailed solutions, alternative acceptable answers, and calibration examples outside the public repository.
+The teacher stores detailed solutions, alternative acceptable answers, secured sets, and calibration examples outside the public repository.
 
 ## Tool Validation
 
 ```bash
 python scripts/manage_student_progress.py --self-test
+python scripts/report_student_progress.py --self-test
 python scripts/generate_daily_model_drill.py --self-test
 ```
 
-The self-tests verify progress-ledger integrity, deterministic selection, recent-repeat avoidance, unique scenarios within a set, mixed-level coverage, minimum bank size, and answer-key-free output.
+The self-tests verify schema migration, score ranges, one-set-per-date integrity, dual-threshold streak calculation, secured-confirmation order, maintenance status, recent-repeat avoidance, mixed-level coverage, and answer-key-free output.

@@ -14,11 +14,16 @@ Complete these files in order before or during the opening Sessions:
 10. [Model Recognition Daily Drills](../04_Assessment/Model_Recognition_Drills/README.md)
 11. [Model Recognition Answer Record](../04_Assessment/Model_Recognition_Drills/Answer_Record.md)
 
-Copy the mastery dashboard and model-recognition answer record into your own course repository. The teacher creates a separate private progress ledger from the example using a pseudonymous student ID. Do not reuse the example file as a real record and do not store a name or email address in the ledger.
+Copy the mastery dashboard and model-recognition answer record into your own course repository. The teacher creates a separate private schema-v2 progress ledger with a pseudonymous student ID. Do not reuse the public example as a real record and do not store a name, email address, protected answer, credential, or hidden label.
 
-Update the dashboard after every assigned Session and the recognition record after every assigned daily set. Each claimed level must link to evidence that you can explain and reconstruct. The machine-readable ledger records only route state, Red debt, qualifications, assigned Set IDs, and reviewed scores.
+The ledger records route state, Red debt, pathway qualifications, one drill assignment per date, task-family accuracy, baseline/metric accuracy, total score, and private-confirmation status. Earlier schema-v1 ledgers must be migrated with:
 
-Generate the assigned worksheet with your private ledger:
+```bash
+python scripts/manage_student_progress.py migrate \
+  --path student-progress/student-001.json
+```
+
+Generate the assigned worksheet with the private ledger:
 
 ```bash
 python scripts/generate_daily_model_drill.py \
@@ -29,6 +34,8 @@ python scripts/generate_daily_model_drill.py \
   --output daily-drills/YYYY-MM-DD.md
 ```
 
-The same date, level, count, and history state produce the same Set ID. Recent assigned scenarios are avoided when possible. Do not search for a public answer key or delete assignments from the ledger; the correction process is part of the evidence.
+Rerunning the same recorded date restores the same Set ID. Recent assigned scenarios are avoided when possible, and a different second assignment on that date is rejected.
 
-The canonical class entry point remains [Class Missions](../02_Class_Missions/README.md). Use the [Workflow Competency Crosswalk](../00_Course_Overview/Workflow_Competency_Crosswalk.md) to understand the evidence gates that recur across the course, and use only the executable pathway assigned by your teacher.
+The teacher may generate a progress report showing route completion, Red debt, pending reviews, the dual-threshold five-set streak, secured confirmation, and maintenance due. That report uses ledger metadata only and does not replace the detailed evidence in the dashboard, worksheet, notebook, code, or correction record.
+
+The canonical class entry point remains [Class Missions](../02_Class_Missions/README.md). Use the [Workflow Competency Crosswalk](../00_Course_Overview/Workflow_Competency_Crosswalk.md) to understand the recurring evidence gates, and use only the executable pathway assigned by your teacher.

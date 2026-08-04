@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "student_id": "student-001",
   "pathway": "noai_round1",
   "completed_sessions": [1, 2, 3],
@@ -12,9 +12,14 @@
       "level": "mixed",
       "scenario_ids": ["L1-D01", "L2-D13", "L3-D25"],
       "task_family_accuracy": null,
+      "baseline_metric_accuracy": null,
       "score_percent": null,
       "reviewed": false
     }
   ],
+  "recognition_confirmation": {
+    "passed": false,
+    "date": null
+  },
   "last_updated": "2026-08-04"
 }

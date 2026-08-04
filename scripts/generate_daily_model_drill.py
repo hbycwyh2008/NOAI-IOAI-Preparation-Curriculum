@@ -11,7 +11,13 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from manage_student_progress import load_progress, new_progress, record_drill_assignment, save_progress
+from manage_student_progress import (
+    find_drill_by_date,
+    load_progress,
+    new_progress,
+    record_drill_assignment,
+    save_progress,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC_PATH = ROOT / "curriculum_spec.json"
@@ -74,6 +80,14 @@ def load_scenarios(spec: dict) -> list[Scenario]:
     if len(scenarios) < minimum:
         raise ValueError(f"Scenario bank below minimum: {len(scenarios)} < {minimum}")
     return scenarios
+
+
+def scenarios_from_ids(scenarios: list[Scenario], identifiers: list[str]) -> list[Scenario]:
+    by_id = {scenario.identifier: scenario for scenario in scenarios}
+    missing = [identifier for identifier in identifiers if identifier not in by_id]
+    if missing:
+        raise ValueError(f"Recorded scenario IDs are no longer available: {', '.join(missing)}")
+    return [by_id[identifier] for identifier in identifiers]
 
 
 def stable_seed(day: str, level: str, count: int) -> int:
@@ -206,7 +220,7 @@ def render(day: str, level: str, selected: list[Scenario], minutes: int, history
         lines.append(f"| {scenario.identifier} |  |  |  |  |  |")
     lines += [
         "",
-        "Mastery is not awarded from one set. Use the repository mastery rule: at least 90% task-family accuracy for five consecutive daily sets plus a fresh secured confirmation set.",
+        "Mastery is not awarded from one set. Public eligibility requires at least 90% task-family accuracy and 90% baseline/metric accuracy for five consecutive reviewed daily sets, followed by a fresh private secured confirmation set.",
     ]
     return "\n".join(lines) + "\n"
 
@@ -237,6 +251,13 @@ def run_self_test() -> None:
         recent = recent_scenario_ids(loaded, 15)
         next_set = select_scenarios(scenarios, "2026-08-05", "mixed", 5, recent)
         assert not ({scenario.identifier for scenario in first} & {scenario.identifier for scenario in next_set})
+
+        existing = find_drill_by_date(loaded, "2026-08-04")
+        assert existing is not None
+        restored = scenarios_from_ids(scenarios, existing["scenario_ids"])
+        assert restored == first
+        assert build_set_id("2026-08-04", restored) == existing["set_id"]
+
         record_drill_assignment(
             loaded,
             day="2026-08-04",
@@ -249,7 +270,7 @@ def run_self_test() -> None:
     text = render("2026-08-04", "mixed", first, int(spec["model_recognition"]["daily_minutes"]), 15)
     assert "Public answer key: none" in text
     assert "candidate model family 2 + limitation" in text
-    assert "Recent-repeat window" in text
+    assert "baseline/metric accuracy" in text
     print("Daily model-recognition drill generator self-test passed.")
 
 
@@ -260,7 +281,7 @@ def main() -> int:
     parser.add_argument("--count", type=int, help="Number of scenarios; defaults to curriculum_spec.json")
     parser.add_argument("--progress", type=Path, help="Use recent assignments from a student progress ledger")
     parser.add_argument("--history-window", type=int, help="Recent scenario assignments to avoid when possible")
-    parser.add_argument("--record-progress", action="store_true", help="Append the assigned set to --progress after output succeeds")
+    parser.add_argument("--record-progress", action="store_true", help="Record the one daily assignment in --progress")
     parser.add_argument("--output", type=Path, help="Write Markdown to this path instead of stdout")
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
@@ -283,8 +304,25 @@ def main() -> int:
             raise ValueError("--record-progress requires --progress")
 
         progress = load_progress(args.progress, spec) if args.progress else None
-        recent = recent_scenario_ids(progress, history_window)
-        selected = select_scenarios(scenarios, args.date, args.level, count, recent)
+        existing = find_drill_by_date(progress, args.date) if progress is not None else None
+        if existing:
+            if existing["level"] != args.level:
+                raise ValueError(
+                    f"{args.date} already has a {existing['level']} assignment; rerun with that level"
+                )
+            if len(existing["scenario_ids"]) != count:
+                raise ValueError(
+                    f"{args.date} already has {len(existing['scenario_ids'])} scenarios; rerun with that count"
+                )
+            selected = scenarios_from_ids(scenarios, existing["scenario_ids"])
+            set_id = build_set_id(args.date, selected)
+            if set_id != existing["set_id"]:
+                raise ValueError(f"Recorded Set ID no longer matches its scenarios for {args.date}")
+        else:
+            recent = recent_scenario_ids(progress, history_window)
+            selected = select_scenarios(scenarios, args.date, args.level, count, recent)
+            set_id = build_set_id(args.date, selected)
+
         text = render(
             args.date,
             args.level,
@@ -292,7 +330,6 @@ def main() -> int:
             int(spec["model_recognition"]["daily_minutes"]),
             history_window,
         )
-        set_id = build_set_id(args.date, selected)
     except (KeyError, TypeError, ValueError, json.JSONDecodeError) as error:
         print(f"Daily drill generation failed: {error}", file=sys.stderr)
         return 2

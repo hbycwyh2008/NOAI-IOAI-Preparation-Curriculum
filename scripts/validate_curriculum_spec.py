@@ -56,6 +56,122 @@ def exact_route_sessions(document: Path) -> list[int]:
     return sessions
 
 
+def validate_progress_contract(spec: dict, errors: list[str]) -> None:
+    contract = spec.get("student_progress", {})
+    schema_path = ROOT / str(contract.get("schema", ""))
+    example_path = ROOT / str(contract.get("example", ""))
+
+    if not schema_path.exists():
+        errors.append("Missing student progress JSON schema")
+    else:
+        try:
+            schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as error:
+            errors.append(f"Invalid student progress JSON schema: {error}")
+            schema = {}
+
+        declared = contract.get("schema_version")
+        actual = schema.get("properties", {}).get("schema_version", {}).get("const")
+        if actual != declared:
+            errors.append("Student progress schema version does not match curriculum_spec.json")
+
+        required = set(schema.get("required", []))
+        for marker in ("student_id", "drill_history", "recognition_confirmation"):
+            if marker not in required:
+                errors.append(f"Student progress schema must require {marker}")
+
+        drill_items = schema.get("properties", {}).get("drill_history", {}).get("items", {})
+        drill_required = set(drill_items.get("required", []))
+        if "baseline_metric_accuracy" not in drill_required:
+            errors.append("Student progress drill records must require baseline_metric_accuracy")
+
+        confirmation_required = set(
+            schema.get("properties", {}).get("recognition_confirmation", {}).get("required", [])
+        )
+        if confirmation_required != {"passed", "date"}:
+            errors.append("Recognition confirmation schema must require exactly passed and date")
+
+    if not example_path.exists():
+        errors.append("Missing student progress example")
+    else:
+        try:
+            example = json.loads(example_path.read_text(encoding="utf-8"))
+            errors.extend(f"Student progress example: {error}" for error in validate_progress(example, spec))
+        except json.JSONDecodeError as error:
+            errors.append(f"Invalid student progress example JSON: {error}")
+
+    if contract.get("privacy_rule") != "pseudonymous identifier only; no name or email address":
+        errors.append("Student progress privacy rule must forbid names and email addresses")
+    if contract.get("red_must_be_completed") is not True:
+        errors.append("Student progress contract must require Red Sessions to be completed attempts")
+    if contract.get("one_daily_assignment_per_date") is not True:
+        errors.append("Student progress contract must enforce one daily assignment per date")
+    if contract.get("migration_command") != "python scripts/manage_student_progress.py migrate --path PATH":
+        errors.append("Student progress contract must declare the supported migration command")
+
+
+def validate_recognition_contract(spec: dict, errors: list[str]) -> tuple[int, int]:
+    recognition = spec["model_recognition"]
+    routine = ROOT / recognition["routine"]
+    drill_index = ROOT / recognition["drill_index"]
+    if not routine.exists():
+        errors.append(f"Missing model-recognition routine: {recognition['routine']}")
+    if not drill_index.exists():
+        errors.append(f"Missing model-recognition drill index: {recognition['drill_index']}")
+
+    scenario_ids: list[str] = []
+    global_numbers: list[int] = []
+    scenario_count = 0
+    for relative in recognition.get("scenario_files", []):
+        path = ROOT / relative
+        if not path.exists():
+            errors.append(f"Missing model-recognition scenario file: {relative}")
+            continue
+        level_match = re.search(r"Level_(\d)_", path.name)
+        if not level_match:
+            errors.append(f"Cannot infer scenario level from file name: {relative}")
+            continue
+        level = int(level_match.group(1))
+        numbers = [int(value) for value in SCENARIO_HEADING.findall(path.read_text(encoding="utf-8"))]
+        scenario_count += len(numbers)
+        global_numbers.extend(numbers)
+        scenario_ids.extend(f"L{level}-D{number:02d}" for number in numbers)
+        if numbers:
+            expected_local = list(range(numbers[0], numbers[0] + len(numbers)))
+            if numbers != expected_local:
+                errors.append(f"Scenario numbering must be internally consecutive in {relative}: {numbers}")
+
+    minimum = int(recognition["minimum_public_scenarios"])
+    if scenario_count < minimum:
+        errors.append(f"Model-recognition scenarios below minimum: {scenario_count} < {minimum}")
+    if global_numbers != list(range(1, scenario_count + 1)):
+        errors.append("Model-recognition scenario files must collectively cover one sequence from Day 1")
+    if len(scenario_ids) != len(set(scenario_ids)):
+        errors.append("Model-recognition scenario IDs are not unique")
+
+    daily_set_size = int(recognition.get("daily_set_size", 0))
+    repeat_window = int(recognition.get("recent_repeat_window", 0))
+    if daily_set_size < 1:
+        errors.append("model_recognition.daily_set_size must be at least 1")
+    if repeat_window < daily_set_size:
+        errors.append("model_recognition.recent_repeat_window must be at least one daily set")
+    if repeat_window >= scenario_count:
+        errors.append("model_recognition.recent_repeat_window must leave unseen scenarios available")
+
+    if int(recognition.get("mastery_consecutive_days", 0)) != 5:
+        errors.append("Model-recognition public mastery eligibility must require five consecutive reviewed sets")
+    for field in ("mastery_minimum_accuracy", "mastery_minimum_baseline_metric_accuracy"):
+        value = recognition.get(field)
+        if type(value) not in (int, float) or not 0 < float(value) <= 1:
+            errors.append(f"model_recognition.{field} must be a number from 0 exclusive to 1 inclusive")
+    if int(recognition.get("maintenance_sets_per_week", 0)) != 2:
+        errors.append("Model-recognition maintenance must require two sets per week")
+    if recognition.get("secured_confirmation_required") is not True:
+        errors.append("A fresh private secured confirmation must remain required")
+
+    return scenario_count, repeat_window
+
+
 def main() -> int:
     errors: list[str] = []
     if not SPEC_PATH.exists():
@@ -66,8 +182,8 @@ def main() -> int:
     except json.JSONDecodeError as error:
         return fail([f"Invalid curriculum_spec.json: {error}"])
 
-    if int(spec.get("schema_version", 0)) < 3:
-        errors.append("curriculum_spec.json must use schema_version 3 or later")
+    if int(spec.get("schema_version", 0)) < 4:
+        errors.append("curriculum_spec.json must use schema_version 4 or later")
 
     expected_sessions = int(spec["canonical_sessions"])
     expected_packets = int(spec["canonical_packets"])
@@ -77,7 +193,6 @@ def main() -> int:
     covered: list[int] = []
     launcher_sessions: list[int] = []
     packets: set[Path] = set()
-
     for phase in phases:
         start = int(phase["start"])
         end = int(phase["end"])
@@ -104,7 +219,7 @@ def main() -> int:
             errors.append(f"Spec/launcher mismatch for {phase['path']}: expected {start}-{end}, found {local}")
 
     if covered != list(range(1, expected_sessions + 1)):
-        errors.append("Phase ranges in curriculum_spec.json must cover every canonical Session exactly once")
+        errors.append("Phase ranges must cover every canonical Session exactly once")
     if launcher_sessions != covered:
         errors.append("Launcher Session order does not match curriculum_spec.json")
     if len(packets) != expected_packets:
@@ -119,11 +234,10 @@ def main() -> int:
         sessions = [int(value) for value in pathway["sessions"]]
         expected_count = int(pathway["expected_count"])
         document = ROOT / pathway["document"]
-
         if len(sessions) != expected_count:
             errors.append(f"{name}: expected_count={expected_count}, actual={len(sessions)}")
         if len(sessions) != len(set(sessions)):
-            errors.append(f"{name}: duplicate Session IDs in curriculum_spec.json")
+            errors.append(f"{name}: duplicate Session IDs")
         invalid = sorted(set(sessions) - canonical_set)
         if invalid:
             errors.append(f"{name}: Sessions outside canonical range: {invalid}")
@@ -135,22 +249,17 @@ def main() -> int:
         for marker in ("## Exact Session Route", "## Exit Standard", "## Capability Boundary"):
             if marker not in text:
                 errors.append(f"{pathway['document']} missing required section: {marker}")
-
         try:
             documented = exact_route_sessions(document)
         except ValueError as error:
             errors.append(f"{pathway['document']}: {error}")
             documented = []
         if documented != sessions:
-            errors.append(
-                f"{name}: documented Exact Session Route does not match curriculum_spec.json; "
-                f"document={documented}, spec={sessions}"
-            )
+            errors.append(f"{name}: documented route does not match curriculum_spec.json")
 
         recovery = [int(value) for value in pathway.get("recovery_sessions", [])]
         if not set(recovery).issubset(set(sessions)):
-            errors.append(f"{name}: recovery_sessions must be included in the pathway route")
-
+            errors.append(f"{name}: recovery_sessions must be included in the route")
         required_name = pathway.get("requires_pathway")
         if required_name:
             if required_name not in pathways:
@@ -160,30 +269,25 @@ def main() -> int:
                 if overlap:
                     errors.append(f"{name}: continuation repeats prior-pathway Sessions: {sorted(overlap)}")
 
-    if "noai_round1" in pathways:
-        round1 = [int(value) for value in pathways["noai_round1"]["sessions"]]
-        if 57 not in round1 or 58 not in round1 or round1.index(57) > round1.index(58):
-            errors.append("NOAI Round 1 must complete Session 57 before Session 58")
+    round1 = [int(value) for value in pathways.get("noai_round1", {}).get("sessions", [])]
+    if 57 not in round1 or 58 not in round1 or round1.index(57) > round1.index(58):
+        errors.append("NOAI Round 1 must complete Session 57 before Session 58")
 
-    if "noai_round2" in pathways:
-        round2 = pathways["noai_round2"]
-        if [int(value) for value in round2.get("recovery_sessions", [])] != [32, 47]:
-            errors.append("NOAI Round 2 recovery bridge must be Sessions 32 and 47")
+    round2 = pathways.get("noai_round2", {})
+    if [int(value) for value in round2.get("recovery_sessions", [])] != [32, 47]:
+        errors.append("NOAI Round 2 recovery bridge must be Sessions 32 and 47")
 
-    if "ioai_full" in pathways:
-        ioai = [int(value) for value in pathways["ioai_full"]["sessions"]]
-        if ioai != list(range(1, expected_sessions + 1)):
-            errors.append("IOAI full pathway must contain Sessions 1–78 exactly once and in order")
-        if "noai_round1" in pathways:
-            round1_set = set(int(value) for value in pathways["noai_round1"]["sessions"])
-            expected_recovery = [session for session in range(1, 59) if session not in round1_set]
-            declared_recovery = [
-                int(value) for value in pathways["ioai_full"].get("recovery_sessions_from_noai_round1", [])
-            ]
-            if declared_recovery != expected_recovery:
-                errors.append(
-                    "IOAI recovery_sessions_from_noai_round1 must equal the exact Sessions 1–58 omitted by Round 1"
-                )
+    ioai = [int(value) for value in pathways.get("ioai_full", {}).get("sessions", [])]
+    if ioai != list(range(1, expected_sessions + 1)):
+        errors.append("IOAI full pathway must contain Sessions 1–78 exactly once and in order")
+    if round1:
+        expected_recovery = [session for session in range(1, 59) if session not in set(round1)]
+        declared_recovery = [
+            int(value)
+            for value in pathways.get("ioai_full", {}).get("recovery_sessions_from_noai_round1", [])
+        ]
+        if declared_recovery != expected_recovery:
+            errors.append("IOAI compressed-route recovery set does not match actual Round 1 omissions")
 
     checkpoints = spec.get("workflow_checkpoints", [])
     checkpoint_sessions = [int(item["session"]) for item in checkpoints]
@@ -192,6 +296,14 @@ def main() -> int:
     if set(checkpoint_sessions) - canonical_set:
         errors.append("workflow_checkpoints contain Sessions outside the canonical range")
 
+    expected_tools = {
+        "progress_manager",
+        "progress_report",
+        "pathway_planner",
+        "daily_drill_generator",
+    }
+    if set(spec.get("operational_tools", {})) != expected_tools:
+        errors.append(f"Operational tool keys must be exactly {sorted(expected_tools)}")
     for tool_name, relative in spec.get("operational_tools", {}).items():
         path = ROOT / relative
         if not path.exists():
@@ -199,81 +311,8 @@ def main() -> int:
         elif "--self-test" not in path.read_text(encoding="utf-8"):
             errors.append(f"Operational tool lacks --self-test support: {relative}")
 
-    progress_contract = spec.get("student_progress", {})
-    progress_schema = ROOT / str(progress_contract.get("schema", ""))
-    progress_example = ROOT / str(progress_contract.get("example", ""))
-    if not progress_schema.exists():
-        errors.append("Missing student progress JSON schema")
-    else:
-        try:
-            schema_data = json.loads(progress_schema.read_text(encoding="utf-8"))
-            if schema_data.get("properties", {}).get("schema_version", {}).get("const") != progress_contract.get("schema_version"):
-                errors.append("Student progress schema version does not match curriculum_spec.json")
-            if "student_id" not in schema_data.get("required", []):
-                errors.append("Student progress schema must require student_id")
-        except json.JSONDecodeError as error:
-            errors.append(f"Invalid student progress JSON schema: {error}")
-    if not progress_example.exists():
-        errors.append("Missing student progress example")
-    else:
-        try:
-            example_data = json.loads(progress_example.read_text(encoding="utf-8"))
-            progress_errors = validate_progress(example_data, spec)
-            errors.extend(f"Student progress example: {error}" for error in progress_errors)
-        except json.JSONDecodeError as error:
-            errors.append(f"Invalid student progress example JSON: {error}")
-    if progress_contract.get("privacy_rule") != "pseudonymous identifier only; no name or email address":
-        errors.append("Student progress privacy rule must forbid names and email addresses")
-    if progress_contract.get("red_must_be_completed") is not True:
-        errors.append("Student progress contract must require Red Sessions to be completed attempts")
-
-    recognition = spec["model_recognition"]
-    routine = ROOT / recognition["routine"]
-    drill_index = ROOT / recognition["drill_index"]
-    if not routine.exists():
-        errors.append(f"Missing model-recognition routine: {recognition['routine']}")
-    if not drill_index.exists():
-        errors.append(f"Missing model-recognition drill index: {recognition['drill_index']}")
-
-    scenario_ids: list[str] = []
-    global_scenario_numbers: list[int] = []
-    scenario_count = 0
-    for relative in recognition.get("scenario_files", []):
-        path = ROOT / relative
-        if not path.exists():
-            errors.append(f"Missing model-recognition scenario file: {relative}")
-            continue
-        level_match = re.search(r"Level_(\d)_", path.name)
-        if not level_match:
-            errors.append(f"Cannot infer scenario level from file name: {relative}")
-            continue
-        level = int(level_match.group(1))
-        numbers = [int(value) for value in SCENARIO_HEADING.findall(path.read_text(encoding="utf-8"))]
-        scenario_count += len(numbers)
-        global_scenario_numbers.extend(numbers)
-        scenario_ids.extend(f"L{level}-D{number:02d}" for number in numbers)
-        if numbers:
-            expected_local = list(range(numbers[0], numbers[0] + len(numbers)))
-            if numbers != expected_local:
-                errors.append(f"Scenario numbering must be internally consecutive in {relative}: {numbers}")
-
-    minimum = int(recognition["minimum_public_scenarios"])
-    if scenario_count < minimum:
-        errors.append(f"Model-recognition scenarios below minimum: {scenario_count} < {minimum}")
-    if global_scenario_numbers != list(range(1, scenario_count + 1)):
-        errors.append(
-            "Model-recognition scenario files must collectively cover one globally consecutive sequence from Day 1"
-        )
-    if len(scenario_ids) != len(set(scenario_ids)):
-        errors.append("Model-recognition scenario IDs are not unique")
-    daily_set_size = int(recognition.get("daily_set_size", 0))
-    repeat_window = int(recognition.get("recent_repeat_window", 0))
-    if daily_set_size < 1:
-        errors.append("model_recognition.daily_set_size must be at least 1")
-    if repeat_window < daily_set_size:
-        errors.append("model_recognition.recent_repeat_window must be at least one daily set")
-    if repeat_window >= scenario_count:
-        errors.append("model_recognition.recent_repeat_window must leave at least one unseen scenario available")
+    validate_progress_contract(spec, errors)
+    scenario_count, repeat_window = validate_recognition_contract(spec, errors)
 
     required_readiness_markers = {
         "10_Ready_to_Teach_Pack/Student_Runtime_Qualification_Record.md": "NOT QUALIFIED until this record is completed",
@@ -295,10 +334,11 @@ def main() -> int:
     print(f"Canonical Sessions: {expected_sessions}")
     print(f"Canonical packets: {expected_packets}")
     print("Exact pathway routes and continuation dependencies: valid")
-    print("Student progress schema, example, privacy, and Red-debt rules: valid")
-    print("Operational progress, planning, and daily-drill tools: present")
-    print(f"Model-recognition scenario bank: {scenario_count} unique scenarios, globally numbered 1-{scenario_count}")
+    print("Student progress schema v2, migration, privacy, and one-set-per-date rules: valid")
+    print("Operational progress, report, planning, and daily-drill tools: present")
+    print(f"Model-recognition scenario bank: {scenario_count} unique scenarios")
     print(f"Recent-repeat window: {repeat_window} scenario assignments")
+    print("Five-set dual-threshold eligibility, secured confirmation, and maintenance rules: valid")
     print("Repository evidence and real-world evidence boundaries: explicit")
     return 0
 
