@@ -28,7 +28,7 @@ This dashboard separates repository-controlled facts from evidence that only rea
 
 The repository has **100% public file-structure and internal-consistency coverage** for the maintained assets listed above. That statement does not include external operational evidence.
 
-## Evidence Outside Repository Control
+## External Evidence Still Required
 
 | Dimension | Current public status | Completion evidence |
 |---|---|---|
@@ -54,4 +54,4 @@ Use statements such as:
 - IOAI 2026 pre-event public documents were reviewed on 2026-08-04;
 - post-event alignment remains pending.
 
-Do **not** state “100% operationally ready,” “fully classroom validated,” or “IOAI 2026 task validated” until the corresponding evidence records are complete.
+The project **must not state** “100% operationally ready,” “fully classroom validated,” or “IOAI 2026 task validated” until the corresponding evidence records are complete.
