@@ -52,7 +52,9 @@ def analyse_progress(data: dict, spec: dict, as_of: date) -> dict:
     baseline_threshold = float(recognition["mastery_minimum_baseline_metric_accuracy"])
     maintenance_required = int(recognition["maintenance_sets_per_week"])
 
-    history = list(data["drill_history"])
+    all_history = list(data["drill_history"])
+    history = [record for record in all_history if date.fromisoformat(record["date"]) <= as_of]
+    future_records = [record for record in all_history if date.fromisoformat(record["date"]) > as_of]
     reviewed = [record for record in history if record.get("reviewed")]
     pending = [record for record in history if not record.get("reviewed")]
     incomplete_reviewed = [
@@ -75,19 +77,25 @@ def analyse_progress(data: dict, spec: dict, as_of: date) -> dict:
     latest_streak_date = date.fromisoformat(streak_records[-1]["date"]) if public_streak_met else None
 
     confirmation = data["recognition_confirmation"]
-    confirmation_passed = bool(confirmation["passed"])
-    confirmation_date = date.fromisoformat(confirmation["date"]) if confirmation_passed else None
+    confirmation_recorded = bool(confirmation["passed"])
+    confirmation_date = date.fromisoformat(confirmation["date"]) if confirmation_recorded else None
+    confirmation_effective = bool(
+        confirmation_recorded and confirmation_date is not None and confirmation_date <= as_of
+    )
     confirmation_after_streak = bool(
         public_streak_met
-        and confirmation_date is not None
+        and confirmation_effective
         and latest_streak_date is not None
+        and confirmation_date is not None
         and confirmation_date >= latest_streak_date
     )
     mastery_confirmed = public_streak_met and confirmation_after_streak
 
     if mastery_confirmed:
         recognition_status = "CONFIRMED"
-    elif public_streak_met and confirmation_passed and not confirmation_after_streak:
+    elif public_streak_met and confirmation_recorded and not confirmation_effective:
+        recognition_status = "CONFIRMATION_NOT_YET_EFFECTIVE"
+    elif public_streak_met and confirmation_effective and not confirmation_after_streak:
         recognition_status = "CONFIRMATION_OUT_OF_ORDER"
     elif public_streak_met:
         recognition_status = "PUBLIC_STREAK_ELIGIBLE_FOR_SECURED_CONFIRMATION"
@@ -125,6 +133,7 @@ def analyse_progress(data: dict, spec: dict, as_of: date) -> dict:
         "required_pathway": required_pathway,
         "reviewed_count": len(reviewed),
         "pending_count": len(pending),
+        "future_record_count": len(future_records),
         "incomplete_reviewed_count": len(incomplete_reviewed),
         "current_streak": streak,
         "streak_required": streak_required,
@@ -132,7 +141,8 @@ def analyse_progress(data: dict, spec: dict, as_of: date) -> dict:
         "baseline_threshold": baseline_threshold,
         "public_streak_met": public_streak_met,
         "recognition_status": recognition_status,
-        "confirmation_passed": confirmation_passed,
+        "confirmation_recorded": confirmation_recorded,
+        "confirmation_effective": confirmation_effective,
         "confirmation_date": confirmation_date,
         "mastery_confirmed": mastery_confirmed,
         "maintenance_sets": len(maintenance_sets),
@@ -171,16 +181,18 @@ def render_report(data: dict, spec: dict, as_of: date) -> str:
         "",
         "## Model-Recognition Evidence",
         "",
-        f"- Reviewed daily sets: **{analysis['reviewed_count']}**",
-        f"- Pending review: **{analysis['pending_count']}**",
+        f"- Reviewed daily sets through report date: **{analysis['reviewed_count']}**",
+        f"- Pending review through report date: **{analysis['pending_count']}**",
+        f"- Future-dated ledger records excluded: **{analysis['future_record_count']}**",
         f"- Reviewed legacy/incomplete records: **{analysis['incomplete_reviewed_count']}**",
         f"- Current qualifying streak: **{analysis['current_streak']}/{analysis['streak_required']}**",
         f"- Task-family threshold: **{analysis['task_threshold']:.0%}**",
         f"- Baseline/metric threshold: **{analysis['baseline_threshold']:.0%}**",
-        f"- Secured confirmation passed: **{'yes' if analysis['confirmation_passed'] else 'no'}**",
+        f"- Secured confirmation recorded: **{'yes' if analysis['confirmation_recorded'] else 'no'}**",
+        f"- Secured confirmation effective by report date: **{'yes' if analysis['confirmation_effective'] else 'no'}**",
         f"- Recognition status: **{analysis['recognition_status']}**",
         "",
-        "A public streak is only eligibility for the private secured confirmation. It is not mastery by itself.",
+        "A public streak is only eligibility for the private secured confirmation. Future-dated evidence is excluded and cannot establish mastery early.",
         "",
         "### Most Recent Reviewed Sets",
         "",
@@ -223,7 +235,9 @@ def render_report(data: dict, spec: dict, as_of: date) -> str:
         "",
     ]
 
-    if analysis["pending_count"]:
+    if analysis["future_record_count"]:
+        lines.append("1. Verify the report date and future-dated ledger records; they are excluded from current evidence decisions.")
+    elif analysis["pending_count"]:
         lines.append("1. Review and score the pending daily set before using it in any mastery decision.")
     elif analysis["red"]:
         lines.append(f"1. Repair and recheck Red prerequisite debt: **{compact_ranges(analysis['red'])}**.")
@@ -233,6 +247,8 @@ def render_report(data: dict, spec: dict, as_of: date) -> str:
         lines.append(f"1. Assign the next unresolved route Sessions: **{compact_ranges(next_sessions)}**.")
     elif not analysis["public_streak_met"]:
         lines.append("1. Continue one reviewed daily set per assigned study day until the five-set public streak is complete.")
+    elif analysis["recognition_status"] == "CONFIRMATION_NOT_YET_EFFECTIVE":
+        lines.append("1. Do not claim confirmed mastery before the recorded private-confirmation date.")
     elif not analysis["mastery_confirmed"]:
         lines.append("1. Administer a fresh private secured confirmation set after the completed public streak.")
     elif analysis["maintenance_due"]:
@@ -244,7 +260,7 @@ def render_report(data: dict, spec: dict, as_of: date) -> str:
         "",
         "## Evidence Boundary",
         "",
-        "This report evaluates only declared ledger evidence. It does not inspect private answers, prove classroom delivery, qualify devices or accounts, or establish current-year competition readiness. Teacher inspection remains required before pathway qualification or readiness claims.",
+        "This report evaluates only declared ledger evidence through the report date. It does not inspect private answers, prove classroom delivery, qualify devices or accounts, or establish current-year competition readiness. Teacher inspection remains required before pathway qualification or readiness claims.",
     ]
     return "\n".join(lines) + "\n"
 
@@ -272,6 +288,10 @@ def run_self_test() -> None:
         set_recognition_confirmation(loaded, "2026-08-06")
         save_progress(path, loaded, spec)
         confirmed = load_progress(path, spec)
+        historical = analyse_progress(confirmed, spec, date(2026, 8, 5))
+        assert historical["recognition_status"] == "PUBLIC_STREAK_ELIGIBLE_FOR_SECURED_CONFIRMATION"
+        assert historical["confirmation_effective"] is False
+
         after = analyse_progress(confirmed, spec, date(2026, 8, 14))
         assert after["mastery_confirmed"] is True
         assert after["maintenance_due"] is True
@@ -279,6 +299,19 @@ def run_self_test() -> None:
         assert "Recognition status: **CONFIRMED**" in text
         assert "Maintenance currently due: **yes**" in text
         assert "private secured confirmation" in text
+
+        future_data = new_progress("student-report-002", "noai_round1", spec)
+        record_drill_assignment(
+            future_data,
+            day="2026-08-10",
+            set_id="000000000a",
+            level="mixed",
+            scenario_ids=["L1-D10"],
+        )
+        score_drill(future_data, "000000000a", 1.0, 1.0, 100)
+        future_analysis = analyse_progress(future_data, spec, date(2026, 8, 9))
+        assert future_analysis["reviewed_count"] == 0
+        assert future_analysis["future_record_count"] == 1
 
     print("Student progress report self-test passed.")
 
